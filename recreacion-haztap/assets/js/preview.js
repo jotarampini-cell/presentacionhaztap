@@ -151,4 +151,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- 5. DEMOSTRADOR INTERACTIVO "SIENTE EL TAP" ---
+    const demoCards = document.querySelectorAll('.demo-product-card');
+    const demoItemName = document.getElementById('demo-item-name');
+    const demoItemSpec = document.getElementById('demo-item-spec');
+    const demoItemPrice = document.getElementById('demo-item-price');
+    const waBubble = document.querySelector('.whatsapp-chat-bubble');
+
+    demoCards.forEach(card => {
+        card.addEventListener('click', () => {
+            demoCards.forEach(c => c.classList.remove('is-active'));
+            card.classList.add('is-active');
+
+            const name = card.getAttribute('data-name');
+            const spec = card.getAttribute('data-spec');
+            const price = card.getAttribute('data-price');
+
+            if (demoItemName && name) demoItemName.textContent = name;
+            if (demoItemSpec && spec) demoItemSpec.textContent = 'Variación: ' + spec;
+            if (demoItemPrice && price) demoItemPrice.textContent = '$' + price + ' USD';
+
+            if (waBubble) {
+                waBubble.classList.remove('has-updated');
+                void waBubble.offsetWidth; // trigger reflow
+                waBubble.classList.add('has-updated');
+            }
+        });
+    });
+
 });
