@@ -578,13 +578,311 @@ body.is-preview {
 .fb-3 { bottom: 18%; left: 10%; animation: floatGentle 4.8s ease-in-out infinite alternate; }
 .fb-3 .badge-icon { background: rgba(10, 207, 131, 0.15); color: #0ACF83; }
 
-/* Badge 4: Naranja (#F24E1E) */
-.fb-4 { bottom: 14%; right: 8%; animation: floatGentle 6s ease-in-out infinite alternate-reverse; }
-.fb-4 .badge-icon { background: rgba(242, 78, 30, 0.15); color: #F24E1E; }
+/* ==========================================================================
+   EL COMERCIO EN VENEZUELA: EL ANTES VS EL DESPUÉS (Bento de Contraste)
+   ========================================================================== */
+.preview-comparison {
+    padding: 100px 0 110px;
+    background: var(--ht-bg-light);
+    border-bottom: 1px solid var(--ht-border);
+}
 
-@keyframes floatGentle {
-    0% { transform: translateY(0px); }
-    100% { transform: translateY(-12px); }
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.comparison-card {
+    border-radius: 28px;
+    padding: 44px 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.card-pain {
+    background: #FFFFFF;
+    border: 1px solid var(--ht-border);
+    box-shadow: 0 10px 30px -10px rgba(23, 23, 25, 0.05);
+}
+
+.card-pain .comparison-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(242, 78, 30, 0.1);
+    color: var(--ht-naranja);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 22px;
+    align-self: flex-start;
+}
+
+.card-pain h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--ht-dark);
+    margin-bottom: 18px;
+    line-height: 1.25;
+}
+
+.card-solution {
+    background: var(--ht-dark);
+    color: #FFFFFF;
+    box-shadow: 0 25px 60px -15px rgba(23, 23, 25, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-solution .comparison-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(10, 207, 131, 0.2);
+    color: var(--ht-verde);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 22px;
+    align-self: flex-start;
+}
+
+.card-solution h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 18px;
+    line-height: 1.25;
+}
+
+.comparison-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 14px;
+}
+
+.comparison-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.98rem;
+    line-height: 1.5;
+}
+
+.card-pain .comparison-list li {
+    color: rgba(23, 23, 25, 0.7);
+}
+
+.card-pain .icon-neg {
+    color: var(--ht-naranja);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.card-solution .comparison-list li {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.card-solution .icon-pos {
+    color: var(--ht-verde);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   EL MÉTODO HAZTAP: SERVICIO END-TO-END EN 4 FASES
+   ========================================================================== */
+.preview-method {
+    padding: 120px 0 130px;
+    background: #FFFFFF;
+    position: relative;
+    border-bottom: 1px solid var(--ht-border);
+}
+
+.method-header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 60px;
+}
+
+.method-header .ht-pill-eyebrow {
+    margin-bottom: 16px;
+}
+
+.method-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 3.8vw, 3.3rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--ht-dark);
+    margin-bottom: 16px;
+    line-height: 1.15;
+}
+
+.method-subtitle {
+    font-size: 1.12rem;
+    color: rgba(23, 23, 25, 0.65);
+    line-height: 1.6;
+}
+
+.method-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.method-card {
+    background: var(--ht-bg-card);
+    border: 1px solid var(--ht-border);
+    border-radius: 28px;
+    padding: 34px 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.method-card:hover {
+    background: #FFFFFF;
+    border-color: var(--ht-dark);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -10px rgba(23, 23, 25, 0.08);
+}
+
+.method-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.method-phase-badge {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(23, 23, 25, 0.45);
+}
+
+.method-icon-wrap {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.method-card:hover .method-icon-wrap {
+    transform: scale(1.1);
+}
+
+.icon-phase-1 { background: rgba(162, 89, 255, 0.15); color: var(--ht-lila); }
+.icon-phase-2 { background: rgba(26, 188, 254, 0.15); color: var(--ht-celeste); }
+.icon-phase-3 { background: rgba(10, 207, 131, 0.15); color: var(--ht-verde); }
+.icon-phase-4 { background: rgba(242, 78, 30, 0.15); color: var(--ht-naranja); }
+
+.method-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ht-dark);
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.method-card p {
+    font-size: 0.92rem;
+    color: rgba(23, 23, 25, 0.65);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.method-tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    border: 1px solid var(--ht-border);
+    color: var(--ht-dark);
+    align-self: flex-start;
+}
+
+/* ==========================================================================
+   GARANTÍAS & RESPALDO HUMANO EN VENEZUELA
+   ========================================================================== */
+.preview-guarantees {
+    padding: 90px 0 100px;
+    background: var(--ht-bg-light);
+    border-bottom: 1px solid var(--ht-border);
+}
+
+.guarantees-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.guarantee-card {
+    background: #FFFFFF;
+    border: 1px solid var(--ht-border);
+    border-radius: 24px;
+    padding: 32px 28px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    box-shadow: 0 6px 20px rgba(23, 23, 25, 0.03);
+    transition: all 0.25s ease;
+}
+
+.guarantee-card:hover {
+    border-color: var(--ht-border-strong);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(23, 23, 25, 0.06);
+}
+
+.guarantee-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(23, 23, 25, 0.05);
+    color: var(--ht-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.guarantee-content h4 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ht-dark);
+    margin-bottom: 6px;
+}
+
+.guarantee-content p {
+    font-size: 0.9rem;
+    color: rgba(23, 23, 25, 0.65);
+    line-height: 1.55;
 }
 
 /* ==========================================================================
@@ -1854,6 +2152,14 @@ body.is-preview {
         grid-template-columns: 1fr;
         gap: 36px;
     }
+
+    .method-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .guarantees-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1900,6 +2206,14 @@ body.is-preview {
     }
 
     .reviews-bento-row {
+        grid-template-columns: 1fr;
+    }
+
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .method-cards-grid {
         grid-template-columns: 1fr;
     }
 
