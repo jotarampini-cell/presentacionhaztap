@@ -99,9 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 videos.forEach(v => { v.muted = (v === activeVideo) ? isMuted : true; });
 
                 if (isMuted) {
-                    muteBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg> Activar Sonido';
+                    muteBtn.innerHTML = '<i class="ph-bold ph-speaker-slash"></i> Activar Sonido';
                 } else {
-                    muteBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2V15H6L11 19V5Z"></path><path d="M19.07 4.93C21.5 7.36 21.5 11.3 19.07 13.73"></path><path d="M15.54 8.46C16.47 9.39 16.47 10.9 15.54 11.83"></path></svg> Silenciar';
+                    muteBtn.innerHTML = '<i class="ph-bold ph-speaker-high"></i> Silenciar';
                 }
             });
         }

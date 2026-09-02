@@ -57,6 +57,95 @@ body.is-preview {
 }
 
 /* ==========================================================================
+   PHOSPHOR ICONS INTEGRATION & HARMONIZATION
+   ========================================================================== */
+i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-size: 1.15em;
+    vertical-align: middle;
+}
+
+.btn-icon-circle i {
+    font-size: 0.95rem;
+}
+
+.partner-tag i {
+    font-size: 1.2rem;
+    color: currentColor;
+    flex-shrink: 0;
+}
+
+.badge-icon i {
+    font-size: 1.15rem;
+}
+
+.method-icon-wrap i {
+    font-size: 1.35rem;
+}
+
+.feature-pill-icon i {
+    font-size: 1.15rem;
+}
+
+.guarantee-icon i {
+    font-size: 1.45rem;
+}
+
+.icon-neg {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.icon-neg i {
+    font-size: 1.25rem;
+    color: var(--ht-naranja);
+}
+
+.icon-pos {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.icon-pos i {
+    font-size: 1.25rem;
+    color: var(--ht-verde);
+}
+
+.stars-rating-svgs i {
+    font-size: 1.15rem;
+    color: #F59E0B;
+}
+
+.showreel-play-btn i {
+    font-size: 2.2rem;
+    margin-left: 4px; /* Optical center for triangle */
+    color: var(--ht-dark);
+}
+
+.faq-toggle-icon i {
+    font-size: 0.95rem;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.faq-item.is-open .faq-toggle-icon i {
+    transform: rotate(45deg);
+}
+
+.team-plus-btn i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover .team-plus-btn i {
+    transform: translate(2px, -2px);
+}
+
+/* ==========================================================================
    BARRA DE NAVEGACIÓN FLOTANTE (Pill con Logo ht + haztap oficial)
    ========================================================================== */
 .preview-nav-wrapper {
@@ -1349,12 +1438,6 @@ body.is-preview {
     color: var(--ht-dark);
     transform: translateY(-2px);
     box-shadow: 0 14px 30px rgba(255, 255, 255, 0.25);
-}
-
-#global-unmute-btn:hover {
-    background: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(23, 23, 25, 0.35);
 }
 
 /* ==========================================================================
