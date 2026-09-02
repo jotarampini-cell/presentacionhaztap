@@ -1,25 +1,21 @@
 /* ==========================================================================
-   HAZTAP — Preview Homepage (Duotono Blanco y Negro / Minimalista High-End)
-   Paleta dominante: #171719 (Negro Grafito Oficial) y #FFFFFF (Blanco Puro)
+   HAZTAP — Preview Homepage (Ultra-Polished B&W Duotone Edition)
+   Inspirado en la estructura de referencia Rial + Pautas oficiales Haztap 2025
    ========================================================================== */
 
 :root {
-    /* Brandbook 2025: Colores Principales Dominantes */
+    /* Brandbook 2025: Paleta Dominante Duotono */
     --ht-dark: #171719;
-    --ht-dark-soft: #222226;
-    --ht-dark-card: #1C1C1F;
+    --ht-dark-card: #202024;
+    --ht-dark-border: rgba(255, 255, 255, 0.12);
     --ht-white: #FFFFFF;
-    --ht-bg-light: #FAFAFB;
+    --ht-bg-light: #FBFBFC;
     --ht-bg-card: #F4F4F6;
     --ht-bg-card-hover: #ECECEF;
     --ht-border: rgba(23, 23, 25, 0.08);
     --ht-border-strong: rgba(23, 23, 25, 0.16);
-    --ht-border-dark: rgba(255, 255, 255, 0.12);
 
-    /* Micro-acentos sobrios (usados exclusivamente en micro-detalles si aplica) */
-    --ht-accent-subtle: #0ACF83;
-
-    /* Tipografías Oficiales Brandbook */
+    /* Tipografías Oficiales */
     --font-heading: 'Ubuntu', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-sans: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
 }
@@ -45,16 +41,15 @@ body.is-preview {
     overflow-x: hidden;
 }
 
-/* Contenedores */
 .ht-container {
     width: 100%;
-    max-width: 1240px;
+    max-width: 1220px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
 /* ==========================================================================
-   BARRA DE NAVEGACIÓN FLOTANTE (Blanco/Negro Glassmorphism)
+   BARRA DE NAVEGACIÓN FLOTANTE (Pill Minimalista)
    ========================================================================== */
 .preview-nav-wrapper {
     position: fixed;
@@ -67,15 +62,15 @@ body.is-preview {
 
 .preview-nav {
     pointer-events: auto;
-    max-width: 1080px;
+    max-width: 1060px;
     margin: 0 auto;
-    padding: 12px 24px;
+    padding: 10px 22px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(24px) saturate(190%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%);
     border: 1px solid var(--ht-border);
     border-radius: 999px;
     box-shadow: 0 10px 30px -10px rgba(23, 23, 25, 0.08);
@@ -91,7 +86,7 @@ body.is-preview {
 .preview-nav-links {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 30px;
     list-style: none;
 }
 
@@ -117,9 +112,9 @@ body.is-preview {
     text-decoration: none;
     padding: 10px 22px;
     border-radius: 999px;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 600;
-    transition: all 0.25s ease;
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .nav-cta-btn:hover {
@@ -129,12 +124,12 @@ body.is-preview {
 }
 
 /* ==========================================================================
-   HERO SECTION (Duotono Blanco y Negro)
+   HERO SECTION (Estructura de Referencia con Teléfono Superpuesto en 3D)
    ========================================================================== */
 .preview-hero {
     position: relative;
-    padding-top: 140px;
-    padding-bottom: 70px;
+    padding-top: 130px;
+    padding-bottom: 90px;
     background: var(--ht-bg-light);
     overflow: hidden;
 }
@@ -142,18 +137,20 @@ body.is-preview {
 .hero-grid {
     display: grid;
     grid-template-columns: 1.15fr 1fr 0.85fr;
-    align-items: center;
-    gap: 32px;
-    margin-bottom: 60px;
+    align-items: flex-start;
+    gap: 28px;
+    position: relative;
+    z-index: 10;
 }
 
+/* Columna Izquierda */
 .hero-copy-left {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-top: 20px;
 }
 
-/* Eyebrow Pill B&W */
 .ht-pill-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -165,7 +162,7 @@ body.is-preview {
     color: var(--ht-dark);
     font-size: 0.82rem;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     box-shadow: 0 2px 8px rgba(23, 23, 25, 0.04);
 }
 
@@ -180,18 +177,18 @@ body.is-preview {
     font-family: var(--font-heading);
     font-size: clamp(2.8rem, 4.4vw, 4.5rem);
     font-weight: 700;
-    line-height: 1.08;
+    line-height: 1.05;
     letter-spacing: -0.04em;
     color: var(--ht-dark);
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .hero-main-subtitle {
-    font-size: 1.15rem;
+    font-size: 1.12rem;
     color: rgba(23, 23, 25, 0.68);
     line-height: 1.6;
     margin-bottom: 36px;
-    max-width: 440px;
+    max-width: 420px;
 }
 
 .hero-cta-group {
@@ -201,7 +198,6 @@ body.is-preview {
     flex-wrap: wrap;
 }
 
-/* Botones B&W High-End */
 .ht-btn-primary {
     display: inline-flex;
     align-items: center;
@@ -219,13 +215,13 @@ body.is-preview {
 
 .ht-btn-primary:hover {
     background: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(23, 23, 25, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(23, 23, 25, 0.3);
 }
 
 .btn-icon-circle {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     background: rgba(255, 255, 255, 0.18);
     color: #fff;
     border-radius: 50%;
@@ -260,24 +256,26 @@ body.is-preview {
     border-color: var(--ht-dark);
 }
 
-/* Mockup Central de iPhone Flotante */
+/* Columna Central: Teléfono Flotante Superpuesto en Perspectiva */
 .hero-mockup-center {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
-    perspective: 1200px;
+    align-items: flex-start;
+    margin-bottom: -180px; /* Se superpone de forma natural con el banner inferior */
+    z-index: 15;
 }
 
 .phone-float-wrapper {
     position: relative;
-    width: 290px;
-    height: 590px;
+    width: 295px;
+    height: 600px;
+    filter: drop-shadow(0 35px 70px rgba(0, 0, 0, 0.28));
     animation: floatPhone 6s ease-in-out infinite alternate;
 }
 
 @keyframes floatPhone {
-    0% { transform: translateY(0px) rotate(-1.2deg); }
+    0% { transform: translateY(0px) rotate(-1.5deg); }
     100% { transform: translateY(-16px) rotate(1deg); }
 }
 
@@ -313,15 +311,15 @@ body.is-preview {
     height: 100%;
     z-index: 2;
     pointer-events: none;
-    filter: drop-shadow(0 30px 60px rgba(23, 23, 25, 0.18));
 }
 
-/* Columna Derecha: Social Proof B&W */
+/* Columna Derecha: Social Proof */
 .hero-proof-right {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    padding-left: 20px;
+    padding-top: 30px;
+    padding-left: 16px;
 }
 
 .proof-mini-card {
@@ -378,29 +376,34 @@ body.is-preview {
 }
 
 /* ==========================================================================
-   HERO VALUE BANNER (Negro Grafito Oficial #171719)
+   HERO VALUE BANNER (#171719 con Marca de Agua y Teléfono Superpuesto)
    ========================================================================== */
 .hero-value-banner {
     position: relative;
+    z-index: 5;
+    margin-top: 40px;
+    padding-top: 140px; /* Espacio para recibir la mitad inferior del teléfono */
+    padding-bottom: 64px;
+    padding-left: 40px;
+    padding-right: 40px;
     background: var(--ht-dark);
-    border-radius: 36px;
-    padding: 64px 40px;
+    border-radius: 40px;
     text-align: center;
     overflow: hidden;
     color: #fff;
-    box-shadow: 0 24px 60px rgba(23, 23, 25, 0.25);
+    box-shadow: 0 30px 80px -15px rgba(23, 23, 25, 0.35);
 }
 
 .banner-watermark {
     position: absolute;
-    top: 50%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: var(--font-heading);
-    font-size: clamp(3.5rem, 8vw, 8.5rem);
+    font-size: clamp(3.5rem, 8.5vw, 9rem);
     font-weight: 700;
     letter-spacing: -0.02em;
-    color: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.04);
     white-space: nowrap;
     pointer-events: none;
     user-select: none;
@@ -419,16 +422,22 @@ body.is-preview {
     font-size: clamp(1.4rem, 2.2vw, 2.1rem);
     font-weight: 700;
     letter-spacing: -0.02em;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     line-height: 1.25;
     color: #fff;
+}
+
+.banner-content p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 30px;
 }
 
 .banner-partners-strip {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
@@ -436,26 +445,31 @@ body.is-preview {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.12);
     padding: 10px 20px;
     border-radius: 999px;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: #fff;
-    transition: background 0.2s ease;
+    transition: all 0.25s ease;
 }
 
 .partner-tag:hover {
     background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.partner-tag svg {
+    flex-shrink: 0;
 }
 
 /* ==========================================================================
-   PROPUESTA DE VALOR (Blanco / Patrón de Marca)
+   PROPUESTA DE VALOR CON MICRO-BADGES FLOTANTES
    ========================================================================== */
 .preview-statement {
     position: relative;
-    padding: 130px 0 110px;
+    padding: 140px 0 120px;
     text-align: center;
     overflow: hidden;
     background: #fff;
@@ -498,7 +512,6 @@ body.is-preview {
     margin: 0 auto 36px;
 }
 
-/* Micro-badges en Duotono B&W */
 .floating-badge {
     position: absolute;
     display: inline-flex;
@@ -508,7 +521,7 @@ body.is-preview {
     background: #fff;
     border: 1px solid var(--ht-border-strong);
     border-radius: 999px;
-    box-shadow: 0 10px 25px rgba(23, 23, 25, 0.05);
+    box-shadow: 0 10px 25px rgba(23, 23, 25, 0.06);
     font-size: 0.88rem;
     font-weight: 600;
     color: var(--ht-dark);
@@ -527,10 +540,10 @@ body.is-preview {
     font-size: 0.75rem;
 }
 
-.fb-1 { top: 18%; left: 8%; animation: floatGentle 5s ease-in-out infinite alternate; }
-.fb-2 { top: 22%; right: 9%; animation: floatGentle 5.5s ease-in-out infinite alternate-reverse; }
-.fb-3 { bottom: 20%; left: 10%; animation: floatGentle 4.8s ease-in-out infinite alternate; }
-.fb-4 { bottom: 16%; right: 8%; animation: floatGentle 6s ease-in-out infinite alternate-reverse; }
+.fb-1 { top: 16%; left: 8%; animation: floatGentle 5s ease-in-out infinite alternate; }
+.fb-2 { top: 20%; right: 9%; animation: floatGentle 5.5s ease-in-out infinite alternate-reverse; }
+.fb-3 { bottom: 18%; left: 10%; animation: floatGentle 4.8s ease-in-out infinite alternate; }
+.fb-4 { bottom: 14%; right: 8%; animation: floatGentle 6s ease-in-out infinite alternate-reverse; }
 
 @keyframes floatGentle {
     0% { transform: translateY(0px); }
@@ -538,7 +551,7 @@ body.is-preview {
 }
 
 /* ==========================================================================
-   BENTO GRID DE FUNCIONALIDADES (Duotono Monocromático)
+   FEATURE PILLS & "FUNCIONES" DASHBOARD SHOWCASE (Estilo Referencia)
    ========================================================================== */
 .preview-features {
     padding: 90px 0 110px;
@@ -549,7 +562,7 @@ body.is-preview {
 .section-header-center {
     text-align: center;
     max-width: 680px;
-    margin: 0 auto 54px;
+    margin: 0 auto 48px;
 }
 
 .section-header-center h2 {
@@ -566,103 +579,219 @@ body.is-preview {
     color: rgba(23, 23, 25, 0.65);
 }
 
-.bento-features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+/* Fila de Feature Pills (como en la referencia) */
+.feature-pills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
     margin-bottom: 60px;
 }
 
-.bento-card {
+.feature-pills-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.feature-pill-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
     background: #fff;
     border: 1px solid var(--ht-border);
-    border-radius: 28px;
-    padding: 36px 30px;
-    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-    position: relative;
-    overflow: hidden;
+    border-radius: 999px;
+    padding: 12px 24px;
+    box-shadow: 0 4px 14px rgba(23, 23, 25, 0.04);
+    transition: all 0.25s ease;
 }
 
-.bento-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px -10px rgba(23, 23, 25, 0.08);
+.feature-pill-card:hover {
+    transform: translateY(-2px);
     border-color: var(--ht-border-strong);
+    box-shadow: 0 8px 20px rgba(23, 23, 25, 0.08);
 }
 
-.bento-icon-wrapper {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-    background: var(--ht-dark);
-    color: #fff;
+.feature-pill-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--ht-bg-card);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 22px;
-    font-size: 1.25rem;
-}
-
-.bento-card h3 {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
     color: var(--ht-dark);
-    margin-bottom: 12px;
+    font-size: 0.85rem;
 }
 
-.bento-card p {
-    font-size: 0.96rem;
-    color: rgba(23, 23, 25, 0.68);
-    line-height: 1.55;
+.feature-pill-text strong {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ht-dark);
+    margin-right: 6px;
 }
 
-/* Functions Showcase Box B&W */
+.feature-pill-text span {
+    font-size: 0.85rem;
+    color: rgba(23, 23, 25, 0.6);
+}
+
+/* Gran Showcase con Marca de Agua "FUNCIONES" y Teléfono Dark Mode Real */
 .functions-showcase-box {
     position: relative;
     background: var(--ht-dark);
-    border-radius: 36px;
-    padding: 80px 40px 0;
+    border-radius: 40px;
+    padding: 90px 40px 0;
     text-align: center;
     overflow: hidden;
-    border: 1px solid var(--ht-dark-soft);
+    border: 1px solid var(--ht-dark-card);
+    box-shadow: 0 30px 80px rgba(23, 23, 25, 0.3);
 }
 
 .functions-watermark {
     position: absolute;
-    top: 25%;
+    top: 28%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: var(--font-heading);
-    font-size: clamp(4rem, 11vw, 11rem);
+    font-size: clamp(4rem, 12vw, 12rem);
     font-weight: 700;
     letter-spacing: -0.02em;
-    color: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.05);
     text-transform: uppercase;
     pointer-events: none;
     user-select: none;
     white-space: nowrap;
 }
 
-.functions-mockup-wrapper {
+.functions-phone-wrapper {
     position: relative;
     z-index: 2;
-    max-width: 320px;
+    width: 280px;
+    height: 520px;
     margin: 0 auto;
-    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 25px 60px rgba(0, 0, 0, 0.6));
 }
 
-.functions-mockup-wrapper img {
-    width: 100%;
-    height: auto;
+/* Interfaz interna Dark Mode */
+.phone-dark-screen {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border-radius: 38px;
+    background: #111113;
+    color: #fff;
+    padding: 38px 18px 20px;
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.phone-dark-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dashboard-stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 14px;
+}
+
+.dashboard-stat-card .stat-title {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
     display: block;
+    margin-bottom: 4px;
+}
+
+.dashboard-stat-card .stat-value {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard-stat-card .stat-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 3px 8px;
+    border-radius: 999px;
+    color: #fff;
+}
+
+/* Mini Bar Chart */
+.dashboard-bars-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    height: 38px;
+    margin-top: 10px;
+    padding-top: 4px;
+}
+
+.dashboard-bar {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.dashboard-bar.active {
+    background: #fff;
+}
+
+/* Lista de pedidos recientes */
+.dashboard-orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dashboard-order-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    padding: 8px 12px;
+    font-size: 0.78rem;
+}
+
+.order-col-left strong {
+    display: block;
+    color: #fff;
+}
+
+.order-col-left span {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.order-col-price {
+    font-weight: 600;
+    color: #fff;
 }
 
 /* ==========================================================================
-   MÉTRICAS Y DATOS (Limpio Blanco y Negro)
+   METRICAS Y DATOS ("Datos y cifras")
    ========================================================================== */
 .preview-metrics {
-    padding: 80px 0;
+    padding: 90px 0;
     background: #fff;
     border-top: 1px solid var(--ht-border);
     border-bottom: 1px solid var(--ht-border);
@@ -698,106 +827,92 @@ body.is-preview {
 }
 
 /* ==========================================================================
-   PORTAFOLIO DE CLIENTES (Tratamiento Duotono B&W / Pág. 7 Brandbook)
+   EQUIPO / CASOS DE ÉXITO ("Los que hacen Haztap posible")
    ========================================================================== */
-.preview-portfolio {
+.preview-team {
     padding: 100px 0;
     background: var(--ht-bg-light);
 }
 
-.portfolio-cards-grid {
+.team-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 }
 
-.portfolio-card {
-    position: relative;
+.team-card {
+    background: #fff;
+    border: 1px solid var(--ht-border);
     border-radius: 24px;
     overflow: hidden;
-    height: 390px;
+    padding: 14px;
+    box-shadow: 0 10px 30px -10px rgba(23, 23, 25, 0.05);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px -10px rgba(23, 23, 25, 0.12);
+    border-color: var(--ht-border-strong);
+}
+
+.team-photo-wrapper {
+    width: 100%;
+    height: 240px;
+    border-radius: 16px;
+    overflow: hidden;
     background: #000;
-    box-shadow: 0 16px 36px -10px rgba(23, 23, 25, 0.12);
-    transition: all 0.35s ease;
+    margin-bottom: 16px;
 }
 
-.portfolio-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 50px -10px rgba(23, 23, 25, 0.22);
-}
-
-.portfolio-card-img {
+.team-photo-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: grayscale(100%) contrast(1.1) brightness(0.9);
-    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: grayscale(100%) contrast(1.1);
+    transition: transform 0.4s ease;
 }
 
-.portfolio-card:hover .portfolio-card-img {
-    transform: scale(1.06);
-    filter: grayscale(80%) contrast(1.15) brightness(0.95);
+.team-card:hover .team-photo-wrapper img {
+    transform: scale(1.05);
 }
 
-.duotone-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(23, 23, 25, 0.92) 0%, rgba(23, 23, 25, 0.2) 60%, rgba(23, 23, 25, 0.5) 100%);
-    pointer-events: none;
-}
-
-.portfolio-card-content {
-    position: absolute;
-    inset: 0;
-    padding: 24px;
+.team-info-row {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
-    z-index: 3;
-    color: #fff;
+    padding: 4px 6px 8px;
 }
 
-.portfolio-top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.portfolio-pill-badge {
-    display: inline-block;
-    background: #fff;
-    color: var(--ht-dark);
-    padding: 6px 14px;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.portfolio-brand-logo {
-    height: 20px;
-    width: auto;
-    filter: brightness(0) invert(1);
-    opacity: 0.85;
-}
-
-.portfolio-card-bottom h4 {
+.team-text h4 {
     font-family: var(--font-heading);
-    font-size: 1.35rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    margin-bottom: 4px;
-    color: #fff;
+    color: var(--ht-dark);
+    margin-bottom: 2px;
 }
 
-.portfolio-card-bottom p {
-    font-size: 0.88rem;
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.4;
+.team-text span {
+    font-size: 0.82rem;
+    color: rgba(23, 23, 25, 0.55);
+}
+
+.team-plus-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--ht-bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ht-dark);
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 /* ==========================================================================
-   RESEÑAS & SOCIAL PROOF BENTO (Duotono B&W)
+   RESEÑAS & SOCIAL PROOF BENTO
    ========================================================================== */
 .preview-reviews {
     padding: 90px 0 110px;
@@ -811,7 +926,6 @@ body.is-preview {
     align-items: stretch;
 }
 
-/* Caja Destacada en Negro Grafito #171719 */
 .review-highlight-box {
     background: var(--ht-dark);
     border-radius: 32px;
@@ -892,7 +1006,7 @@ body.is-preview {
 }
 
 /* ==========================================================================
-   FAQ ACCORDION (Preguntas frecuentes)
+   FAQ ACCORDION
    ========================================================================== */
 .preview-faq {
     padding: 100px 0;
@@ -969,7 +1083,7 @@ body.is-preview {
 }
 
 /* ==========================================================================
-   BANNER DE CIERRE (Final CTA)
+   FINAL CTA BANNER
    ========================================================================== */
 .preview-final-cta {
     padding: 80px 0 120px;
@@ -1113,7 +1227,6 @@ body.is-preview {
     color: #fff;
 }
 
-/* Mockup QR Code en Footer (Estilo Referencia) */
 .footer-qr-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1205,11 +1318,16 @@ body.is-preview {
         align-items: center;
     }
 
-    .bento-features-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .hero-mockup-center {
+        margin-bottom: 0; /* Normal flow on tablets */
     }
 
-    .portfolio-cards-grid {
+    .hero-value-banner {
+        padding-top: 60px;
+        margin-top: 30px;
+    }
+
+    .team-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1240,8 +1358,14 @@ body.is-preview {
         height: 510px;
     }
 
-    .bento-features-grid {
-        grid-template-columns: 1fr;
+    .feature-pills-row {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .feature-pill-card {
+        width: 100%;
+        justify-content: flex-start;
     }
 
     .metrics-grid {
@@ -1249,7 +1373,7 @@ body.is-preview {
         gap: 24px;
     }
 
-    .portfolio-cards-grid {
+    .team-grid {
         grid-template-columns: 1fr;
     }
 
