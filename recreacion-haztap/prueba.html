@@ -10,26 +10,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Estilos dedicados de la versión de prueba en duotono blanco y negro -->
+    <!-- Swiper 11 CSS para el carrusel de videos 3D -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Estilos dedicados de preview -->
     <link rel="stylesheet" href="assets/css/preview.css">
 </head>
 <body class="is-preview">
 
-    <!-- BARRA DE NAVEGACIÓN FLOTANTE (Pill B&W) -->
+    <!-- BARRA DE NAVEGACIÓN FLOTANTE (Logo oficial ht + haztap como en la captura) -->
     <div class="preview-nav-wrapper">
         <header class="preview-nav">
             <a href="preview.html" class="preview-nav-logo" aria-label="Haztap Inicio">
-                <img src="assets/img/haztap-logo-horizontal.svg" alt="Haztap – Todo a un Tap">
+                <img src="assets/img/haztap-logo-dark.png" alt="ht">
+                <span class="brand-wordmark">haztap</span>
             </a>
 
             <nav>
                 <ul class="preview-nav-links">
                     <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#showreel">Conócenos</a></li>
                     <li><a href="#solucion">Solución</a></li>
+                    <li><a href="#videos-clientes">Casos Reales</a></li>
                     <li><a href="#funciones">Funciones</a></li>
                     <li><a href="#cifras">Cifras</a></li>
                     <li><a href="#equipo">Equipo</a></li>
-                    <li><a href="#testimonios">Reseñas</a></li>
                     <li><a href="#preguntas">Preguntas</a></li>
                 </ul>
             </nav>
@@ -44,7 +49,7 @@
         </header>
     </div>
 
-    <!-- HERO SECTION (Estructura de Referencia con Teléfono Superpuesto) -->
+    <!-- HERO SECTION (Estructura de Referencia con Teléfono Superpuesto y Acentos Sutiles) -->
     <section class="preview-hero" id="inicio">
         <div class="ht-container">
             <div class="hero-grid">
@@ -77,8 +82,8 @@
                             </span>
                         </a>
 
-                        <a href="#funciones" class="ht-btn-secondary">
-                            Ver Funciones
+                        <a href="#showreel" class="ht-btn-secondary">
+                            Ver Video
                         </a>
                     </div>
                 </div>
@@ -93,7 +98,7 @@
                     </div>
                 </div>
 
-                <!-- Columna Derecha: Social Proof B&W -->
+                <!-- Columna Derecha: Social Proof -->
                 <div class="hero-proof-right">
                     <div class="proof-mini-card">
                         <p>
@@ -152,27 +157,54 @@
         </div>
     </section>
 
-    <!-- PROPUESTA DE VALOR CON MICRO-BADGES FLOTANTES -->
+    <!-- VIDEO INSTITUCIONAL SHOWREEL ("CONÓCENOS / Así hacemos Haztap") -->
+    <section class="preview-showreel" id="showreel">
+        <div class="showreel-bg-glow"></div>
+        <div class="ht-container">
+            <div class="showreel-header">
+                <span class="showreel-eyebrow">Conócenos</span>
+                <h2 class="showreel-title">Así hacemos Haztap</h2>
+            </div>
+
+            <div class="showreel-player-container">
+                <video
+                    id="home-showreel-video"
+                    poster="assets/img/portfolio/proyecto4.webp"
+                    preload="none"
+                    playsinline
+                    controls
+                >
+                    <source src="assets/videos/video1.mp4" type="video/mp4">
+                </video>
+                <button class="showreel-play-btn" id="home-showreel-play-btn" aria-label="Reproducir video">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPUESTA DE VALOR CON MICRO-BADGES FLOTANTES (Con Acentos Oficiales) -->
     <section class="preview-statement" id="solucion">
         <div class="statement-bg-pattern"></div>
 
+        <!-- Micro-badges flotantes con acentos oficiales -->
         <div class="floating-badge fb-1">
-            <span class="badge-icon">✓</span>
+            <span class="badge-icon">⚡</span>
             <span>0% comisiones por venta</span>
         </div>
 
         <div class="floating-badge fb-2">
-            <span class="badge-icon">●</span>
+            <span class="badge-icon">📱</span>
             <span>Todo a un tap en tu móvil</span>
         </div>
 
         <div class="floating-badge fb-3">
-            <span class="badge-icon">→</span>
+            <span class="badge-icon">💳</span>
             <span>Cobros directos a tu cuenta</span>
         </div>
 
         <div class="floating-badge fb-4">
-            <span class="badge-icon">⚡</span>
+            <span class="badge-icon">🚀</span>
             <span>En línea en menos de 24h</span>
         </div>
 
@@ -192,7 +224,39 @@
         </div>
     </section>
 
-    <!-- FUNCIONES & FEATURE PILLS (Inspirado en la Referencia) -->
+    <!-- CARRUSEL 3D DE VIDEOS VERTICALES ("CASOS REALES") -->
+    <section class="preview-clients-video" id="videos-clientes">
+        <div class="ht-container">
+            <div class="clients-video-header">
+                <span class="clients-video-eyebrow">Casos reales</span>
+                <h2 class="clients-video-title">Conoce a nuestros clientes</h2>
+                <a href="portafolios.html" class="clients-video-link">Ver todos los proyectos →</a>
+            </div>
+
+            <!-- Carrusel Swiper 3D Coverflow -->
+            <div class="swiper swiper-video-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <video src="assets/videos/video1.mp4" preload="none" loop muted playsinline></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="assets/videos/video2.mp4" preload="none" loop muted playsinline></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="assets/videos/video3.mp4" preload="none" loop muted playsinline></video>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón de Control de Audio -->
+            <button id="global-unmute-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                Activar Sonido
+            </button>
+        </div>
+    </section>
+
+    <!-- FUNCIONES & FEATURE PILLS (Con Acentos de Color de Marca) -->
     <section class="preview-features" id="funciones">
         <div class="ht-container">
             <div class="section-header-center">
@@ -200,11 +264,11 @@
                 <p>Herramientas potentes diseñadas para automatizar pedidos y fidelizar clientes.</p>
             </div>
 
-            <!-- Fila de Feature Pills (2 filas de tags interactivos) -->
+            <!-- Fila de Feature Pills con Acentos -->
             <div class="feature-pills-container">
                 <div class="feature-pills-row">
                     <div class="feature-pill-card">
-                        <span class="feature-pill-icon">🛍️</span>
+                        <span class="feature-pill-icon pill-icon-verde">🛍️</span>
                         <div class="feature-pill-text">
                             <strong>Catálogo en Vivo:</strong>
                             <span>variaciones de talla, color y stock</span>
@@ -212,7 +276,7 @@
                     </div>
 
                     <div class="feature-pill-card">
-                        <span class="feature-pill-icon">💬</span>
+                        <span class="feature-pill-icon pill-icon-celeste">💬</span>
                         <div class="feature-pill-text">
                             <strong>Checkout WhatsApp:</strong>
                             <span>pedidos estructurados listos para enviar</span>
@@ -220,7 +284,7 @@
                     </div>
 
                     <div class="feature-pill-card">
-                        <span class="feature-pill-icon">⚡</span>
+                        <span class="feature-pill-icon pill-icon-lila">⚡</span>
                         <div class="feature-pill-text">
                             <strong>Pagos al Instante:</strong>
                             <span>tarjetas, transferencias y PagoMóvil</span>
@@ -230,7 +294,7 @@
 
                 <div class="feature-pills-row">
                     <div class="feature-pill-card">
-                        <span class="feature-pill-icon">📱</span>
+                        <span class="feature-pill-icon pill-icon-naranja">📱</span>
                         <div class="feature-pill-text">
                             <strong>Gestión Móvil 24/7:</strong>
                             <span>control total desde tu smartphone</span>
@@ -238,7 +302,7 @@
                     </div>
 
                     <div class="feature-pill-card">
-                        <span class="feature-pill-icon">🌐</span>
+                        <span class="feature-pill-icon pill-icon-salmon">🌐</span>
                         <div class="feature-pill-text">
                             <strong>Dominio Propio:</strong>
                             <span>presencia profesional optimizada en Google</span>
@@ -256,7 +320,7 @@
                     <div class="phone-dark-screen">
                         <div class="phone-dark-header">
                             <span>Haztap Admin</span>
-                            <span>● En Vivo</span>
+                            <span style="color: var(--ht-verde);">● En Vivo</span>
                         </div>
 
                         <!-- Card de Ventas de hoy -->
@@ -351,7 +415,6 @@
 
             <div class="team-grid">
                 
-                <!-- Miembro 1 -->
                 <div class="team-card">
                     <div class="team-photo-wrapper">
                         <img src="assets/img/portfolio/proyecto4-mob.webp" alt="Dirección de Producto">
@@ -365,7 +428,6 @@
                     </div>
                 </div>
 
-                <!-- Miembro 2 -->
                 <div class="team-card">
                     <div class="team-photo-wrapper">
                         <img src="assets/img/portfolio/mockup-autoclub.jpg" alt="Diseño de Producto">
@@ -379,7 +441,6 @@
                     </div>
                 </div>
 
-                <!-- Miembro 3 -->
                 <div class="team-card">
                     <div class="team-photo-wrapper">
                         <img src="assets/img/portfolio/proyecto7-mob.webp" alt="Arquitectura Web">
@@ -393,7 +454,6 @@
                     </div>
                 </div>
 
-                <!-- Miembro 4 -->
                 <div class="team-card">
                     <div class="team-photo-wrapper">
                         <img src="assets/img/portfolio/mockup-kpane.jpg" alt="Éxito de Clientes">
@@ -569,7 +629,8 @@
                     <h4>Navegación</h4>
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#solucion">Solución</a></li>
+                        <li><a href="#showreel">Conócenos</a></li>
+                        <li><a href="#videos-clientes">Casos Reales</a></li>
                         <li><a href="#funciones">Funciones</a></li>
                         <li><a href="#cifras">Cifras</a></li>
                         <li><a href="#equipo">Equipo</a></li>
@@ -614,7 +675,9 @@
         </div>
     </footer>
 
-    <!-- Scripts interactivos -->
+    <!-- Swiper 11 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Scripts interactivos de preview -->
     <script src="assets/js/preview.js"></script>
 </body>
 </html>

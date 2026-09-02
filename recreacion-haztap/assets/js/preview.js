@@ -1,37 +1,42 @@
 /* ==========================================================================
    HAZTAP — Preview Homepage Interactive Script
+   - Acordeón FAQ
+   - Video Institucional (Showreel)
+   - Swiper 3D Coverflow de Videos Verticales + Control de Audio
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- FAQ Accordion ---
+    // --- 1. FAQ ACCORDION ---
     const faqItems = document.querySelectorAll('.faq-item');
 
     faqItems.forEach(item => {
         const questionBtn = item.querySelector('.faq-question');
         const answer = item.querySelector('.faq-answer');
 
-        questionBtn.addEventListener('click', () => {
-            const isOpen = item.classList.contains('is-open');
+        if (questionBtn && answer) {
+            questionBtn.addEventListener('click', () => {
+                const isOpen = item.classList.contains('is-open');
 
-            // Close all other items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('is-open');
-                    const otherAnswer = otherItem.querySelector('.faq-answer');
-                    if (otherAnswer) otherAnswer.style.maxHeight = null;
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('is-open');
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        if (otherAnswer) otherAnswer.style.maxHeight = null;
+                    }
+                });
+
+                // Toggle current
+                if (isOpen) {
+                    item.classList.remove('is-open');
+                    answer.style.maxHeight = null;
+                } else {
+                    item.classList.add('is-open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
                 }
             });
-
-            // Toggle current
-            if (isOpen) {
-                item.classList.remove('is-open');
-                answer.style.maxHeight = null;
-            } else {
-                item.classList.add('is-open');
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-            }
-        });
+        }
     });
 
     // Open first FAQ by default
@@ -42,7 +47,97 @@ document.addEventListener('DOMContentLoaded', () => {
         if (firstAnswer) firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
     }
 
-    // --- Smooth Anchor Navigation ---
+    // --- 2. VIDEO INSTITUCIONAL (SHOWREEL) ---
+    const showreelVideo = document.getElementById('home-showreel-video');
+    const showreelPlayBtn = document.getElementById('home-showreel-play-btn');
+
+    if (showreelVideo && showreelPlayBtn) {
+        showreelPlayBtn.addEventListener('click', () => {
+            showreelVideo.play();
+            showreelVideo.setAttribute('preload', 'auto');
+        });
+
+        showreelVideo.addEventListener('play', () => showreelPlayBtn.classList.add('is-hidden'));
+        showreelVideo.addEventListener('pause', () => showreelPlayBtn.classList.remove('is-hidden'));
+        showreelVideo.addEventListener('ended', () => showreelPlayBtn.classList.remove('is-hidden'));
+    }
+
+    // --- 3. SWIPER: CARRUSEL DE VIDEOS VERTICALES 3D ---
+    const swiperContainer = document.querySelector('.swiper-video-slider');
+    if (swiperContainer && typeof Swiper !== 'undefined') {
+        const videoSwiper = new Swiper('.swiper-video-slider', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            observer: true,
+            observeParents: true,
+            coverflowEffect: {
+                rotate: 25,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            keyboard: { enabled: true },
+            loop: false,
+        });
+
+        setTimeout(() => { if (videoSwiper) videoSwiper.update(); }, 600);
+
+        const videos = document.querySelectorAll('.swiper-slide video');
+        const muteBtn = document.getElementById('global-unmute-btn');
+        let isMuted = true;
+        let hasEnteredView = false;
+
+        if (muteBtn) {
+            muteBtn.addEventListener('click', () => {
+                isMuted = !isMuted;
+                const activeSlide = document.querySelector('.swiper-slide-active');
+                const activeVideo = activeSlide ? activeSlide.querySelector('video') : null;
+
+                videos.forEach(v => { v.muted = (v === activeVideo) ? isMuted : true; });
+
+                if (isMuted) {
+                    muteBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg> Activar Sonido';
+                } else {
+                    muteBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2V15H6L11 19V5Z"></path><path d="M19.07 4.93C21.5 7.36 21.5 11.3 19.07 13.73"></path><path d="M15.54 8.46C16.47 9.39 16.47 10.9 15.54 11.83"></path></svg> Silenciar';
+                }
+            });
+        }
+
+        function handleVideoPlay() {
+            if (!videoSwiper) return;
+            const activeSlide = videoSwiper.slides[videoSwiper.activeIndex];
+            const activeVideo = activeSlide ? activeSlide.querySelector('video') : null;
+
+            videos.forEach(v => {
+                if (v.paused) v.play().catch(() => {});
+                v.muted = (v === activeVideo) ? isMuted : true;
+            });
+        }
+
+        videoSwiper.on('slideChange', handleVideoPlay);
+
+        // IntersectionObserver para reproducción automática eficiente
+        if (typeof IntersectionObserver !== 'undefined') {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasEnteredView) {
+                        hasEnteredView = true;
+                        handleVideoPlay();
+                    } else if (!entry.isIntersecting) {
+                        videos.forEach(v => v.pause());
+                    }
+                });
+            }, { threshold: 0.35 });
+            observer.observe(swiperContainer);
+        } else {
+            handleVideoPlay();
+        }
+    }
+
+    // --- 4. SMOOTH ANCHOR SCROLL ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
