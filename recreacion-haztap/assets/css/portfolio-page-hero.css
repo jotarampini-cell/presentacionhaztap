@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Hero simple para páginas de listado de portafolio por categoría
+   (Inicio/E-Commerce/Corporativo/Cursos) — no depende de Elementor.
+   ========================================================================== */
+.ht-portfolio-page-hero {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 160px 1rem 0;
+    font-family: 'Ubuntu', sans-serif;
+    color: #fff;
+}
+
+.ht-portfolio-page-eyebrow {
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 20px;
+}
+
+.ht-portfolio-page-title {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin: 0 0 24px;
+}
+
+.ht-portfolio-page-desc {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.55);
+    max-width: 640px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .ht-portfolio-page-hero { padding-top: 120px; }
+}

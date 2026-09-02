@@ -1,0 +1,8 @@
+# WordPress source (not part of the recreated static design)
+presentacion.haztap.com/
+presentacion.haztap.com.zip
+director_wp437.sql
+docker-compose.yml
+
+# Claude session internals
+.claude/scheduled_tasks.lock

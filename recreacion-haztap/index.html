@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haztap – Todo a un Tap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="assets/css/gsap-menu.css">
+<link rel="stylesheet" href="assets/css/gsap-transitions.css">
+</head>
+<body class="is-home">
+
+<main id="gsap-home-wrapper">
+    <div id="gsap-pinned-container">
+
+        <!-- SLIDE 1: Hero -->
+        <section class="gsap-slide slide-1">
+            <div class="slide-bg">
+                <canvas id="hero-canvas" aria-hidden="true"></canvas>
+                <div class="slide-exit-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="slide-content slide-content-center">
+                <h1 class="hero-title">Haz tap en tu <br>futuro digital</h1>
+                <p class="slide-subtitle fade-element">Crea en nuestras manos tu página web.<br>¡Ven y Haztap!</p>
+
+                <div class="search-box-wrapper fade-element">
+                    <form action="#" class="hero-search-form" onsubmit="return false;">
+                        <input type="text" name="s" placeholder="Busca tu futura página web..." required autocomplete="off">
+                        <button type="submit" class="search-submit-btn">Ir</button>
+                    </form>
+                </div>
+
+                <div class="fade-element cta-row">
+                    <a href="portafolios.html" class="cta-btn cta-secondary">Nuestros Clientes</a>
+                    <a href="https://store.haztap.com/" target="_blank" class="cta-btn cta-primary">Probar Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: Funcionalidades -->
+        <section class="gsap-slide slide-2">
+            <div class="slide-bg">
+                <canvas id="slide-2-bg-canvas"></canvas>
+                <div class="slide-exit-overlay" aria-hidden="true"></div>
+            </div>
+
+            <div class="slide-2-container">
+                <div class="slide-2-content">
+                    <div class="slide-2-glass-panel">
+                        <h1 class="hero-title" style="font-size: clamp(2.5rem, 4vw, 4.5rem);">Potencia <br>sin límites.</h1>
+                        <p class="slide-subtitle fade-element">Ecosistemas digitales construidos para escalar y convertir. Desliza para explorar.</p>
+                        <div class="fade-element">
+                            <a href="funcionalidades.html" class="cta-btn cta-secondary">Descubre Funcionalidades</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-2-carousel">
+                    <div class="swiper swiper-video-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <video src="assets/videos/video1.mp4" preload="none" loop muted playsinline></video>
+                            </div>
+                            <div class="swiper-slide">
+                                <video src="assets/videos/video2.mp4" preload="none" loop muted playsinline></video>
+                            </div>
+                            <div class="swiper-slide">
+                                <video src="assets/videos/video3.mp4" preload="none" loop muted playsinline></video>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="global-unmute-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                        Activar Sonido
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: Contacto -->
+        <section class="gsap-slide slide-3">
+            <div class="slide-bg">
+                <div class="slide-3-dynamic-bg">
+                    <div class="blob-wrapper"><div class="mesh-blob blob-1"></div></div>
+                    <div class="blob-wrapper"><div class="mesh-blob blob-2"></div></div>
+                    <div class="blob-wrapper"><div class="mesh-blob blob-3"></div></div>
+                    <div class="blob-wrapper"><div class="mesh-blob blob-4"></div></div>
+                    <div class="blob-wrapper"><div class="mesh-blob blob-5"></div></div>
+                </div>
+            </div>
+            <div class="slide-content slide-content-center">
+                <h1 class="hero-title">¿Listo para el <br>siguiente nivel?</h1>
+                <p class="slide-subtitle fade-element">Conectemos y hagamos tu visión realidad.</p>
+                <div class="contact-ctas fade-element">
+                    <a href="https://www.instagram.com/haz.tap/" target="_blank" class="cta-btn cta-primary">Síguenos en Instagram</a>
+                    <a href="https://wa.link/mo02tp" target="_blank" class="cta-btn cta-secondary">Escríbenos por WhatsApp</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<div class="gsap-scroll-arrows">
+    <div class="gsap-scroll-arrow arrow-up" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </div>
+    <div class="gsap-scroll-arrow arrow-down">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollToPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="assets/js/include-header.js"></script>
+<script src="assets/js/gsap-menu.js"></script>
+<script src="assets/js/gsap-transitions.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

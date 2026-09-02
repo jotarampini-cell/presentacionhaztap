@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "haztap-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "http-server", "recreacion-haztap", "-p", "4173", "-c-1"],
+      "port": 4173
+    }
+  ]
+}

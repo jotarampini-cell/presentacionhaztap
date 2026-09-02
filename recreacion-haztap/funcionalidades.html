@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funcionalidades – Haztap – Todo a un Tap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/gsap-menu.css">
+<link rel="stylesheet" href="assets/css/gsap-transitions.css">
+<link rel="stylesheet" href="assets/css/funcionalidades.css">
+</head>
+<body>
+
+<div class="page-spacer"></div>
+
+<div class="hts-cine-showcase-wrapper">
+<section class="hts-cine-showcase" id="htsCineShowcase">
+
+    <div class="hts-showcase-header">
+        <span class="hts-showcase-label">Funcionalidades Destacadas</span>
+        <h2 class="hts-showcase-title">Todo lo que Necesitas para tu Negocio</h2>
+    </div>
+
+    <!-- DESKTOP LAYOUT -->
+    <div class="hts-showcase-desktop">
+
+        <div class="hts-features-col" id="htsFeaturesCol">
+            <div class="hts-feature-item" data-index="0">
+                <span class="hts-feature-num">01</span>
+                <div class="hts-feature-content">
+                    <h3>Envío a WhatsApp</h3>
+                    <p>Conecta directamente con tus clientes permitiéndoles finalizar sus pedidos a través de WhatsApp, facilitando una comunicación inmediata y personal.</p>
+                </div>
+            </div>
+            <div class="hts-feature-item" data-index="1">
+                <span class="hts-feature-num">02</span>
+                <div class="hts-feature-content">
+                    <h3>Sistema Multimoneda</h3>
+                    <p>Expande tu mercado aceptando pagos en múltiples divisas. El sistema ajusta los precios automáticamente para una experiencia de compra global.</p>
+                </div>
+            </div>
+            <div class="hts-feature-item" data-index="2">
+                <span class="hts-feature-num">03</span>
+                <div class="hts-feature-content">
+                    <h3>App de Gestión Móvil</h3>
+                    <p>Lleva el control total de tu negocio en tu bolsillo. Gestiona inventario, pedidos y productos en tiempo real desde tu propio teléfono.</p>
+                </div>
+            </div>
+            <div class="hts-feature-item" data-index="3">
+                <span class="hts-feature-num">04</span>
+                <div class="hts-feature-content">
+                    <h3>Panel Administrativo Pro</h3>
+                    <p>Una herramienta intuitiva y potente para mantener el control total. Carga productos y visualiza tus métricas de venta en cuestión de segundos.</p>
+                </div>
+            </div>
+            <div class="hts-feature-item" data-index="4">
+                <span class="hts-feature-num">05</span>
+                <div class="hts-feature-content">
+                    <h3>Soporte Técnico</h3>
+                    <p>Tu tranquilidad es nuestra prioridad. Contamos con un equipo especializado listo para asegurar la continuidad y el éxito de tu operación técnica.</p>
+                </div>
+            </div>
+            <div class="hts-feature-item" data-index="5">
+                <span class="hts-feature-num">06</span>
+                <div class="hts-feature-content">
+                    <h3>Tutorías Personalizadas</h3>
+                    <p>Te acompañamos en cada paso. Ofrecemos sesiones de capacitación para que domines todas las herramientas y el manejo de tu tienda en línea.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hts-sticky-phone-col">
+            <div class="hts-phone-3d-model" id="htsPhone3d">
+                <div class="hts-phone-body">
+                    <div class="hts-phone-island"></div>
+                    <div class="hts-phone-status-bar">
+                        <div class="hts-status-left">9:41</div>
+                        <div class="hts-status-right">
+                            <svg viewBox="0 0 18 12" width="16" height="12" fill="currentColor">
+                                <rect x="0" y="8" width="2.5" height="4" rx="0.8" />
+                                <rect x="4.5" y="6" width="2.5" height="6" rx="0.8" />
+                                <rect x="9" y="3" width="2.5" height="9" rx="0.8" />
+                                <rect x="13.5" y="0" width="2.5" height="12" rx="0.8" />
+                            </svg>
+                            <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor">
+                                <path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.444 12.444 0 0 0 8 3 12.44 12.44 0 0 0 .663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049z"/>
+                                <path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.455 9.455 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.577 1.336c.205.132.48.108.652-.065zm-2.183 2.183c.226-.226.185-.605-.1-.75A6.473 6.473 0 0 0 8 9c-1.187 0-2.302.318-3.266.877-.285.165-.326.544-.1.77l.1.1c.143.143.364.167.534.057A5.474 5.474 0 0 1 8 10c1.024 0 1.979.28 2.79.76.17.11.391.086.534-.056l.1-.11zm-1.892 1.892a.5.5 0 0 0-.31-.146H7.156a.5.5 0 0 0-.31.146l-.5.5c-.244.244-.07.654.275.654h2.758c.345 0 .519-.41.275-.654l-.5-.5z"/>
+                            </svg>
+                            <svg viewBox="0 0 24 12" width="20" height="12" fill="currentColor">
+                                <rect x="0" y="0" width="20" height="12" rx="3.5" fill="none" stroke="currentColor" stroke-width="1" />
+                                <rect x="2" y="2" width="13" height="8" rx="1.5" />
+                                <path d="M21 4c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="hts-phone-screen">
+                        <a href="https://store.haztap.com/" target="_blank" class="hts-screen-link">
+                            <img src="assets/img/store-preview.webp" alt="App Preview" loading="eager" decoding="sync" fetchpriority="high" draggable="false">
+                        </a>
+                    </div>
+                    <div class="hts-phone-btn-volume-up"></div>
+                    <div class="hts-phone-btn-volume-down"></div>
+                    <div class="hts-phone-btn-power"></div>
+                    <div class="hts-phone-side"></div>
+                </div>
+                <div class="hts-ambient-glow"></div>
+
+                <a href="https://store.haztap.com/" target="_blank" class="hts-interaction-badge">
+                    <span class="hts-badge-icon">
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="5" y="2" width="14" height="20" rx="7" ry="7"></rect>
+                            <line x1="12" y1="6" x2="12" y2="10"></line>
+                        </svg>
+                    </span>
+                    <span class="hts-badge-text">Interactúa / Demo</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MOBILE LAYOUT -->
+    <div class="hts-showcase-mobile">
+
+        <div class="hts-mobile-features hts-mobile-top">
+            <div class="hts-feature-item hts-mobile-item" data-index="0">
+                <span class="hts-feature-num">01</span>
+                <div class="hts-feature-content">
+                    <h3>Envío a WhatsApp</h3>
+                    <p>Conecta directamente con tus clientes permitiéndoles finalizar sus pedidos a través de WhatsApp, facilitando una comunicación inmediata y personal.</p>
+                </div>
+            </div>
+            <div class="hts-feature-item hts-mobile-item" data-index="1">
+                <span class="hts-feature-num">02</span>
+                <div class="hts-feature-content">
+                    <h3>Sistema Multimoneda</h3>
+                    <p>Expande tu mercado aceptando pagos en múltiples divisas. El sistema ajusta los precios automáticamente para una experiencia de compra global.</p>
+                </div>
+            </div>
+            <div class="hts-feature-item hts-mobile-item" data-index="2">
+                <span class="hts-feature-num">03</span>
+                <div class="hts-feature-content">
+                    <h3>App de Gestión Móvil</h3>
+                    <p>Lleva el control total de tu negocio en tu bolsillo. Gestiona inventario, pedidos y productos en tiempo real desde tu propio teléfono.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hts-mobile-phone-wrap">
+            <div class="hts-phone-3d-model hts-phone-mobile" id="htsPhone3dMobile">
+                <div class="hts-phone-body">
+                    <div class="hts-phone-island"></div>
+                    <div class="hts-phone-status-bar">
+                        <div class="hts-status-left">9:41</div>
+                        <div class="hts-status-right">
+                            <svg viewBox="0 0 18 12" width="16" height="12" fill="currentColor">
+                                <rect x="0" y="8" width="2.5" height="4" rx="0.8" />
+                                <rect x="4.5" y="6" width="2.5" height="6" rx="0.8" />
+                                <rect x="9" y="3" width="2.5" height="9" rx="0.8" />
+                                <rect x="13.5" y="0" width="2.5" height="12" rx="0.8" />
+                            </svg>
+                            <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor">
+                                <path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.444 12.444 0 0 0 8 3 12.44 12.44 0 0 0 .663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049z"/>
+                                <path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.455 9.455 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.577 1.336c.205.132.48.108.652-.065zm-2.183 2.183c.226-.226.185-.605-.1-.75A6.473 6.473 0 0 0 8 9c-1.187 0-2.302.318-3.266.877-.285.165-.326.544-.1.77l.1.1c.143.143.364.167.534.057A5.474 5.474 0 0 1 8 10c1.024 0 1.979.28 2.79.76.17.11.391.086.534-.056l.1-.11zm-1.892 1.892a.5.5 0 0 0-.31-.146H7.156a.5.5 0 0 0-.31.146l-.5.5c-.244.244-.07.654.275.654h2.758c.345 0 .519-.41.275-.654l-.5-.5z"/>
+                            </svg>
+                            <svg viewBox="0 0 24 12" width="20" height="12" fill="currentColor">
+                                <rect x="0" y="0" width="20" height="12" rx="3.5" fill="none" stroke="currentColor" stroke-width="1" />
+                                <rect x="2" y="2" width="13" height="8" rx="1.5" />
+                                <path d="M21 4c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="hts-phone-screen">
+                        <a href="https://store.haztap.com/" target="_blank" class="hts-screen-link">
+                            <img src="assets/img/store-preview.webp" alt="App Preview" loading="eager" decoding="sync" fetchpriority="high" draggable="false">
+                        </a>
+                    </div>
+                    <div class="hts-phone-btn-volume-up"></div>
+                    <div class="hts-phone-btn-volume-down"></div>
+                    <div class="hts-phone-btn-power"></div>
+                </div>
+                <div class="hts-ambient-glow"></div>
+            </div>
+
+            <a href="https://store.haztap.com/" target="_blank" class="hts-interaction-badge hts-mobile-badge">
+                <span class="hts-badge-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15.536 8.464a5 5 0 0 1 0 7.072m2.828-9.9a9 9 0 0 1 0 12.728M8.464 8.464a5 5 0 0 0 0 7.072m-2.828-9.9a9 9 0 0 0 0 12.728"></path>
+                        <circle cx="12" cy="12" r="1"></circle>
+                    </svg>
+                </span>
+                <span class="hts-badge-text">Haz tap para ver más</span>
+            </a>
+        </div>
+
+        <div class="hts-mobile-features hts-mobile-bottom">
+            <div class="hts-feature-item hts-mobile-item" data-index="3">
+                <span class="hts-feature-num">04</span>
+                <div class="hts-feature-content">
+                    <h3>Panel Administrativo Pro</h3>
+                    <p>Una herramienta intuitiva y potente para mantener el control total. Carga productos y visualiza tus métricas de venta en cuestión de segundos.</p>
+                </div>
+            </div>
+            <div class="hts-feature-item hts-mobile-item" data-index="4">
+                <span class="hts-feature-num">05</span>
+                <div class="hts-feature-content">
+                    <h3>Soporte Técnico</h3>
+                    <p>Tu tranquilidad es nuestra prioridad. Contamos con un equipo especializado listo para asegurar la continuidad y el éxito de tu operación técnica.</p>
+                </div>
+            </div>
+            <div class="hts-feature-item hts-mobile-item" data-index="5">
+                <span class="hts-feature-num">06</span>
+                <div class="hts-feature-content">
+                    <h3>Tutorías Personalizadas</h3>
+                    <p>Te acompañamos en cada paso. Ofrecemos sesiones de capacitación para que domines todas las herramientas y el manejo de tu tienda en línea.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+<script src="assets/js/include-header.js"></script>
+<script src="assets/js/gsap-menu.js"></script>
+<script src="assets/js/gsap-transitions.js"></script>
+<script src="assets/js/funcionalidades.js"></script>
+</body>
+</html>

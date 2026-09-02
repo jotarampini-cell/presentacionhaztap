@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio E-Commerce – Haztap – Todo a un Tap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/gsap-menu.css">
+<link rel="stylesheet" href="assets/css/gsap-transitions.css">
+<link rel="stylesheet" href="assets/css/portfolio-page-hero.css">
+<link rel="stylesheet" href="assets/css/gsap-portfolio.css">
+</head>
+<body>
+
+<div class="ht-portfolio-page-hero">
+    <span class="ht-portfolio-page-eyebrow">━ Portafolio</span>
+    <h1 class="ht-portfolio-page-title">Tiendas en línea</h1>
+    <p class="ht-portfolio-page-desc">Nuestros clientes quedan fascinados con su tienda en línea ya que tienen todo el control de sus pedidos, aplicación móvil, inventario, multimoneda y facilidad para editar.</p>
+</div>
+
+<div class="ht-portfolio-wrapper">
+
+    <div class="ht-portfolio-header">
+        <div class="ht-filters-wrapper">
+            <button class="ht-filter-arrow ht-filter-prev" aria-label="Anterior">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="ht-filters" id="htFilters">
+                <button class="ht-filter-btn active" data-filter="*">
+                    <span class="ht-btn-text">Todos</span>
+                    <span class="ht-btn-line"></span>
+                </button>
+                <button class="ht-filter-btn" data-filter=".ht-cat-cocina">
+                    <span class="ht-btn-text">Cocina</span>
+                    <span class="ht-btn-line"></span>
+                </button>
+                <button class="ht-filter-btn" data-filter=".ht-cat-comida">
+                    <span class="ht-btn-text">Comida</span>
+                    <span class="ht-btn-line"></span>
+                </button>
+                <button class="ht-filter-btn" data-filter=".ht-cat-deportiva">
+                    <span class="ht-btn-text">Deportiva</span>
+                    <span class="ht-btn-line"></span>
+                </button>
+                <button class="ht-filter-btn" data-filter=".ht-cat-moda">
+                    <span class="ht-btn-text">Moda</span>
+                    <span class="ht-btn-line"></span>
+                </button>
+                <button class="ht-filter-btn" data-filter=".ht-cat-tecnologia">
+                    <span class="ht-btn-text">Tecnología</span>
+                    <span class="ht-btn-line"></span>
+                </button>
+            </div>
+            <button class="ht-filter-arrow ht-filter-next" aria-label="Siguiente">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+
+        <div class="ht-search-container">
+            <div class="ht-search-box">
+                <svg class="ht-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="htSearchInput" class="ht-search-input" placeholder="Buscar proyecto o categoría..." autocomplete="off">
+            </div>
+            <div class="ht-search-results-msg" id="htSearchResultsMsg"></div>
+        </div>
+    </div>
+
+    <div class="ht-portfolio-grid" id="htPortfolioGrid">
+
+        <div class="ht-portfolio-item ht-cat-moda" data-title="bienchic" data-category="moda">
+            <a href="portfolio-bienchic.html" class="ht-item-link">
+                <div class="ht-mockups-container">
+                    <div class="ht-mockup-wrapper ht-macbook-wrapper">
+                        <div class="ht-mockup-screen ht-macbook-screen"><img src="assets/img/portfolio/proyecto4.webp" alt="Bienchic"></div>
+                        <img src="assets/img/portfolio/macbook.png" alt="MacBook Mockup" class="ht-mockup-frame">
+                    </div>
+                    <div class="ht-mockup-wrapper ht-iphone-wrapper">
+                        <div class="ht-mockup-screen ht-iphone-screen"><img src="assets/img/portfolio/proyecto4-mob.webp" alt="Bienchic"></div>
+                        <img src="assets/img/portfolio/iphone.png" alt="iPhone Mockup" class="ht-mockup-frame">
+                    </div>
+                </div>
+                <div class="ht-project-meta-bottom">
+                    <div class="ht-project-meta-left">
+                        <span class="ht-project-category">Moda</span>
+                        <h3 class="ht-project-title">Bienchic</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="ht-portfolio-item ht-cat-deportiva" data-title="active bodhi" data-category="deportiva">
+            <a href="portfolio-active-bodhi-2.html" class="ht-item-link">
+                <div class="ht-mockups-container">
+                    <div class="ht-mockup-wrapper ht-macbook-wrapper">
+                        <div class="ht-mockup-screen ht-macbook-screen"><img src="assets/img/portfolio/proyect1.webp" alt="Active Bodhi"></div>
+                        <img src="assets/img/portfolio/macbook.png" alt="MacBook Mockup" class="ht-mockup-frame">
+                    </div>
+                    <div class="ht-mockup-wrapper ht-iphone-wrapper">
+                        <div class="ht-mockup-screen ht-iphone-screen"><img src="assets/img/portfolio/proyecto1-mob.webp" alt="Active Bodhi"></div>
+                        <img src="assets/img/portfolio/iphone.png" alt="iPhone Mockup" class="ht-mockup-frame">
+                    </div>
+                </div>
+                <div class="ht-project-meta-bottom">
+                    <div class="ht-project-meta-left">
+                        <span class="ht-project-category">Deportiva</span>
+                        <h3 class="ht-project-title">Active Bodhi</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="ht-portfolio-item ht-cat-cocina" data-title="kitchen boss" data-category="cocina">
+            <a href="portfolio-kitchen-boss.html" class="ht-item-link">
+                <div class="ht-mockups-container">
+                    <div class="ht-mockup-wrapper ht-macbook-wrapper">
+                        <div class="ht-mockup-screen ht-macbook-screen"><img src="assets/img/portfolio/proyecto10.webp" alt="Kitchen Boss"></div>
+                        <img src="assets/img/portfolio/macbook.png" alt="MacBook Mockup" class="ht-mockup-frame">
+                    </div>
+                    <div class="ht-mockup-wrapper ht-iphone-wrapper">
+                        <div class="ht-mockup-screen ht-iphone-screen"><img src="assets/img/portfolio/proyecto10-mob.webp" alt="Kitchen Boss"></div>
+                        <img src="assets/img/portfolio/iphone.png" alt="iPhone Mockup" class="ht-mockup-frame">
+                    </div>
+                </div>
+                <div class="ht-project-meta-bottom">
+                    <div class="ht-project-meta-left">
+                        <span class="ht-project-category">Cocina</span>
+                        <h3 class="ht-project-title">Kitchen Boss</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="ht-portfolio-item ht-cat-moda" data-title="extravagance" data-category="moda">
+            <a href="portfolio-extravagance.html" class="ht-item-link">
+                <div class="ht-mockups-container">
+                    <div class="ht-mockup-wrapper ht-macbook-wrapper">
+                        <div class="ht-mockup-screen ht-macbook-screen"><img src="assets/img/portfolio/proyecto5.webp" alt="Extravagance"></div>
+                        <img src="assets/img/portfolio/macbook.png" alt="MacBook Mockup" class="ht-mockup-frame">
+                    </div>
+                    <div class="ht-mockup-wrapper ht-iphone-wrapper">
+                        <div class="ht-mockup-screen ht-iphone-screen"><img src="assets/img/portfolio/proyecto5-mob.webp" alt="Extravagance"></div>
+                        <img src="assets/img/portfolio/iphone.png" alt="iPhone Mockup" class="ht-mockup-frame">
+                    </div>
+                </div>
+                <div class="ht-project-meta-bottom">
+                    <div class="ht-project-meta-left">
+                        <span class="ht-project-category">Moda</span>
+                        <h3 class="ht-project-title">Extravagance</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="ht-portfolio-item ht-cat-deportiva" data-title="vaneshop" data-category="deportiva">
+            <a href="portfolio-vaneshop.html" class="ht-item-link">
+                <div class="ht-mockups-container">
+                    <div class="ht-mockup-wrapper ht-macbook-wrapper">
+                        <div class="ht-mockup-screen ht-macbook-screen"><img src="assets/img/portfolio/proyecto7.webp" alt="Vaneshop"></div>
+                        <img src="assets/img/portfolio/macbook.png" alt="MacBook Mockup" class="ht-mockup-frame">
+                    </div>
+                    <div class="ht-mockup-wrapper ht-iphone-wrapper">
+                        <div class="ht-mockup-screen ht-iphone-screen"><img src="assets/img/portfolio/proyecto7-mob.webp" alt="Vaneshop"></div>
+                        <img src="assets/img/portfolio/iphone.png" alt="iPhone Mockup" class="ht-mockup-frame">
+                    </div>
+                </div>
+                <div class="ht-project-meta-bottom">
+                    <div class="ht-project-meta-left">
+                        <span class="ht-project-category">Deportiva</span>
+                        <h3 class="ht-project-title">Vaneshop</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="ht-portfolio-item ht-cat-tecnologia" data-title="enchulame" data-category="tecnologia">
+            <a href="portfolio-enchulame.html" class="ht-item-link">
+                <div class="ht-mockups-container">
+                    <div class="ht-mockup-wrapper ht-macbook-wrapper">
+                        <div class="ht-mockup-screen ht-macbook-screen"><img src="assets/img/portfolio/proyecto9.webp" alt="Enchúlame"></div>
+                        <img src="assets/img/portfolio/macbook.png" alt="MacBook Mockup" class="ht-mockup-frame">
+                    </div>
+                    <div class="ht-mockup-wrapper ht-iphone-wrapper">
+                        <div class="ht-mockup-screen ht-iphone-screen"><img src="assets/img/portfolio/proyecto9-mob.webp" alt="Enchúlame"></div>
+                        <img src="assets/img/portfolio/iphone.png" alt="iPhone Mockup" class="ht-mockup-frame">
+                    </div>
+                </div>
+                <div class="ht-project-meta-bottom">
+                    <div class="ht-project-meta-left">
+                        <span class="ht-project-category">Tecnología</span>
+                        <h3 class="ht-project-title">Enchúlame</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="ht-portfolio-item ht-cat-moda" data-title="passarela shop trendy" data-category="moda">
+            <a href="portfolio-passarela-shop-trendy.html" class="ht-item-link">
+                <div class="ht-mockups-container">
+                    <div class="ht-mockup-wrapper ht-macbook-wrapper">
+                        <div class="ht-mockup-screen ht-macbook-screen"><img src="assets/img/portfolio/proyecto6.webp" alt="Passarela Shop Trendy"></div>
+                        <img src="assets/img/portfolio/macbook.png" alt="MacBook Mockup" class="ht-mockup-frame">
+                    </div>
+                    <div class="ht-mockup-wrapper ht-iphone-wrapper">
+                        <div class="ht-mockup-screen ht-iphone-screen"><img src="assets/img/portfolio/proyecto6-mob.webp" alt="Passarela Shop Trendy"></div>
+                        <img src="assets/img/portfolio/iphone.png" alt="iPhone Mockup" class="ht-mockup-frame">
+                    </div>
+                </div>
+                <div class="ht-project-meta-bottom">
+                    <div class="ht-project-meta-left">
+                        <span class="ht-project-category">Moda</span>
+                        <h3 class="ht-project-title">Passarela Shop Trendy</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="ht-portfolio-item ht-cat-moda" data-title="andrea masotti" data-category="moda">
+            <a href="portfolio-andrea-masotti.html" class="ht-item-link">
+                <div class="ht-mockups-container">
+                    <div class="ht-mockup-wrapper ht-macbook-wrapper">
+                        <div class="ht-mockup-screen ht-macbook-screen"><img src="assets/img/portfolio/proyecto2.webp" alt="Andrea Masotti"></div>
+                        <img src="assets/img/portfolio/macbook.png" alt="MacBook Mockup" class="ht-mockup-frame">
+                    </div>
+                    <div class="ht-mockup-wrapper ht-iphone-wrapper">
+                        <div class="ht-mockup-screen ht-iphone-screen"><img src="assets/img/portfolio/proyecto2-mob.webp" alt="Andrea Masotti"></div>
+                        <img src="assets/img/portfolio/iphone.png" alt="iPhone Mockup" class="ht-mockup-frame">
+                    </div>
+                </div>
+                <div class="ht-project-meta-bottom">
+                    <div class="ht-project-meta-left">
+                        <span class="ht-project-category">Moda</span>
+                        <h3 class="ht-project-title">Andrea Masotti</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="ht-portfolio-item ht-cat-moda" data-title="b2u jeans" data-category="moda">
+            <a href="portfolio-b2u-jeans.html" class="ht-item-link">
+                <div class="ht-mockups-container">
+                    <div class="ht-mockup-wrapper ht-macbook-wrapper">
+                        <div class="ht-mockup-screen ht-macbook-screen"><img src="assets/img/portfolio/proyecto3.webp" alt="B2U Jeans"></div>
+                        <img src="assets/img/portfolio/macbook.png" alt="MacBook Mockup" class="ht-mockup-frame">
+                    </div>
+                    <div class="ht-mockup-wrapper ht-iphone-wrapper">
+                        <div class="ht-mockup-screen ht-iphone-screen"><img src="assets/img/portfolio/proyecto3-mob.webp" alt="B2U Jeans"></div>
+                        <img src="assets/img/portfolio/iphone.png" alt="iPhone Mockup" class="ht-mockup-frame">
+                    </div>
+                </div>
+                <div class="ht-project-meta-bottom">
+                    <div class="ht-project-meta-left">
+                        <span class="ht-project-category">Moda</span>
+                        <h3 class="ht-project-title">B2U Jeans</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+<script src="assets/js/include-header.js"></script>
+<script src="assets/js/gsap-menu.js"></script>
+<script src="assets/js/gsap-transitions.js"></script>
+<script src="assets/js/gsap-portfolio.js"></script>
+</body>
+</html>

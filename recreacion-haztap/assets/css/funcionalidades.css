@@ -1,0 +1,475 @@
+/* ==========================================================================
+   Haztap — Funcionalidades Showcase
+   Desktop: Sticky iPhone | Mobile: 3 → phone → 3
+   ========================================================================== */
+
+/* ── WRAPPER: break out of Elementor container ── */
+.hts-cine-showcase-wrapper {
+    background: #000;
+    width: 100%;
+}
+
+.hts-cine-showcase {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background: #000;
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    overflow: clip; /* clip no rompe el position: sticky como lo hace hidden */
+    padding-bottom: 15vh;
+}
+
+/* ── SECTION HEADER ── */
+.hts-showcase-header {
+    text-align: center;
+    padding: 15vh 5vw 10vh;
+}
+
+.hts-showcase-label {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 24px;
+}
+
+.hts-showcase-title {
+    font-size: clamp(42px, 6vw, 92px);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    color: #fff;
+    margin: 0;
+    /* Para GSAP split: cada línea necesita overflow hidden */
+    overflow: visible;
+}
+
+/* Cada palabra-wrapper que GSAP inyecta */
+.hts-title-word {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    margin-right: 0.25em;
+    padding-bottom: 0.1em;
+    perspective: 600px;
+}
+
+/* Cada letra */
+.hts-title-char {
+    display: inline-block;
+    will-change: transform, opacity;
+}
+
+/* ==========================================================================
+   DESKTOP LAYOUT (>900px)
+   ========================================================================== */
+.hts-showcase-desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: start;
+    padding: 0 8vw;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* ── LEFT: Features scrolling column ── */
+.hts-features-col {
+    padding-top: 5vh;
+    padding-bottom: 20vh;
+    padding-right: 6vw;
+}
+
+/* ── Feature item ── */
+.hts-feature-item {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    padding: 48px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    opacity: 0.12;
+    transform: scale(0.98);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hts-feature-item:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+
+/* Active state (toggled by JS) */
+.hts-feature-item.is-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hts-feature-num {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.25);
+    padding-top: 6px;
+    flex-shrink: 0;
+    width: 28px;
+}
+
+.hts-feature-item.is-active .hts-feature-num { color: rgba(255,255,255,0.5); }
+
+.hts-feature-content h3 {
+    font-size: clamp(22px, 2.5vw, 34px);
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 16px;
+    line-height: 1.2;
+}
+
+.hts-feature-content p {
+    font-size: clamp(15px, 1.3vw, 18px);
+    color: rgba(255,255,255,0.45);
+    line-height: 1.75;
+    margin: 0;
+    max-width: 500px;
+}
+
+/* ── RIGHT: Sticky phone column ── */
+.hts-sticky-phone-col {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   INTERACTION BADGE (Awwwards Style)
+   ========================================================================== */
+.hts-interaction-badge {
+    position: absolute;
+    bottom: -30px;
+    right: -40px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 20px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    text-decoration: none !important;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+    transform: translateZ(50px);
+    animation: hts-badge-float 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 50;
+    pointer-events: auto;
+}
+
+.hts-interaction-badge:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateZ(60px) scale(1.05);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.hts-badge-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: hts-badge-pulse 2s infinite;
+}
+
+@keyframes hts-badge-float {
+    0%, 100% { transform: translateZ(50px) translateY(0); }
+    50% { transform: translateZ(50px) translateY(-12px); }
+}
+
+@keyframes hts-badge-pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.15); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.hts-screen-link {
+    display: block;
+    width: 100%;
+}
+
+/* ==========================================================================
+   MOBILE LAYOUT (≤900px) — hidden on desktop
+   ========================================================================== */
+.hts-showcase-mobile { display: none; }
+
+/* ==========================================================================
+   3D PHONE MODEL (shared)
+   ========================================================================== */
+.hts-phone-3d-model {
+    position: relative;
+    width: 280px;
+    transform-style: preserve-3d;
+    /* Eliminamos will-change para evitar que el navegador comprima la imagen como una textura de baja resolución */
+    /* Ángulo reducido: menos rotación = GPU preserva más detalle en la imagen de la pantalla */
+    transform: rotateY(-10deg) rotateX(4deg);
+}
+
+
+.hts-phone-body {
+    position: relative;
+    width: 280px;
+    height: 580px;
+    background: linear-gradient(135deg, #1e1e22 0%, #0c0c10 50%, #050508 100%);
+    border-radius: 48px;
+    border: 1.5px solid rgba(255,255,255,0.14);
+    box-shadow:
+        inset 0 0 30px rgba(0,0,0,0.9),
+        0 40px 80px rgba(0,0,0,0.7),
+        0 0 0 1px rgba(255,255,255,0.04);
+    overflow: hidden;
+}
+
+.hts-phone-body::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border-radius: 44px;
+    border: 1px solid rgba(255,255,255,0.05);
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Dynamic Island */
+@keyframes islandBreathe {
+    0%,100% { transform: translateX(-50%) scaleX(1) scaleY(1); }
+    50%      { transform: translateX(-50%) scaleX(1.04) scaleY(1.08); }
+}
+.hts-phone-island {
+    position: absolute;
+    top: 18px; left: 50%;
+    transform: translateX(-50%);
+    width: 96px; height: 28px;
+    background: #000;
+    border-radius: 16px;
+    z-index: 16; /* Elevado para estar por encima de la barra blanca */
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.05);
+    animation: islandBreathe 8s infinite ease-in-out;
+}
+
+/* Status Bar */
+.hts-phone-status-bar {
+    position: absolute;
+    top: 2%; left: 3.5%;
+    width: 93%;
+    height: 46px;
+    background: #ffffff;
+    border-top-left-radius: 38px;
+    border-top-right-radius: 38px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 15;
+    pointer-events: none;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+.hts-status-left {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 0.5px;
+    margin-top: 6px; /* alineación con la isla */
+}
+
+.hts-status-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #000;
+    margin-top: 6px;
+}
+
+.hts-phone-screen {
+    position: absolute;
+    top: 2%; left: 3.5%;
+    width: 93%; height: 96%;
+    border-radius: 38px;
+    overflow-y: auto; /* Permite el scroll interactivo */
+    overflow-x: hidden;
+    background: #000;
+    z-index: 5;
+    /* Suavidad en el scroll para móviles */
+    -webkit-overflow-scrolling: touch;
+    /* Cursor para indicar que es interactivo */
+    cursor: grab;
+}
+
+/* Ocultar la barra de scroll para que luzca como un teléfono real */
+.hts-phone-screen::-webkit-scrollbar {
+    display: none;
+}
+.hts-phone-screen {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Efecto visual al hacer clic/arrastrar */
+.hts-phone-screen:active {
+    cursor: grabbing;
+}
+
+.hts-phone-screen img {
+    width: 100%; 
+    height: auto;
+    display: block;
+    object-position: top center;
+    margin-top: 46px; /* Empuja la imagen debajo de la barra de estado blanca */
+    
+    /* TÉCNICA DE CAPA INDEPENDIENTE: El navegador renderiza la imagen
+       en su propia capa GPU a resolución nativa, sin comprimirla junto
+       al contexto 3D del teléfono */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    image-rendering: -webkit-optimize-contrast; /* Safari */
+    image-rendering: high-quality;              /* Chrome 108+ */
+}
+
+
+/* Physical buttons */
+.hts-phone-btn-volume-up,
+.hts-phone-btn-volume-down {
+    position: absolute;
+    left: -3px; width: 3px;
+    background: #2a2a2e;
+    border-radius: 2px 0 0 2px;
+}
+.hts-phone-btn-volume-up   { top: 120px; height: 38px; }
+.hts-phone-btn-volume-down { top: 170px; height: 38px; }
+
+.hts-phone-btn-power {
+    position: absolute;
+    right: -3px; top: 140px;
+    width: 3px; height: 70px;
+    background: #2a2a2e;
+    border-radius: 0 2px 2px 0;
+}
+
+/* 3D side face */
+.hts-phone-side {
+    position: absolute;
+    top: 14px; right: -13px;
+    width: 13px; height: calc(100% - 28px);
+    background: linear-gradient(to right, #1c1c20, #0e0e12);
+    border-radius: 0 7px 7px 0;
+    transform: rotateY(90deg);
+    transform-origin: left center;
+}
+
+/* Ambient glow - attached to the SECTION, not inside the phone */
+.hts-ambient-glow {
+    display: none; /* Hide the one inside the phone (it was clipped) */
+}
+
+/* The real glow sits directly on hts-cine-showcase via a pseudo-element */
+.hts-cine-showcase::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 70%;
+    background: linear-gradient(
+        120deg,
+        #A259FF,
+        #1ABCFE,
+        #F24E1E,
+        #0ACF83,
+        #A259FF
+    );
+    background-size: 300% 300%;
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(100px);
+    border-radius: 50%;
+    animation: hts-gemini-flow 12s infinite linear;
+}
+
+@keyframes hts-gemini-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ==========================================================================
+   RESPONSIVE — Mobile ≤ 900px
+   ========================================================================== */
+@media (max-width: 900px) {
+
+    /* Hide desktop layout */
+    .hts-showcase-desktop { display: none; }
+
+    /* Show mobile layout */
+    .hts-showcase-mobile {
+        display: flex;
+        flex-direction: column;
+        padding: 0 6vw 10vh;
+    }
+
+    /* Mobile feature groups */
+    .hts-mobile-features { width: 100%; }
+
+    .hts-feature-item {
+        padding: 32px 0;
+        opacity: 0.15;
+        transform: none;
+    }
+
+    .hts-feature-item.is-active {
+        opacity: 1;
+        transform: none;
+    }
+
+    .hts-feature-content h3 { font-size: 22px; }
+    .hts-feature-content p  { font-size: 15px; }
+
+    /* Mobile phone: centered between the two groups */
+    .hts-mobile-phone-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 0 20px;
+        position: relative;
+    }
+
+    .hts-mobile-badge {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin: 30px auto 0 auto;
+        width: max-content;
+        transform: translateZ(0);
+        animation: none;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .hts-phone-mobile {
+        transform: rotateY(0deg) rotateX(0deg) !important;
+        width: 220px;
+    }
+
+    .hts-phone-mobile .hts-phone-body {
+        width: 220px;
+        height: 455px;
+    }
+
+    .hts-phone-mobile .hts-phone-side { display: none; }
+
+    .hts-showcase-header { padding: 10vh 5vw 6vh; }
+}

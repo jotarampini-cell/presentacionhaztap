@@ -1,0 +1,51 @@
+/* ================================================
+   HAZTAP — PAGE TRANSITIONS
+   Overlay cinematográfico entre páginas.
+   No afecta ningún otro sistema de animación.
+   ================================================ */
+
+#ht-page-transition {
+    position: fixed;
+    inset: 0;                        /* top/right/bottom/left: 0 */
+    z-index: 99999;
+    pointer-events: none;            /* no bloquea interacciones cuando es invisible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Capa principal de desvanecimiento */
+#ht-transition-overlay {
+    position: absolute;
+    inset: 0;
+    background: #0a0a0a;            /* mismo negro del fondo del sitio */
+    opacity: 0;
+    will-change: opacity;
+}
+
+/* Logo/isotipo de Haztap que aparece en el centro durante la transición */
+#ht-transition-logo {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: scale(0.8);
+    will-change: opacity, transform;
+}
+
+#ht-transition-logo img {
+    width: 48px;
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1); /* fuerza blanco */
+}
+
+/* Barra de progreso inferior — estilo minimalista */
+#ht-transition-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 0%;
+    background: rgba(255, 255, 255, 0.5);
+    will-change: width;
+}

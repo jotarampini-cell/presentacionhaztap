@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Active Bodhi - Haztap - Todo a un Tap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/gsap-menu.css">
+<link rel="stylesheet" href="assets/css/gsap-transitions.css">
+<link rel="stylesheet" href="assets/css/portfolio-single.css">
+<style>
+    html, body { overflow-x: hidden; }
+</style>
+</head>
+<body>
+
+<article class="hts-cine-article">
+
+    <div class="hts-hero-track" id="htsHeroTrack">
+        <section class="hts-cine-hero" id="htsCineHero">
+            <div class="hts-cine-hero-content">
+                <div class="hts-hero-meta">
+                    <span class="hts-meta-line"></span>
+                    <span class="hts-meta-text">Deportiva — 2026</span>
+                </div>
+                <h1 class="hts-hero-title" id="htsHeroTitle">Active Bodhi</h1>
+
+                <div class="hts-hero-bottom-meta">
+                    <div class="hts-meta-block">
+                        <span class="hts-meta-label">Cliente</span>
+                        <span class="hts-meta-val">Active Bodhi</span>
+                    </div>
+                    <div class="hts-meta-block">
+                        <span class="hts-meta-label">Servicios</span>
+                        <span class="hts-meta-val">Deportiva &amp; Moda</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hts-cine-hero-image-wrap">
+                <div class="hts-cine-hero-image" style="--desktop-hero: url('/assets/img/portfolio/proyect1.webp'); --mobile-hero: url('/assets/img/portfolio/proyecto1-mob.webp'); background-image: var(--desktop-hero);"></div>
+            </div>
+        </section>
+    </div>
+
+    <section class="hts-cine-brief">
+        <div class="hts-container">
+            <div class="hts-brief-columns">
+                <div class="hts-brief-body" id="htsBriefBody">
+                    <p>Diseñamos una experiencia digital inmersiva y de alto impacto, combinando una estética oscura y sofisticada con interacciones fluidas que capturan la esencia de la marca y elevan su posicionamiento en el mercado.</p>
+                </div>
+
+                <div class="hts-brief-video" style="position: relative; display: inline-block;">
+                    <video id="hts-reel-video" src="assets/videos/portfolio/bienchic-reel.mp4" autoplay loop muted playsinline></video>
+                    <button id="hts-reel-mute-btn" class="hts-mute-btn" aria-label="Activar Sonido">
+                        <svg class="icon-muted" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                        <svg class="icon-unmuted" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="hts-gallery-track" id="htsGalleryTrack">
+        <section class="hts-cine-gallery-wrap" id="htsGalleryWrap">
+            <div class="hts-cine-gallery" id="htsGallery">
+                <div class="hts-gallery-title-slide">
+                    <h2>Visuales</h2>
+                </div>
+                <div class="hts-gallery-slide">
+                    <div class="hts-slide-inner" style="--desktop-bg: url('/assets/img/portfolio/proyect1.webp'); --mobile-bg: url('/assets/img/portfolio/proyecto1-mob.webp'); background-image: var(--desktop-bg);"></div>
+                </div>
+                <div class="hts-gallery-slide">
+                    <div class="hts-slide-inner" style="--desktop-bg: url('/assets/img/portfolio/proyecto1-mob.webp'); --mobile-bg: url('/assets/img/portfolio/proyecto1-mob.webp'); background-image: var(--desktop-bg);"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="hts-cine-brief-secondary">
+        <div class="hts-container">
+            <div class="hts-secondary-divider"></div>
+
+            <div class="hts-brief-reveal-2" id="htsBriefSecondaryBody">
+                <p>Nuestra metodología se enfoca en la innovación constante, asegurando que cada proyecto no solo cumpla con las expectativas técnicas, sino que también cree un vínculo emocional duradero con el usuario final.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="hts-cine-next">
+        <div class="hts-next-bg" style="background-image:url('/assets/img/portfolio/proyecto6.webp');"></div>
+        <div class="hts-next-overlay"></div>
+        <a href="portfolio-passarela-shop-trendy.html" class="hts-next-content">
+            <span class="hts-next-label">Siguiente Proyecto</span>
+            <h2 class="hts-next-title">Passarela Shop Trendy</h2>
+        </a>
+    </section>
+
+</article>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+<script src="assets/js/include-header.js"></script>
+<script src="assets/js/gsap-menu.js"></script>
+<script src="assets/js/gsap-transitions.js"></script>
+<script src="assets/js/portfolio-single.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const reelVideo = document.getElementById('hts-reel-video');
+    const muteBtn = document.getElementById('hts-reel-mute-btn');
+    if (reelVideo && muteBtn) {
+        muteBtn.addEventListener('click', function() {
+            reelVideo.muted = !reelVideo.muted;
+            if (reelVideo.muted) {
+                muteBtn.querySelector('.icon-muted').style.display = 'block';
+                muteBtn.querySelector('.icon-unmuted').style.display = 'none';
+            } else {
+                muteBtn.querySelector('.icon-muted').style.display = 'none';
+                muteBtn.querySelector('.icon-unmuted').style.display = 'block';
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>

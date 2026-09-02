@@ -1,0 +1,665 @@
+/* ── CINE DARK PORTFOLIO CSS ── */
+
+:root {
+    --cine-bg: #050505;
+    --cine-bg-alt: #0a0a0a;
+    --cine-text: #ffffff;
+    --cine-gray: #888888;
+    --cine-border: rgba(255,255,255,0.1);
+    --cine-font: 'Ubuntu', sans-serif;
+}
+
+/* Reset for this article */
+.hts-cine-article {
+    background-color: var(--cine-bg);
+    color: var(--cine-text);
+    font-family: var(--cine-font) !important;
+    width: 100%;
+}
+.hts-cine-article button,
+.hts-cine-article input,
+.hts-cine-article select,
+.hts-cine-article textarea,
+.hts-cine-article a,
+.hts-cine-article h1,
+.hts-cine-article h2,
+.hts-cine-article h3,
+.hts-cine-article h4,
+.hts-cine-article h5,
+.hts-cine-article h6 {
+    font-family: var(--cine-font) !important;
+}
+
+.hts-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5vw;
+}
+
+/* 1. CINEMATIC HERO */
+.hts-hero-track {
+    position: relative;
+    width: 100%;
+    height: 200vh; /* Track length determines scroll duration */
+}
+
+.hts-cine-hero {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.hts-cine-hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 5vw;
+}
+
+.hts-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.hts-meta-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--ht-naranja), var(--ht-lila));
+}
+.hts-meta-text {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--cine-gray);
+}
+
+.hts-hero-title {
+    font-size: clamp(40px, 10vw, 180px);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin: 0 0 50px 0;
+    color: var(--cine-text);
+    text-transform: uppercase;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.hts-hero-bottom-meta {
+    display: flex;
+    gap: 40px;
+    border-top: 1px solid var(--cine-border);
+    padding-top: 20px;
+}
+.hts-meta-block {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.hts-meta-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--cine-gray);
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+.hts-meta-val {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Hero Image that rises */
+.hts-cine-hero-image-wrap {
+    position: absolute;
+    inset: 0; /* top:0 left:0 right:0 bottom:0 */
+    border-radius: 20px;
+    overflow: hidden;
+    transform-origin: center bottom;
+    transform: scale(0.4);
+    opacity: 0;
+    z-index: 5;
+    will-change: transform, opacity;
+}
+.hts-cine-hero-image-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border-radius: 30px;
+    z-index: -1;
+    background: linear-gradient(120deg, var(--ht-morado), var(--ht-celeste), var(--ht-naranja), var(--ht-verde), var(--ht-morado));
+    background-size: 300% 300%;
+    filter: blur(40px);
+    opacity: 0.3;
+    animation: htp-gemini-flow 8s infinite linear;
+    pointer-events: none;
+}
+@keyframes htp-gemini-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.hts-cine-hero-image {
+    width: 100%;
+    height: 120%; /* For parallax inside */
+    background-size: cover;
+    background-position: center;
+    transform-origin: center top;
+}
+
+/* 2. THE BRIEF */
+.hts-cine-brief {
+    padding: 15vh 0;
+    background: var(--cine-bg);
+    position: relative;
+    z-index: 20;
+}
+
+.hts-brief-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+@media (min-width: 992px) {
+    .hts-brief-columns {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
+}
+
+.hts-brief-body p {
+    font-size: clamp(20px, 3vw, 40px); /* Slightly smaller since it's 50% width now */
+    font-weight: 300;
+    line-height: 1.35;
+    color: var(--cine-gray); /* Starts gray, JS makes it white */
+    margin: 0;
+}
+
+.hts-brief-video video {
+    width: 100%;
+    max-width: 320px; /* Reel format approx */
+    height: auto;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    margin: 0 auto;
+    display: block;
+}
+
+.hts-mute-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+.hts-mute-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.1);
+}
+.hts-brief-body p,
+.hts-brief-reveal-2 p {
+    will-change: transform, opacity;
+}
+
+/* Word wrapper for pro GSAP reveals */
+.hts-word {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    perspective: 800px;
+    perspective-origin: 50% 80%;
+}
+.hts-word__in {
+    display: inline-block;
+    transform-origin: 50% 100%;
+    will-change: transform, opacity;
+}
+.hts-brief-body p + p {
+    margin-top: 1.1em;
+}
+
+.hts-brief-cta {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Subtle hint text below the CTA */
+.hts-cta-hint {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.hts-cta-hint svg {
+    opacity: 0.5;
+}
+.hts-live-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 20px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+    color: var(--cine-text);
+    text-decoration: none;
+    letter-spacing: 0.2px;
+    box-shadow:
+        0 12px 40px rgba(0,0,0,0.45),
+        0 0 0 1px rgba(255,255,255,0.06) inset;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateZ(0);
+    transition:
+        transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+        background 260ms ease,
+        border-color 260ms ease,
+        box-shadow 260ms ease;
+    will-change: transform;
+    position: relative;
+    overflow: hidden;
+}
+.hts-live-cta:visited {
+    color: var(--cine-text);
+}
+.hts-live-cta__label {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.hts-live-cta__logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 22px;
+    max-width: 180px;
+}
+.hts-live-cta__logo img {
+    height: 22px;
+    width: auto;
+    display: block;
+    filter: brightness(1.05) contrast(1.05);
+}
+.hts-live-cta__sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+.hts-live-cta__icon {
+    display: inline-flex;
+    width: 22px;
+    height: 22px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(0,0,0,0.25);
+    transform: translateY(-1px);
+    color: rgba(255,255,255,0.92);
+}
+.hts-live-cta__svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+}
+.hts-live-cta:hover {
+    transform: translateY(-2px) scale(1.01);
+    border-color: var(--ht-aguamarina);
+    box-shadow:
+        0 18px 60px rgba(10, 207, 131, 0.2),
+        0 0 0 1px rgba(10, 207, 131, 0.10) inset,
+        0 0 32px rgba(10, 207, 131, 0.08);
+}
+.hts-live-cta:hover .hts-live-cta__icon {
+    transform: translate(2px, -3px);
+    transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hts-live-cta:focus-visible {
+    outline: 2px solid rgba(10, 207, 131, 0.55);
+    outline-offset: 3px;
+}
+.hts-live-cta::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: radial-gradient(80% 80% at 20% 20%, rgba(255,255,255,0.16), transparent 60%);
+    opacity: 0.0;
+    transition: opacity 260ms ease;
+    pointer-events: none;
+}
+.hts-live-cta:hover::before {
+    opacity: 1;
+}
+
+/* Subtle moving sheen for the CTA */
+.hts-live-cta::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.10) 45%, transparent 60%);
+    transform: translateX(-120%);
+    opacity: 0;
+    pointer-events: none;
+}
+.hts-live-cta:hover::after {
+    opacity: 1;
+    transform: translateX(120%);
+    transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1), opacity 200ms ease;
+}
+
+/* Stats in Brief */
+.hts-brief-stats {
+    display: flex;
+    gap: 80px;
+    margin-top: 60px;
+    border-top: 1px solid var(--cine-border);
+    padding-top: 40px;
+}
+.hts-stat-item {
+    display: flex;
+    flex-direction: column;
+}
+.hts-stat-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--cine-text);
+}
+.hts-stat-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--cine-gray);
+    margin-top: 5px;
+}
+@media (max-width: 768px) {
+    .hts-brief-stats {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* 4. HORIZONTAL GALLERY */
+.hts-gallery-track {
+    position: relative;
+    width: 100%;
+    /* Height will be set by JS based on scroll distance needed */
+}
+
+.hts-cine-gallery-wrap {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+}
+
+.hts-cine-gallery {
+    display: flex;
+    height: 100vh;
+    padding: 10vh 5vw;
+    gap: 5vw;
+    width: max-content;
+    will-change: transform;
+}
+
+.hts-gallery-title-slide {
+    width: 30vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.hts-gallery-title-slide h2 {
+    font-size: clamp(60px, 10vw, 150px);
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--cine-text);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+}
+/* Each letter gets its own clip-reveal wrapper */
+.hts-vis-letter {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+.hts-vis-letter > span {
+    display: inline-block;
+    will-change: transform;
+}
+
+/* Slide counter: "01 / 04" */
+.hts-gallery-counter {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-top: 24px;
+    opacity: 0; /* revealed by GSAP */
+    font-weight: 400;
+}
+
+.hts-gallery-slide {
+    width: 60vw;
+    height: 100%;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.hts-slide-inner {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    /* JS will add slight parallax here too */
+}
+
+/* 4.5 SECONDARY BRIEF */
+.hts-cine-brief-secondary {
+    padding: 22vh 0;
+    background: var(--cine-bg);
+    position: relative;
+    z-index: 20;
+    text-align: center;
+}
+
+/* Animated divider drawn by GSAP */
+.hts-secondary-divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--ht-celeste), var(--ht-salmon));
+    margin: 0 auto 60px auto;
+    transform-origin: left center;
+    transform: scaleX(0);
+}
+
+.hts-brief-reveal-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.hts-brief-reveal-2 p {
+    font-size: clamp(28px, 4.2vw, 60px);
+    line-height: 1.15;
+    font-weight: 300;
+    color: var(--cine-gray);
+    margin: 0;
+}
+.hts-brief-reveal-2 p + p {
+    margin-top: 1em;
+}
+
+/* 5. NEXT PROJECT */
+.hts-cine-next {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.hts-next-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.1);
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hts-next-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    transition: background 1s ease;
+}
+.hts-cine-next:hover .hts-next-bg {
+    transform: scale(1);
+}
+.hts-cine-next:hover .hts-next-overlay {
+    background: rgba(0,0,0,0.4);
+}
+.hts-next-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+.hts-next-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ccc;
+    display: block;
+    margin-bottom: 20px;
+}
+.hts-next-title {
+    font-size: clamp(50px, 8vw, 120px);
+    font-weight: 300;
+    margin: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    
+    .hts-gallery-title-slide { width: 80vw; }
+    .hts-gallery-slide { width: 85vw; }
+    
+    /* Use the phone mockup image as the hero image on mobile */
+    .hts-cine-hero-image { background-image: var(--mobile-hero) !important; }
+    
+    /* Use mobile-specific gallery images */
+    .hts-slide-inner { background-image: var(--mobile-bg) !important; }
+    
+    
+    /* Reduced spacing for mobile */
+    .hts-cine-brief { padding: 10vh 0; }
+}
+
+/* -- CINEMATIC ANIMATION SYSTEM -- */
+
+/* GPU-accelerated elements */
+.hts-cine-hero-image-wrap,
+.hts-cine-hero-content,
+.hts-cine-gallery,
+.hts-phone-3d-model {
+    will-change: transform, opacity;
+}
+
+/* Hero title: clip-based letter reveal */
+.hts-hero-title {
+    font-size: clamp(40px, 10vw, 180px);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin: 0 0 50px 0;
+    color: var(--cine-text);
+    text-transform: uppercase;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.hts-hero-subtitle {
+    margin: -28px 0 42px 0;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.72);
+}
+@media (max-width: 900px) {
+    .hts-hero-subtitle {
+        margin: -18px 0 34px 0;
+        letter-spacing: 3px;
+    }
+}
+.hts-letter {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    padding-bottom: 0.08em;
+    margin-bottom: -0.08em;
+}
+
+/* Initial hidden states to prevent FOUC */
+.hts-hero-meta,
+.hts-hero-bottom-meta {
+    opacity: 0;
+}
+.hts-feature-item {
+    opacity: 0;
+}
+#htsShowcase {
+    opacity: 0;
+}
+.hts-cine-next {
+    overflow: hidden;
+}
+.hts-next-content {
+    opacity: 0;
+}

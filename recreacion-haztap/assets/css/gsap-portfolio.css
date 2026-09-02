@@ -1,0 +1,505 @@
+/* -----------------------------------------
+   HAZTAP PORTFOLIO GSAP STYLES - FULL PRO
+----------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+.ht-portfolio-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem 6rem;
+    font-family: 'Ubuntu', sans-serif;
+    color: #fff;
+    background: transparent;
+}
+
+/* NAVBAR & INLINE SEARCH */
+.ht-portfolio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.ht-filters-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 0; /* Permite que el flex child se encoja por debajo de su content size */
+}
+
+.ht-filter-arrow {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    padding: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.ht-filter-arrow:hover {
+    color: #fff;
+}
+
+.ht-filters {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    flex: 1;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+}
+
+.ht-filters:active {
+    cursor: grabbing;
+}
+
+.ht-filters::-webkit-scrollbar {
+    display: none;
+    /* WebKit */
+}
+
+.ht-filter-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    font-family: 'Ubuntu', sans-serif;
+    flex-shrink: 0;
+}
+
+.ht-filter-btn:hover,
+.ht-filter-btn.active {
+    color: #fff;
+}
+
+.ht-filter-btn:nth-child(5n+1):hover, .ht-filter-btn:nth-child(5n+1).active { color: var(--ht-naranja); }
+.ht-filter-btn:nth-child(5n+2):hover, .ht-filter-btn:nth-child(5n+2).active { color: var(--ht-salmon); }
+.ht-filter-btn:nth-child(5n+3):hover, .ht-filter-btn:nth-child(5n+3).active { color: var(--ht-lila); }
+.ht-filter-btn:nth-child(5n+4):hover, .ht-filter-btn:nth-child(5n+4).active { color: var(--ht-celeste); }
+.ht-filter-btn:nth-child(5n+5):hover, .ht-filter-btn:nth-child(5n+5).active { color: var(--ht-aguamarina); }
+
+.ht-btn-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.ht-btn-line {
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.ht-filter-btn:hover .ht-btn-line,
+.ht-filter-btn.active .ht-btn-line {
+    transform: scaleX(1);
+}
+
+.ht-filter-btn:nth-child(5n+1):hover .ht-btn-line, .ht-filter-btn:nth-child(5n+1).active .ht-btn-line { background: var(--ht-naranja); }
+.ht-filter-btn:nth-child(5n+2):hover .ht-btn-line, .ht-filter-btn:nth-child(5n+2).active .ht-btn-line { background: var(--ht-salmon); }
+.ht-filter-btn:nth-child(5n+3):hover .ht-btn-line, .ht-filter-btn:nth-child(5n+3).active .ht-btn-line { background: var(--ht-lila); }
+.ht-filter-btn:nth-child(5n+4):hover .ht-btn-line, .ht-filter-btn:nth-child(5n+4).active .ht-btn-line { background: var(--ht-celeste); }
+.ht-filter-btn:nth-child(5n+5):hover .ht-btn-line, .ht-filter-btn:nth-child(5n+5).active .ht-btn-line { background: var(--ht-aguamarina); }
+
+/* Inline Search Box */
+.ht-search-container {
+    position: relative;
+}
+
+.ht-search-box {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 0.6rem 1.2rem;
+    transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.ht-search-box:focus-within {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.ht-search-icon {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.ht-search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    width: 160px;
+    transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ht-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 300;
+}
+
+.ht-search-input:focus {
+    width: 260px;
+}
+
+.ht-search-results-msg {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.5rem);
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* GRID */
+.ht-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6rem 4rem;
+    position: relative;
+    perspective: 1500px;
+}
+
+@media (max-width: 900px) {
+    .ht-portfolio-header {
+        flex-direction: column-reverse;
+        align-items: stretch; /* Cambio de flex-start a stretch para ocupar todo el ancho */
+        gap: 1.5rem;
+    }
+
+    .ht-filters-wrapper {
+        width: 100%;
+        gap: 0; /* Las flechas quedan pegadas al borde */
+    }
+
+    .ht-search-container {
+        width: 100%;
+    }
+
+    .ht-search-box {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .ht-search-input {
+        width: 100%;
+    }
+
+    .ht-search-input:focus {
+        width: 100%;
+    }
+
+    .ht-portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 5rem 0;
+    }
+
+    /* En mobile el container necesita más altura para acomodar el iPhone */
+    .ht-mockups-container {
+        padding-top: 72%;
+    }
+
+    /* Mac en mobile: un poco más centrado y pequeño */
+    .ht-macbook-wrapper {
+        left: 42%;
+        width: 84%;
+    }
+
+    /* iPhone en mobile: más pequeño y reposicionado para no salirse */
+    .ht-iphone-wrapper {
+        bottom: -10%;
+        right: 0%;
+        width: 28%;
+    }
+}
+
+@media (max-width: 480px) {
+    .ht-mockups-container {
+        padding-top: 80%;
+    }
+
+    .ht-macbook-wrapper {
+        left: 40%;
+        width: 82%;
+    }
+
+    .ht-iphone-wrapper {
+        bottom: -8%;
+        right: -1%;
+        width: 30%;
+    }
+}
+
+.ht-portfolio-item {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: visible;
+}
+
+.ht-item-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    outline: none;
+}
+
+/* MOCKUPS CONTAINER */
+.ht-mockups-container {
+    position: relative;
+    width: 100%;
+    padding-top: 65%;
+    background: transparent;
+    border-radius: 0;
+    overflow: visible;
+    margin-bottom: 2.5rem;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    transform-origin: center center;
+}
+
+/* Fluid abstract glow behind mockups on hover */
+.ht-mockups-container::before {
+    content: '';
+    position: absolute;
+    inset: 10%;
+    border-radius: 50%;
+    z-index: -1;
+    background: linear-gradient(120deg, var(--ht-morado), var(--ht-celeste), var(--ht-naranja), var(--ht-verde), var(--ht-morado));
+    background-size: 300% 300%;
+    filter: blur(60px);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    animation: ht-flow-anim 8s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes ht-flow-anim {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.ht-item-link:hover .ht-mockups-container {
+    transform: scale(0.97) translateY(-5px);
+}
+
+.ht-item-link:hover .ht-mockups-container::before {
+    opacity: 0.35;
+}
+
+/* Base Wrapper for both mockups */
+.ht-mockup-wrapper {
+    position: absolute;
+    will-change: transform;
+}
+
+.ht-mockup-frame {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+    display: block;
+}
+
+.ht-mockup-screen {
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    background: #000;
+}
+
+.ht-mockup-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ht-item-link:hover .ht-mockup-screen img {
+    transform: scale(1.08);
+}
+
+/* Macbook Specifics */
+.ht-macbook-wrapper {
+    top: 50%;
+    left: 45%;
+    width: 88%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0px 30px 60px rgba(0, 0, 0, 0.6));
+}
+
+.ht-macbook-screen {
+    top: 6.65%;
+    left: 5.23%;
+    width: 83.93%;
+    height: 73.14%;
+    border-radius: 1.5% / 2.5%;
+    background: transparent;
+}
+
+/* iPhone Specifics */
+.ht-iphone-wrapper {
+    bottom: -15%;
+    right: 2%;
+    width: 26%;
+    z-index: 5;
+    filter: drop-shadow(-15px 20px 40px rgba(0, 0, 0, 0.8));
+}
+
+.ht-iphone-screen {
+    top: 2.00%;
+    left: 4.11%;
+    width: 91.78%;
+    height: 96.40%;
+    border-radius: 12% / 5.5%;
+    background: transparent;
+}
+
+/* INFO ELEGANT & CINEMATIC */
+.ht-project-meta-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 1rem;
+}
+
+.ht-project-meta-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.ht-project-category {
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.4s ease;
+}
+
+.ht-item-link:hover .ht-project-category {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.ht-project-title {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.03em;
+    color: #fff;
+    line-height: 1.1;
+    transition: text-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1), color 0.6s ease;
+}
+
+.ht-item-link:hover .ht-project-title {
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* -----------------------------------------
+   LOAD MORE BUTTON
+----------------------------------------- */
+.ht-load-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 6rem;
+    width: 100%;
+}
+
+.ht-load-more-btn {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    color: #fff;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.ht-load-more-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--ht-celeste);
+    color: var(--ht-celeste);
+    box-shadow: 0 10px 30px -10px rgba(26, 188, 254, 0.2);
+    transform: translateY(-3px);
+}
+
+.ht-load-more-btn .ht-btn-text {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-family: 'Ubuntu', sans-serif;
+    z-index: 2;
+}
+
+.ht-load-more-btn .ht-btn-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1;
+}
+
+.ht-load-more-btn:hover .ht-btn-line {
+    transform: scaleY(1);
+    background: rgba(26, 188, 254, 0.1);
+}

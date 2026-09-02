@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio Cursos – Haztap – Todo a un Tap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/gsap-menu.css">
+<link rel="stylesheet" href="assets/css/gsap-transitions.css">
+<link rel="stylesheet" href="assets/css/portfolio-page-hero.css">
+<link rel="stylesheet" href="assets/css/gsap-portfolio.css">
+</head>
+<body>
+
+<div class="ht-portfolio-page-hero">
+    <span class="ht-portfolio-page-eyebrow">━ Portafolio</span>
+    <h1 class="ht-portfolio-page-title">Plataformas de cursos</h1>
+    <p class="ht-portfolio-page-desc">Ya sabes que tu conocimiento es de alto nivel, por eso deseas que tus estudiantes tengan acceso a todo de una forma profesional y organizada.</p>
+</div>
+
+<div class="ht-portfolio-wrapper">
+
+    <div class="ht-portfolio-header">
+        <div class="ht-filters-wrapper">
+            <button class="ht-filter-arrow ht-filter-prev" aria-label="Anterior">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="ht-filters" id="htFilters">
+                <button class="ht-filter-btn active" data-filter="*">
+                    <span class="ht-btn-text">Todos</span>
+                    <span class="ht-btn-line"></span>
+                </button>
+                <button class="ht-filter-btn" data-filter=".ht-cat-educativo">
+                    <span class="ht-btn-text">Educativo</span>
+                    <span class="ht-btn-line"></span>
+                </button>
+            </div>
+            <button class="ht-filter-arrow ht-filter-next" aria-label="Siguiente">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+
+        <div class="ht-search-container">
+            <div class="ht-search-box">
+                <svg class="ht-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="htSearchInput" class="ht-search-input" placeholder="Buscar proyecto o categoría..." autocomplete="off">
+            </div>
+            <div class="ht-search-results-msg" id="htSearchResultsMsg"></div>
+        </div>
+    </div>
+
+    <div class="ht-portfolio-grid" id="htPortfolioGrid">
+
+        <div class="ht-portfolio-item ht-cat-educativo" data-title="cursos idu" data-category="educativo">
+            <a href="portfolio-cursos-idu.html" class="ht-item-link">
+                <div class="ht-mockups-container">
+                    <div class="ht-mockup-wrapper ht-macbook-wrapper">
+                        <div class="ht-mockup-screen ht-macbook-screen"><img src="assets/img/portfolio/proyecto8.webp" alt="Cursos IDU"></div>
+                        <img src="assets/img/portfolio/macbook.png" alt="MacBook Mockup" class="ht-mockup-frame">
+                    </div>
+                    <div class="ht-mockup-wrapper ht-iphone-wrapper">
+                        <div class="ht-mockup-screen ht-iphone-screen"><img src="assets/img/portfolio/proyecto8-mob.webp" alt="Cursos IDU"></div>
+                        <img src="assets/img/portfolio/iphone.png" alt="iPhone Mockup" class="ht-mockup-frame">
+                    </div>
+                </div>
+                <div class="ht-project-meta-bottom">
+                    <div class="ht-project-meta-left">
+                        <span class="ht-project-category">Educativo</span>
+                        <h3 class="ht-project-title">Cursos IDU</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+<script src="assets/js/include-header.js"></script>
+<script src="assets/js/gsap-menu.js"></script>
+<script src="assets/js/gsap-transitions.js"></script>
+<script src="assets/js/gsap-portfolio.js"></script>
+</body>
+</html>

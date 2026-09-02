@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planes – Haztap – Todo a un Tap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/gsap-menu.css">
+<link rel="stylesheet" href="assets/css/gsap-transitions.css">
+<link rel="stylesheet" href="assets/css/planes.css">
+</head>
+<body>
+
+<div class="page-spacer"></div>
+
+<div class="htp-pricing-wrapper">
+    <canvas id="htp-particles-canvas"></canvas>
+
+    <div class="htp-pricing-header">
+        <span class="htp-pricing-subtitle">Crecimiento Seguro</span>
+        <h2 class="htp-pricing-title">Planes creados para expandir tu negocio.</h2>
+        <p class="htp-pricing-desc">Transparencia total desde el primer día. Elige la estructura tecnológica diseñada para soportar el nivel de demanda y la proyección real de tu negocio.</p>
+    </div>
+
+    <div class="htp-pricing-grid">
+
+        <!-- BÁSICO -->
+        <div class="htp-plan-card" data-index="0">
+            <div class="htp-card-inner">
+                <div class="htp-plan-header">
+                    <h3 class="htp-plan-name">Básico</h3>
+                    <p class="htp-plan-desc">Ideal para negocios en crecimiento.</p>
+                    <div class="htp-plan-price">$950</div>
+                    <a href="https://wa.link/mo02tp" target="_blank" class="htp-plan-btn">
+                        <span>¡Obtener ahora!</span>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+                <div class="htp-plan-features">
+                    <ul class="htp-features-list">
+                        <li class="htp-feature-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Dominio .com por 1 año</span></li>
+                        <li class="htp-feature-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Certificado SSL (candado de seguridad)</span></li>
+                        <li class="htp-feature-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Hosting</span></li>
+                        <li class="htp-feature-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Respaldos semanales</span></li>
+                        <li class="htp-feature-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Correos corporativos</span></li>
+                    </ul>
+                    <div class="htp-hidden-features-wrapper">
+                        <div class="htp-hidden-features-inner">
+                            <ul class="htp-features-list htp-hidden-list">
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Envío del pedido a WhatsApp con notificaciones</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Cupones de descuento</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Buscador inteligente</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Segmentación de artículos</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Sistema responsive (PC, Celular)</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Productos con variaciones (Color, talla...)</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Panel de pedidos</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Panel administrativo</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Multimoneda</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Filtros personalizados</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Multilenguaje</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="htp-toggle-features" data-open="false">
+                        <span class="htp-toggle-text-more">Mostrar más (+11)</span>
+                        <span class="htp-toggle-text-less" style="display:none;">Mostrar menos</span>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="htp-card-bg-glow"></div>
+        </div>
+
+        <!-- HAZTAP (popular) -->
+        <div class="htp-plan-card htp-popular" data-index="1">
+            <div class="htp-popular-badge">
+                <span class="htp-badge-glow"></span>
+                <span class="htp-badge-text">Recomendado</span>
+            </div>
+            <div class="htp-card-inner">
+                <div class="htp-plan-header">
+                    <h3 class="htp-plan-name">Haztap</h3>
+                    <p class="htp-plan-desc">Tienda en línea con conexión a inventario en tiempo real.</p>
+                    <a href="https://wa.link/mo02tp" target="_blank" class="htp-plan-btn">
+                        <span>¡Obtener ahora!</span>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+                <div class="htp-plan-features">
+                    <ul class="htp-features-list">
+                        <li class="htp-feature-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Conexión a inventario de tu negocio</span></li>
+                        <li class="htp-feature-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Dominio .com por 1 año</span></li>
+                        <li class="htp-feature-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Certificado SSL (candado de seguridad)</span></li>
+                        <li class="htp-feature-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Hosting</span></li>
+                        <li class="htp-feature-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Respaldos semanales</span></li>
+                    </ul>
+                    <div class="htp-hidden-features-wrapper">
+                        <div class="htp-hidden-features-inner">
+                            <ul class="htp-features-list htp-hidden-list">
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Correos corporativos</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Envío del pedido a WhatsApp con notificaciones</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Cupones de descuento</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Buscador inteligente</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Segmentación de artículos</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Sistema responsive (PC, Celular)</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Productos con variaciones (Color, talla...)</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Panel de pedidos</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Panel administrativo</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Multimoneda</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Filtros personalizados</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Multilenguaje</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="htp-toggle-features" data-open="false">
+                        <span class="htp-toggle-text-more">Mostrar más (+12)</span>
+                        <span class="htp-toggle-text-less" style="display:none;">Mostrar menos</span>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="htp-card-bg-glow"></div>
+        </div>
+
+        <!-- PLUS -->
+        <div class="htp-plan-card" data-index="2">
+            <div class="htp-card-inner">
+                <div class="htp-plan-header">
+                    <h3 class="htp-plan-name">+ Plus</h3>
+                    <p class="htp-plan-desc">Tienda en línea con conexión a inventario &amp; aplicación.</p>
+                    <a href="https://wa.link/mo02tp" target="_blank" class="htp-plan-btn">
+                        <span>¡Obtener ahora!</span>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+                <div class="htp-plan-features">
+                    <ul class="htp-features-list">
+                        <li class="htp-feature-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Aplicación móvil Android</span></li>
+                        <li class="htp-feature-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Aplicación móvil iOS</span></li>
+                        <li class="htp-feature-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Conexión a inventario de tu negocio</span></li>
+                        <li class="htp-feature-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Dominio .com por 1 año</span></li>
+                        <li class="htp-feature-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Certificado SSL (candado de seguridad)</span></li>
+                    </ul>
+                    <div class="htp-hidden-features-wrapper">
+                        <div class="htp-hidden-features-inner">
+                            <ul class="htp-features-list htp-hidden-list">
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Hosting</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Respaldos semanales</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Correos corporativos</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Envío del pedido a WhatsApp con notificaciones</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Cupones de descuento</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Buscador inteligente</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Segmentación de artículos</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Sistema responsive (PC, Celular)</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Productos con variaciones (Color, talla...)</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Panel de pedidos</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Panel administrativo</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Multimoneda</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Filtros personalizados</span></li>
+                                <li class="htp-feature-item htp-hidden-item"><div class="htp-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>Multilenguaje</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="htp-toggle-features" data-open="false">
+                        <span class="htp-toggle-text-more">Mostrar más (+14)</span>
+                        <span class="htp-toggle-text-less" style="display:none;">Mostrar menos</span>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="htp-card-bg-glow"></div>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+<script src="assets/js/include-header.js"></script>
+<script src="assets/js/gsap-menu.js"></script>
+<script src="assets/js/gsap-transitions.js"></script>
+<script src="assets/js/planes.js"></script>
+</body>
+</html>
