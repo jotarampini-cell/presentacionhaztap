@@ -1,5 +1,5 @@
 // ==========================================================================
-// HAZTAP — Recreación de script.js (partículas, GSAP timeline, swiper)
+// HAZTAP — Home: timeline de slides (fade + slide simple, GPU-friendly)
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -31,13 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         onUpdate: function () {
             const progress = this.progress();
 
-            const wasCanvasPaused = window._heroCanvasPaused;
-            window._heroCanvasPaused = progress > 0.1;
-            if (wasCanvasPaused && !window._heroCanvasPaused && window._heroCanvasResume) {
-                window._heroCanvasResume();
-            }
-
-            const isSlide2Active = progress > 0.45 && progress < 0.85;
+            const isSlide2Active = progress > 0.3 && progress < 0.7;
             if (isSlide2Active !== window._slide2MediaActive) {
                 window._slide2MediaActive = isSlide2Active;
                 if (isSlide2Active) {
@@ -76,8 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
         updateArrows();
 
         tl.tweenTo(slideLabels[index], {
-            duration: 0.9,
-            ease: "power3.inOut",
+            duration: 0.6,
+            ease: "power2.inOut",
             onComplete: () => {
                 isAnimating = false;
                 document.body.classList.remove("is-scrolling");
@@ -116,189 +110,48 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.set('.slide-1 .word > div', { y: '0%' });
     gsap.set('.slide-1 .fade-element', { autoAlpha: 1, y: 0 });
 
-    // --- TRANSICIÓN 1: Slide 1 -> Slide 2 ---
-    tl.to('.slide-1 .word > div', { y: '-100%', duration: 1, ease: "power2.inOut", stagger: 0.05 }, 0)
-      .to('.slide-1 .fade-element', { autoAlpha: 0, y: -30, duration: 1, ease: "power2.inOut", stagger: 0.1 }, 0.2)
-      .to('.slide-1 .slide-bg', { scale: 1.2, duration: 2, ease: "none" }, 0)
-      .to('.slide-1 .slide-exit-overlay', { opacity: 1, duration: 2, ease: "none" }, 0);
+    // --- TRANSICIÓN 1: Slide 1 -> Slide 2 (fade + slide, sin clip-path) ---
+    tl.to('.slide-1', { autoAlpha: 0, duration: 0.5, ease: "power1.inOut" }, 0);
 
     tl.to('.slide-2', {
-        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-        duration: 2,
-        ease: "power3.inOut"
-    }, 0.5);
+        opacity: 1,
+        duration: 0.6,
+        ease: "power2.inOut"
+    }, 0.15);
+    gsap.set('.slide-2', { y: 24 });
+    tl.to('.slide-2', { y: 0, duration: 0.6, ease: "power2.out" }, 0.15);
 
-    gsap.set('.slide-2 .slide-bg', { scale: 1.1 });
-    tl.to('.slide-2 .slide-bg', { scale: 1, duration: 2.5, ease: "power2.out" }, 0.5);
+    tl.to('.slide-2 .fade-element', { autoAlpha: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.4);
 
-    tl.to('.slide-2 .word > div', { y: '0%', duration: 1, ease: "power2.out", stagger: 0.05 }, 1.5)
-      .to('.slide-2 .fade-element', { autoAlpha: 1, y: 0, duration: 1, ease: "power2.out", stagger: 0.1 }, 1.8);
-
-    tl.addLabel("slide2", 2.8);
+    tl.addLabel("slide2", 1.1);
 
     // --- TRANSICIÓN 2: Slide 2 -> Slide 3 ---
-    tl.to('.slide-2 .word > div', { x: '-100%', autoAlpha: 0, duration: 1, ease: "power2.in", stagger: 0.05 }, 3)
-      .to('.slide-2 .fade-element', { autoAlpha: 0, x: -30, duration: 1, ease: "power2.in", stagger: 0.1 }, 3.2)
-      .to('.slide-2 .slide-bg', { scale: 1.15, duration: 2, ease: "none" }, 3)
-      .to('.slide-2 .slide-exit-overlay', { opacity: 1, duration: 2, ease: "none" }, 3);
+    tl.to('.slide-2 .fade-element', { autoAlpha: 0, duration: 0.4, ease: "power1.in" }, 1.3)
+      .to('.slide-2', { autoAlpha: 0, duration: 0.4, ease: "power1.inOut" }, 1.55);
 
     tl.to('.slide-3', {
-        clipPath: 'circle(150% at 50% 50%)',
-        duration: 2,
+        opacity: 1,
+        duration: 0.6,
         ease: "power2.inOut"
-    }, 3.5);
+    }, 1.65);
+    gsap.set('.slide-3', { y: 24 });
+    tl.to('.slide-3', { y: 0, duration: 0.6, ease: "power2.out" }, 1.65);
 
-    gsap.set('.slide-3 .slide-bg', { scale: 1.2 });
-    tl.to('.slide-3 .slide-bg', { scale: 1, duration: 2.5, ease: "power2.out" }, 3.5);
+    tl.to('.slide-3 .word > div', { y: '0%', duration: 0.7, ease: "power3.out", stagger: 0.04 }, 1.85)
+      .to('.slide-3 .fade-element', { autoAlpha: 1, y: 0, duration: 0.7, ease: "power3.out", stagger: 0.08 }, 1.95);
 
-    tl.to('.slide-3 .word > div', { y: '0%', duration: 1, ease: "power3.out", stagger: 0.05 }, 4.5)
-      .to('.slide-3 .fade-element', { autoAlpha: 1, y: 0, duration: 1, ease: "power3.out", stagger: 0.1 }, 4.8);
-
-    tl.addLabel("slide3", 5.8);
+    tl.addLabel("slide3", 2.5);
 
     // Animación de entrada inicial
     updateArrows();
-    gsap.set('.slide-1 .slide-bg', { scale: 1.0 });
 
     let introTl = gsap.timeline();
-    introTl.to('.slide-1 .word > div', { y: '0%', duration: 1, ease: "power3.out", stagger: 0.05 }, 0.4)
+    introTl.to('.slide-1 .word > div', { y: '0%', duration: 1, ease: "power3.out", stagger: 0.05 }, 0.3)
            .to('.slide-1 .fade-element', { autoAlpha: 1, y: 0, duration: 1, ease: "power3.out", stagger: 0.1 }, "-=0.7");
 });
 
 // ==========================================================================
-// HERO CANVAS: Red de partículas interactiva
-// ==========================================================================
-(function () {
-    const canvas = document.getElementById('hero-canvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-
-    let W, H, raf;
-    let paused = false;
-    window._heroCanvasPaused = false;
-
-    const colors = ['#A259FF', '#1ABCFE', '#0ACF83', '#F24E1E', '#7B61FF'];
-    let particles = [];
-    const mouse = { x: null, y: null, radius: 180 };
-
-    window.addEventListener('mousemove', e => {
-        const rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
-    });
-
-    window.addEventListener('mouseout', () => {
-        mouse.x = null;
-        mouse.y = null;
-    });
-
-    function hexToRgb(hex) {
-        const r = parseInt(hex.slice(1, 3), 16);
-        const g = parseInt(hex.slice(3, 5), 16);
-        const b = parseInt(hex.slice(5, 7), 16);
-        return [r, g, b];
-    }
-
-    class Particle {
-        constructor() {
-            this.x = Math.random() * W;
-            this.y = Math.random() * H;
-            this.vx = (Math.random() - 0.5) * 1.2;
-            this.vy = (Math.random() - 0.5) * 1.2;
-            this.size = Math.random() * 2.5 + 1;
-            this.color = colors[Math.floor(Math.random() * colors.length)];
-            this.rgb = hexToRgb(this.color);
-        }
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(${this.rgb[0]}, ${this.rgb[1]}, ${this.rgb[2]}, 0.8)`;
-            ctx.fill();
-        }
-        update() {
-            if (this.x > W || this.x < 0) this.vx = -this.vx;
-            if (this.y > H || this.y < 0) this.vy = -this.vy;
-
-            if (mouse.x !== null) {
-                const dx = mouse.x - this.x;
-                const dy = mouse.y - this.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < mouse.radius) {
-                    const force = (mouse.radius - dist) / mouse.radius;
-                    this.x -= (dx / dist) * force * 1.5;
-                    this.y -= (dy / dist) * force * 1.5;
-                }
-            }
-
-            this.x += this.vx * 0.4;
-            this.y += this.vy * 0.4;
-            this.draw();
-        }
-    }
-
-    function init() {
-        particles = [];
-        W = canvas.width = canvas.offsetWidth;
-        H = canvas.height = canvas.offsetHeight;
-        const isMobile = W <= 768;
-        let pCount = Math.min(Math.floor((W * H) / 10000), isMobile ? 30 : 60);
-        for (let i = 0; i < pCount; i++) particles.push(new Particle());
-    }
-
-    function connect() {
-        for (let a = 0; a < particles.length; a++) {
-            for (let b = a + 1; b < particles.length; b++) {
-                const dx = particles[a].x - particles[b].x;
-                const dy = particles[a].y - particles[b].y;
-                const distSq = dx * dx + dy * dy;
-                const maxDistSq = 18000;
-                if (distSq < maxDistSq) {
-                    const opacity = (1 - (distSq / maxDistSq)) * 0.5;
-                    ctx.beginPath();
-                    ctx.strokeStyle = `rgba(255,255,255,${opacity})`;
-                    ctx.lineWidth = 0.8;
-                    ctx.moveTo(particles[a].x, particles[a].y);
-                    ctx.lineTo(particles[b].x, particles[b].y);
-                    ctx.stroke();
-                }
-            }
-        }
-    }
-
-    function drawMouseGlow() {
-        if (mouse.x !== null) {
-            const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 300);
-            grad.addColorStop(0, 'rgba(255, 255, 255, 0.08)');
-            grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
-            ctx.fillStyle = grad;
-            ctx.beginPath();
-            ctx.arc(mouse.x, mouse.y, 300, 0, Math.PI * 2);
-            ctx.fill();
-        }
-    }
-
-    function draw() {
-        if (!paused && !window._heroCanvasPaused) {
-            ctx.globalCompositeOperation = 'source-over';
-            ctx.fillStyle = '#050507';
-            ctx.fillRect(0, 0, W, H);
-            ctx.globalCompositeOperation = 'lighter';
-            particles.forEach(p => p.update());
-            connect();
-            drawMouseGlow();
-        }
-        raf = requestAnimationFrame(draw);
-    }
-
-    document.addEventListener('visibilitychange', () => { paused = document.hidden; });
-    window.addEventListener('resize', init, { passive: true });
-
-    init();
-    raf = requestAnimationFrame(draw);
-})();
-
-// ==========================================================================
-// SLIDE 2: Canvas de fondo difuminado (usa colores de marca como blobs)
+// SLIDE 2: Canvas de fondo difuminado (blobs de color de marca)
 // ==========================================================================
 (function () {
     const canvas = document.getElementById('slide-2-bg-canvas');
@@ -319,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
         H = canvas.height = canvas.offsetHeight || window.innerHeight;
     }
 
-    function draw(t) {
+    function draw() {
         if (!running) return;
         ctx.clearRect(0, 0, W, H);
         blobs.forEach(b => {
