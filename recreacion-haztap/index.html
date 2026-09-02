@@ -15,108 +15,106 @@
 </head>
 <body class="is-home">
 
-<main id="gsap-home-wrapper">
-    <div id="gsap-pinned-container">
-
-        <!-- SLIDE 1: Hero -->
-        <section class="gsap-slide slide-1">
-            <div class="slide-bg">
-                <div class="slide-exit-overlay" aria-hidden="true"></div>
-            </div>
-            <div class="slide-content slide-content-center">
-                <h1 class="hero-title">Haztap en tu <br>futuro digital</h1>
-                <p class="slide-subtitle fade-element">Crea en nuestras manos tu página web.<br>¡Ven y Haztap!</p>
-
-                <div class="fade-element cta-row">
-                    <a href="portafolios.html" class="cta-btn cta-secondary">Nuestros Clientes</a>
-                    <a href="https://store.haztap.com/" target="_blank" class="cta-btn cta-primary">Probar Demo</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- SLIDE 2: Funcionalidades -->
-        <section class="gsap-slide slide-2">
-            <div class="slide-bg">
-                <canvas id="slide-2-bg-canvas"></canvas>
-                <div class="slide-exit-overlay" aria-hidden="true"></div>
-            </div>
-
-            <div class="slide-2-container">
-                <div class="slide-2-header fade-element">
-                    <span class="slide-2-eyebrow">Casos reales</span>
-                    <h2 class="slide-2-title">Conoce a nuestros clientes</h2>
-                    <a href="portafolios.html" class="cta-btn cta-secondary slide-2-cta">Ver todos los proyectos</a>
-                </div>
-
-                <div class="slide-2-carousel">
-                    <div class="swiper swiper-video-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <video src="assets/videos/video1.mp4" preload="none" loop muted playsinline></video>
-                            </div>
-                            <div class="swiper-slide">
-                                <video src="assets/videos/video2.mp4" preload="none" loop muted playsinline></video>
-                            </div>
-                            <div class="swiper-slide">
-                                <video src="assets/videos/video3.mp4" preload="none" loop muted playsinline></video>
-                            </div>
-                        </div>
-                    </div>
-                    <button id="global-unmute-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-                        Activar Sonido
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- SLIDE 3: Contacto -->
-        <section class="gsap-slide slide-3">
-            <div class="slide-bg">
-                <div class="slide-3-dynamic-bg">
-                    <div class="blob-wrapper"><div class="mesh-blob blob-1"></div></div>
-                    <div class="blob-wrapper"><div class="mesh-blob blob-2"></div></div>
-                    <div class="blob-wrapper"><div class="mesh-blob blob-3"></div></div>
-                    <div class="blob-wrapper"><div class="mesh-blob blob-4"></div></div>
-                    <div class="blob-wrapper"><div class="mesh-blob blob-5"></div></div>
-                </div>
-            </div>
-            <div class="slide-content slide-content-center">
-                <h1 class="hero-title">¿Listo para el <br>siguiente nivel?</h1>
-                <p class="slide-subtitle fade-element">Conectemos y hagamos tu visión realidad.</p>
-
-                <div class="proof-strip fade-element">
-                    <div class="proof-avatars">
-                        <img src="assets/img/portfolio/proyecto4-mob.webp" alt="Bienchic">
-                        <img src="assets/img/portfolio/mockup-autoclub.jpg" alt="Autoclub">
-                        <img src="assets/img/portfolio/proyecto7-mob.webp" alt="Vaneshop">
-                        <img src="assets/img/portfolio/mockup-kpane.jpg" alt="KPANE INC.">
-                    </div>
-                    <span class="proof-text">+150 negocios ya confiaron en Haztap</span>
-                </div>
-
-                <div class="contact-ctas fade-element">
-                    <a href="portafolios.html" class="cta-btn cta-primary">Nuestros Clientes</a>
-                    <a href="https://wa.link/mo02tp" target="_blank" class="cta-btn cta-secondary">Escríbenos por WhatsApp</a>
-                </div>
-            </div>
-        </section>
-
+<!-- HERO -->
+<section class="home-hero">
+    <div class="home-hero-bg"></div>
+    <div class="home-hero-content">
+        <h1 class="hero-title">Haztap en tu <br>futuro digital</h1>
+        <p class="slide-subtitle fade-in-up">Crea en nuestras manos tu página web.<br>¡Ven y Haztap!</p>
+        <div class="cta-row fade-in-up">
+            <a href="portafolios.html" class="cta-btn cta-secondary">Nuestros Clientes</a>
+            <a href="https://store.haztap.com/" target="_blank" class="cta-btn cta-primary">Probar Demo</a>
+        </div>
     </div>
-</main>
-
-<div class="gsap-scroll-arrows">
-    <div class="gsap-scroll-arrow arrow-up" style="display:none;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
-    </div>
-    <div class="gsap-scroll-arrow arrow-down">
+    <div class="home-scroll-hint fade-in-up">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
     </div>
-</div>
+</section>
+
+<!-- VIDEO INSTITUCIONAL -->
+<section class="home-showreel">
+    <div class="home-showreel-header fade-in-up">
+        <span class="home-eyebrow">Conócenos</span>
+        <h2 class="home-section-title">Así hacemos Haztap</h2>
+    </div>
+    <div class="home-showreel-player fade-in-up">
+        <video
+            id="home-showreel-video"
+            poster="assets/img/portfolio/proyecto4.webp"
+            preload="none"
+            playsinline
+            controls
+        >
+            <!-- Reemplazar con el video institucional cuando esté listo -->
+            <source src="assets/videos/video1.mp4" type="video/mp4">
+        </video>
+        <button class="home-showreel-play" id="home-showreel-play-btn" aria-label="Reproducir video">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+    </div>
+</section>
+
+<!-- CLIENTES -->
+<section class="home-clients">
+    <div class="home-clients-header fade-in-up">
+        <span class="home-eyebrow">Casos reales</span>
+        <h2 class="home-section-title">Conoce a nuestros clientes</h2>
+        <a href="portafolios.html" class="cta-btn cta-secondary">Ver todos los proyectos</a>
+    </div>
+
+    <div class="home-clients-carousel fade-in-up">
+        <div class="swiper swiper-video-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <video src="assets/videos/video1.mp4" preload="none" loop muted playsinline></video>
+                </div>
+                <div class="swiper-slide">
+                    <video src="assets/videos/video2.mp4" preload="none" loop muted playsinline></video>
+                </div>
+                <div class="swiper-slide">
+                    <video src="assets/videos/video3.mp4" preload="none" loop muted playsinline></video>
+                </div>
+            </div>
+        </div>
+        <button id="global-unmute-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+            Activar Sonido
+        </button>
+    </div>
+</section>
+
+<!-- CIERRE / CONTACTO -->
+<section class="home-closing">
+    <div class="home-closing-bg">
+        <div class="blob-wrapper"><div class="mesh-blob blob-1"></div></div>
+        <div class="blob-wrapper"><div class="mesh-blob blob-2"></div></div>
+        <div class="blob-wrapper"><div class="mesh-blob blob-3"></div></div>
+        <div class="blob-wrapper"><div class="mesh-blob blob-4"></div></div>
+        <div class="blob-wrapper"><div class="mesh-blob blob-5"></div></div>
+    </div>
+    <div class="slide-content-center home-closing-content">
+        <h2 class="hero-title fade-in-up">¿Listo para el <br>siguiente nivel?</h2>
+        <p class="slide-subtitle fade-in-up">Conectemos y hagamos tu visión realidad.</p>
+
+        <div class="proof-strip fade-in-up">
+            <div class="proof-avatars">
+                <img src="assets/img/portfolio/proyecto4-mob.webp" alt="Bienchic">
+                <img src="assets/img/portfolio/mockup-autoclub.jpg" alt="Autoclub">
+                <img src="assets/img/portfolio/proyecto7-mob.webp" alt="Vaneshop">
+                <img src="assets/img/portfolio/mockup-kpane.jpg" alt="KPANE INC.">
+            </div>
+            <span class="proof-text">+150 negocios ya confiaron en Haztap</span>
+        </div>
+
+        <div class="contact-ctas fade-in-up">
+            <a href="portafolios.html" class="cta-btn cta-primary">Nuestros Clientes</a>
+            <a href="https://wa.link/mo02tp" target="_blank" class="cta-btn cta-secondary">Escríbenos por WhatsApp</a>
+        </div>
+    </div>
+</section>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollToPlugin.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="assets/js/include-header.js"></script>
 <script src="assets/js/gsap-menu.js"></script>

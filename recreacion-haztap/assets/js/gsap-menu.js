@@ -200,7 +200,7 @@ document.addEventListener('haztap:header-ready', function () {
     });
 
     const mainHeader = document.getElementById('gsap-custom-header');
-    if (mainHeader && !document.body.classList.contains('is-home')) {
+    if (mainHeader) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 mainHeader.classList.add('is-scrolled');

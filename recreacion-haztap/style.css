@@ -1,148 +1,19 @@
 /* ==========================================================================
-   HAZTAP — Home (slides GSAP pineados)
+   HAZTAP — Home (scroll normal, secciones apiladas)
    Estilos base compartidos (reset, colores, tipografía) viven en
    assets/css/base.css — este archivo es exclusivo del layout del home.
    ========================================================================== */
 
-html, body {
-    height: 100vh;
-    overflow: hidden;
+@keyframes geminiFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* ==========================================================================
-   SLIDER LAYOUT (PINNED CONTAINER)
+   TYPOGRAPHY & FADE-IN HELPERS
    ========================================================================== */
-#gsap-home-wrapper {
-    position: relative;
-    width: 100%;
-}
-
-#gsap-pinned-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.gsap-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    visibility: hidden;
-}
-
-.slide-1 { z-index: 1; visibility: visible; opacity: 1; }
-.slide-2 {
-    z-index: 2;
-    opacity: 0;
-    will-change: opacity, transform;
-    transform: translateZ(0);
-}
-.slide-3 {
-    z-index: 3;
-    opacity: 0;
-    will-change: opacity, transform;
-    transform: translateZ(0);
-}
-
-body.is-scrolling #slide-2-bg-canvas {
-    opacity: 0 !important;
-    transition: none !important;
-}
-
-@media (max-width: 768px) {
-    #slide-2-bg-canvas {
-        filter: blur(60px) saturate(140%) !important;
-        opacity: 0.25;
-    }
-}
-
-.slide-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    transform-origin: center center;
-    background: #050507;
-}
-
-.slide-1 .slide-bg {
-    background:
-        radial-gradient(ellipse 70% 60% at 25% 15%, rgba(162, 89, 255, 0.34), transparent 62%),
-        radial-gradient(ellipse 65% 55% at 80% 80%, rgba(26, 188, 254, 0.28), transparent 62%),
-        radial-gradient(ellipse 50% 50% at 85% 10%, rgba(10, 207, 131, 0.22), transparent 60%),
-        radial-gradient(ellipse 55% 45% at 10% 85%, rgba(242, 78, 30, 0.16), transparent 60%),
-        #08060c;
-    animation: heroGlowDrift 18s ease-in-out infinite alternate;
-}
-
-@keyframes heroGlowDrift {
-    0%   { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
-    100% { background-position: 4% 3%, -4% -3%, -3% 4%, 3% -4%, 0% 0%; }
-}
-
-.slide-1 .slide-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse 85% 65% at 50% 55%, transparent 45%, rgba(0,0,0,0.4) 100%),
-        linear-gradient(to bottom, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.28) 100%);
-    pointer-events: none;
-}
-
-.slide-bg::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%);
-    z-index: -1;
-}
-
-.slide-3 .slide-bg::after { display: none; }
-
-/* --- Slide 2: fondo mayoritariamente claro (respiro visual) --- */
-.slide-2 .slide-bg {
-    background:
-        radial-gradient(ellipse 55% 45% at 20% 15%, rgba(162, 89, 255, 0.10), transparent 60%),
-        radial-gradient(ellipse 50% 40% at 85% 80%, rgba(26, 188, 254, 0.10), transparent 60%),
-        radial-gradient(ellipse 45% 40% at 90% 10%, rgba(10, 207, 131, 0.08), transparent 60%),
-        #e9e6e1;
-}
-
-.slide-2 .slide-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(5,5,7,0.92) 0%, rgba(5,5,7,0.55) 22%, rgba(5,5,7,0) 42%);
-    z-index: -1;
-}
-
-/* ==========================================================================
-   TYPOGRAPHY & CONTENT PANELS
-   ========================================================================== */
-.slide-content {
-    position: relative;
-    z-index: 10;
-    padding: 0 10%;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.slide-content-center {
-    text-align: center;
-    margin: 0 auto;
-    max-width: 900px;
-    padding: 0 5%;
-}
-
-h1.hero-title {
+h1.hero-title, h2.hero-title {
     font-size: clamp(3rem, 6vw, 5.5rem);
     font-weight: 700;
     line-height: 1.1;
@@ -158,13 +29,19 @@ h1.hero-title {
     color: rgba(255, 255, 255, 0.85);
 }
 
-/* ==========================================================================
-   CTA ROW
-   ========================================================================== */
-@keyframes geminiFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.hero-title .word {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.hero-title .word > div {
+    display: inline-block;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 .cta-row {
@@ -182,85 +59,16 @@ h1.hero-title {
     margin-top: 40px;
 }
 
-/* ==========================================================================
-   PROOF STRIP (Slide 3 — prueba social)
-   ========================================================================== */
-.proof-strip {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    margin-top: 8px;
-}
-
-.proof-avatars {
-    display: flex;
-}
-
-.proof-avatars img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #050507;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    margin-left: -12px;
-}
-
-.proof-avatars img:first-child { margin-left: 0; }
-
-.proof-text {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.75);
-}
-
-@media (max-width: 768px) {
-    .proof-strip { flex-direction: column; gap: 10px; }
-}
-
-/* ==========================================================================
-   GSAP SPLIT TEXT ELEMENTS
-   ========================================================================== */
-.hero-title .word {
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: top;
-}
-
-.hero-title .word > div {
-    display: inline-block;
-    transform: translateY(100%);
-}
-
-.fade-element {
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-/* ==========================================================================
-   SLIDE 2 VIDEO CAROUSEL CSS
-   ========================================================================== */
-.slide-2-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+.slide-content-center {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 0 5%;
     position: relative;
     z-index: 10;
-    gap: 18px;
 }
 
-.slide-2-header {
-    text-align: center;
-    z-index: 2;
-    max-width: 560px;
-    padding: 0 20px;
-}
-
-.slide-2-eyebrow {
+.home-eyebrow {
     display: inline-block;
     font-size: 0.8rem;
     font-weight: 500;
@@ -270,43 +78,192 @@ h1.hero-title {
     margin-bottom: 10px;
 }
 
-.slide-2-title {
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
+.home-section-title {
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
     font-weight: 700;
     letter-spacing: -0.02em;
     margin: 0 0 18px 0;
     line-height: 1.15;
 }
 
-.slide-2-cta {
-    padding: 12px 26px;
-    font-size: 0.95rem;
-}
-
-.slide-2-carousel {
-    flex: 1 1 auto;
-    width: 100%;
-    min-height: 0;
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.home-hero {
     position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 120px 5% 80px;
+    box-sizing: border-box;
 }
 
-#slide-2-bg-canvas {
+.home-hero-bg {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    filter: blur(120px) saturate(160%);
-    opacity: 0.22;
-    transform: scale(1.2);
-    z-index: -2;
-    transition: opacity 0.5s ease;
-    mix-blend-mode: multiply;
+    inset: -10% -5%;
+    z-index: 0;
+    background:
+        radial-gradient(ellipse 70% 60% at 25% 15%, rgba(162, 89, 255, 0.34), transparent 62%),
+        radial-gradient(ellipse 65% 55% at 80% 80%, rgba(26, 188, 254, 0.28), transparent 62%),
+        radial-gradient(ellipse 50% 50% at 85% 10%, rgba(10, 207, 131, 0.22), transparent 60%),
+        radial-gradient(ellipse 55% 45% at 10% 85%, rgba(242, 78, 30, 0.16), transparent 60%),
+        #08060c;
+    animation: heroGlowDrift 18s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlowDrift {
+    0%   { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
+    100% { background-position: 4% 3%, -4% -3%, -3% 4%, 3% -4%, 0% 0%; }
+}
+
+.home-hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 85% 65% at 50% 55%, transparent 45%, rgba(0,0,0,0.4) 100%),
+        linear-gradient(to bottom, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.28) 100%);
+}
+
+.home-hero-content {
+    text-align: center;
+    max-width: 900px;
+    position: relative;
+    z-index: 10;
+}
+
+.home-scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    animation: scrollHintBounce 2.4s infinite ease-in-out;
+    z-index: 10;
+}
+
+.home-scroll-hint svg { width: 26px; height: 26px; }
+
+@keyframes scrollHintBounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 8px); }
 }
 
 /* ==========================================================================
-   SLIDE 3 ORGANIC LIGHT BLOBS
+   SHOWREEL (video institucional)
    ========================================================================== */
-.slide-3-dynamic-bg {
+.home-showreel {
+    position: relative;
+    padding: 100px 5% 110px;
+    background: #050507;
+    text-align: center;
+}
+
+.home-showreel-header { margin-bottom: 48px; }
+
+.home-showreel-player {
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.home-showreel-player video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.home-showreel-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    color: #050507;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease;
+}
+
+.home-showreel-play svg { margin-left: 3px; }
+
+.home-showreel-play:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+    background: #fff;
+}
+
+.home-showreel-play.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.85);
+}
+
+/* ==========================================================================
+   CLIENTES (carrusel de video)
+   ========================================================================== */
+.home-clients {
+    position: relative;
+    padding: 90px 0 110px;
+    background:
+        radial-gradient(ellipse 55% 45% at 20% 15%, rgba(162, 89, 255, 0.10), transparent 60%),
+        radial-gradient(ellipse 50% 40% at 85% 80%, rgba(26, 188, 254, 0.10), transparent 60%),
+        radial-gradient(ellipse 45% 40% at 90% 10%, rgba(10, 207, 131, 0.08), transparent 60%),
+        #e9e6e1;
+    overflow: hidden;
+}
+
+.home-clients-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+}
+
+.home-clients-header .home-eyebrow,
+.home-clients-header .home-section-title {
+    color: #1a1720;
+}
+
+.home-clients-header .home-eyebrow { color: rgba(20, 17, 25, 0.55); }
+
+.home-clients-carousel {
+    position: relative;
+    width: 100%;
+}
+
+/* ==========================================================================
+   CIERRE / CONTACTO
+   ========================================================================== */
+.home-closing {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 5%;
+    background: #050507;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.home-closing-bg {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     overflow: hidden;
@@ -315,6 +272,8 @@ h1.hero-title {
     mask-image: radial-gradient(ellipse at center, transparent 60%, black 100%);
     -webkit-mask-image: radial-gradient(ellipse at center, transparent 60%, black 100%);
 }
+
+.home-closing-content { position: relative; z-index: 10; }
 
 .blob-wrapper {
     position: absolute;
@@ -352,19 +311,55 @@ h1.hero-title {
 }
 
 /* ==========================================================================
-   SWIPER VIDEO CAROUSEL
+   PROOF STRIP (Cierre — prueba social)
+   ========================================================================== */
+.proof-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.proof-avatars {
+    display: flex;
+}
+
+.proof-avatars img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #050507;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    margin-left: -12px;
+}
+
+.proof-avatars img:first-child { margin-left: 0; }
+
+.proof-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 768px) {
+    .proof-strip { flex-direction: column; gap: 10px; }
+}
+
+/* ==========================================================================
+   SWIPER VIDEO CAROUSEL (clientes)
    ========================================================================== */
 .swiper-video-slider {
     width: 100%;
-    height: 100%;
     padding: 20px 0;
     overflow: visible !important;
 }
 
 .swiper-slide {
-    width: 360px;
-    height: 640px;
-    max-height: 78vh;
+    width: 300px;
+    height: 533px;
+    max-height: 66vh;
     border-radius: 24px;
     overflow: hidden;
     transition: all 0.4s ease;
@@ -389,12 +384,10 @@ h1.hero-title {
 .swiper-slide-active video { opacity: 1; }
 
 #global-unmute-btn {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    background: rgba(10, 8, 14, 0.72);
+    position: relative;
+    display: flex;
+    margin: 30px auto 0;
+    background: rgba(10, 8, 14, 0.85);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255,255,255,0.15);
@@ -403,7 +396,6 @@ h1.hero-title {
     border-radius: 50px;
     cursor: pointer;
     font-size: 1rem;
-    display: flex;
     align-items: center;
     gap: 10px;
     transition: all 0.3s ease;
@@ -411,106 +403,22 @@ h1.hero-title {
 }
 
 #global-unmute-btn:hover {
-    background: rgba(255,255,255,0.2);
-    transform: translateX(-50%) scale(1.05);
+    background: rgba(20, 16, 26, 0.95);
+    transform: scale(1.05);
 }
 
 /* ==========================================================================
    RESPONSIVE (MOBILE)
    ========================================================================== */
 @media (max-width: 768px) {
-    .slide-2-container {
-        justify-content: flex-start;
-        padding-top: 8vh;
-        height: 100vh;
-        overflow: hidden;
-        gap: 10px;
-    }
-    .slide-2-header { padding: 0 15px; }
-    .slide-2-title { font-size: 1.4rem; margin-bottom: 12px; }
-    .slide-2-cta { padding: 10px 20px; font-size: 0.85rem; }
-    .slide-2-carousel {
-        flex: 1 1 auto;
-        width: 100%;
-        height: auto;
-        min-height: 0;
-    }
-    .swiper-video-slider { padding: 10px 0; }
+    .home-hero { padding: 100px 6% 60px; }
+    .home-showreel { padding: 70px 5% 80px; }
+    .home-showreel-play { width: 64px; height: 64px; }
+    .home-showreel-play svg { width: 22px; height: 22px; }
+    .home-clients { padding: 60px 0 80px; }
+    .home-clients-header { margin-bottom: 34px; }
     .swiper-slide { height: 100%; max-height: 380px; width: 215px; }
-    #global-unmute-btn { bottom: 20px; padding: 8px 16px; font-size: 0.85rem; }
-    .slide-content { padding: 0 20px; }
-    .slide-bg::after { background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 100%); }
+    .home-closing { padding: 80px 5%; min-height: unset; }
     .contact-ctas { flex-direction: column; width: 100%; }
     .cta-btn { width: 100%; text-align: center; box-sizing: border-box; }
-}
-
-/* ==========================================================================
-   SCROLL INDICATOR (UP/DOWN ARROWS)
-   ========================================================================== */
-.gsap-scroll-arrows {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    z-index: 9998;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.gsap-scroll-arrow {
-    width: 46px;
-    height: 46px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.arrow-down { animation: floatArrow 3s infinite cubic-bezier(0.4, 0, 0.2, 1); }
-
-.gsap-scroll-arrow svg {
-    width: 20px;
-    height: 20px;
-    color: #fff;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.gsap-scroll-arrow:hover {
-    border-color: rgba(255, 255, 255, 0.8);
-    background: rgba(255, 255, 255, 0.25);
-    animation-play-state: paused;
-}
-
-.arrow-down:hover svg { transform: translateY(3px); }
-.arrow-up:hover svg { transform: translateY(-3px); }
-
-@keyframes floatArrow {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(8px); }
-}
-
-.gsap-scroll-arrow.clicked {
-    animation: none;
-    transform: scale(0.85);
-    opacity: 0.7;
-    background: rgba(255, 255, 255, 0.4);
-}
-
-/* ==========================================================================
-   PERFORMANCE: GPU-composited exit overlay
-   ========================================================================== */
-.slide-exit-overlay {
-    position: absolute;
-    inset: 0;
-    background: #050507;
-    opacity: 0;
-    z-index: 1;
-    pointer-events: none;
-    will-change: opacity;
 }
