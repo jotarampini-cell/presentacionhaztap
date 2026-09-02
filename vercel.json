@@ -1,3 +1,4 @@
 {
-  "outputDirectory": "recreacion-haztap"
+  "outputDirectory": "recreacion-haztap",
+  "cleanUrls": true
 }

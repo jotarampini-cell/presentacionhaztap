@@ -6,3 +6,6 @@ docker-compose.yml
 
 # Claude session internals
 .claude/scheduled_tasks.lock
+
+# Local backups
+recreacion-haztap-backup/

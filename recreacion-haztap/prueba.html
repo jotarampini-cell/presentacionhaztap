@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haztap – Todo a un Tap | Tu tienda digital moderna</title>
+    
+    <!-- Tipografías oficiales del Brandbook: Ubuntu + SF Pro Display Stack -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos dedicados de la versión de prueba en duotono blanco y negro -->
+    <link rel="stylesheet" href="assets/css/preview.css">
+</head>
+<body class="is-preview">
+
+    <!-- BARRA DE NAVEGACIÓN FLOTANTE (Blanco / Negro) -->
+    <div class="preview-nav-wrapper">
+        <header class="preview-nav">
+            <a href="preview.html" class="preview-nav-logo" aria-label="Haztap Inicio">
+                <img src="assets/img/haztap-logo-horizontal.svg" alt="Haztap – Todo a un Tap">
+            </a>
+
+            <nav>
+                <ul class="preview-nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="#metricas">Cifras</a></li>
+                    <li><a href="#casos-reales">Clientes</a></li>
+                    <li><a href="#preguntas">Preguntas</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                </ul>
+            </nav>
+
+            <a href="https://store.haztap.com/" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">
+                <span>Probar Demo</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </header>
+    </div>
+
+    <!-- HERO SECTION (Duotono Blanco y Negro) -->
+    <section class="preview-hero" id="inicio">
+        <div class="ht-container">
+            <div class="hero-grid">
+                
+                <!-- Columna Izquierda: Copy & CTAs -->
+                <div class="hero-copy-left">
+                    <div class="ht-pill-eyebrow">
+                        <span class="pulse-dot"></span>
+                        <span>Haztap 2025 · Comercio Digital</span>
+                    </div>
+
+                    <h1 class="hero-main-title">
+                        Tus ventas.<br>
+                        Tu control.<br>
+                        Una sola app.
+                    </h1>
+
+                    <p class="hero-main-subtitle">
+                        Crea tu tienda web profesional en minutos. Conecta pagos directos, catálogo interactivo en vivo y pedidos automáticos a WhatsApp.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="https://store.haztap.com/" target="_blank" rel="noopener noreferrer" class="ht-btn-primary">
+                            <span>Empezar ahora</span>
+                            <span class="btn-icon-circle">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </span>
+                        </a>
+
+                        <a href="#casos-reales" class="ht-btn-secondary">
+                            Ver Clientes
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna Central: Mockup 3D de iPhone Flotante -->
+                <div class="hero-mockup-center">
+                    <div class="phone-float-wrapper">
+                        <div class="phone-screen-container">
+                            <img src="assets/img/store-preview.webp" alt="Tienda móvil creada con Haztap">
+                        </div>
+                        <img src="assets/img/portfolio/iphone.png" class="phone-hardware-frame" alt="iPhone Frame">
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Social Proof B&W -->
+                <div class="hero-proof-right">
+                    <div class="proof-mini-card">
+                        <p>
+                            "La plataforma favorita de marcas y negocios para vender en automático sin lidiar con código ni complicaciones técnicas."
+                        </p>
+                        <div class="proof-user-strip">
+                            <div class="proof-avatars-stacked">
+                                <img src="assets/img/portfolio/proyecto4-mob.webp" alt="Bienchic">
+                                <img src="assets/img/portfolio/mockup-autoclub.jpg" alt="Autoclub">
+                                <img src="assets/img/portfolio/proyecto7-mob.webp" alt="Vaneshop">
+                                <img src="assets/img/portfolio/mockup-kpane.jpg" alt="KPANE">
+                            </div>
+                            <div class="proof-metrics-text">
+                                <strong>+150</strong>
+                                <span>negocios activos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- HERO VALUE BANNER (#171719 Negro Grafito Oficial) -->
+            <div class="hero-value-banner">
+                <span class="banner-watermark">TODO A UN TAP</span>
+                <div class="banner-content">
+                    <h3>La plataforma que impulsa a más de 150 marcas y negocios</h3>
+                    <p style="margin-bottom: 28px; opacity: 0.75; font-size: 1.05rem;">
+                        Conectados directamente con los canales y herramientas que tus clientes ya usan:
+                    </p>
+                    <div class="banner-partners-strip">
+                        <span class="partner-tag">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.97.53 1.776.814 2.796.814 3.182 0 5.767-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm6.75 5.766c0 3.722-3.028 6.75-6.75 6.75-1.144 0-2.215-.289-3.155-.795l-3.522.923.939-3.432c-.581-.996-.912-2.155-.912-3.446 0-3.722 3.028-6.75 6.75-6.75s6.75 3.028 6.75 6.75z"/></svg>
+                            WhatsApp Business
+                        </span>
+                        <span class="partner-tag">💳 Stripe</span>
+                        <span class="partner-tag">⚡ PagoMóvil</span>
+                        <span class="partner-tag">🛍️ Instagram Shopping</span>
+                        <span class="partner-tag">🌐 Dominio Propio</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROPUESTA DE VALOR CON MICRO-BADGES FLOTANTES B&W -->
+    <section class="preview-statement">
+        <div class="statement-bg-pattern"></div>
+
+        <div class="floating-badge fb-1">
+            <span class="badge-icon">✓</span>
+            <span>0% comisiones por venta</span>
+        </div>
+
+        <div class="floating-badge fb-2">
+            <span class="badge-icon">●</span>
+            <span>Todo a un tap en tu móvil</span>
+        </div>
+
+        <div class="floating-badge fb-3">
+            <span class="badge-icon">→</span>
+            <span>Cobros directos a tu cuenta</span>
+        </div>
+
+        <div class="floating-badge fb-4">
+            <span class="badge-icon">⚡</span>
+            <span>En línea en 24 horas</span>
+        </div>
+
+        <div class="ht-container">
+            <div class="statement-center">
+                <h2>
+                    Nuestra plataforma es la solución todo en uno para digitalizar tu catálogo y acelerar tus ventas.
+                </h2>
+                <p>
+                    Haztap unifica diseño minimalista de alto impacto, facilidad de uso y máxima velocidad de compra para que tus clientes vivan una experiencia fluida desde su primer tap.
+                </p>
+                <a href="planes.html" class="ht-btn-primary">
+                    <span>Ver Planes Disponibles</span>
+                    <span class="btn-icon-circle">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENTO GRID DE FUNCIONALIDADES (Duotono Monocromático) -->
+    <section class="preview-features" id="funcionalidades">
+        <div class="ht-container">
+            <div class="section-header-center">
+                <h2>Hecho para llevar tu negocio más lejos</h2>
+                <p>Herramientas potentes diseñadas para automatizar pedidos y fidelizar clientes.</p>
+            </div>
+
+            <div class="bento-features-grid">
+                
+                <div class="bento-card">
+                    <div class="bento-icon-wrapper">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    </div>
+                    <h3>Catálogo Inteligente en Vivo</h3>
+                    <p>Muestra tus productos organizados con fotos nítidas, tallas, colores y control de disponibilidad en tiempo real.</p>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon-wrapper">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                    </div>
+                    <h3>Pedidos Directos a WhatsApp</h3>
+                    <p>El cliente llena el carrito y te envía un resumen estructurado y listo para confirmar con dirección y método de pago.</p>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon-wrapper">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                    </div>
+                    <h3>Pagos en un solo Tap</h3>
+                    <p>Acepta tarjetas de crédito, transferencias bancarias o PagoMóvil sin fricción ni comisiones imprevistas.</p>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon-wrapper">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                    </div>
+                    <h3>Control Total desde el Móvil</h3>
+                    <p>Agrega productos, actualiza precios y despacha pedidos desde cualquier lugar sin necesidad de una computadora.</p>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon-wrapper">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <h3>Dominio Propio y Marca Única</h3>
+                    <p>Tu tienda con tu propio nombre web (ej: tuempresa.com) y optimizada para posicionar en Google.</p>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon-wrapper">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Seguridad y Velocidad Cloud</h3>
+                    <p>Alojada en infraestructura de alta velocidad con certificado SSL para una experiencia de compra instantánea.</p>
+                </div>
+
+            </div>
+
+            <!-- Gran caja de showcase de funciones en Negro Grafito -->
+            <div class="functions-showcase-box">
+                <span class="functions-watermark">FUNCIONES</span>
+                <div class="functions-mockup-wrapper">
+                    <img src="assets/img/portfolio/iphone.png" alt="Mockup Haztap App">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- METRICAS Y DATOS (Blanco y Negro Limpio) -->
+    <section class="preview-metrics" id="metricas">
+        <div class="ht-container">
+            <div class="metrics-grid">
+                
+                <div class="metric-item">
+                    <span class="metric-number">+150</span>
+                    <span class="metric-label">Negocios activos en Haztap</span>
+                </div>
+
+                <div class="metric-item">
+                    <span class="metric-number">3x</span>
+                    <span class="metric-label">Aumento en velocidad de compra</span>
+                </div>
+
+                <div class="metric-item">
+                    <span class="metric-number">100%</span>
+                    <span class="metric-label">Diseño adaptable a móviles</span>
+                </div>
+
+                <div class="metric-item">
+                    <span class="metric-number">24/7</span>
+                    <span class="metric-label">Acompañamiento y soporte</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CASOS REALES (Duotono Monocromático / B&W Fotográfico) -->
+    <section class="preview-portfolio" id="casos-reales">
+        <div class="ht-container">
+            <div class="section-header-center">
+                <h2>Marcas que confían en Haztap</h2>
+                <p>Descubre algunos de los proyectos creados y potenciados con nuestra tecnología.</p>
+            </div>
+
+            <div class="portfolio-cards-grid">
+                
+                <!-- Proyecto 1: Bienchic -->
+                <div class="portfolio-card">
+                    <img src="assets/img/portfolio/proyecto4.webp" alt="Bienchic" class="portfolio-card-img">
+                    <div class="duotone-overlay"></div>
+                    <div class="portfolio-card-content">
+                        <div class="portfolio-top-bar">
+                            <span class="portfolio-pill-badge">Moda & Accesorios</span>
+                            <img src="assets/img/haztap-logo-horizontal-white.svg" alt="Haztap" class="portfolio-brand-logo">
+                        </div>
+                        <div class="portfolio-card-bottom">
+                            <h4>Bienchic</h4>
+                            <p>Catálogo e-commerce con más de 200 referencias y pedidos automáticos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: Autoclub -->
+                <div class="portfolio-card">
+                    <img src="assets/img/portfolio/mockup-autoclub1.jpg" alt="Autoclub" class="portfolio-card-img">
+                    <div class="duotone-overlay"></div>
+                    <div class="portfolio-card-content">
+                        <div class="portfolio-top-bar">
+                            <span class="portfolio-pill-badge">Automotriz</span>
+                            <img src="assets/img/haztap-logo-horizontal-white.svg" alt="Haztap" class="portfolio-brand-logo">
+                        </div>
+                        <div class="portfolio-card-bottom">
+                            <h4>Autoclub</h4>
+                            <p>Plataforma de servicios, cotizaciones instantáneas y reservas en línea.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3: Vaneshop -->
+                <div class="portfolio-card">
+                    <img src="assets/img/portfolio/proyecto7.webp" alt="Vaneshop" class="portfolio-card-img">
+                    <div class="duotone-overlay"></div>
+                    <div class="portfolio-card-content">
+                        <div class="portfolio-top-bar">
+                            <span class="portfolio-pill-badge">Calzado & Ropa</span>
+                            <img src="assets/img/haztap-logo-horizontal-white.svg" alt="Haztap" class="portfolio-brand-logo">
+                        </div>
+                        <div class="portfolio-card-bottom">
+                            <h4>Vaneshop</h4>
+                            <p>Tienda multimarca con filtros por talla, marca y pasarela de pago.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4: KPANE Inc. -->
+                <div class="portfolio-card">
+                    <img src="assets/img/portfolio/mockup-kpane1.jpg" alt="KPANE Inc." class="portfolio-card-img">
+                    <div class="duotone-overlay"></div>
+                    <div class="portfolio-card-content">
+                        <div class="portfolio-top-bar">
+                            <span class="portfolio-pill-badge">Corporativo</span>
+                            <img src="assets/img/haztap-logo-horizontal-white.svg" alt="Haztap" class="portfolio-brand-logo">
+                        </div>
+                        <div class="portfolio-card-bottom">
+                            <h4>KPANE INC.</h4>
+                            <p>Portal corporativo internacional con catálogo de soluciones industriales.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="portafolios.html" class="ht-btn-secondary">
+                    Ver todos los proyectos →
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RESEÑAS & TESTIMONIOS (Duotono B&W) -->
+    <section class="preview-reviews">
+        <div class="ht-container">
+            <div class="section-header-center">
+                <h2>Reseñas de nuestros clientes</h2>
+                <p>La experiencia de quienes ya dieron el salto digital con nosotros.</p>
+            </div>
+
+            <div class="reviews-bento-row">
+                
+                <div class="review-highlight-box">
+                    <div>
+                        <div class="review-highlight-number">+150</div>
+                        <p>Marcas y emprendedores confían activamente en Haztap para sus ventas del día a día.</p>
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <a href="portafolios.html" style="color: #fff; font-weight: 600; text-decoration: underline;">
+                            Conoce más historias de éxito →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="review-card-quote">
+                    <div>
+                        <div class="stars-rating">★★★★★</div>
+                        <p class="quote-text">
+                            "Haztap es lo más simple de gestionar. Antes perdíamos horas enviando fotos individuales por WhatsApp; ahora el cliente selecciona sus prendas en la tienda, confirma su pedido y nos llega todo detallado y listo para entregar."
+                        </p>
+                    </div>
+
+                    <div class="quote-author">
+                        <img src="assets/img/portfolio/proyecto4-mob.webp" alt="María Valentina">
+                        <div class="author-info">
+                            <h5>María Valentina</h5>
+                            <span>Fundadora de Bienchic · Tienda de Moda</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ACORDEON DE PREGUNTAS FRECUENTES -->
+    <section class="preview-faq" id="preguntas">
+        <div class="ht-container">
+            <div class="section-header-center">
+                <h2>Preguntas frecuentes</h2>
+                <p>Todo lo que necesitas saber antes de dar el paso con Haztap.</p>
+            </div>
+
+            <div class="faq-accordion">
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Necesito saber de diseño o programación para usar Haztap?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            No. Haztap está diseñado para que cualquier persona pueda gestionar su tienda sin tocar una sola línea de código. Nosotros nos encargamos del diseño inicial, la configuración y el despliegue; tú solo te enfocas en vender y recibir pedidos.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cómo recibo los pagos de mis ventas?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            El dinero va directamente a tus cuentas bancarias o pasarelas preferidas (PagoMóvil, transferencias bancarias, Stripe o Zelle). Haztap no retiene tu dinero ni cobra comisiones por transacción.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Puedo conectar mi propio dominio (.com)?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Sí. Puedes conectar tu propio dominio personalizado (ej: mitienda.com) para proyectar máxima seriedad y fortalecer el branding de tu negocio.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cuánto tiempo tarda en estar lista mi tienda online?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Una vez que nos compartes la información y fotos de tus productos, tu tienda puede estar 100% activa y lista para vender en un plazo de 24 a 48 horas hábiles.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Qué tipo de soporte recibo si tengo dudas?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Cuentas con soporte directo y personalizado a través de WhatsApp y correo electrónico, además de acompañamiento continuo para resolver cualquier consulta.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER DE CIERRE (Final CTA) -->
+    <section class="preview-final-cta">
+        <div class="ht-container">
+            <div class="final-cta-card">
+                <div class="final-cta-pattern"></div>
+                <h2>Empieza a digitalizar tu negocio hoy mismo</h2>
+                <p>Tu tienda web profesional, ágil y atractiva a tan solo un tap de distancia.</p>
+                <a href="https://wa.link/mo02tp" target="_blank" rel="noopener noreferrer" class="ht-btn-primary">
+                    <span>Hablar con un Asesor</span>
+                    <span class="btn-icon-circle">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER OSCURO OFICIAL (#171719 Brandbook) -->
+    <footer class="preview-footer">
+        <div class="footer-brand-pattern"></div>
+        <div class="ht-container">
+            
+            <div class="footer-top-grid">
+                
+                <div class="footer-brand-col">
+                    <img src="assets/img/haztap-logo-horizontal-white.svg" alt="Haztap">
+                    <p>
+                        La plataforma moderna que conecta marcas con sus clientes. Todo a un tap, sin barreras técnicas ni límites de crecimiento.
+                    </p>
+                    <div class="footer-social-links">
+                        <a href="https://wa.link/mo02tp" target="_blank" aria-label="WhatsApp">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.97.53 1.776.814 2.796.814 3.182 0 5.767-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm6.75 5.766c0 3.722-3.028 6.75-6.75 6.75-1.144 0-2.215-.289-3.155-.795l-3.522.923.939-3.432c-.581-.996-.912-2.155-.912-3.446 0-3.722 3.028-6.75 6.75-6.75s6.75 3.028 6.75 6.75z"/></svg>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#funcionalidades">Funcionalidades</a></li>
+                        <li><a href="portafolios.html">Casos de Éxito</a></li>
+                        <li><a href="planes.html">Planes y Precios</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Soluciones</h4>
+                    <ul>
+                        <li><a href="portafolios-ecommerce.html">Tiendas de Ropa & Moda</a></li>
+                        <li><a href="portafolios-corporativo.html">Empresas & Servicios</a></li>
+                        <li><a href="portafolios-cursos.html">Cursos & Capacitación</a></li>
+                        <li><a href="https://store.haztap.com/" target="_blank">Probar Demo Tienda</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Prueba en tu móvil</h4>
+                    <div class="footer-qr-card">
+                        <div class="footer-qr-box">
+                            <svg viewBox="0 0 24 24" fill="#171719">
+                                <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm10 0h2v2h-2v-2zm4 0h4v2h-4v-2zm-4 4h2v2h-2v-2zm4 0h4v4h-4v-4zm-4 2h2v2h-2v-2z"/>
+                            </svg>
+                        </div>
+                        <div class="footer-qr-text">
+                            <span>Escanear Demo</span>
+                            <strong>Haztap Store</strong>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom-bar">
+                <span>&copy; 2026 Haztap. Brandboard Haztap 2025. Todos los derechos reservados.</span>
+                <div class="footer-bottom-links">
+                    <a href="privacidad.html">Política de Privacidad</a>
+                    <a href="index.html">Versión Original</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Scripts interactivos -->
+    <script src="assets/js/preview.js"></script>
+</body>
+</html>
