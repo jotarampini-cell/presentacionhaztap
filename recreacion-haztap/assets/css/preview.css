@@ -2246,67 +2246,359 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 }
 
 @media (max-width: 768px) {
+    /* Espaciado global limpio y desahogado en móvil */
+    .preview-hero {
+        padding: 85px 0 35px;
+    }
+
+    .preview-comparison,
+    .preview-method,
+    .preview-statement,
+    .preview-interactive-demo,
+    .preview-cinema,
+    .preview-features,
+    .preview-metrics,
+    .preview-team,
+    .preview-reviews,
+    .preview-guarantees,
+    .preview-faq {
+        padding: 48px 0;
+    }
+
+    .preview-final-cta {
+        padding: 38px 0 55px;
+    }
+
+    /* Navbar Móvil */
     .preview-nav {
-        padding: 10px 18px;
+        padding: 10px 16px;
     }
 
     .preview-nav-links {
         display: none;
     }
 
+    .preview-nav-cta {
+        padding: 8px 16px;
+        font-size: 0.84rem;
+    }
+
+    /* Tipografía y Títulos en Móvil (sin amontonamiento) */
     .hero-main-title {
-        font-size: 2.6rem;
+        font-size: 2rem;
+        line-height: 1.18;
+        letter-spacing: -0.03em;
+        margin-bottom: 14px;
     }
 
+    .hero-main-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.48;
+        margin-bottom: 22px;
+        color: rgba(23, 23, 25, 0.7);
+    }
+
+    .section-header-center h2,
+    .method-title,
+    .demo-title,
+    .cinema-title {
+        font-size: 1.65rem;
+        line-height: 1.22;
+        letter-spacing: -0.03em;
+        margin-bottom: 10px;
+    }
+
+    .section-header-center p,
+    .method-subtitle,
+    .demo-subtitle,
+    .cinema-subtitle {
+        font-size: 0.92rem;
+        line-height: 1.48;
+        margin-bottom: 24px;
+    }
+
+    /* Mockup de Teléfono Hero más ligero en altura */
     .phone-float-wrapper {
-        width: 250px;
-        height: 510px;
+        width: 205px;
+        height: 415px;
+        margin: 15px auto 0;
     }
 
+    .hero-cta-group {
+        width: 100%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-cta-group .ht-btn-primary,
+    .hero-cta-group .ht-btn-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 13px 20px;
+    }
+
+    .proof-mini-card {
+        padding: 18px 20px;
+        margin-top: 15px;
+        text-align: left;
+    }
+
+    .proof-mini-card p {
+        font-size: 0.88rem;
+        line-height: 1.45;
+    }
+
+    /* Banner de Valor Hero - Píldoras con Scroll Horizontal Limpio */
+    .hero-value-banner {
+        padding: 40px 18px 26px;
+        margin-top: 25px;
+        border-radius: 24px;
+    }
+
+    .hero-value-banner h3 {
+        font-size: 1.25rem;
+        margin-bottom: 6px;
+    }
+
+    .hero-value-banner p {
+        font-size: 0.88rem;
+        margin-bottom: 18px;
+    }
+
+    .banner-partners-strip {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        justify-content: flex-start;
+    }
+
+    .banner-partners-strip::-webkit-scrollbar {
+        display: none;
+    }
+
+    .partner-tag {
+        flex-shrink: 0;
+        font-size: 0.78rem;
+        padding: 7px 12px;
+    }
+
+    /* Bento de Comparación */
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .comparison-card {
+        padding: 24px 18px;
+        border-radius: 20px;
+    }
+
+    .comparison-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 16px;
+    }
+
+    .comparison-list li {
+        gap: 10px;
+        margin-bottom: 12px;
+        font-size: 0.88rem;
+        line-height: 1.42;
+    }
+
+    /* Método en 4 Fases */
+    .method-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .method-card {
+        padding: 22px 18px;
+        border-radius: 20px;
+    }
+
+    .method-card h4 {
+        font-size: 1.15rem;
+        margin-bottom: 8px;
+    }
+
+    .method-card p {
+        font-size: 0.88rem;
+        line-height: 1.45;
+        margin-bottom: 16px;
+    }
+
+    /* Demostrador "Siente el Tap" */
+    .demo-experience-grid {
+        gap: 24px;
+    }
+
+    .demo-product-card {
+        padding: 10px 12px;
+        border-radius: 14px;
+    }
+
+    .demo-product-card img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .demo-product-info strong {
+        font-size: 0.88rem;
+    }
+
+    .demo-product-info span {
+        font-size: 0.78rem;
+    }
+
+    .whatsapp-mock-phone {
+        border-radius: 20px;
+        padding: 14px;
+    }
+
+    .whatsapp-mock-header {
+        padding-bottom: 12px;
+        margin-bottom: 14px;
+    }
+
+    .whatsapp-chat-bubble {
+        padding: 14px 14px 8px;
+        border-radius: 14px;
+    }
+
+    /* Feature Pills */
     .feature-pills-row {
         flex-direction: column;
         width: 100%;
+        gap: 10px;
     }
 
     .feature-pill-card {
         width: 100%;
         justify-content: flex-start;
+        padding: 12px 16px;
+        font-size: 0.85rem;
     }
 
+    .functions-showcase-box {
+        padding: 36px 16px 28px;
+        border-radius: 24px;
+        margin-top: 30px;
+    }
+
+    .phone-dark-screen {
+        width: 100%;
+        max-width: 310px;
+        margin: 0 auto;
+        padding: 18px 14px;
+        border-radius: 20px;
+    }
+
+    /* Video Swiper */
     .swiper-slide {
         height: 100%;
-        max-height: 380px;
-        width: 215px;
+        max-height: 360px;
+        width: 200px;
     }
 
-    .metrics-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
+    /* Garantías */
+    .guarantees-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
     }
 
+    .guarantee-card {
+        padding: 18px 16px;
+        border-radius: 16px;
+        gap: 14px;
+    }
+
+    .guarantee-content h4 {
+        font-size: 1.05rem;
+        margin-bottom: 4px;
+    }
+
+    .guarantee-content p {
+        font-size: 0.86rem;
+        line-height: 1.45;
+    }
+
+    /* FAQ */
+    .faq-accordion {
+        gap: 10px;
+    }
+
+    .faq-question {
+        padding: 15px 18px;
+        font-size: 0.9rem;
+    }
+
+    .faq-answer-inner {
+        padding: 0 18px 15px;
+        font-size: 0.86rem;
+        line-height: 1.48;
+    }
+
+    /* Final CTA */
+    .final-cta-card {
+        padding: 38px 20px;
+        border-radius: 24px;
+    }
+
+    .final-cta-card h2 {
+        font-size: 1.65rem;
+        margin-bottom: 12px;
+    }
+
+    .final-cta-card p {
+        font-size: 0.92rem;
+        line-height: 1.45;
+        margin-bottom: 22px;
+    }
+
+    .final-cta-card .ht-btn-primary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Equipo y Reseñas */
     .team-grid {
         grid-template-columns: 1fr;
+        gap: 18px;
     }
 
     .reviews-bento-row {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
 
-    .comparison-grid {
-        grid-template-columns: 1fr;
+    .review-highlight-box,
+    .review-card-quote {
+        padding: 28px 20px;
+        border-radius: 20px;
     }
 
-    .method-cards-grid {
-        grid-template-columns: 1fr;
+    .quote-text {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
     }
 
     .footer-top-grid {
         grid-template-columns: 1fr;
+        gap: 32px;
     }
 
     .footer-bottom-bar {
         flex-direction: column;
-        gap: 16px;
+        gap: 14px;
         text-align: center;
     }
 }
