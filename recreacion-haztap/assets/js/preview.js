@@ -205,15 +205,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 7. VIDEO SHOWCASE CONTINUO EN LOOP RÁPIDO Y DINÁMICO (Cero esperas) ---
+    // --- 7. VIDEO SHOWCASE CONTINUO: SOLO NOTIFICACIONES DE PEDIDOS (Sin invadir Dynamic Island) ---
     const notif1 = document.getElementById('stream-notif-1');
     const notif2 = document.getElementById('stream-notif-2');
     const notif3 = document.getElementById('stream-notif-3');
     const notif4 = document.getElementById('stream-notif-4');
     const counterPanel = document.getElementById('stream-counter-panel');
     const countNumberEl = document.getElementById('stream-count-number');
-    const dynamicIsland = document.getElementById('dynamic-island');
-    const islandText = document.getElementById('island-text');
 
     let countInterval = null;
     let showcaseTimeoutIds = [];
@@ -234,42 +232,29 @@ document.addEventListener('DOMContentLoaded', () => {
         if (notif4) notif4.classList.remove('is-visible');
         if (counterPanel) counterPanel.classList.remove('is-active');
 
-        if (dynamicIsland) {
-            dynamicIsland.classList.remove('is-expanded');
-            if (islandText) islandText.textContent = 'Haztap Commerce';
-        }
-
-        // T+200ms: Notificación 1 llega de inmediato + Dynamic Island activa
+        // T+200ms: Notificación 1 llega de inmediato
         showcaseTimeoutIds.push(setTimeout(() => {
             if (notif1) notif1.classList.add('is-visible');
-            if (dynamicIsland) {
-                dynamicIsland.classList.add('is-expanded');
-                if (islandText) islandText.textContent = 'Pago recibido: +$48.00';
-            }
         }, 200));
 
         // T+900ms: Notificación 2
         showcaseTimeoutIds.push(setTimeout(() => {
             if (notif2) notif2.classList.add('is-visible');
-            if (islandText) islandText.textContent = 'Pago recibido: +$55.00';
         }, 900));
 
         // T+1600ms: Notificación 3
         showcaseTimeoutIds.push(setTimeout(() => {
             if (notif3) notif3.classList.add('is-visible');
-            if (islandText) islandText.textContent = 'Zelle aprobado: +$28.00';
         }, 1600));
 
         // T+2300ms: Notificación 4
         showcaseTimeoutIds.push(setTimeout(() => {
             if (notif4) notif4.classList.add('is-visible');
-            if (islandText) islandText.textContent = 'Pago recibido: +$34.00';
         }, 2300));
 
-        // T+3000ms: Contador de impacto explosivo (170 -> 209)
+        // T+3000ms: Contador de impacto explosivo (175 -> 209)
         showcaseTimeoutIds.push(setTimeout(() => {
             if (counterPanel) counterPanel.classList.add('is-active');
-            if (islandText) islandText.textContent = '● 209 pedidos cobrados hoy';
 
             let count = 175;
             const target = 209;
