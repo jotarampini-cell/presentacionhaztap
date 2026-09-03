@@ -177,6 +177,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 waBubble.classList.add('has-updated');
             }
         });
-    });
+    // --- 6. SIMULACIÓN DE VERIFICACIÓN DE COMPROBANTE EN 1 CLIC ---
+    const approveSlipBtn = document.getElementById('btn-approve-slip-demo');
+    const liveOrderTag = document.querySelector('.admin-live-tag');
+
+    if (approveSlipBtn) {
+        approveSlipBtn.addEventListener('click', () => {
+            const originalHTML = approveSlipBtn.innerHTML;
+            approveSlipBtn.style.background = '#0ACF83';
+            approveSlipBtn.style.color = '#171719';
+            approveSlipBtn.innerHTML = '<i class="ph-bold ph-check"></i> <span>¡Pago Conciliado y Despacho Notificado!</span>';
+            
+            if (liveOrderTag) {
+                liveOrderTag.innerHTML = '<i class="ph-bold ph-check-circle" style="color: #0ACF83;"></i> Pagado & Listo';
+            }
+
+            setTimeout(() => {
+                approveSlipBtn.innerHTML = originalHTML;
+                approveSlipBtn.style.background = '';
+                approveSlipBtn.style.color = '';
+                if (liveOrderTag) {
+                    liveOrderTag.innerHTML = '<i class="ph-bold ph-circle"></i> Orden #1084';
+                }
+            }, 3500);
+        });
+    }
 
 });
