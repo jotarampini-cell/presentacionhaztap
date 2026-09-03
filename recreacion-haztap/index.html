@@ -1,124 +1,1108 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Haztap – Todo a un Tap</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-<link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="assets/css/gsap-menu.css">
-<link rel="stylesheet" href="assets/css/gsap-transitions.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haztap – Todo a un Tap | Tu tienda digital moderna</title>
+
+    <!-- Tipografías oficiales del Brandbook: Ubuntu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Biblioteca de Iconos: Phosphor Icons (Bold, Regular & Fill) -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+
+    <!-- Swiper 11 CSS para el carrusel de videos 3D -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- CSS del sitio original (menú GSAP, transiciones, base) -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/gsap-menu.css">
+    <link rel="stylesheet" href="assets/css/gsap-transitions.css">
+
+    <!-- CSS del nuevo home y checkout showcase -->
+    <link rel="stylesheet" href="assets/css/preview.css">
+    <link rel="stylesheet" href="assets/css/checkout-showcase.css">
 </head>
-<body class="is-home">
+<body class="is-home is-preview">
 
-<!-- HERO -->
-<section class="home-hero">
-    <div class="home-hero-bg"></div>
-    <div class="home-hero-content">
-        <h1 class="hero-title">Haztap en tu <br>futuro digital</h1>
-        <p class="slide-subtitle fade-in-up">Crea en nuestras manos tu página web.<br>¡Ven y Haztap!</p>
-        <div class="cta-row fade-in-up">
-            <a href="portafolios.html" class="cta-btn cta-secondary">Nuestros Clientes</a>
-            <a href="https://store.haztap.com/" target="_blank" class="cta-btn cta-primary">Probar Demo</a>
+    <!-- HERO 1: BRAND STATEMENT AMBIENT GLOW (Tomado de index) -->
+    <section class="home-hero" id="inicio">
+        <div class="home-hero-bg"></div>
+        <div class="home-hero-content">
+            <h1 class="hero-title">Haztap en tu <br>futuro digital</h1>
+            <p class="slide-subtitle">Crea en nuestras manos tu página web.<br>¡Ven y Haztap!</p>
+            <div class="cta-row">
+                <a href="#casos-clientes" class="cta-btn cta-secondary">Nuestros Clientes</a>
+                <a href="https://store.haztap.com/" target="_blank" rel="noopener noreferrer" class="cta-btn cta-primary">Probar Demo</a>
+            </div>
         </div>
-    </div>
-    <div class="home-scroll-hint fade-in-up">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-    </div>
-</section>
+        <div class="home-scroll-hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+    </section>
 
-<!-- VIDEO INSTITUCIONAL -->
-<section class="home-showreel">
-    <div class="home-showreel-header fade-in-up">
-        <span class="home-eyebrow">Conócenos</span>
-        <h2 class="home-section-title">Así hacemos Haztap</h2>
-    </div>
-    <div class="home-showreel-player fade-in-up">
-        <video
-            id="home-showreel-video"
-            poster="assets/img/portfolio/proyecto4.webp"
-            preload="none"
-            playsinline
-            controls
-        >
-            <!-- Reemplazar con el video institucional cuando esté listo -->
-            <source src="assets/videos/video1.mp4" type="video/mp4">
-        </video>
-        <button class="home-showreel-play" id="home-showreel-play-btn" aria-label="Reproducir video">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </button>
-    </div>
-</section>
+    <!-- HERO 2: SOLUCIÓN HAZTAP COMMERCE (Sin badges, redimensionado para 1 pantalla desktop) -->
+    <section class="preview-hero" id="solucion-haztap">
+        <div class="ht-container">
+            <div class="hero-grid">
+                
+                <!-- Columna Izquierda: Mensaje Central & CTAs -->
+                <div class="hero-copy-left">
+                    <h2 class="hero-main-title">
+                        Tu tienda física.<br class="desktop-only-br"> Facturando en automático.
+                    </h2>
 
-<!-- CLIENTES -->
-<section class="home-clients">
-    <div class="home-clients-header fade-in-up">
-        <span class="home-eyebrow">Casos reales</span>
-        <h2 class="home-section-title">Conoce a nuestros clientes</h2>
-        <a href="portafolios.html" class="cta-btn cta-secondary">Ver todos los proyectos</a>
-    </div>
+                    <p class="hero-main-subtitle">
+                        Diseñamos y configuramos tu plataforma de ventas digital conectada a tu inventario real y con cobros directos en bolívares y dólares. Sin fricción técnica para ti.
+                    </p>
 
-    <div class="home-clients-carousel fade-in-up">
-        <div class="swiper swiper-video-slider">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <video src="assets/videos/video1.mp4" preload="none" loop muted playsinline></video>
+                    <div class="hero-cta-group">
+                        <a href="embudo.html" class="ht-btn-primary">
+                            <span>Solicitar propuesta comercial</span>
+                            <span class="btn-icon-circle">
+                                <i class="ph-bold ph-arrow-right"></i>
+                            </span>
+                        </a>
+
+                        <a href="#beneficios" class="ht-btn-secondary">
+                            <span>Ver cómo funciona</span>
+                            <i class="ph-bold ph-arrow-down" style="font-size: 0.9rem;"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="swiper-slide">
-                    <video src="assets/videos/video2.mp4" preload="none" loop muted playsinline></video>
+
+                <!-- Columna Derecha: Mockup de Smartphone con Tienda Móvil -->
+                <div class="hero-mockup-center">
+                    <div class="phone-float-wrapper">
+                        <div class="phone-screen-container">
+                            <img src="assets/img/store-preview.webp" alt="Tienda móvil creada con Haztap">
+                        </div>
+                        <img src="assets/img/portfolio/iphone.png" class="phone-hardware-frame" alt="iPhone Frame">
+                    </div>
                 </div>
-                <div class="swiper-slide">
-                    <video src="assets/videos/video3.mp4" preload="none" loop muted playsinline></video>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CASOS REALES / VIDEOS DE CLIENTES (Debajo de Tu tienda física) -->
+    <section class="home-clients-section" id="casos-clientes">
+        <div class="ht-container">
+            <div class="home-clients-header text-center">
+                <span class="home-eyebrow">Casos reales</span>
+                <h2 class="home-section-title">Conoce a nuestros clientes</h2>
+                <div class="clients-cta-wrapper">
+                    <a href="portafolios.html" class="clients-projects-btn">
+                        <span>Ver todos los proyectos</span>
+                        <i class="ph-bold ph-arrow-up-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="home-clients-carousel">
+                <div class="swiper swiper-video-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <video src="assets/videos/video1.mp4" preload="none" loop muted playsinline></video>
+                        </div>
+                        <div class="swiper-slide">
+                            <video src="assets/videos/video2.mp4" preload="none" loop muted playsinline></video>
+                        </div>
+                        <div class="swiper-slide">
+                            <video src="assets/videos/video3.mp4" preload="none" loop muted playsinline></video>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="global-unmute-btn">
+                    <i class="ph-bold ph-speaker-high"></i>
+                    Activar Sonido
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: EL CONTRASTE (Problema vs. Solución) -->
+    <section class="preview-comparison" id="beneficios">
+        <div class="ht-container">
+            <div class="section-header-center">
+                <div class="ht-pill-eyebrow">
+                    <span class="pulse-dot" style="background: var(--ht-naranja);"></span>
+                    <span>El Cambio de Juego</span>
+                </div>
+                <h2>El caos de vender por chat.<br>O la precisión de Haztap.</h2>
+                <p>No pierdas más ventas respondiendo mensajes tarde ni cuadrando transferencias a mano.</p>
+            </div>
+
+            <div class="comparison-grid">
+                
+                <!-- Columna: La fricción tradicional -->
+                <div class="comparison-card card-pain">
+                    <div class="chat-simulation-wrapper">
+                        <div class="whatsapp-mockup">
+                            <div class="msg-received delay-1">Hola! precio de la franela?</div>
+                            <div class="msg-sent delay-2">Hola! $20. Solo me queda en talla M.</div>
+                            <div class="msg-received delay-3">Ok, aceptas pago móvil?</div>
+                            <div class="msg-sent delay-4">Si, CI: 24..., Telf: 0414... Banco Banesco</div>
+                            <div class="msg-received delay-5">Ay no me pasa el pago, tienes Zelle?</div>
+                            <div class="msg-sent delay-6">Déjame consultar y te aviso...</div>
+                            <div class="lost-sale-badge delay-7">❌ Venta Perdida (30 mins de fricción)</div>
+                        </div>
+                    </div>
+                    <div class="comparison-text-content">
+                        <span class="comparison-tag">Canal informal</span>
+                        <h3>Fricción continua en WhatsApp</h3>
+                        <p class="comparison-desc">Vender por chat es lento, desorganizado y propenso a errores. Pierdes horas respondiendo precios y cuadrando pagos a mano, mientras tu cliente se enfría y abandona la compra.</p>
+                    </div>
+                </div>
+
+                <!-- Columna: Con Haztap -->
+                <div class="comparison-card card-solution">
+                    <div class="chat-simulation-wrapper">
+                        <div class="haztap-mockup">
+                            <div class="ht-notification delay-2">
+                                <div class="ht-notif-header">
+                                    <div class="ht-dot"></div>
+                                    <span>Haztap Store</span>
+                                    <span class="ht-time">Ahora</span>
+                                </div>
+                                <div class="ht-notif-body">
+                                    <strong>🛍️ Nueva Orden Pagada #1024</strong>
+                                    <span>Franela Básica Blanca (Talla M)</span>
+                                </div>
+                                <div class="ht-notif-footer">
+                                    <span class="ht-chip zelle">Zelle Confirmado</span>
+                                    <span class="ht-price">$20.00</span>
+                                </div>
+                            </div>
+                            <div class="won-sale-badge delay-4">✅ Venta Cerrada (2 minutos, automático)</div>
+                        </div>
+                    </div>
+                    <div class="comparison-text-content">
+                        <span class="comparison-tag">Con Haztap</span>
+                        <h3>Tu tienda formal y automática</h3>
+                        <p class="comparison-desc">Catálogo siempre actualizado, selector de envíos y conciliación de pagos automática. El cliente compra sin fricción y tú solo recibes la orden lista para despachar.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: VIDEO ANIMADO CONTINUO DE PEDIDOS EN VIVO (POV MESA DE CAFÉ) -->
+    <section class="preview-live-orders-section" id="pedidos-en-vivo">
+        <div class="orders-stage-glow"></div>
+        <div class="ht-container">
+            
+            <div class="orders-video-header text-center">
+                <h2 class="live-orders-title">
+                    0 mensajes al DM.<br>
+                    <span class="gradient-text-impact">209 pedidos cobrados hoy.</span>
+                </h2>
+                <p class="live-orders-subtitle">
+                    Mientras disfrutas tu café, Haztap procesa las compras, valida los pagos en bolívares o dólares y te entrega las órdenes listas para despacho. En tiempo real.
+                </p>
+            </div>
+
+            <!-- Escenario POV de Mesa de Café (Sin etiquetas feas/genéricas) -->
+            <div class="cafe-stage-wrapper">
+                <div class="cafe-stage-tint"></div>
+
+                <!-- Dispositivo iPhone apoyado en la mesa -->
+                <div class="cinema-phone-frame">
+                    
+                    <div class="phone-screen-viewport">
+                        <!-- Fondo Relajado Lockscreen -->
+                        <img src="assets/img/wallpaper-chill.jpg" class="phone-chill-bg" alt="Fondo de pantalla">
+                        <div class="phone-vignette"></div>
+
+                        <!-- Barra de Estado iOS con Dynamic Island (Pastilla limpia de hardware) -->
+                        <div class="ios-statusbar-clean">
+                            <span class="ios-time">09:41</span>
+                            <div class="ios-island" id="dynamic-island"></div>
+                            <div class="ios-icons">
+                                <i class="ph-fill ph-cell-signal-full"></i>
+                                <i class="ph-bold ph-wifi-high"></i>
+                                <i class="ph-fill ph-battery-charging-vertical"></i>
+                            </div>
+                        </div>
+
+                        <!-- Reloj Central Lockscreen iOS -->
+                        <div class="ios-lock-clock" id="anim-lock-clock">
+                            <span class="ios-date-label">Hoy en vivo</span>
+                            <h1 class="ios-big-time">09:41</h1>
+                        </div>
+
+                        <!-- Pila de Notificaciones en Cascada Ultra Rápida -->
+                        <div class="ios-orders-stream" id="orders-stream">
+                            
+                            <!-- Notificación 1 -->
+                            <div class="stream-notif" id="stream-notif-1">
+                                <div class="stream-notif-top">
+                                    <div class="stream-brand">
+                                        <div class="stream-logo"><img src="assets/img/haztap-logo.png" alt="ht"></div>
+                                        <span>Haztap Pedidos</span>
+                                    </div>
+                                    <span class="stream-time">Ahora</span>
+                                </div>
+                                <div class="stream-notif-body">
+                                    <img src="assets/img/portfolio/proyecto4-mob.webp" class="stream-photo" alt="Vestido Linen">
+                                    <div class="stream-info">
+                                        <strong>María Valentina</strong>
+                                        <p>Vestido Linen Sand · Talla M</p>
+                                        <span class="stream-badge">+$48.00 · PagoMóvil Banesco</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notificación 2 -->
+                            <div class="stream-notif" id="stream-notif-2">
+                                <div class="stream-notif-top">
+                                    <div class="stream-brand">
+                                        <div class="stream-logo"><img src="assets/img/haztap-logo.png" alt="ht"></div>
+                                        <span>Haztap Pedidos</span>
+                                    </div>
+                                    <span class="stream-time">Ahora</span>
+                                </div>
+                                <div class="stream-notif-body">
+                                    <img src="assets/img/portfolio/proyecto7-mob.webp" class="stream-photo" alt="Pantalón Denim">
+                                    <div class="stream-info">
+                                        <strong>Carlos Rodríguez</strong>
+                                        <p>Pantalón Denim Flare · Talla 28</p>
+                                        <span class="stream-badge">+$55.00 · PagoMóvil</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notificación 3 -->
+                            <div class="stream-notif" id="stream-notif-3">
+                                <div class="stream-notif-top">
+                                    <div class="stream-brand">
+                                        <div class="stream-logo"><img src="assets/img/haztap-logo.png" alt="ht"></div>
+                                        <span>Haztap Pedidos</span>
+                                    </div>
+                                    <span class="stream-time">Ahora</span>
+                                </div>
+                                <div class="stream-notif-body">
+                                    <img src="assets/img/portfolio/mockup-autoclub.jpg" class="stream-photo" alt="Top Ribbed">
+                                    <div class="stream-info">
+                                        <strong>Andrea Morán</strong>
+                                        <p>Top Ribbed Terracota · Talla S</p>
+                                        <span class="stream-badge">+$28.00 · Zelle</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notificación 4 -->
+                            <div class="stream-notif" id="stream-notif-4">
+                                <div class="stream-notif-top">
+                                    <div class="stream-brand">
+                                        <div class="stream-logo"><img src="assets/img/haztap-logo.png" alt="ht"></div>
+                                        <span>Haztap Pedidos</span>
+                                    </div>
+                                    <span class="stream-time">Ahora</span>
+                                </div>
+                                <div class="stream-notif-body">
+                                    <img src="assets/img/portfolio/mockup-kpane.jpg" class="stream-photo" alt="Bakery">
+                                    <div class="stream-info">
+                                        <strong>Daniel Silva</strong>
+                                        <p>Caja Degustación Prémium</p>
+                                        <span class="stream-badge">+$34.00 · PagoMóvil</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Resumen en Vivo / Contador Explosivo -->
+                        <div class="stream-counter-panel" id="stream-counter-panel">
+                            <span class="counter-pulse-chip">
+                                <i class="ph-bold ph-lightning"></i>
+                                <span>Ventas Hoy en Automático</span>
+                            </span>
+                            <div class="counter-number-row">
+                                <strong id="stream-count-number">209</strong>
+                                <span>pedidos cobrados y listos</span>
+                            </div>
+                            <div class="counter-sales-row">
+                                <span>Total facturado hoy:</span>
+                                <strong id="stream-sales-total">$5,280.00 USD</strong>
+                            </div>
+                        </div>
+
+                        <!-- Barra Inferior iOS Home Indicator -->
+                        <div class="ios-bottom-bar-wrapper">
+                            <div class="ios-home-pill"></div>
+                        </div>
+
+                    </div>
+
+                    <!-- Marco de iPhone Hardware -->
+                    <img src="assets/img/portfolio/iphone.png" class="cinema-hardware-overlay" alt="iPhone Frame">
+                </div>
+
+                <!-- Botón de Conversión Inmediato -->
+                <div class="orders-stage-cta text-center">
+                    <a href="embudo.html" class="ht-btn-primary">
+                        <span>Automatizar las ventas de mi tienda</span>
+                        <span class="btn-icon-circle">
+                            <i class="ph-bold ph-arrow-right"></i>
+                        </span>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN: SHOWCASE CHECKOUT VENEZOLANO (DISEÑO FIEL Y PURO) -->
+    <section class="checkout-showcase-section" id="checkout-interactivo">
+        <div class="checkout-showcase-glow"></div>
+        <div class="ht-container">
+            
+            <div class="checkout-section-header">
+                <div class="ht-pill-eyebrow" style="margin: 0 auto 16px;">
+                    <span class="pulse-dot" style="background: var(--ht-verde);"></span>
+                    <span>Checkout Oficial Haztap</span>
+                </div>
+                <h2>El checkout más fluido de Venezuela.<br><span class="gradient-text-impact">Cero fricción. Máxima conversión.</span></h2>
+                <p>
+                    Diseñado exactamente para la dinámica de nuestro país. Observa la demostración automática o interactúa tú mismo con cada paso:
+                </p>
+            </div>
+
+            <!-- Barra de Control de Reproducción Automática / Interacción -->
+            <div class="checkout-playback-bar">
+                <div class="playback-status-pill" id="playback-status">
+                    <span class="playback-pulse-dot"></span>
+                    <span id="playback-status-text">Reproduciendo demostración automática</span>
+                </div>
+                <button type="button" class="playback-toggle-btn" id="playback-toggle-btn">
+                    <i class="ph-bold ph-hand-tap"></i>
+                    <span id="playback-btn-label">Interactuar manualmente</span>
+                </button>
+            </div>
+
+            <!-- Ventana de Aplicación del Checkout (Diseño Exacto del Repositorio) -->
+            <div class="checkout-app-window" id="checkout-app-window" style="padding: 0; background: transparent; box-shadow: none;"><iframe src="checkout-app/index.html" id="checkout-iframe" frameborder="0" style="width: 100%; height: 800px; border-radius: 20px; box-shadow: 0 25px 60px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.05); overflow: hidden; "></iframe></div>
+    </section>
+
+    <!-- SECCIÓN: CHECKOUT ADAPTADO A VENEZUELA -->
+    <section class="preview-checkout-section" id="checkout">
+        <div class="ht-container">
+            <div class="section-header-center">
+                <div class="ht-pill-eyebrow">
+                    <span class="pulse-dot" style="background: var(--ht-verde);"></span>
+                    <span>Checkout Adaptado a Venezuela</span>
+                </div>
+                <h2>Cobrar en Venezuela nunca fue tan simple.</h2>
+                <p>Diseñado para la realidad de nuestro mercado. Sin intermediarios foráneos que retengan tus fondos:</p>
+            </div>
+
+            <div class="checkout-blocks-grid bento-minimal">
+                
+                <!-- Box 1: Verificación Manual -->
+                <div class="checkout-card minimal-card">
+                    <div class="minimal-card-visual bg-soft-green">
+                        <div class="anim-receipt-wrapper">
+                            <div class="anim-receipt">
+                                <div class="receipt-header-row">
+                                    <div class="receipt-bank-icon"><i class="ph-fill ph-bank"></i></div>
+                                    <div class="receipt-bank-name">PagoMóvil Banesco</div>
+                                </div>
+                                <div class="receipt-divider"></div>
+                                <div class="receipt-row"><span class="r-label">Cliente:</span><span class="r-val">María Gómez</span></div>
+                                <div class="receipt-row"><span class="r-label">Ref:</span><span class="r-val">#849201</span></div>
+                                <div class="receipt-row"><span class="r-label">Fecha:</span><span class="r-val">Hoy, 14:30</span></div>
+                                <div class="receipt-amount-large">Bs. 3,840.00</div>
+                                <div class="anim-btn-approve"><i class="ph-bold ph-check"></i> Aprobar 1-Tap</div>
+                            </div>
+                            <div class="anim-cursor"><i class="ph-fill ph-cursor"></i></div>
+                            <div class="anim-success-overlay"><i class="ph-bold ph-check-circle"></i></div>
+                        </div>
+                    </div>
+                    <div class="minimal-card-text">
+                        <h3>Verificación manual, pero inteligente</h3>
+                        <p>Tus clientes suben el comprobante y tú apruebas con un solo botón. Se acabaron los chats llenos de fotos borrosas y las conciliaciones confusas.</p>
+                    </div>
+                </div>
+
+                <!-- Box 2: Pasarelas / Zelle -->
+                <div class="checkout-card minimal-card">
+                    <div class="minimal-card-visual bg-soft-blue">
+                        <div class="horizontal-pipeline-wrapper">
+                            
+                            <div class="pipeline-node node-client">
+                                <div class="node-icon"><i class="ph-fill ph-credit-card"></i></div>
+                                <span class="node-text">Cliente Paga</span>
+                            </div>
+
+                            <div class="pipeline-track">
+                                <div class="moving-payment payment-1"><i class="ph-bold ph-currency-dollar"></i></div>
+                            </div>
+
+                            <div class="pipeline-node node-store">
+                                <div class="node-icon glowing-store"><i class="ph-fill ph-storefront"></i></div>
+                                <span class="node-text">Tienda en línea</span>
+                            </div>
+
+                            <div class="pipeline-track">
+                                <div class="moving-payment payment-2"><i class="ph-bold ph-currency-dollar"></i></div>
+                            </div>
+
+                            <div class="pipeline-node node-bank">
+                                <div class="node-icon"><i class="ph-fill ph-bank"></i></div>
+                                <span class="node-text">Tu Banco</span>
+                            </div>
+
+                            <div class="floating-success-badge">
+                                <i class="ph-fill ph-check-circle"></i> Aprobado 100% Automático
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="minimal-card-text">
+                        <h3>Cobros 100% automatizados</h3>
+                        <p>Haztap conecta el pago de tu cliente directo con tu banco (bancos nacionales que tengan botón de pago). El dinero cae en tus cuentas y el pedido se aprueba sin que muevas un dedo.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: PILARES DEL SERVICIO LLAVE EN MANO (Bento Grid) -->
+    <section class="preview-pillars-section" id="pilares">
+        <div class="ht-container">
+            <div class="section-header-center">
+                <div class="ht-pill-eyebrow">
+                    <span class="pulse-dot" style="background: var(--ht-lila);"></span>
+                    <span>Infraestructura Llave en Mano</span>
+                </div>
+                <h2>Todo listo para vender.<br>Sin que toques una sola línea de código.</h2>
+                <p>Una arquitectura tecnológica diseñada para que tú solo tengas que ocuparte de despachar y hacer crecer tu marca:</p>
+            </div>
+
+            <div class="bento-grid-apple">
+                
+                <!-- Item 1 (Wide) -->
+                <div class="bento-item wide">
+                    <div class="bento-content">
+                        <i class="ph-bold ph-arrows-clockwise icon-feature color-blue"></i>
+                        <h3>Inventario Espejo</h3>
+                        <p>Conectamos tu sistema administrativo o punto de venta físico con tu tienda online. Cero ventas dobles, cero horas cuadrando stock a mano.</p>
+                    </div>
+                    <div class="bento-graphic">
+                        <div class="sync-loop">
+                            <i class="ph-fill ph-storefront"></i>
+                            <div class="sync-arrows"><i class="ph-bold ph-arrows-left-right"></i></div>
+                            <i class="ph-fill ph-globe"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 (Square) -->
+                <div class="bento-item">
+                    <div class="bento-content">
+                        <i class="ph-bold ph-device-mobile icon-feature color-green"></i>
+                        <h3>Tu negocio en el bolsillo</h3>
+                        <p>Control total de pedidos y cobros desde tu smartphone. Recibe alertas inmediatas con cada compra.</p>
+                    </div>
+                    <div class="bento-graphic-bottom">
+                        <div class="fake-notification">
+                            <i class="ph-fill ph-bell-ringing"></i> ¡Nueva orden recibida!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bento-item small">
+                    <i class="ph-bold ph-sparkle icon-feature color-purple"></i>
+                    <h3>Diseño Premium</h3>
+                    <p>Proyecta la autoridad de marcas internacionales respetando tu identidad visual y tipografía.</p>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="bento-item small">
+                    <i class="ph-bold ph-chalkboard-teacher icon-feature color-orange"></i>
+                    <h3>Capacitación 1 a 1</h3>
+                    <p>Te enseñamos a ti y a tu personal a gestionar pedidos con total seguridad y confianza.</p>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="bento-item small">
+                    <i class="ph-bold ph-shield-check icon-feature color-dark"></i>
+                    <h3>Soporte Continuo</h3>
+                    <p>Blindamos cada transacción y respaldamos tu plataforma para que tú solo te enfoques en despachar.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: VELOZ Y SEGURA (INFRAESTRUCTURA ESCALABLE) -->
+    <section class="preview-scale-section" id="escalabilidad">
+        <div class="ht-container">
+            <div class="scale-split-layout">
+                
+                <!-- Columna Izquierda -->
+                <div class="scale-visual-col">
+                    <h2>Veloz, segura y hecha para escalar.</h2>
+                    <p>La tienda en línea que crece contigo. Toda la potencia de servidores de clase mundial, traducida en ventas rápidas y sin interrupciones.</p>
+                    
+                    <div class="monumental-metrics">
+                        <div class="metric-item">
+                            <span class="metric-big">99.9%</span>
+                            <span class="metric-label">Uptime garantizado</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-big">50K+</span>
+                            <span class="metric-label">Peticiones simultáneas</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-big"><i class="ph-bold ph-lightning"></i> 15ms</span>
+                            <span class="metric-label">Latencia promedio</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Tarjetas Deslizantes -->
+                <div class="scale-cards-col">
+                    <div class="scroll-fade-top"></div>
+                    <div class="scale-cards-scroller">
+                        <div class="scale-card">
+                            <div class="scale-icon"><i class="ph-bold ph-rocket-launch"></i></div>
+                            <h3>Velocidad Relámpago</h3>
+                            <p>Con nuestra red de distribución global (CDN) y caché avanzado, tu tienda carga en milisegundos para que ningún cliente abandone por esperas.</p>
+                        </div>
+                        <div class="scale-card">
+                            <div class="scale-icon"><i class="ph-bold ph-trend-up"></i></div>
+                            <h3>Lista para la Masividad</h3>
+                            <p>¿Una campaña viral? ¿Temporada alta? Nuestra arquitectura soporta desde miles hasta decenas de miles de visitas simultáneas sin pestañear.</p>
+                        </div>
+                        <div class="scale-card">
+                            <div class="scale-icon"><i class="ph-bold ph-shield-check"></i></div>
+                            <h3>Seguridad de Banco</h3>
+                            <p>Certificados SSL de fábrica, eliminación proactiva de malware y monitoreo de actividad cada 5 minutos. 24 horas, 7 días a la semana.</p>
+                        </div>
+                        <div class="scale-card">
+                            <div class="scale-icon"><i class="ph-bold ph-cloud-check"></i></div>
+                            <h3>Respaldo Automático</h3>
+                            <p>Hacemos copias de seguridad encriptadas diarias (retenidas 14 días). Tu inventario y tus ventas están blindados ante cualquier imprevisto.</p>
+                        </div>
+                        <div class="scale-card">
+                            <div class="scale-icon"><i class="ph-bold ph-globe"></i></div>
+                            <h3>Autoridad de Marca</h3>
+                            <p>Incluimos tu propio dominio profesional y cuentas de correo corporativo para proyectar la máxima confianza en cada interacción.</p>
+                        </div>
+                        <div class="scale-card">
+                            <div class="scale-icon"><i class="ph-bold ph-heartbeat"></i></div>
+                            <h3>Auto-Recuperación</h3>
+                            <p>Si algo llegara a fallar, nuestro sistema de Auto-Recovery de 4 niveles lo detecta y lo soluciona en segundos para que sigas vendiendo.</p>
+                        </div>
+
+                        <!-- DUPLICADO PARA EFECTO INFINITO -->
+                        <div class="scale-card" aria-hidden="true">
+                            <div class="scale-icon"><i class="ph-bold ph-rocket-launch"></i></div>
+                            <h3>Velocidad Relámpago</h3>
+                            <p>Con nuestra red de distribución global (CDN) y caché avanzado, tu tienda carga en milisegundos para que ningún cliente abandone por esperas.</p>
+                        </div>
+                        <div class="scale-card" aria-hidden="true">
+                            <div class="scale-icon"><i class="ph-bold ph-trend-up"></i></div>
+                            <h3>Lista para la Masividad</h3>
+                            <p>¿Una campaña viral? ¿Temporada alta? Nuestra arquitectura soporta desde miles hasta decenas de miles de visitas simultáneas sin pestañear.</p>
+                        </div>
+                        <div class="scale-card" aria-hidden="true">
+                            <div class="scale-icon"><i class="ph-bold ph-shield-check"></i></div>
+                            <h3>Seguridad de Banco</h3>
+                            <p>Certificados SSL de fábrica, eliminación proactiva de malware y monitoreo de actividad cada 5 minutos. 24 horas, 7 días a la semana.</p>
+                        </div>
+                        <div class="scale-card" aria-hidden="true">
+                            <div class="scale-icon"><i class="ph-bold ph-cloud-check"></i></div>
+                            <h3>Respaldo Automático</h3>
+                            <p>Hacemos copias de seguridad encriptadas diarias (retenidas 14 días). Tu inventario y tus ventas están blindados ante cualquier imprevisto.</p>
+                        </div>
+                        <div class="scale-card" aria-hidden="true">
+                            <div class="scale-icon"><i class="ph-bold ph-globe"></i></div>
+                            <h3>Autoridad de Marca</h3>
+                            <p>Incluimos tu propio dominio profesional y cuentas de correo corporativo para proyectar la máxima confianza en cada interacción.</p>
+                        </div>
+                        <div class="scale-card" aria-hidden="true">
+                            <div class="scale-icon"><i class="ph-bold ph-heartbeat"></i></div>
+                            <h3>Auto-Recuperación</h3>
+                            <p>Si algo llegara a fallar, nuestro sistema de Auto-Recovery de 4 niveles lo detecta y lo soluciona en segundos para que sigas vendiendo.</p>
+                        </div>
+                    </div>
+                    <div class="scroll-fade-bottom"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: EL PROCESO DE TRABAJO (5 PASOS ESTRUCTURADOS) -->
+    <section class="preview-process-section" id="proceso">
+        <div class="ht-container">
+            <div class="section-header-center">
+                <div class="ht-pill-eyebrow">
+                    <span class="pulse-dot" style="background: var(--ht-azul);"></span>
+                    <span>Cronograma y Certidumbre</span>
+                </div>
+                <h2>De la idea a tu tienda en 10 días hábiles.</h2>
+                <div class="process-timeline-badge">
+                    <i class="ph-bold ph-timer"></i>
+                    <span>Plazo oficial: <strong>10 a 14 días hábiles</strong> de inicio a entrega formal</span>
+                </div>
+            </div>
+
+            <div class="process-steps-list">
+                
+                <!-- Paso 1 -->
+                <div class="process-step-item">
+                    <div class="step-badge-col">
+                        <span class="step-circle">01</span>
+                        <div class="step-connector"></div>
+                    </div>
+                    <div class="step-content-card">
+                        <div class="step-card-header">
+                            <span class="step-phase-tag">Fase Inicial</span>
+                            <h4>Onboarding estratégico y definición</h4>
+                        </div>
+                        <p>
+                            Analizamos las líneas de producto de tu negocio, definimos tu paleta de marca y establecemos el plan de acción comercial exacto.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="process-step-item">
+                    <div class="step-badge-col">
+                        <span class="step-circle">02</span>
+                        <div class="step-connector"></div>
+                    </div>
+                    <div class="step-content-card">
+                        <div class="step-card-header">
+                            <span class="step-phase-tag">Desarrollo Web</span>
+                            <h4>Construcción y versión preliminar interactiva</h4>
+                        </div>
+                        <p>
+                            Construimos una versión digital 100% funcional para que puedas navegarla, probar el checkout y sugerir ajustes antes de publicar.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="process-step-item">
+                    <div class="step-badge-col">
+                        <span class="step-circle">03</span>
+                        <div class="step-connector"></div>
+                    </div>
+                    <div class="step-content-card">
+                        <div class="step-card-header">
+                            <span class="step-phase-tag">Certificación Técnica</span>
+                            <h4>Control de calidad y certificación de pagos</h4>
+                        </div>
+                        <p>
+                            Verificamos velocidad de carga móvil, seguridad en las transacciones y la correcta sincronización de stock para asegurar cero fallas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="process-step-item">
+                    <div class="step-badge-col">
+                        <span class="step-circle">04</span>
+                        <div class="step-connector"></div>
+                    </div>
+                    <div class="step-content-card">
+                        <div class="step-card-header">
+                            <span class="step-phase-tag">Capacitación</span>
+                            <h4>Entrega de accesos y capacitación uno a uno</h4>
+                        </div>
+                        <p>
+                            Te entregamos las credenciales y entrenamos a tu personal con sesiones guiadas para gestionar pedidos y catálogo sin fricción.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Paso 5 -->
+                <div class="process-step-item">
+                    <div class="step-badge-col">
+                        <span class="step-circle is-highlight">05</span>
+                    </div>
+                    <div class="step-content-card is-highlight">
+                        <div class="step-card-header">
+                            <span class="step-phase-tag tag-highlight">Lanzamiento Protegido</span>
+                            <h4>Acompañamiento intensivo de lanzamiento (primeras 2 semanas)</h4>
+                        </div>
+                        <p>
+                            Estamos a tu lado durante los primeros 14 días con soporte prioritario para resolver dudas operativas y asegurar que tus cobros fluyan perfecto.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TEATRO DE CASOS REALES & AUTORIDAD (Fusión Cinematográfica en Dark Mode con Métricas) -->
+    <section class="preview-cinema" id="casos-reales">
+        <div class="cinema-bg-glow"></div>
+        <div class="ht-container">
+            
+            <div class="cinema-header">
+                <span class="cinema-eyebrow">Historias de Éxito & Autoridad</span>
+                <h2 class="cinema-title">Marcas reales. Crecimiento medible.</h2>
+                <p class="cinema-subtitle">
+                    Descubre cómo tiendas boutique y comercios líderes en Venezuela transformaron sus operaciones y multiplicaron sus ventas con Haztap.
+                </p>
+            </div>
+
+            <!-- Tira de Métricas y Resultados Clave -->
+            <div class="cinema-metrics-strip" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto 50px; text-align: center;">
+                <div class="cinema-metric-card" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 20px; border-radius: 16px;">
+                    <span style="font-family: var(--font-heading); font-size: 2.4rem; font-weight: 700; color: var(--ht-verde); display: block; line-height: 1.1;">+150</span>
+                    <span style="font-size: 0.9rem; color: rgba(255,255,255,0.65);">Marcas y comercios activos</span>
+                </div>
+                <div class="cinema-metric-card" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 20px; border-radius: 16px;">
+                    <span style="font-family: var(--font-heading); font-size: 2.4rem; font-weight: 700; color: var(--ht-celeste); display: block; line-height: 1.1;">3x</span>
+                    <span style="font-size: 0.9rem; color: rgba(255,255,255,0.65);">Mayor velocidad de compra</span>
+                </div>
+                <div class="cinema-metric-card" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 20px; border-radius: 16px;">
+                    <span style="font-family: var(--font-heading); font-size: 2.4rem; font-weight: 700; color: var(--ht-lila); display: block; line-height: 1.1;">10 a 14</span>
+                    <span style="font-size: 0.9rem; color: rgba(255,255,255,0.65);">Días hábiles de entrega</span>
+                </div>
+                <div class="cinema-metric-card" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 20px; border-radius: 16px;">
+                    <span style="font-family: var(--font-heading); font-size: 2.4rem; font-weight: 700; color: #FFFFFF; display: block; line-height: 1.1;">100%</span>
+                    <span style="font-size: 0.9rem; color: rgba(255,255,255,0.65);">Adaptado a Venezuela</span>
+                </div>
+            </div>
+
+            <!-- Video Institucional Showreel 16:9 -->
+            <div class="cinema-showreel-wrapper">
+                <div class="cinema-player-card">
+                    <video
+                        id="home-showreel-video"
+                        poster="assets/img/portfolio/proyecto4.webp"
+                        preload="none"
+                        playsinline
+                        controls
+                    >
+                        <source src="assets/videos/video1.mp4" type="video/mp4">
+                    </video>
+                    <button class="showreel-play-btn" id="home-showreel-play-btn" aria-label="Reproducir video">
+                        <i class="ph-fill ph-play"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Testimonio Destacado de Cliente Real -->
+            <div class="cinema-quote-container" style="max-width: 820px; margin: 60px auto 0; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 36px 40px; text-align: left;">
+                <div class="stars-rating-svgs" style="display: flex; gap: 4px; margin-bottom: 16px;">
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                </div>
+                <p style="font-size: 1.18rem; line-height: 1.6; color: #FFFFFF; font-style: italic; margin-bottom: 24px;">
+                    "Haztap eliminó por completo el caos de enviar fotos individuales por WhatsApp. Antes perdíamos horas contestando mensajes; ahora el cliente selecciona su talla en la tienda web, confirma su pedido y nos llega todo cerrado y listo para entregar."
+                </p>
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <img src="assets/img/portfolio/proyecto4-mob.webp" alt="María Valentina" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--ht-verde);">
+                    <div>
+                        <strong style="color: #fff; font-size: 1.05rem; display: block;">María Valentina</strong>
+                        <span style="color: rgba(255,255,255,0.6); font-size: 0.88rem;">Fundadora de Bienchic · Tienda de Moda</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GARANTÍAS Y RESPALDO EN VENEZUELA -->
+    <section class="preview-guarantees" id="garantias">
+        <div class="ht-container">
+            <div class="section-header-center">
+                <div class="ht-pill-eyebrow">
+                    <span class="pulse-dot" style="background: var(--ht-verde);"></span>
+                    <span>Respaldo Real</span>
+                </div>
+                <h2>Garantías y acompañamiento en Venezuela</h2>
+                <p>Un equipo a tu lado respaldando tu negocio todos los días:</p>
+            </div>
+
+            <div class="guarantees-grid">
+                
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <i class="ph-bold ph-chats-circle"></i>
+                    </div>
+                    <div class="guarantee-content">
+                        <h4>Asesoría 1 a 1 por WhatsApp</h4>
+                        <p>Atención directa en tu misma zona horaria para resolver consultas y asistirte con cercanía.</p>
+                    </div>
+                </div>
+
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <i class="ph-bold ph-clock-countdown"></i>
+                    </div>
+                    <div class="guarantee-content">
+                        <h4>Entrega en 10 a 14 Días Hábiles</h4>
+                        <p>Tu tienda en vivo, con catálogo inicial cargado y lista para facturar en plazo garantizado.</p>
+                    </div>
+                </div>
+
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <i class="ph-bold ph-shield-check"></i>
+                    </div>
+                    <div class="guarantee-content">
+                        <h4>Garantía de Estabilidad 24/7</h4>
+                        <p>Infraestructura optimizada para conexiones móviles en Venezuela. Tu tienda siempre activa.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: PREGUNTAS FRECUENTES (CERO DUDAS) -->
+    <section class="preview-faq" id="preguntas">
+        <div class="ht-container">
+            <div class="section-header-center">
+                <div class="ht-pill-eyebrow">
+                    <span class="pulse-dot"></span>
+                    <span>Certeza Total</span>
+                </div>
+                <h2>Preguntas frecuentes</h2>
+                <p>Resolvemos de inmediato las dudas operativas antes de tu llamada estratégica:</p>
+            </div>
+
+            <div class="faq-accordion">
+                
+                <!-- Pregunta 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cuánto tiempo toma tener mi tienda lista para vender?</span>
+                        <span class="faq-toggle-icon">
+                            <i class="ph-bold ph-plus"></i>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            El desarrollo integral se entrega en un plazo de 10 a 14 días hábiles, con catálogo base cargado, pasarelas conectadas y capacitación lista.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Necesito conocimientos técnicos o de programación?</span>
+                        <span class="faq-toggle-icon">
+                            <i class="ph-bold ph-plus"></i>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Ninguno. Haztap entrega un servicio 100% llave en mano. Nosotros nos encargamos de todo el desarrollo y la configuración técnica, y te enseñamos a gestionar tus pedidos con facilidad.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cómo gestiono los cobros en bolívares y en dólares?</span>
+                        <span class="faq-toggle-icon">
+                            <i class="ph-bold ph-plus"></i>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Tu tienda acepta ambas monedas. Puedes gestionar pagos manuales (verificando comprobantes de PagoMóvil o divisas con 1 tap) o conectar botones bancarios directos para automatización total.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Ustedes conectan mi botón de pago bancario?</span>
+                        <span class="faq-toggle-icon">
+                            <i class="ph-bold ph-plus"></i>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Sí. Una vez aprobada tu afiliación ante tu entidad bancaria (Banesco, Mercantil, BDV, etc.), el equipo de Haztap realiza toda la integración técnica a tu tienda web.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cómo se conecta la tienda con el inventario de mi tienda física?</span>
+                        <span class="faq-toggle-icon">
+                            <i class="ph-bold ph-plus"></i>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Evaluamos tu software administrativo actual para crear la sincronización en tiempo real. Cuando vendes en tu mostrador físico, el stock se descuenta en tu web automáticamente.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 6 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Qué respaldo recibo después del lanzamiento?</span>
+                        <span class="faq-toggle-icon">
+                            <i class="ph-bold ph-plus"></i>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Cuentas con dos semanas completas de acompañamiento intensivo para supervisar tus primeras ventas, responder consultas y asegurar que la operación ruede a la perfección.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: LLAMADO A LA ACCIÓN FINAL (Estilo Apple Monumental) -->
+    <section class="preview-final-cta" id="cta-final">
+        <div class="ht-container">
+            <div class="final-cta-card">
+                <div class="final-cta-pattern"></div>
+                
+                <span class="cta-mini-pill">
+                    <i class="ph-bold ph-calendar-check"></i>
+                    <span>Sesión Estratégica de 20 Minutos</span>
+                </span>
+
+                <h2>Es momento de que tu marca juegue en primera división.</h2>
+                <p>Convierte tu negocio en una tienda en línea sólida, moderna y adaptada a la dinámica comercial real de tus clientes.</p>
+                
+                <div class="final-cta-actions">
+                    <a href="embudo.html" class="ht-btn-primary">
+                        <span>Agendar llamada estratégica 1 a 1</span>
+                        <span class="btn-icon-circle">
+                            <i class="ph-bold ph-arrow-right"></i>
+                        </span>
+                    </a>
+                    
+                    <span class="final-cta-support-text">
+                        <i class="ph-bold ph-clock"></i>
+                        Evaluamos tu modelo de negocio y te presentamos una ruta clara de implementación sin compromiso.
+                    </span>
                 </div>
             </div>
         </div>
-        <button id="global-unmute-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-            Activar Sonido
-        </button>
-    </div>
-</section>
+    </section>
 
-<!-- CIERRE / CONTACTO -->
-<section class="home-closing">
-    <div class="home-closing-bg">
-        <div class="blob-wrapper"><div class="mesh-blob blob-1"></div></div>
-        <div class="blob-wrapper"><div class="mesh-blob blob-2"></div></div>
-        <div class="blob-wrapper"><div class="mesh-blob blob-3"></div></div>
-        <div class="blob-wrapper"><div class="mesh-blob blob-4"></div></div>
-        <div class="blob-wrapper"><div class="mesh-blob blob-5"></div></div>
-    </div>
-    <div class="slide-content-center home-closing-content">
-        <h2 class="hero-title fade-in-up">¿Listo para el <br>siguiente nivel?</h2>
-        <p class="slide-subtitle fade-in-up">Conectemos y hagamos tu visión realidad.</p>
+    <!-- FOOTER OSCURO OFICIAL (#171719 Brandbook) -->
+    <footer class="preview-footer">
+        <div class="footer-brand-pattern"></div>
+        <div class="ht-container">
+            
+            <div class="footer-top-grid">
+                
+                <div class="footer-brand-col">
+                    <div class="preview-footer-logo" style="display: flex; align-items: center; gap: 9px; margin-bottom: 20px;">
+                        <img src="assets/img/haztap-logo.png" alt="ht" style="height: 32px; width: auto; display: block;">
+                        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 1.75rem; letter-spacing: -0.04em; color: #FFFFFF; line-height: 1;">haztap</span>
+                    </div>
+                    <p>
+                        La plataforma moderna que conecta marcas con sus clientes. Todo a un tap, sin barreras técnicas ni límites de crecimiento.
+                    </p>
+                    <div class="footer-social-links">
+                        <a href="https://wa.link/mo02tp" target="_blank" aria-label="WhatsApp">
+                            <i class="ph-bold ph-whatsapp-logo"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="ph-bold ph-instagram-logo"></i>
+                        </a>
+                    </div>
+                </div>
 
-        <div class="proof-strip fade-in-up">
-            <div class="proof-avatars">
-                <img src="assets/img/portfolio/proyecto4-mob.webp" alt="Bienchic">
-                <img src="assets/img/portfolio/mockup-autoclub.jpg" alt="Autoclub">
-                <img src="assets/img/portfolio/proyecto7-mob.webp" alt="Vaneshop">
-                <img src="assets/img/portfolio/mockup-kpane.jpg" alt="KPANE INC.">
+                <div class="footer-col">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#beneficios">El Contraste</a></li>
+                        <li><a href="#pedidos-en-vivo">En Vivo</a></li>
+                        <li><a href="#checkout">Checkout y Pagos</a></li>
+                        <li><a href="#pilares">Sincronización</a></li>
+                        <li><a href="#proceso">Proceso</a></li>
+                        <li><a href="#casos-reales">Casos de Éxito</a></li>
+                        <li><a href="#preguntas">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Soluciones</h4>
+                    <ul>
+                        <li><a href="portafolios-ecommerce.html">Tiendas de Ropa & Moda</a></li>
+                        <li><a href="portafolios-corporativo.html">Empresas & Servicios</a></li>
+                        <li><a href="portafolios-cursos.html">Cursos & Capacitación</a></li>
+                        <li><a href="https://store.haztap.com/" target="_blank">Probar Demo Tienda</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Prueba en tu móvil</h4>
+                    <div class="footer-qr-card">
+                        <div class="footer-qr-box">
+                            <svg viewBox="0 0 24 24" fill="#171719">
+                                <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm10 0h2v2h-2v-2zm4 0h4v2h-4v-2zm-4 4h2v2h-2v-2zm4 0h4v4h-4v-4zm-4 2h2v2h-2v-2z"/>
+                            </svg>
+                        </div>
+                        <div class="footer-qr-text">
+                            <span>Escanear Demo</span>
+                            <strong>Haztap Store</strong>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <span class="proof-text">+150 negocios ya confiaron en Haztap</span>
-        </div>
 
-        <div class="contact-ctas fade-in-up">
-            <a href="portafolios.html" class="cta-btn cta-primary">Nuestros Clientes</a>
-            <a href="https://wa.link/mo02tp" target="_blank" class="cta-btn cta-secondary">Escríbenos por WhatsApp</a>
-        </div>
-    </div>
-</section>
+            <div class="footer-bottom-bar">
+                <span>&copy; 2026 Haztap. Brandboard Haztap 2025. Todos los derechos reservados.</span>
+                <div class="footer-bottom-links">
+                    <a href="privacidad.html">Política de Privacidad</a>
+                    <a href="preview.html">Versión Preview</a>
+                </div>
+            </div>
 
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="assets/js/include-header.js"></script>
-<script src="assets/js/gsap-menu.js"></script>
-<script src="assets/js/gsap-transitions.js"></script>
-<script src="script.js"></script>
+        </div>
+    </footer>
+
+
+    <!-- Scripts del sitio original (menú GSAP) -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/include-header.js"></script>
+    <script src="assets/js/gsap-menu.js"></script>
+    <script src="assets/js/gsap-transitions.js"></script>
+
+    <!-- Swiper 11 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Scripts interactivos de preview y checkout showcase -->
+    <script src="assets/js/preview.js"></script>
+    <script src="assets/js/checkout-showcase.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
