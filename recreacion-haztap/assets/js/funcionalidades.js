@@ -61,7 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 yPercent: 0,
                 opacity: 1,
                 rotationX: 0,
-                duration: 1.2,
+                duration: 0.8,
+                force3D: true,
                 ease: 'power4.out',
                 stagger: {
                     amount: 0.4,
@@ -93,7 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
             {
                 y: 0,
                 opacity: 1,
-                duration: 2,
+                duration: 1.2,
+                force3D: true,
                 ease: 'power4.out',
                 scrollTrigger: {
                     trigger: showcase,
@@ -109,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 rotationY: 12,
                 rotationX: -3,
                 z: 0,
+                force3D: true,
                 ease: 'none',
                 scrollTrigger: {
                     trigger: featuresCol,

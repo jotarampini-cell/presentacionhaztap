@@ -60,6 +60,9 @@
 .hts-title-char {
     display: inline-block;
     will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    transform: translateZ(0);
 }
 
 /* ==========================================================================
@@ -211,8 +214,8 @@
     position: relative;
     width: 280px;
     transform-style: preserve-3d;
-    /* Eliminamos will-change para evitar que el navegador comprima la imagen como una textura de baja resolución */
-    /* Ángulo reducido: menos rotación = GPU preserva más detalle en la imagen de la pantalla */
+    will-change: transform;
+    backface-visibility: hidden;
     transform: rotateY(-10deg) rotateX(4deg);
 }
 
