@@ -265,6 +265,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 {
                     scale: 1, opacity: 1,
                     ease: "none",
+                    force3D: true,
+                    rotationZ: 0.01, /* Truco anti-jank para Chrome en escalas lentas */
                     scrollTrigger: {
                         trigger: galleryTrack,
                         start: "top 90%",

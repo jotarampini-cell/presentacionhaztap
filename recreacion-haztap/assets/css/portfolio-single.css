@@ -139,17 +139,16 @@
     inset: -20px;
     border-radius: 30px;
     z-index: -1;
-    background: linear-gradient(120deg, var(--ht-morado), var(--ht-celeste), var(--ht-naranja), var(--ht-verde), var(--ht-morado));
-    background-size: 300% 300%;
-    filter: blur(40px);
-    opacity: 0.3;
-    animation: htp-gemini-flow 8s infinite linear;
+    background: linear-gradient(120deg, var(--ht-morado), var(--ht-celeste), var(--ht-naranja), var(--ht-verde));
+    filter: blur(35px);
+    opacity: 0.25;
+    animation: htp-gemini-pulse 6s infinite alternate ease-in-out;
     pointer-events: none;
+    transform: translateZ(0); /* Forzar compositing para no redibujar el blur */
 }
-@keyframes htp-gemini-flow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+@keyframes htp-gemini-pulse {
+    0% { opacity: 0.15; }
+    100% { opacity: 0.35; }
 }
 .hts-cine-hero-image {
     width: 100%;
@@ -240,6 +239,9 @@
     display: inline-block;
     transform-origin: 50% 100%;
     will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    transform: translateZ(0);
 }
 .hts-brief-body p + p {
     margin-top: 1.1em;
@@ -485,6 +487,9 @@
     position: relative;
     border-radius: 10px;
     overflow: hidden;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 .hts-slide-inner {
     width: 100%;
