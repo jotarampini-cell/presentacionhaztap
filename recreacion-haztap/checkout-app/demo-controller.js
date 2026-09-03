@@ -32,9 +32,8 @@ window.addEventListener('message', (event) => {
   }
 });
 
-// Broadcast click events up to parent window to break automation
 document.addEventListener('click', (e) => {
-  if (e.isTrusted) { // Only real user clicks
+  if (e.isTrusted) {
     window.parent.postMessage({ type: 'USER_INTERACTION' }, '*');
   }
 }, { capture: true });
