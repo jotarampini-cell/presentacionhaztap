@@ -5041,3 +5041,91 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
         margin-bottom: 30px;
     }
 }
+
+/* =========================================================================
+   NEW SECTION: ESCALABILIDAD (DARK THEME)
+   ========================================================================= */
+.preview-scale-section {
+    padding: 120px 0;
+    background: #0D0D0F; /* Apple-style dark gray/black */
+    color: #fff;
+}
+
+.preview-scale-section .section-header-center h2 {
+    color: #fff;
+}
+
+.preview-scale-section .section-header-center p {
+    color: rgba(255,255,255,0.7);
+}
+
+.preview-scale-section .ht-pill-eyebrow {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border-color: rgba(255,255,255,0.1);
+}
+
+.scale-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+}
+
+.scale-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 28px;
+    padding: 40px 30px;
+    transition: all 0.3s ease;
+}
+
+.scale-card:hover {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.15);
+    transform: translateY(-5px);
+}
+
+.scale-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(187, 107, 217, 0.15);
+    color: var(--ht-lila);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
+
+.scale-card:nth-child(2) .scale-icon { background: rgba(45, 156, 219, 0.15); color: var(--ht-azul); }
+.scale-card:nth-child(3) .scale-icon { background: rgba(10, 207, 131, 0.15); color: var(--ht-verde); }
+.scale-card:nth-child(4) .scale-icon { background: rgba(242, 153, 74, 0.15); color: var(--ht-naranja); }
+.scale-card:nth-child(5) .scale-icon { background: rgba(255, 255, 255, 0.1); color: #fff; }
+.scale-card:nth-child(6) .scale-icon { background: rgba(255, 71, 87, 0.15); color: #FF4757; }
+
+.scale-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 14px;
+}
+
+.scale-card p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .scale-features-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .scale-features-grid {
+        grid-template-columns: 1fr;
+    }
+}
