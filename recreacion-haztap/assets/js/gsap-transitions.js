@@ -104,7 +104,7 @@
 
         if (!link) return;
 
-        const href = link.getAttribute('href');
+        const href = link.getAttribute('href'); if (href.includes('embudo.html')) return;
 
         // Ignorar:
         // - links sin href
