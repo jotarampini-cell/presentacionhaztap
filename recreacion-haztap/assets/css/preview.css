@@ -4427,7 +4427,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 
 /* --- DYNAMIC COMPARISON UI --- */
 .chat-simulation-wrapper {
-    height: 320px;
+    height: 380px;
     background: #f9f9fa;
     border-radius: 20px;
     margin-bottom: 30px;
@@ -4451,12 +4451,12 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     max-width: 320px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     font-size: 0.85rem;
 }
 
 .msg-received, .msg-sent {
-    padding: 10px 14px;
+    padding: 8px 12px;
     border-radius: 16px;
     max-width: 85%;
     line-height: 1.4;
