@@ -214,8 +214,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const countNumberEl = document.getElementById('stream-count-number');
     const outroPanel = document.getElementById('stream-outro-panel');
     const timelineSteps = document.querySelectorAll('.timeline-step');
+    const dynamicIsland = document.getElementById('dynamic-island');
+    const islandText = document.getElementById('island-text');
 
-    const sceneDurations = [2500, 3000, 4000, 3500, 2800]; // Duración en ms de las 5 escenas
+    const sceneDurations = [2500, 3200, 4200, 3600, 2800]; // Duración en ms de las 5 escenas
     let currentStep = 1;
     let stepStartTime = null;
     let animFrameId = null;
@@ -244,6 +246,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (step === 1) {
             // Escena 1: Calma
+            if (dynamicIsland) {
+                dynamicIsland.classList.remove('is-expanded');
+                if (islandText) islandText.textContent = 'Haztap';
+            }
             if (notif1) notif1.classList.remove('is-visible');
             if (notif2) notif2.classList.remove('is-visible');
             if (notif3) notif3.classList.remove('is-visible');
@@ -251,7 +257,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (counterPanel) counterPanel.classList.remove('is-active');
             if (outroPanel) outroPanel.classList.remove('is-active');
         } else if (step === 2) {
-            // Escena 2: Primer pedido
+            // Escena 2: Primer pedido (Expande Dynamic Island)
+            if (dynamicIsland) {
+                dynamicIsland.classList.add('is-expanded');
+                if (islandText) islandText.textContent = 'Nuevo pedido +$48 USD';
+            }
             if (counterPanel) counterPanel.classList.remove('is-active');
             if (outroPanel) outroPanel.classList.remove('is-active');
             if (notif2) notif2.classList.remove('is-visible');
@@ -260,6 +270,10 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => { if (notif1) notif1.classList.add('is-visible'); }, 150);
         } else if (step === 3) {
             // Escena 3: Cascada de ventas
+            if (dynamicIsland) {
+                dynamicIsland.classList.add('is-expanded');
+                if (islandText) islandText.textContent = '4 pedidos en curso';
+            }
             if (counterPanel) counterPanel.classList.remove('is-active');
             if (outroPanel) outroPanel.classList.remove('is-active');
             if (notif1) notif1.classList.add('is-visible');
@@ -268,6 +282,10 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => { if (notif4) notif4.classList.add('is-visible'); }, 1500);
         } else if (step === 4) {
             // Escena 4: Contador +209 en vivo
+            if (dynamicIsland) {
+                dynamicIsland.classList.add('is-expanded');
+                if (islandText) islandText.textContent = '● En vivo: 209 pedidos';
+            }
             if (outroPanel) outroPanel.classList.remove('is-active');
             if (notif1) notif1.classList.add('is-visible');
             if (notif2) notif2.classList.add('is-visible');
@@ -288,6 +306,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 55);
         } else if (step === 5) {
             // Escena 5: En automático (Cierre de marca)
+            if (dynamicIsland) {
+                dynamicIsland.classList.remove('is-expanded');
+                if (islandText) islandText.textContent = 'Haztap · 24/7';
+            }
             if (counterPanel) counterPanel.classList.remove('is-active');
             if (outroPanel) outroPanel.classList.add('is-active');
         }

@@ -659,7 +659,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN: VIDEO ANIMADO CONTINUO DE PEDIDOS EN VIVO -->
+    <!-- SECCIÓN: VIDEO ANIMADO CONTINUO DE PEDIDOS EN VIVO (POV MESA DE CAFÉ) -->
     <section class="preview-live-orders-section" id="pedidos-en-vivo">
         <div class="orders-stage-glow"></div>
         <div class="ht-container">
@@ -667,14 +667,25 @@
             <div class="orders-video-header text-center">
                 <div class="ht-pill-eyebrow" style="margin: 0 auto 16px;">
                     <span class="pulse-dot" style="background: var(--ht-verde);"></span>
-                    <span>Modo Automático en Vivo</span>
+                    <span>Modo Piloto Automático</span>
                 </div>
-                <h2>Vender en automático se ve exactamente así.</h2>
-                <p>Cero chats interminables. Mira cómo caen los pedidos organizados con fotos y pagos listos en tu teléfono personal:</p>
+                <h2>0 mensajes respondidos. 209 pedidos cobrados hoy.</h2>
+                <p>Así se siente operar con una tienda que nunca duerme. Tú disfrutas de tu café; Haztap atiende, valida los pagos y organiza cada despacho directo en tu teléfono personal:</p>
             </div>
 
-            <!-- Escenario Central del Smartphone (Video Animado Continuo) -->
-            <div class="orders-stage-center">
+            <!-- Escenario POV de la Vida Real: El Teléfono sobre la Mesa del Café -->
+            <div class="cafe-stage-wrapper">
+                <div class="cafe-stage-tint"></div>
+
+                <!-- Píldoras de Contexto Emocional Flotantes -->
+                <div class="lifestyle-badge badge-left">
+                    <i class="ph-bold ph-coffee"></i>
+                    <span>Tú: Desayunando en paz</span>
+                </div>
+                <div class="lifestyle-badge badge-right">
+                    <span class="pulse-dot" style="background: var(--ht-verde);"></span>
+                    <span>Tu tienda: Cobrando en vivo</span>
+                </div>
                 
                 <!-- Barra de Progreso de Escenas Estilo Video -->
                 <div class="video-timeline-bar" id="video-timeline-bar">
@@ -700,7 +711,7 @@
                     </div>
                 </div>
 
-                <!-- Dispositivo iPhone en Escenario con Iluminación Cinematográfica -->
+                <!-- Dispositivo iPhone apoyado en la mesa -->
                 <div class="cinema-phone-frame">
                     
                     <div class="phone-screen-viewport">
@@ -708,10 +719,13 @@
                         <img src="assets/img/wallpaper-chill.jpg" class="phone-chill-bg" alt="Fondo de pantalla relajado">
                         <div class="phone-vignette"></div>
 
-                        <!-- Barra de Estado Superior iOS -->
+                        <!-- Barra de Estado Superior iOS con Dynamic Island Inteligente -->
                         <div class="ios-statusbar-clean">
                             <span class="ios-time">09:41</span>
-                            <div class="ios-island"></div>
+                            <div class="ios-island" id="dynamic-island">
+                                <span class="island-icon-dot"><i class="ph-fill ph-check-circle"></i></span>
+                                <span class="island-text" id="island-text">Haztap</span>
+                            </div>
                             <div class="ios-icons">
                                 <i class="ph-fill ph-cell-signal-full"></i>
                                 <i class="ph-bold ph-wifi-high"></i>

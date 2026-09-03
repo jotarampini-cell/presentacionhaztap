@@ -3057,11 +3057,11 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 }
 
 /* ==========================================================================
-   SECCIÓN: VIDEO ANIMADO CONTINUO DE PEDIDOS EN VIVO
+   SECCIÓN: VIDEO ANIMADO CONTINUO DE PEDIDOS EN VIVO (POV MESA DE CAFÉ)
    ========================================================================== */
 .preview-live-orders-section {
     position: relative;
-    padding: 100px 0 90px;
+    padding: 105px 0 95px;
     background: #0B0C0E;
     color: #fff;
     overflow: hidden;
@@ -3069,13 +3069,13 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 
 .orders-stage-glow {
     position: absolute;
-    top: 45%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 720px;
-    height: 520px;
-    background: radial-gradient(circle, rgba(162, 89, 255, 0.22) 0%, rgba(10, 207, 131, 0.12) 40%, transparent 70%);
-    filter: blur(90px);
+    width: 800px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(162, 89, 255, 0.2) 0%, rgba(10, 207, 131, 0.1) 45%, transparent 70%);
+    filter: blur(100px);
     pointer-events: none;
     z-index: 0;
 }
@@ -3083,51 +3083,104 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 .orders-video-header {
     position: relative;
     z-index: 2;
-    max-width: 700px;
-    margin: 0 auto 30px;
+    max-width: 780px;
+    margin: 0 auto 35px;
 }
 
 .orders-video-header h2 {
     color: #fff;
-    font-size: 2.35rem;
-    line-height: 1.2;
-    letter-spacing: -0.03em;
+    font-size: 2.5rem;
+    line-height: 1.16;
+    letter-spacing: -0.035em;
     margin-bottom: 12px;
 }
 
 .orders-video-header p {
-    color: rgba(255, 255, 255, 0.72);
-    font-size: 1.05rem;
-    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.08rem;
+    line-height: 1.55;
     margin: 0;
 }
 
-.orders-stage-center {
+/* Escenario POV Mesa de Café */
+.cafe-stage-wrapper {
     position: relative;
     z-index: 2;
-    max-width: 620px;
+    max-width: 960px;
     margin: 0 auto;
+    border-radius: 36px;
+    overflow: hidden;
+    background: #17181c url('../img/cafe-table-pov.jpg') center center / cover no-repeat;
+    box-shadow: 0 35px 85px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.12);
+    padding: 50px 30px 45px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Barra de Progreso de Escenas Estilo Video */
+.cafe-stage-tint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(11, 12, 14, 0.35) 0%, rgba(11, 12, 14, 0.12) 40%, rgba(11, 12, 14, 0.65) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Píldoras de Contexto Emocional */
+.lifestyle-badge {
+    position: absolute;
+    top: 24px;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(13, 14, 16, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.badge-left {
+    left: 28px;
+}
+
+.badge-left i {
+    color: #F59E0B;
+    font-size: 1rem;
+}
+
+.badge-right {
+    right: 28px;
+}
+
+/* Barra de Progreso de Escenas */
 .video-timeline-bar {
+    position: relative;
+    z-index: 3;
     display: flex;
     gap: 8px;
     width: 100%;
-    max-width: 500px;
-    margin-bottom: 34px;
+    max-width: 480px;
+    margin-bottom: 28px;
 }
 
 .timeline-step {
     flex: 1;
     position: relative;
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.22);
     height: 4px;
     border-radius: 999px;
     overflow: visible;
+    cursor: pointer;
 }
 
 .timeline-step span {
@@ -3137,9 +3190,10 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.72rem;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.65);
     font-weight: 600;
     white-space: nowrap;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
     transition: color 0.3s ease;
 }
 
@@ -3151,24 +3205,32 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     width: 0%;
     background: var(--ht-verde);
     border-radius: 999px;
+    box-shadow: 0 0 8px rgba(10, 207, 131, 0.6);
     transition: width 0.1s linear;
 }
 
 .timeline-step.is-active span {
     color: #fff;
+    font-weight: 700;
 }
 
 .timeline-step.is-passed .step-progress-fill {
     width: 100% !important;
 }
 
-/* Dispositivo Smartphone */
+/* Dispositivo Smartphone sobre la Mesa */
 .cinema-phone-frame {
     position: relative;
+    z-index: 3;
     width: 320px;
     height: 650px;
-    margin: 0 auto 30px;
-    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.75));
+    margin: 0 auto 26px;
+    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.75)) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.45));
+    transition: transform 0.3s ease;
+}
+
+.cinema-phone-frame:hover {
+    transform: translateY(-3px) scale(1.01);
 }
 
 .phone-screen-viewport {
@@ -3215,7 +3277,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     pointer-events: none;
 }
 
-/* Statusbar iOS */
+/* Statusbar iOS con Dynamic Island Elástica */
 .ios-statusbar-clean {
     position: relative;
     z-index: 2;
@@ -3229,11 +3291,46 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 }
 
 .ios-island {
-    width: 85px;
-    height: 22px;
+    position: relative;
+    height: 24px;
+    min-width: 85px;
+    padding: 0 10px;
     background: #000;
     border-radius: 999px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.ios-island.is-expanded {
+    min-width: 175px;
+    height: 28px;
+    background: #000;
+    box-shadow: 0 0 18px rgba(10, 207, 131, 0.5), 0 0 0 1px rgba(10, 207, 131, 0.4);
+}
+
+.island-icon-dot {
+    display: none;
+    color: var(--ht-verde);
+    font-size: 0.82rem;
+}
+
+.ios-island.is-expanded .island-icon-dot {
+    display: inline-block;
+    animation: pulseGlow 1.5s infinite;
+}
+
+.island-text {
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.95);
+    white-space: nowrap;
 }
 
 .ios-icons {
@@ -3712,6 +3809,25 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
         padding: 48px 0;
     }
 
+    .cafe-stage-wrapper {
+        padding: 55px 14px 35px;
+        border-radius: 24px;
+    }
+
+    .lifestyle-badge {
+        font-size: 0.72rem;
+        padding: 5px 10px;
+        top: 14px;
+    }
+
+    .badge-left {
+        left: 14px;
+    }
+
+    .badge-right {
+        right: 14px;
+    }
+
     .cinema-phone-frame {
         width: 285px;
         height: 580px;
@@ -3741,7 +3857,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 
     .video-timeline-bar {
         gap: 4px;
-        margin-bottom: 26px;
+        margin-top: 15px;
+        margin-bottom: 24px;
     }
 
     .timeline-step span {
