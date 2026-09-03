@@ -276,6 +276,20 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     100% { background-position: 4% 3%, -4% -3%, -3% 4%, 3% -4%, 0% 0%; }
 }
 
+
+.home-hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../img/haztap-brand-pattern.svg');
+    background-size: 140px;
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 1;
+    pointer-events: none;
+}
+
 .home-hero-bg::after {
     content: '';
     position: absolute;
