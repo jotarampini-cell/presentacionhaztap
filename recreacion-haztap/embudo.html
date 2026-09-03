@@ -115,169 +115,83 @@
                 <!-- Columna Derecha: Calendario y Horarios Interactivos -->
                 <div class="booking-interactive-main">
                     
-                    <!-- PASO 1: Selección de Fecha y Hora -->
-                    <div class="booking-step-container" id="booking-step-1">
+                    <!-- PASO 1: Formulario de Calificación -->
+                    <div class="booking-step-container booking-form-step is-active" id="booking-step-form" style="display: block;">
                         <div class="calendar-header-bar">
-                            <h4>Selecciona un Día y Horario</h4>
-                            <span style="color: var(--funnel-verde); font-size: 0.88rem; font-weight: 600;">
-                                <i class="ph-bold ph-globe"></i> Zona horaria: Caracas (GMT-4)
-                            </span>
+                            <h4>Cuéntanos sobre tu negocio</h4>
+                            <span style="color: var(--funnel-text-muted); font-size: 0.88rem;">Paso 1 de 1</span>
                         </div>
 
-                        <div class="calendar-grid-view">
-                            
-                            <!-- Matriz de Días -->
-                            <div class="calendar-days-matrix" id="calendar-days-grid">
-                                <span class="cal-day-label">Lun</span>
-                                <span class="cal-day-label">Mar</span>
-                                <span class="cal-day-label">Mié</span>
-                                <span class="cal-day-label">Jue</span>
-                                <span class="cal-day-label">Vie</span>
-                                <span class="cal-day-label">Sáb</span>
-                                <span class="cal-day-label">Dom</span>
-
-                                <span class="cal-day-cell is-disabled">1</span>
-                                <span class="cal-day-cell is-disabled">2</span>
-                                <span class="cal-day-cell is-disabled">3</span>
-                                <span class="cal-day-cell is-disabled">4</span>
-                                <span class="cal-day-cell is-disabled">5</span>
-                                <span class="cal-day-cell is-disabled">6</span>
-                                <span class="cal-day-cell is-disabled">7</span>
-
-                                <span class="cal-day-cell is-disabled">8</span>
-                                <span class="cal-day-cell is-disabled">9</span>
-                                <span class="cal-day-cell is-disabled">10</span>
-                                <span class="cal-day-cell is-disabled">11</span>
-                                <span class="cal-day-cell is-disabled">12</span>
-                                <span class="cal-day-cell is-disabled">13</span>
-                                <span class="cal-day-cell is-disabled">14</span>
-
-                                <button type="button" class="cal-day-cell is-active" data-day="15">15</button>
-                                <button type="button" class="cal-day-cell" data-day="16">16</button>
-                                <button type="button" class="cal-day-cell" data-day="17">17</button>
-                                <button type="button" class="cal-day-cell" data-day="18">18</button>
-                                <button type="button" class="cal-day-cell" data-day="19">19</button>
-                                <span class="cal-day-cell is-disabled">20</span>
-                                <span class="cal-day-cell is-disabled">21</span>
-
-                                <button type="button" class="cal-day-cell" data-day="22">22</button>
-                                <button type="button" class="cal-day-cell" data-day="23">23</button>
-                                <button type="button" class="cal-day-cell" data-day="24">24</button>
-                                <button type="button" class="cal-day-cell" data-day="25">25</button>
-                                <button type="button" class="cal-day-cell" data-day="26">26</button>
-                                <span class="cal-day-cell is-disabled">27</span>
-                                <span class="cal-day-cell is-disabled">28</span>
-                            </div>
-
-                            <!-- Lista de Horarios -->
-                            <div class="time-slots-column">
-                                <h5 id="selected-date-display">Día 15 de este mes · Horarios Disponibles</h5>
-                                
-                                <div class="time-slots-list" id="time-slots-list">
-                                    <button type="button" class="time-slot-btn is-selected" data-time="10:00 AM">
-                                        <span>10:00 AM</span>
-                                        <i class="ph-bold ph-check"></i>
-                                    </button>
-                                    <button type="button" class="time-slot-btn" data-time="11:30 AM">
-                                        <span>11:30 AM</span>
-                                        <i class="ph-bold ph-arrow-right"></i>
-                                    </button>
-                                    <button type="button" class="time-slot-btn" data-time="02:00 PM">
-                                        <span>02:00 PM</span>
-                                        <i class="ph-bold ph-arrow-right"></i>
-                                    </button>
-                                    <button type="button" class="time-slot-btn" data-time="03:30 PM">
-                                        <span>03:30 PM</span>
-                                        <i class="ph-bold ph-arrow-right"></i>
-                                    </button>
-                                    <button type="button" class="time-slot-btn" data-time="05:00 PM">
-                                        <span>05:00 PM</span>
-                                        <i class="ph-bold ph-arrow-right"></i>
-                                    </button>
-                                </div>
-
-                                <div class="proceed-btn-wrap">
-                                    <button type="button" class="booking-confirm-btn" id="proceed-to-form-btn">
-                                        <span>Continuar con este horario</span>
-                                        <i class="ph-bold ph-arrow-right"></i>
-                                    </button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- PASO 2: Formulario de Datos del Negocio -->
-                    <div class="booking-step-container booking-form-step" id="booking-step-2">
-                        <div class="calendar-header-bar">
-                            <h4>Ingresa los datos de tu comercio</h4>
-                            <span style="color: var(--funnel-text-muted); font-size: 0.88rem;">Paso 2 de 2</span>
-                        </div>
-
-                        <form id="calendly-booking-form">
+                        <form id="lead-qualification-form">
                             <div class="form-field-group">
                                 <label for="field-client-name">Tu nombre y apellido *</label>
                                 <input type="text" id="field-client-name" class="form-input-control" placeholder="Ej: Valentina Morales" required>
                             </div>
 
                             <div class="form-field-group">
-                                <label for="field-business-name">Nombre de tu marca o tienda física *</label>
-                                <input type="text" id="field-business-name" class="form-input-control" placeholder="Ej: Bienchic Boutique (@bienchic.ve)" required>
-                            </div>
-
-                            <div class="form-field-group">
-                                <label for="field-whatsapp">Número de WhatsApp (con código de área) *</label>
+                                <label for="field-whatsapp">Número de teléfono (con código de área) *</label>
                                 <input type="tel" id="field-whatsapp" class="form-input-control" placeholder="Ej: +58 412 1234567" required>
                             </div>
+                            
+                            <div class="form-field-group">
+                                <label for="field-email">Correo electrónico *</label>
+                                <input type="email" id="field-email" class="form-input-control" placeholder="Ej: valentina@correo.com" required>
+                            </div>
 
                             <div class="form-field-group">
-                                <label for="field-rubro">Rubro o tipo de productos *</label>
-                                <select id="field-rubro" class="form-input-control" required style="cursor: pointer;">
-                                    <option value="" disabled selected>Selecciona tu rubro</option>
-                                    <option value="moda">Ropa, Calzado y Moda</option>
-                                    <option value="gastronomia">Alimentos, Repostería y Gastronomía</option>
-                                    <option value="repuestos">Repuestos, Ferretería y Autos</option>
-                                    <option value="belleza">Cosmética, Cuidado Personal y Belleza</option>
-                                    <option value="retail">Tienda General / Otro rubro</option>
+                                <label for="field-industria">¿De qué industria es tu negocio? *</label>
+                                <select id="field-industria" class="form-input-control" required style="cursor: pointer;">
+                                    <option value="" disabled selected>Selecciona una opción</option>
+                                    <option value="ropa">Ropa, Calzado y Moda</option>
+                                    <option value="cosmeticos">Cosméticos y Cuidado Personal</option>
+                                    <option value="gastronomia">Alimentos y Gastronomía</option>
+                                    <option value="tecnologia">Tecnología y Electrónica</option>
+                                    <option value="servicios">Servicios y Consultoría</option>
+                                    <option value="otros">Otros</option>
                                 </select>
                             </div>
 
-                            <div class="form-actions-row">
-                                <button type="button" class="form-back-btn" id="back-to-calendar-btn">
-                                    <i class="ph-bold ph-arrow-left"></i> Cambiar fecha
-                                </button>
+                            <div class="form-field-group">
+                                <label for="field-objetivo">¿Qué estás buscando / qué necesitas? *</label>
+                                <select id="field-objetivo" class="form-input-control" required style="cursor: pointer;">
+                                    <option value="" disabled selected>Selecciona una opción</option>
+                                    <option value="pagina_web">Tener una página web / tienda digital</option>
+                                    <option value="aumentar_ventas">Aumentar mis ventas</option>
+                                    <option value="asesoria">Asesoría estratégica</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                            </div>
+
+                            <div class="form-field-group">
+                                <label for="field-comentarios">Cuéntanos un poco cómo podemos ayudarte *</label>
+                                <textarea id="field-comentarios" class="form-input-control" rows="3" placeholder="Explícanos brevemente tu situación actual..." required style="resize: vertical;"></textarea>
+                            </div>
+
+                            <div class="form-field-group" style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                                <input type="checkbox" id="field-contact-whatsapp" checked style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--funnel-verde);">
+                                <label for="field-contact-whatsapp" style="margin: 0; cursor: pointer; color: var(--funnel-text-muted); font-size: 0.95rem;">
+                                    Sí, acepto que me contacten por WhatsApp
+                                </label>
+                            </div>
+
+                            <div class="form-actions-row" style="margin-top: 24px;">
                                 <button type="submit" class="booking-confirm-btn" style="flex: 1;">
-                                    <span>Confirmar Mi Sesión Estratégica</span>
-                                    <i class="ph-bold ph-check-circle"></i>
+                                    <span>Solicitar mi llamada</span>
+                                    <i class="ph-bold ph-paper-plane-right"></i>
                                 </button>
                             </div>
                         </form>
                     </div>
 
-                    <!-- PASO 3: Confirmación Exitosa -->
-                    <div class="booking-step-container booking-success-step" id="booking-step-success">
+                    <!-- PASO 2: Confirmación Exitosa -->
+                    <div class="booking-step-container booking-success-step" id="booking-step-success" style="display: none;">
                         <div class="success-icon-wrap">
                             <i class="ph-fill ph-check"></i>
                         </div>
-                        <h3 style="font-size: 1.8rem; margin: 0 0 10px 0; color: #fff;">¡Sesión Agendada con Éxito!</h3>
+                        <h3 style="font-size: 1.8rem; margin: 0 0 10px 0; color: #fff;">¡Gracias por la información!</h3>
                         <p style="color: var(--funnel-text-muted); font-size: 1rem; margin: 0 auto 20px; max-width: 480px;">
-                            Hemos reservado tu espacio en el calendario. Te contactaremos por WhatsApp para enviarte el enlace oficial de Google Meet y los detalles previos.
+                            Hemos recibido tus datos correctamente. Nuestro equipo revisará tu solicitud y te vamos a contactar lo antes posible.
                         </p>
-
-                        <div class="success-summary-box">
-                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-                                <i class="ph-bold ph-calendar" style="color: var(--funnel-verde); font-size: 1.2rem;"></i>
-                                <strong id="summary-datetime" style="color: #fff;">Día 15 · 10:00 AM (Hora de Caracas)</strong>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-                                <i class="ph-bold ph-storefront" style="color: var(--funnel-celeste); font-size: 1.2rem;"></i>
-                                <span id="summary-client" style="color: rgba(255,255,255,0.9);">Cliente · Mi Tienda</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <i class="ph-bold ph-video-camera" style="color: var(--funnel-lila); font-size: 1.2rem;"></i>
-                                <span style="color: rgba(255,255,255,0.7); font-size: 0.88rem;">Enlace: meet.google.com/hzt-str-call</span>
-                            </div>
-                        </div>
 
                         <a href="https://wa.link/mo02tp" target="_blank" rel="noopener noreferrer" class="booking-confirm-btn" style="max-width: 380px; margin: 20px auto 0;">
                             <i class="ph-bold ph-whatsapp-logo" style="font-size: 1.2rem;"></i>
@@ -323,13 +237,13 @@
                 <div class="swiper funnel-video-swiper" style="padding: 20px 0; overflow: visible;">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" style="width: 280px; height: 500px; border-radius: 24px; overflow: hidden; background: #111;">
-                            <video src="assets/videos/video1.mp4" preload="none" loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+                            <video src="assets/videos/video1.mp4" preload="metadata" loop muted autoplay playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
                         </div>
                         <div class="swiper-slide" style="width: 280px; height: 500px; border-radius: 24px; overflow: hidden; background: #111;">
-                            <video src="assets/videos/video2.mp4" preload="none" loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+                            <video src="assets/videos/video2.mp4" preload="metadata" loop muted autoplay playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
                         </div>
                         <div class="swiper-slide" style="width: 280px; height: 500px; border-radius: 24px; overflow: hidden; background: #111;">
-                            <video src="assets/videos/video3.mp4" preload="none" loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+                            <video src="assets/videos/video3.mp4" preload="metadata" loop muted autoplay playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
                         </div>
                     </div>
                 </div>
@@ -372,7 +286,7 @@
             </div>
 
             <div style="text-align: center; margin-top: 50px;">
-                <a href="#booking-step-1" class="booking-confirm-btn" style="display: inline-flex; max-width: 320px;">
+                <a href="#booking-step-1" id="scroll-to-booking-btn" class="booking-confirm-btn" style="display: inline-flex; max-width: 320px;">
                     <span>Reservar mi llamada ahora</span>
                     <i class="ph-bold ph-calendar-check"></i>
                 </a>
