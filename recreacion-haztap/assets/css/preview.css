@@ -3057,6 +3057,592 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 }
 
 /* ==========================================================================
+   SECCIÓN: CÓMO LLEGAN LOS PEDIDOS EN VIVO (Simulación Lockscreen Relajado)
+   ========================================================================== */
+.preview-live-orders-section {
+    position: relative;
+    padding: 110px 0 100px;
+    background: #0D0E10;
+    color: #fff;
+    overflow: hidden;
+}
+
+.orders-ambient-glow {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(162, 89, 255, 0.15) 0%, rgba(10, 207, 131, 0.08) 50%, transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.preview-live-orders-section .section-header-center {
+    position: relative;
+    z-index: 2;
+}
+
+.preview-live-orders-section .section-header-center h2 {
+    color: #fff;
+}
+
+.preview-live-orders-section .section-header-center p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.live-orders-showcase-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+/* Teléfono y Pantalla de Bloqueo */
+.lockscreen-phone-wrapper {
+    position: relative;
+    width: 320px;
+    height: 650px;
+    margin: 0 auto;
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.65));
+}
+
+.lockscreen-screen {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    right: 13px;
+    bottom: 13px;
+    border-radius: 42px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lockscreen-wallpaper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: transform 0.8s ease;
+}
+
+.lockscreen-overlay-tint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.05) 35%, rgba(0,0,0,0.4) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.lockscreen-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Statusbar */
+.lockscreen-statusbar {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px 0;
+    color: #fff;
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+.dynamic-island-pill {
+    width: 85px;
+    height: 22px;
+    background: #000;
+    border-radius: 999px;
+    margin: 0 auto;
+}
+
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+}
+
+/* Reloj y Fecha */
+.lockscreen-clock-widget {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    margin-top: 14px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.lockscreen-date {
+    display: block;
+    font-size: 0.86rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-bottom: 2px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.lockscreen-time {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", var(--font-heading), sans-serif;
+    font-size: 4.1rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin: 0;
+    color: #fff;
+}
+
+/* Notificaciones en Cascada */
+.lockscreen-notifications-stack {
+    position: relative;
+    z-index: 2;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 380px;
+    overflow: hidden;
+}
+
+.ios-order-notif {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 16px;
+    padding: 10px 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    color: #171719;
+    opacity: 0;
+    transform: translateY(25px) scale(0.92);
+    transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ios-order-notif.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.notif-app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.notif-app-brand {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: rgba(23, 23, 25, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.notif-logo-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    background: #171719;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.notif-logo-dot img {
+    width: 10px;
+    height: auto;
+}
+
+.notif-time-ago {
+    font-size: 0.68rem;
+    color: rgba(23, 23, 25, 0.45);
+}
+
+.notif-body-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notif-photo-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #eee;
+}
+
+.notif-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.notif-text-col {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.notif-text-col strong {
+    font-size: 0.82rem;
+    color: #171719;
+    font-weight: 700;
+}
+
+.notif-text-col p {
+    font-size: 0.74rem;
+    color: rgba(23, 23, 25, 0.65);
+    margin: 1px 0 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notif-text-col p span {
+    color: #171719;
+    font-weight: 600;
+}
+
+.notif-amount-badge {
+    align-self: flex-start;
+    display: inline-block;
+    padding: 2px 7px;
+    background: rgba(10, 207, 131, 0.15);
+    color: #047a4d;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 6px;
+}
+
+/* Escena 4: Contador Overlay */
+.lockscreen-counter-overlay {
+    position: absolute;
+    bottom: 60px;
+    left: 12px;
+    right: 12px;
+    z-index: 5;
+    background: rgba(23, 23, 25, 0.94);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 16px 14px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+}
+
+.lockscreen-counter-overlay.is-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.counter-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 8px;
+}
+
+.counter-big-number {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.counter-value {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--ht-verde);
+    line-height: 1;
+}
+
+.counter-label {
+    font-size: 0.74rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.counter-amount-sum {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.75);
+    padding-top: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.counter-amount-sum strong {
+    color: #fff;
+    font-size: 0.88rem;
+}
+
+/* Botones de bloqueo inferior */
+.lockscreen-bottom-actions {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px 14px;
+}
+
+.quick-action-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.lockscreen-home-bar {
+    width: 90px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 999px;
+}
+
+/* Columna Derecha: Controles y Beneficios */
+.live-orders-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.scene-playback-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.scene-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.scene-live-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ht-verde);
+}
+
+.scene-current-step {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.scene-progress-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.scene-tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.scene-tab-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+.scene-tab-btn.is-active {
+    background: #fff;
+    border-color: #fff;
+    color: #171719;
+}
+
+.tab-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    opacity: 0.7;
+}
+
+.scene-description-box {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.scene-description-box h4 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.scene-description-box p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.scene-controls-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn-scene-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: var(--ht-verde);
+    border: none;
+    border-radius: 999px;
+    color: #171719;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-scene-action:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}
+
+.sim-speed-note {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sim-speed-note i {
+    color: var(--ht-verde);
+}
+
+/* 3 Tarjetas de Beneficios */
+.orders-benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.benefit-item-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.benefit-item-card:hover {
+    transform: translateX(4px);
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+.benefit-icon-wrap {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.icon-green { background: rgba(10, 207, 131, 0.15); color: var(--ht-verde); }
+.icon-blue { background: rgba(45, 156, 219, 0.15); color: var(--ht-azul); }
+.icon-purple { background: rgba(162, 89, 255, 0.15); color: var(--ht-lila); }
+
+.benefit-text strong {
+    display: block;
+    font-size: 0.92rem;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.benefit-text p {
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+}
+
+.orders-cta-block {
+    margin-top: 6px;
+}
+
+/* ==========================================================================
    SECCIÓN 9: FINAL CTA ENHANCEMENTS
    ========================================================================== */
 .cta-mini-pill {
@@ -3167,6 +3753,11 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     .bento-row-bottom {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .live-orders-showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -3179,6 +3770,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     .preview-checkout-section,
     .preview-pillars-section,
     .preview-process-section,
+    .preview-live-orders-section,
     .preview-method,
     .preview-statement,
     .preview-interactive-demo,
@@ -3190,6 +3782,41 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     .preview-guarantees,
     .preview-faq {
         padding: 48px 0;
+    }
+
+    .lockscreen-phone-wrapper {
+        width: 285px;
+        height: 580px;
+    }
+
+    .lockscreen-screen {
+        border-radius: 36px;
+    }
+
+    .lockscreen-time {
+        font-size: 3.4rem;
+    }
+
+    .lockscreen-notifications-stack {
+        gap: 6px;
+        max-height: 330px;
+    }
+
+    .ios-order-notif {
+        padding: 8px 10px;
+    }
+
+    .notif-photo-wrap {
+        width: 38px;
+        height: 38px;
+    }
+
+    .scene-progress-tabs {
+        justify-content: center;
+    }
+
+    .scene-controls-row {
+        justify-content: center;
     }
 
     .hero-trust-bullets {

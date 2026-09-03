@@ -203,4 +203,174 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- 7. SIMULADOR DE PEDIDOS EN PANTALLA DE BLOQUEO (Brief Escenas) ---
+    const lockscreenSection = document.getElementById('pedidos-en-vivo');
+    const notif1 = document.getElementById('notif-1');
+    const notif2 = document.getElementById('notif-2');
+    const notif3 = document.getElementById('notif-3');
+    const notif4 = document.getElementById('notif-4');
+    const counterOverlay = document.getElementById('counter-overlay');
+    const counterNumEl = document.getElementById('pedidos-counter-num');
+    const sceneTabs = document.querySelectorAll('.scene-tab-btn');
+    const sceneStepIndicator = document.getElementById('scene-step-indicator');
+    const sceneTitle = document.getElementById('scene-title');
+    const sceneDesc = document.getElementById('scene-desc');
+    const playPauseBtn = document.getElementById('btn-play-pause-sim');
+
+    const scenesData = [
+        {
+            num: 1,
+            name: "Calma",
+            title: "1. Calma en tu teléfono personal",
+            desc: "Pantalla de bloqueo con un fondo relajado de tu vida diaria. Todo en silencio mientras la tienda digital Haztap opera en la nube.",
+            duration: 2500
+        },
+        {
+            num: 2,
+            name: "Primer pedido",
+            title: "2. Llega el primer pedido del día",
+            desc: "Un cliente navega tu catálogo, selecciona su talla y completa la compra. Tu teléfono recibe la primera notificación con foto de la prenda y confirmación de pago.",
+            duration: 3200
+        },
+        {
+            num: 3,
+            name: "Llegan más",
+            title: "3. Cascada automática de pedidos",
+            desc: "Mientras trabajas, atiendes en el mostrador o tomas un café, caen más órdenes simultáneas con fotos y datos listos sin colapsar tu WhatsApp.",
+            duration: 3800
+        },
+        {
+            num: 4,
+            name: "Contador en vivo",
+            title: "4. Tu facturación en tiempo real",
+            desc: "El panel consolida los pedidos del día en automático. Observa cómo el contador asciende hasta superar las 200 órdenes sin esfuerzo manual.",
+            duration: 4000
+        },
+        {
+            num: 5,
+            name: "Cierre",
+            title: "5. Tu negocio en piloto automático",
+            desc: "Sin estrés, sin capturas dudosas y sin perder horas en el chat. Todo organizado y respaldado para despachar a tiempo.",
+            duration: 4500
+        }
+    ];
+
+    let currentSceneIdx = 0;
+    let sceneTimer = null;
+    let counterInterval = null;
+    let isAutoPlaying = true;
+
+    function activateScene(sceneNum) {
+        currentSceneIdx = sceneNum - 1;
+        const data = scenesData[currentSceneIdx];
+
+        // Update tabs
+        sceneTabs.forEach(t => {
+            const tNum = parseInt(t.getAttribute('data-scene'), 10);
+            t.classList.toggle('is-active', tNum === sceneNum);
+        });
+
+        // Update text labels
+        if (sceneStepIndicator) sceneStepIndicator.textContent = `Escena ${sceneNum} de 5`;
+        if (sceneTitle) sceneTitle.textContent = data.title;
+        if (sceneDesc) sceneDesc.textContent = data.desc;
+
+        // Reset elements
+        clearInterval(counterInterval);
+        
+        if (sceneNum === 1) {
+            if (notif1) notif1.classList.remove('is-visible');
+            if (notif2) notif2.classList.remove('is-visible');
+            if (notif3) notif3.classList.remove('is-visible');
+            if (notif4) notif4.classList.remove('is-visible');
+            if (counterOverlay) counterOverlay.classList.remove('is-active');
+        } else if (sceneNum === 2) {
+            if (counterOverlay) counterOverlay.classList.remove('is-active');
+            if (notif2) notif2.classList.remove('is-visible');
+            if (notif3) notif3.classList.remove('is-visible');
+            if (notif4) notif4.classList.remove('is-visible');
+            setTimeout(() => { if (notif1) notif1.classList.add('is-visible'); }, 150);
+        } else if (sceneNum === 3) {
+            if (counterOverlay) counterOverlay.classList.remove('is-active');
+            if (notif1) notif1.classList.add('is-visible');
+            setTimeout(() => { if (notif2) notif2.classList.add('is-visible'); }, 200);
+            setTimeout(() => { if (notif3) notif3.classList.add('is-visible'); }, 700);
+            setTimeout(() => { if (notif4) notif4.classList.add('is-visible'); }, 1200);
+        } else if (sceneNum === 4) {
+            if (notif1) notif1.classList.add('is-visible');
+            if (notif2) notif2.classList.add('is-visible');
+            if (notif3) notif3.classList.add('is-visible');
+            if (notif4) notif4.classList.add('is-visible');
+            if (counterOverlay) counterOverlay.classList.add('is-active');
+
+            // Animate counter from 0 to 209
+            let current = 0;
+            const target = 209;
+            const step = Math.ceil(target / 25);
+            counterInterval = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(counterInterval);
+                }
+                if (counterNumEl) counterNumEl.textContent = current;
+            }, 50);
+        } else if (sceneNum === 5) {
+            if (notif1) notif1.classList.add('is-visible');
+            if (notif2) notif2.classList.add('is-visible');
+            if (notif3) notif3.classList.add('is-visible');
+            if (notif4) notif4.classList.add('is-visible');
+            if (counterOverlay) counterOverlay.classList.add('is-active');
+            if (counterNumEl) counterNumEl.textContent = '209';
+        }
+    }
+
+    function runNextScene() {
+        if (!isAutoPlaying) return;
+        let nextScene = currentSceneIdx + 2;
+        if (nextScene > 5) nextScene = 1;
+        activateScene(nextScene);
+        sceneTimer = setTimeout(runNextScene, scenesData[currentSceneIdx].duration);
+    }
+
+    function startSimulation() {
+        clearTimeout(sceneTimer);
+        isAutoPlaying = true;
+        activateScene(1);
+        sceneTimer = setTimeout(runNextScene, scenesData[0].duration);
+    }
+
+    // Manual scene tabs click
+    sceneTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            clearTimeout(sceneTimer);
+            isAutoPlaying = false; // pause auto sequence so user can inspect
+            const sNum = parseInt(tab.getAttribute('data-scene'), 10);
+            activateScene(sNum);
+        });
+    });
+
+    if (playPauseBtn) {
+        playPauseBtn.addEventListener('click', () => {
+            startSimulation();
+        });
+    }
+
+    // IntersectionObserver to auto-start when user reaches section
+    if (lockscreenSection && 'IntersectionObserver' in window) {
+        let hasTriggered = false;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasTriggered) {
+                    hasTriggered = true;
+                    startSimulation();
+                }
+            });
+        }, { threshold: 0.35 });
+
+        observer.observe(lockscreenSection);
+    } else {
+        startSimulation();
+    }
+
 });
