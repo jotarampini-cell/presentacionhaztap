@@ -27,10 +27,17 @@ window.addEventListener('message', (event) => {
     const el = getEl(selector, index);
     if (el) setReactValue(el, value);
   } else if (action === 'scroll') {
-    const el = getEl(selector, index);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Suppressed intentionally to avoid jumping
   }
 });
+
+// Suppress all React/App auto-scrolling to create an "Apple style" smooth presentation
+Element.prototype.scrollIntoView = function() {
+  console.log('Suppressed scrollIntoView to keep presentation smooth');
+};
+window.scrollTo = function() {
+  console.log('Suppressed scrollTo to keep presentation smooth');
+};
 
 document.addEventListener('click', (e) => {
   if (e.isTrusted) {
