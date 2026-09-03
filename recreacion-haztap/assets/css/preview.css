@@ -5211,7 +5211,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 .monumental-metrics {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 50px;
     margin-top: 50px;
 }
 
@@ -5226,6 +5226,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     line-height: 1;
     letter-spacing: -0.04em;
     font-family: var(--font-heading);
+    color: #fff;
+    text-shadow: 0 0 60px rgba(255,255,255,0.15);
 }
 
 .metric-big i {
@@ -5234,34 +5236,12 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 }
 
 .metric-label {
-    font-size: 1rem;
-    color: rgba(255,255,255,0.6);
-    margin-top: 10px;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.35);
+    margin-top: 8px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
-/* Gradients and Glows for the Text */
-.glow-lila {
-    background: linear-gradient(135deg, #BB6BD9, #FF7844);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 40px rgba(187, 107, 217, 0.4);
-}
-
-.glow-blue {
-    background: linear-gradient(135deg, #2D9CDB, #0ACF83);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 40px rgba(45, 156, 219, 0.4);
-}
-
-.glow-green {
-    background: linear-gradient(135deg, #0ACF83, #2D9CDB);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 40px rgba(10, 207, 131, 0.4);
+    letter-spacing: 0.15em;
 }
 
 @media (max-width: 900px) {
@@ -5269,3 +5249,4 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
         font-size: 4rem;
     }
 }
+
