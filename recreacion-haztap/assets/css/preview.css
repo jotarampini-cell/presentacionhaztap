@@ -1451,22 +1451,26 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 
 .section-header-center {
     text-align: center;
-    max-width: 680px;
-    margin: 0 auto 48px;
+    max-width: 780px;
+    margin: 0 auto 56px;
 }
 
 .section-header-center h2 {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    font-size: clamp(2.3rem, 3.8vw, 3.2rem);
     font-weight: 700;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
+    line-height: 1.12;
     color: var(--ht-dark);
-    margin-bottom: 14px;
+    margin-bottom: 16px;
 }
 
 .section-header-center p {
-    font-size: 1.1rem;
-    color: rgba(23, 23, 25, 0.65);
+    font-size: clamp(1.08rem, 1.3vw, 1.22rem);
+    color: rgba(23, 23, 25, 0.62);
+    line-height: 1.55;
+    max-width: 620px;
+    margin: 0 auto;
 }
 
 /* Fila de Feature Pills con Acentos de Marca */
