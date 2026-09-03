@@ -259,6 +259,7 @@
     z-index: 16; /* Elevado para estar por encima de la barra blanca */
     box-shadow: 0 0 0 1px rgba(255,255,255,0.05);
     animation: islandBreathe 8s infinite ease-in-out;
+    will-change: transform;
 }
 
 /* Status Bar */
@@ -383,7 +384,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) translateZ(0); /* force compositing */
     width: 80%;
     height: 70%;
     background: linear-gradient(
@@ -391,22 +392,19 @@
         #A259FF,
         #1ABCFE,
         #F24E1E,
-        #0ACF83,
-        #A259FF
+        #0ACF83
     );
-    background-size: 300% 300%;
     opacity: 0.08;
     z-index: 0;
     pointer-events: none;
-    filter: blur(100px);
+    filter: blur(80px);
     border-radius: 50%;
-    animation: hts-gemini-flow 12s infinite linear;
+    animation: hts-gemini-pulse 6s infinite alternate ease-in-out;
 }
 
-@keyframes hts-gemini-flow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+@keyframes hts-gemini-pulse {
+    0% { opacity: 0.04; }
+    100% { opacity: 0.12; }
 }
 
 /* ==========================================================================
