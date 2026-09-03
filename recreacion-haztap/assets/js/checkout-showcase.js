@@ -36,11 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleBtn.innerHTML = '<i class="ph-bold ph-hand-tap"></i> <span>Interactuar manualmente</span>';
         }
         
-        // Reload iframe to reset state cleanly for the demo
-        if (iframe) {
-            iframe.src = iframe.src;
-            // The onload event will restart runAutoTour
-        }
+        if (iframe) iframe.src = iframe.src;
     }
 
     if (toggleBtn) {
@@ -77,26 +73,19 @@ document.addEventListener('DOMContentLoaded', () => {
         clearAllTimeouts();
 
         // STEP 1: ENTREGA
-        schedule(1500, () => sendCmd('click', '.card-interactive', '', 0)); // Delivery Local
+        schedule(1500, () => sendCmd('click', '.card-interactive', '', 0)); 
         schedule(2500, () => sendCmd('type', '.select-premium', 'caracas', 0));
         schedule(3500, () => sendCmd('type', '.select-premium', 'las-mercedes', 1));
         
-        // El mapa carga... escribimos la dirección
         schedule(4500, () => sendCmd('type', '.input-premium', 'Torre Orinoco, Piso 4', 0)); 
-        // Click Confirmar dirección (es el btn-secondary en map-picker)
         schedule(5500, () => sendCmd('click', 'button.btn-secondary')); 
         
-        // Click Continuar en el Order Summary (escritorio lg:flex o el flotante mobile)
-        // Order Summary "Continuar" button is `.btn-primary` (usually the last one or the only active one)
-        // order-summary.tsx uses `.hidden.lg\\:flex.btn-primary` and mobile uses `.lg\\:hidden .btn-primary`
-        // We will click both to be safe
         schedule(6500, () => {
             sendCmd('click', 'button.btn-primary:not(:disabled)', '', 0); 
             sendCmd('click', '.lg\\:hidden button.btn-primary', '', 0); 
         });
 
         // STEP 2: DATOS
-        // The first input is Name
         schedule(8000, () => sendCmd('type', '.input-premium', 'María Valentina Gómez', 0));
         schedule(8500, () => sendCmd('type', '.input-premium', '24891042', 1));
         schedule(9000, () => sendCmd('type', '.input-premium', '4149201842', 2));
@@ -108,19 +97,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // STEP 3: PAGO
-        // On payment screen, first select bank/method (if it exists, usually defaults to pago movil)
-        // We assume it defaults to Pago Movil. We just need to fill the reference.
-        // `.input-premium[0]` will be the reference input or phone input depending on the form
-        // Let's just type the reference into the first input-premium available
-        schedule(12000, () => sendCmd('type', '.input-premium', '849201', 0));
+        // Select Zelle (index 0 since USD is default)
+        schedule(12000, () => sendCmd('click', '.card-interactive', '', 0));
         
-        schedule(13500, () => {
-            sendCmd('click', 'button.btn-primary:not(:disabled)', '', 0);
-            sendCmd('click', '.lg\\:hidden button.btn-primary', '', 0);
-        });
+        // Upload Zelle Screenshot (fake upload trigger)
+        schedule(13000, () => sendCmd('upload', 'input[type="file"]', 'captura_zelle_012.png', 0));
+        
+        // Type Zelle Reference
+        schedule(14000, () => sendCmd('type', '.input-premium', '98402941', 0));
+        
+        // Finish purchase
+        schedule(15500, () => sendCmd('click', 'button.btn-primary:not(:disabled)', '', 0));
 
-        // Restart loop
-        schedule(19000, () => {
+        // Restart loop after success screen
+        schedule(21000, () => {
             if (isAutoPlaying) activateAutoMode();
         });
     }

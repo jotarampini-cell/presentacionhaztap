@@ -10,6 +10,15 @@ window.addEventListener('message', (event) => {
     }
   }
 
+  function setReactFile(el, filename) {
+    if (!el) return;
+    // Create a dummy file
+    const dt = new DataTransfer();
+    dt.items.add(new File(["dummy content"], filename, { type: "image/png" }));
+    el.files = dt.files;
+    el.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+
   function getEl(sel, index) {
     if (index !== undefined) {
       return doc.querySelectorAll(sel)[index];
@@ -26,18 +35,16 @@ window.addEventListener('message', (event) => {
   } else if (action === 'type') {
     const el = getEl(selector, index);
     if (el) setReactValue(el, value);
+  } else if (action === 'upload') {
+    const el = getEl(selector, index);
+    if (el) setReactFile(el, value);
   } else if (action === 'scroll') {
-    // Suppressed intentionally to avoid jumping
+    // Suppressed
   }
 });
 
-// Suppress all React/App auto-scrolling to create an "Apple style" smooth presentation
-Element.prototype.scrollIntoView = function() {
-  console.log('Suppressed scrollIntoView to keep presentation smooth');
-};
-window.scrollTo = function() {
-  console.log('Suppressed scrollTo to keep presentation smooth');
-};
+Element.prototype.scrollIntoView = function() {};
+window.scrollTo = function() {};
 
 document.addEventListener('click', (e) => {
   if (e.isTrusted) {
