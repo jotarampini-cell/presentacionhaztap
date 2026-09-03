@@ -205,151 +205,98 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 7. VIDEO SHOWCASE CONTINUO EN LOOP AUTÓNOMO (Zero clicks needed) ---
+    // --- 7. VIDEO SHOWCASE CONTINUO EN LOOP RÁPIDO Y DINÁMICO (Cero esperas) ---
     const notif1 = document.getElementById('stream-notif-1');
     const notif2 = document.getElementById('stream-notif-2');
     const notif3 = document.getElementById('stream-notif-3');
     const notif4 = document.getElementById('stream-notif-4');
     const counterPanel = document.getElementById('stream-counter-panel');
     const countNumberEl = document.getElementById('stream-count-number');
-    const outroPanel = document.getElementById('stream-outro-panel');
-    const timelineSteps = document.querySelectorAll('.timeline-step');
     const dynamicIsland = document.getElementById('dynamic-island');
     const islandText = document.getElementById('island-text');
 
-    const sceneDurations = [2500, 3200, 4200, 3600, 2800]; // Duración en ms de las 5 escenas
-    let currentStep = 1;
-    let stepStartTime = null;
-    let animFrameId = null;
-    let counterIntervalId = null;
+    let countInterval = null;
+    let showcaseTimeoutIds = [];
 
-    function renderSceneState(step) {
-        // Timeline Bar
-        timelineSteps.forEach((s) => {
-            const num = parseInt(s.getAttribute('data-step'), 10);
-            const fill = s.querySelector('.step-progress-fill');
-            if (num < step) {
-                s.classList.add('is-passed');
-                s.classList.remove('is-active');
-                if (fill) fill.style.width = '100%';
-            } else if (num === step) {
-                s.classList.remove('is-passed');
-                s.classList.add('is-active');
-            } else {
-                s.classList.remove('is-passed');
-                s.classList.remove('is-active');
-                if (fill) fill.style.width = '0%';
-            }
-        });
+    function clearShowcaseTimers() {
+        showcaseTimeoutIds.forEach(id => clearTimeout(id));
+        showcaseTimeoutIds = [];
+        clearInterval(countInterval);
+    }
 
-        clearInterval(counterIntervalId);
+    function runRapidShowcase() {
+        clearShowcaseTimers();
 
-        if (step === 1) {
-            // Escena 1: Calma
+        // Estado inicial limpio
+        if (notif1) notif1.classList.remove('is-visible');
+        if (notif2) notif2.classList.remove('is-visible');
+        if (notif3) notif3.classList.remove('is-visible');
+        if (notif4) notif4.classList.remove('is-visible');
+        if (counterPanel) counterPanel.classList.remove('is-active');
+
+        if (dynamicIsland) {
+            dynamicIsland.classList.remove('is-expanded');
+            if (islandText) islandText.textContent = 'Haztap Commerce';
+        }
+
+        // T+200ms: Notificación 1 llega de inmediato + Dynamic Island activa
+        showcaseTimeoutIds.push(setTimeout(() => {
+            if (notif1) notif1.classList.add('is-visible');
             if (dynamicIsland) {
-                dynamicIsland.classList.remove('is-expanded');
-                if (islandText) islandText.textContent = 'Haztap';
+                dynamicIsland.classList.add('is-expanded');
+                if (islandText) islandText.textContent = 'Pago recibido: +$48.00';
             }
+        }, 200));
+
+        // T+900ms: Notificación 2
+        showcaseTimeoutIds.push(setTimeout(() => {
+            if (notif2) notif2.classList.add('is-visible');
+            if (islandText) islandText.textContent = 'Pago recibido: +$55.00';
+        }, 900));
+
+        // T+1600ms: Notificación 3
+        showcaseTimeoutIds.push(setTimeout(() => {
+            if (notif3) notif3.classList.add('is-visible');
+            if (islandText) islandText.textContent = 'Zelle aprobado: +$28.00';
+        }, 1600));
+
+        // T+2300ms: Notificación 4
+        showcaseTimeoutIds.push(setTimeout(() => {
+            if (notif4) notif4.classList.add('is-visible');
+            if (islandText) islandText.textContent = 'Pago recibido: +$34.00';
+        }, 2300));
+
+        // T+3000ms: Contador de impacto explosivo (170 -> 209)
+        showcaseTimeoutIds.push(setTimeout(() => {
+            if (counterPanel) counterPanel.classList.add('is-active');
+            if (islandText) islandText.textContent = '● 209 pedidos cobrados hoy';
+
+            let count = 175;
+            const target = 209;
+            clearInterval(countInterval);
+            countInterval = setInterval(() => {
+                count += 3;
+                if (count >= target) {
+                    count = target;
+                    clearInterval(countInterval);
+                }
+                if (countNumberEl) countNumberEl.textContent = count;
+            }, 30);
+        }, 3000));
+
+        // T+5200ms: Reseteo suave para el siguiente ciclo
+        showcaseTimeoutIds.push(setTimeout(() => {
+            if (counterPanel) counterPanel.classList.remove('is-active');
             if (notif1) notif1.classList.remove('is-visible');
             if (notif2) notif2.classList.remove('is-visible');
             if (notif3) notif3.classList.remove('is-visible');
             if (notif4) notif4.classList.remove('is-visible');
-            if (counterPanel) counterPanel.classList.remove('is-active');
-            if (outroPanel) outroPanel.classList.remove('is-active');
-        } else if (step === 2) {
-            // Escena 2: Primer pedido (Expande Dynamic Island)
-            if (dynamicIsland) {
-                dynamicIsland.classList.add('is-expanded');
-                if (islandText) islandText.textContent = 'Nuevo pedido +$48 USD';
-            }
-            if (counterPanel) counterPanel.classList.remove('is-active');
-            if (outroPanel) outroPanel.classList.remove('is-active');
-            if (notif2) notif2.classList.remove('is-visible');
-            if (notif3) notif3.classList.remove('is-visible');
-            if (notif4) notif4.classList.remove('is-visible');
-            setTimeout(() => { if (notif1) notif1.classList.add('is-visible'); }, 150);
-        } else if (step === 3) {
-            // Escena 3: Cascada de ventas
-            if (dynamicIsland) {
-                dynamicIsland.classList.add('is-expanded');
-                if (islandText) islandText.textContent = '4 pedidos en curso';
-            }
-            if (counterPanel) counterPanel.classList.remove('is-active');
-            if (outroPanel) outroPanel.classList.remove('is-active');
-            if (notif1) notif1.classList.add('is-visible');
-            setTimeout(() => { if (notif2) notif2.classList.add('is-visible'); }, 200);
-            setTimeout(() => { if (notif3) notif3.classList.add('is-visible'); }, 850);
-            setTimeout(() => { if (notif4) notif4.classList.add('is-visible'); }, 1500);
-        } else if (step === 4) {
-            // Escena 4: Contador +209 en vivo
-            if (dynamicIsland) {
-                dynamicIsland.classList.add('is-expanded');
-                if (islandText) islandText.textContent = '● En vivo: 209 pedidos';
-            }
-            if (outroPanel) outroPanel.classList.remove('is-active');
-            if (notif1) notif1.classList.add('is-visible');
-            if (notif2) notif2.classList.add('is-visible');
-            if (notif3) notif3.classList.add('is-visible');
-            if (notif4) notif4.classList.add('is-visible');
-            if (counterPanel) counterPanel.classList.add('is-active');
-
-            let currentCount = 0;
-            const target = 209;
-            const stepInc = Math.ceil(target / 24);
-            counterIntervalId = setInterval(() => {
-                currentCount += stepInc;
-                if (currentCount >= target) {
-                    currentCount = target;
-                    clearInterval(counterIntervalId);
-                }
-                if (countNumberEl) countNumberEl.textContent = currentCount;
-            }, 55);
-        } else if (step === 5) {
-            // Escena 5: En automático (Cierre de marca)
-            if (dynamicIsland) {
-                dynamicIsland.classList.remove('is-expanded');
-                if (islandText) islandText.textContent = 'Haztap · 24/7';
-            }
-            if (counterPanel) counterPanel.classList.remove('is-active');
-            if (outroPanel) outroPanel.classList.add('is-active');
-        }
+            if (dynamicIsland) dynamicIsland.classList.remove('is-expanded');
+        }, 5200));
     }
 
-    function videoLoopDirector(timestamp) {
-        if (!stepStartTime) stepStartTime = timestamp;
-        const elapsed = timestamp - stepStartTime;
-        const currentDuration = sceneDurations[currentStep - 1];
-        const progress = Math.min(elapsed / currentDuration, 1);
-
-        // Actualizar barra de progreso del paso activo
-        const currentStepEl = document.querySelector(`.timeline-step[data-step="${currentStep}"]`);
-        if (currentStepEl) {
-            const fillEl = currentStepEl.querySelector('.step-progress-fill');
-            if (fillEl) fillEl.style.width = (progress * 100) + '%';
-        }
-
-        if (elapsed >= currentDuration) {
-            // Pasar al siguiente paso o reiniciar loop
-            stepStartTime = timestamp;
-            currentStep = currentStep >= 5 ? 1 : currentStep + 1;
-            renderSceneState(currentStep);
-        }
-
-        animFrameId = requestAnimationFrame(videoLoopDirector);
-    }
-
-    // Inicializar y reproducir continuamente
-    renderSceneState(1);
-    animFrameId = requestAnimationFrame(videoLoopDirector);
-
-    // Permitir clic en la barra para adelantar a un capítulo si se desea
-    timelineSteps.forEach((s) => {
-        s.addEventListener('click', () => {
-            const targetStep = parseInt(s.getAttribute('data-step'), 10);
-            currentStep = targetStep;
-            stepStartTime = performance.now();
-            renderSceneState(currentStep);
-        });
-    });
+    // Iniciar de inmediato y repetir cada 5.7 segundos en loop fluido
+    runRapidShowcase();
+    setInterval(runRapidShowcase, 5700);
 
 });
