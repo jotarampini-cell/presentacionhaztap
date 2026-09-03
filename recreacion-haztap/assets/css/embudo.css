@@ -1,0 +1,666 @@
+/* ==========================================================================
+   HAZTAP — EMBUDO DE VENTAS & AGENDAMIENTO ESTRATÉGICO
+   Estilos dedicados para embudo.html
+   ========================================================================== */
+
+:root {
+    --funnel-bg: #0A0B0E;
+    --funnel-card: #131419;
+    --funnel-border: rgba(255, 255, 255, 0.1);
+    --funnel-border-strong: rgba(255, 255, 255, 0.22);
+    --funnel-verde: #0acf83;
+    --funnel-celeste: #1abcfe;
+    --funnel-lila: #a259ff;
+    --funnel-text-main: #ffffff;
+    --funnel-text-muted: rgba(255, 255, 255, 0.68);
+    --font-main: 'Ubuntu', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body.funnel-page-body {
+    background-color: var(--funnel-bg);
+    color: var(--funnel-text-main);
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+.funnel-container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+/* Encabezado Mínimo */
+.funnel-header {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--funnel-border);
+    position: relative;
+    z-index: 10;
+}
+
+.funnel-header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.funnel-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.funnel-logo img {
+    height: 26px;
+    width: auto;
+}
+
+.funnel-header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(10, 207, 131, 0.12);
+    border: 1px solid rgba(10, 207, 131, 0.35);
+    border-radius: 999px;
+    color: var(--funnel-verde);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.funnel-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--funnel-text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.funnel-back-link:hover {
+    color: #fff;
+}
+
+/* Hero del Embudo */
+.funnel-hero {
+    position: relative;
+    padding: 70px 0 60px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.funnel-hero-glow {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 750px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(26, 188, 254, 0.15) 0%, rgba(162, 89, 255, 0.12) 40%, transparent 70%);
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.funnel-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+.funnel-eyebrow-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--funnel-border);
+    border-radius: 999px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--funnel-celeste);
+    margin-bottom: 22px;
+}
+
+.funnel-main-title {
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    margin: 0 0 20px 0;
+    color: #fff;
+}
+
+.funnel-gradient-text {
+    background: linear-gradient(135deg, var(--funnel-celeste) 0%, var(--funnel-verde) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.funnel-main-subtitle {
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    color: var(--funnel-text-muted);
+    line-height: 1.6;
+    margin: 0 auto 36px;
+    max-width: 680px;
+}
+
+/* ==========================================================================
+   SIMULADOR INTERACTIVO DE CALENDLY (Booking Widget)
+   ========================================================================== */
+.booking-section {
+    position: relative;
+    z-index: 5;
+    padding-bottom: 90px;
+}
+
+.calendly-mock-card {
+    background: var(--funnel-card);
+    border: 1px solid var(--funnel-border-strong);
+    border-radius: 28px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    min-height: 560px;
+}
+
+/* Columna Izquierda: Información de la Sesión */
+.booking-sidebar {
+    padding: 40px 32px;
+    border-right: 1px solid var(--funnel-border);
+    background: rgba(255, 255, 255, 0.02);
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-host-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.host-avatar-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.host-avatar-box img {
+    width: 28px;
+    height: auto;
+}
+
+.host-details strong {
+    display: block;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.host-details span {
+    font-size: 0.82rem;
+    color: var(--funnel-text-muted);
+}
+
+.booking-title-lead {
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    line-height: 1.25;
+    color: #fff;
+}
+
+.booking-meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.booking-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.booking-meta-item i {
+    font-size: 1.1rem;
+    color: var(--funnel-verde);
+}
+
+.booking-agenda-box {
+    margin-top: auto;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border: 1px solid var(--funnel-border);
+}
+
+.booking-agenda-box h5 {
+    margin: 0 0 10px 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--funnel-celeste);
+}
+
+.booking-agenda-box ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 0.82rem;
+    color: var(--funnel-text-muted);
+    line-height: 1.55;
+}
+
+/* Columna Derecha: Calendario y Horarios */
+.booking-interactive-main {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-step-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.calendar-header-bar h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.calendar-grid-view {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 32px;
+    flex: 1;
+}
+
+/* Matriz de Días */
+.calendar-days-matrix {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+}
+
+.cal-day-label {
+    font-size: 0.76rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 600;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.cal-day-cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid transparent;
+    color: #fff;
+    transition: all 0.2s ease;
+}
+
+.cal-day-cell:hover:not(.is-disabled) {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.cal-day-cell.is-active {
+    background: var(--funnel-verde) !important;
+    color: #050608 !important;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(10, 207, 131, 0.4);
+}
+
+.cal-day-cell.is-disabled {
+    color: rgba(255, 255, 255, 0.18);
+    cursor: not-allowed;
+}
+
+/* Columna de Horarios */
+.time-slots-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.time-slots-column h5 {
+    margin: 0 0 16px 0;
+    font-size: 0.9rem;
+    color: var(--funnel-text-muted);
+}
+
+.time-slots-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 320px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.time-slot-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--funnel-border);
+    border-radius: 14px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.94rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.time-slot-btn:hover {
+    border-color: var(--funnel-verde);
+    background: rgba(10, 207, 131, 0.08);
+    transform: translateX(4px);
+}
+
+.time-slot-btn.is-selected {
+    background: var(--funnel-verde);
+    border-color: var(--funnel-verde);
+    color: #050608;
+    box-shadow: 0 4px 16px rgba(10, 207, 131, 0.35);
+}
+
+.time-slot-btn.is-selected i {
+    color: #050608;
+}
+
+.proceed-btn-wrap {
+    margin-top: 20px;
+}
+
+.booking-confirm-btn {
+    width: 100%;
+    padding: 14px 24px;
+    background: #fff;
+    color: #050608;
+    border: none;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+}
+
+.booking-confirm-btn:hover {
+    background: var(--funnel-verde);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(10, 207, 131, 0.4);
+}
+
+/* Formulario Paso 2 */
+.booking-form-step {
+    display: none;
+}
+
+.booking-form-step.is-visible {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.form-field-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.form-input-control {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--funnel-border);
+    border-radius: 12px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-input-control:focus {
+    border-color: var(--funnel-verde);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.form-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.form-back-btn {
+    background: transparent;
+    border: 1px solid var(--funnel-border);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Estado de Éxito / Confirmación */
+.booking-success-step {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+    margin: auto 0;
+}
+
+.booking-success-step.is-visible {
+    display: block;
+}
+
+.success-icon-wrap {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(10, 207, 131, 0.15);
+    border: 2px solid var(--funnel-verde);
+    color: var(--funnel-verde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    margin: 0 auto 20px;
+}
+
+.success-summary-box {
+    max-width: 440px;
+    margin: 24px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 18px;
+    border: 1px solid var(--funnel-border);
+    text-align: left;
+}
+
+/* ==========================================================================
+   SECCIÓN DE VIDEOS DE AUTORIDAD Y CLIENTES (Que tenga los vídeos que tenga todo)
+   ========================================================================== */
+.funnel-media-section {
+    padding: 90px 0;
+    border-top: 1px solid var(--funnel-border);
+    background: #08090C;
+}
+
+.funnel-section-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 50px;
+}
+
+.funnel-section-header h2 {
+    font-size: clamp(2rem, 3.8vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin: 0 0 14px 0;
+    color: #fff;
+}
+
+.funnel-section-header p {
+    font-size: 1.05rem;
+    color: var(--funnel-text-muted);
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* Video Showcase 16:9 */
+.funnel-showreel-box {
+    max-width: 860px;
+    margin: 0 auto 60px;
+    border-radius: 28px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--funnel-border-strong);
+    background: #000;
+}
+
+.funnel-showreel-box video {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* Carrusel de Casos en Video Verticales */
+.funnel-videos-carousel {
+    position: relative;
+    width: 100%;
+}
+
+/* Beneficios / Qué descubriremos */
+.funnel-deliverables-section {
+    padding: 90px 0 100px;
+    border-top: 1px solid var(--funnel-border);
+}
+
+.deliverables-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.deliverable-card {
+    background: var(--funnel-card);
+    border: 1px solid var(--funnel-border);
+    border-radius: 24px;
+    padding: 32px 26px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.deliverable-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--funnel-border-strong);
+}
+
+.deliverable-number {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--funnel-verde);
+    margin-bottom: 12px;
+}
+
+.deliverable-card h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: #fff;
+}
+
+.deliverable-card p {
+    font-size: 0.92rem;
+    color: var(--funnel-text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Footer */
+.funnel-footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--funnel-border);
+    text-align: center;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .calendly-mock-card {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--funnel-border);
+        padding: 30px 24px;
+    }
+
+    .booking-interactive-main {
+        padding: 30px 20px;
+    }
+
+    .calendar-grid-view {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .deliverables-grid {
+        grid-template-columns: 1fr;
+    }
+}

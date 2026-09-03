@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda tu Sesión Estratégica 1 a 1 | Haztap</title>
+    <meta name="description" content="Agenda tu sesión de 30 minutos sin costo con especialistas de Haztap. Analizaremos tu tienda física y te mostraremos tu plataforma digital llave en mano.">
+    <link rel="icon" href="assets/img/haztap-logo.png" type="image/png">
+    
+    <!-- Tipografía Ubuntu Oficial -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons & Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Estilos de Embudo Dedicados -->
+    <link rel="stylesheet" href="assets/css/preview.css">
+    <link rel="stylesheet" href="assets/css/embudo.css">
+</head>
+<body class="funnel-page-body">
+
+    <!-- ENCABEZADO MINIMALISTA -->
+    <header class="funnel-header">
+        <div class="funnel-container">
+            <div class="funnel-header-nav">
+                <a href="preview.html" class="funnel-logo">
+                    <img src="assets/img/haztap-logo.png" alt="Haztap">
+                    <span>haztap</span>
+                </a>
+
+                <div class="funnel-header-badge">
+                    <i class="ph-fill ph-check-circle"></i>
+                    <span>Sesión 1 a 1 · 100% Sin Costo</span>
+                </div>
+
+                <a href="preview.html" class="funnel-back-link">
+                    <i class="ph-bold ph-arrow-left"></i>
+                    <span>Volver a Inicio</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO DEL EMBUDO -->
+    <section class="funnel-hero">
+        <div class="funnel-hero-glow"></div>
+        <div class="funnel-container">
+            <div class="funnel-hero-content">
+                <div class="funnel-eyebrow-chip">
+                    <i class="ph-bold ph-calendar-check"></i>
+                    <span>Cupos Limitados para Nuevos Proyectos Este Mes</span>
+                </div>
+
+                <h1 class="funnel-main-title">
+                    Convierte tu tienda física en una<br>
+                    <span class="funnel-gradient-text">máquina de ventas digital.</span>
+                </h1>
+
+                <p class="funnel-main-subtitle">
+                    Agenda una llamada estratégica de 30 minutos con nuestro equipo técnico. Evaluaremos tu inventario, tus métodos de cobro en Venezuela y te mostraremos en vivo cómo funcionará tu tienda Haztap conectada a tu stock real.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALENDLY MOCKUP INTERACTIVO -->
+    <section class="booking-section">
+        <div class="funnel-container">
+            
+            <div class="calendly-mock-card">
+                
+                <!-- Columna Izquierda: Información del Host -->
+                <div class="booking-sidebar">
+                    <div class="booking-host-header">
+                        <div class="host-avatar-box">
+                            <img src="assets/img/haztap-logo.png" alt="Haztap">
+                        </div>
+                        <div class="host-details">
+                            <strong>Haztap Commerce</strong>
+                            <span>Equipo de Arquitectura Digital</span>
+                        </div>
+                    </div>
+
+                    <h3 class="booking-title-lead">Sesión de Estrategia y Demostración en Vivo</h3>
+
+                    <div class="booking-meta-list">
+                        <div class="booking-meta-item">
+                            <i class="ph-bold ph-clock"></i>
+                            <span>30 minutos de duración</span>
+                        </div>
+                        <div class="booking-meta-item">
+                            <i class="ph-bold ph-video-camera"></i>
+                            <span>Videollamada vía Google Meet</span>
+                        </div>
+                        <div class="booking-meta-item">
+                            <i class="ph-bold ph-currency-dollar-simple"></i>
+                            <span>100% gratuita y sin compromiso</span>
+                        </div>
+                    </div>
+
+                    <div class="booking-agenda-box">
+                        <h5>Lo que veremos en la llamada:</h5>
+                        <ul>
+                            <li>Diagnóstico comercial de tus líneas de producto.</li>
+                            <li>Demostración en vivo adaptada a Bolívares y Dólares.</li>
+                            <li>Plan de entrega llave en mano en 10 a 14 días.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Calendario y Horarios Interactivos -->
+                <div class="booking-interactive-main">
+                    
+                    <!-- PASO 1: Selección de Fecha y Hora -->
+                    <div class="booking-step-container" id="booking-step-1">
+                        <div class="calendar-header-bar">
+                            <h4>Selecciona un Día y Horario</h4>
+                            <span style="color: var(--funnel-verde); font-size: 0.88rem; font-weight: 600;">
+                                <i class="ph-bold ph-globe"></i> Zona horaria: Caracas (GMT-4)
+                            </span>
+                        </div>
+
+                        <div class="calendar-grid-view">
+                            
+                            <!-- Matriz de Días -->
+                            <div class="calendar-days-matrix" id="calendar-days-grid">
+                                <span class="cal-day-label">Lun</span>
+                                <span class="cal-day-label">Mar</span>
+                                <span class="cal-day-label">Mié</span>
+                                <span class="cal-day-label">Jue</span>
+                                <span class="cal-day-label">Vie</span>
+                                <span class="cal-day-label">Sáb</span>
+                                <span class="cal-day-label">Dom</span>
+
+                                <span class="cal-day-cell is-disabled">1</span>
+                                <span class="cal-day-cell is-disabled">2</span>
+                                <span class="cal-day-cell is-disabled">3</span>
+                                <span class="cal-day-cell is-disabled">4</span>
+                                <span class="cal-day-cell is-disabled">5</span>
+                                <span class="cal-day-cell is-disabled">6</span>
+                                <span class="cal-day-cell is-disabled">7</span>
+
+                                <span class="cal-day-cell is-disabled">8</span>
+                                <span class="cal-day-cell is-disabled">9</span>
+                                <span class="cal-day-cell is-disabled">10</span>
+                                <span class="cal-day-cell is-disabled">11</span>
+                                <span class="cal-day-cell is-disabled">12</span>
+                                <span class="cal-day-cell is-disabled">13</span>
+                                <span class="cal-day-cell is-disabled">14</span>
+
+                                <button type="button" class="cal-day-cell is-active" data-day="15">15</button>
+                                <button type="button" class="cal-day-cell" data-day="16">16</button>
+                                <button type="button" class="cal-day-cell" data-day="17">17</button>
+                                <button type="button" class="cal-day-cell" data-day="18">18</button>
+                                <button type="button" class="cal-day-cell" data-day="19">19</button>
+                                <span class="cal-day-cell is-disabled">20</span>
+                                <span class="cal-day-cell is-disabled">21</span>
+
+                                <button type="button" class="cal-day-cell" data-day="22">22</button>
+                                <button type="button" class="cal-day-cell" data-day="23">23</button>
+                                <button type="button" class="cal-day-cell" data-day="24">24</button>
+                                <button type="button" class="cal-day-cell" data-day="25">25</button>
+                                <button type="button" class="cal-day-cell" data-day="26">26</button>
+                                <span class="cal-day-cell is-disabled">27</span>
+                                <span class="cal-day-cell is-disabled">28</span>
+                            </div>
+
+                            <!-- Lista de Horarios -->
+                            <div class="time-slots-column">
+                                <h5 id="selected-date-display">Día 15 de este mes · Horarios Disponibles</h5>
+                                
+                                <div class="time-slots-list" id="time-slots-list">
+                                    <button type="button" class="time-slot-btn is-selected" data-time="10:00 AM">
+                                        <span>10:00 AM</span>
+                                        <i class="ph-bold ph-check"></i>
+                                    </button>
+                                    <button type="button" class="time-slot-btn" data-time="11:30 AM">
+                                        <span>11:30 AM</span>
+                                        <i class="ph-bold ph-arrow-right"></i>
+                                    </button>
+                                    <button type="button" class="time-slot-btn" data-time="02:00 PM">
+                                        <span>02:00 PM</span>
+                                        <i class="ph-bold ph-arrow-right"></i>
+                                    </button>
+                                    <button type="button" class="time-slot-btn" data-time="03:30 PM">
+                                        <span>03:30 PM</span>
+                                        <i class="ph-bold ph-arrow-right"></i>
+                                    </button>
+                                    <button type="button" class="time-slot-btn" data-time="05:00 PM">
+                                        <span>05:00 PM</span>
+                                        <i class="ph-bold ph-arrow-right"></i>
+                                    </button>
+                                </div>
+
+                                <div class="proceed-btn-wrap">
+                                    <button type="button" class="booking-confirm-btn" id="proceed-to-form-btn">
+                                        <span>Continuar con este horario</span>
+                                        <i class="ph-bold ph-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- PASO 2: Formulario de Datos del Negocio -->
+                    <div class="booking-step-container booking-form-step" id="booking-step-2">
+                        <div class="calendar-header-bar">
+                            <h4>Ingresa los datos de tu comercio</h4>
+                            <span style="color: var(--funnel-text-muted); font-size: 0.88rem;">Paso 2 de 2</span>
+                        </div>
+
+                        <form id="calendly-booking-form">
+                            <div class="form-field-group">
+                                <label for="field-client-name">Tu nombre y apellido *</label>
+                                <input type="text" id="field-client-name" class="form-input-control" placeholder="Ej: Valentina Morales" required>
+                            </div>
+
+                            <div class="form-field-group">
+                                <label for="field-business-name">Nombre de tu marca o tienda física *</label>
+                                <input type="text" id="field-business-name" class="form-input-control" placeholder="Ej: Bienchic Boutique (@bienchic.ve)" required>
+                            </div>
+
+                            <div class="form-field-group">
+                                <label for="field-whatsapp">Número de WhatsApp (con código de área) *</label>
+                                <input type="tel" id="field-whatsapp" class="form-input-control" placeholder="Ej: +58 412 1234567" required>
+                            </div>
+
+                            <div class="form-field-group">
+                                <label for="field-rubro">Rubro o tipo de productos *</label>
+                                <select id="field-rubro" class="form-input-control" required style="cursor: pointer;">
+                                    <option value="" disabled selected>Selecciona tu rubro</option>
+                                    <option value="moda">Ropa, Calzado y Moda</option>
+                                    <option value="gastronomia">Alimentos, Repostería y Gastronomía</option>
+                                    <option value="repuestos">Repuestos, Ferretería y Autos</option>
+                                    <option value="belleza">Cosmética, Cuidado Personal y Belleza</option>
+                                    <option value="retail">Tienda General / Otro rubro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-actions-row">
+                                <button type="button" class="form-back-btn" id="back-to-calendar-btn">
+                                    <i class="ph-bold ph-arrow-left"></i> Cambiar fecha
+                                </button>
+                                <button type="submit" class="booking-confirm-btn" style="flex: 1;">
+                                    <span>Confirmar Mi Sesión Estratégica</span>
+                                    <i class="ph-bold ph-check-circle"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- PASO 3: Confirmación Exitosa -->
+                    <div class="booking-step-container booking-success-step" id="booking-step-success">
+                        <div class="success-icon-wrap">
+                            <i class="ph-fill ph-check"></i>
+                        </div>
+                        <h3 style="font-size: 1.8rem; margin: 0 0 10px 0; color: #fff;">¡Sesión Agendada con Éxito!</h3>
+                        <p style="color: var(--funnel-text-muted); font-size: 1rem; margin: 0 auto 20px; max-width: 480px;">
+                            Hemos reservado tu espacio en el calendario. Te contactaremos por WhatsApp para enviarte el enlace oficial de Google Meet y los detalles previos.
+                        </p>
+
+                        <div class="success-summary-box">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                                <i class="ph-bold ph-calendar" style="color: var(--funnel-verde); font-size: 1.2rem;"></i>
+                                <strong id="summary-datetime" style="color: #fff;">Día 15 · 10:00 AM (Hora de Caracas)</strong>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                                <i class="ph-bold ph-storefront" style="color: var(--funnel-celeste); font-size: 1.2rem;"></i>
+                                <span id="summary-client" style="color: rgba(255,255,255,0.9);">Cliente · Mi Tienda</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <i class="ph-bold ph-video-camera" style="color: var(--funnel-lila); font-size: 1.2rem;"></i>
+                                <span style="color: rgba(255,255,255,0.7); font-size: 0.88rem;">Enlace: meet.google.com/hzt-str-call</span>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.link/mo02tp" target="_blank" rel="noopener noreferrer" class="booking-confirm-btn" style="max-width: 380px; margin: 20px auto 0;">
+                            <i class="ph-bold ph-whatsapp-logo" style="font-size: 1.2rem;"></i>
+                            <span>Notificar al equipo por WhatsApp</span>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE VIDEOS DE AUTORIDAD Y CLIENTES (Que tenga los vídeos que tenga todo) -->
+    <section class="funnel-media-section">
+        <div class="funnel-container">
+            <div class="funnel-section-header">
+                <h2>Así es la experiencia de trabajar con Haztap</h2>
+                <p>Descubre el proceso detrás de cada tienda y escucha directamente a los dueños de negocios que ya operan en automático:</p>
+            </div>
+
+            <!-- Video Principal Showreel 16:9 -->
+            <div class="funnel-showreel-box">
+                <video
+                    id="funnel-main-video"
+                    poster="assets/img/portfolio/proyecto4.webp"
+                    controls
+                    playsinline
+                    preload="metadata"
+                >
+                    <source src="assets/videos/video1.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- Carrusel de Casos de Éxito en Video Vertical -->
+            <div class="funnel-videos-carousel">
+                <div class="funnel-section-header" style="margin-bottom: 30px;">
+                    <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 8px;">Testimonios en primera persona</h3>
+                    <p style="font-size: 0.95rem;">Desliza para ver la experiencia de marcas reales en Venezuela:</p>
+                </div>
+
+                <div class="swiper funnel-video-swiper" style="padding: 20px 0; overflow: visible;">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="width: 280px; height: 500px; border-radius: 24px; overflow: hidden; background: #111;">
+                            <video src="assets/videos/video1.mp4" preload="none" loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+                        </div>
+                        <div class="swiper-slide" style="width: 280px; height: 500px; border-radius: 24px; overflow: hidden; background: #111;">
+                            <video src="assets/videos/video2.mp4" preload="none" loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+                        </div>
+                        <div class="swiper-slide" style="width: 280px; height: 500px; border-radius: 24px; overflow: hidden; background: #111;">
+                            <video src="assets/videos/video3.mp4" preload="none" loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="funnel-unmute-btn" class="booking-confirm-btn" style="max-width: 240px; margin: 24px auto 0; background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2);">
+                    <i class="ph-bold ph-speaker-high"></i>
+                    <span>Activar Sonido</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ENTREGABLES DE LA SESIÓN -->
+    <section class="funnel-deliverables-section">
+        <div class="funnel-container">
+            <div class="funnel-section-header">
+                <h2>Qué recibirás en tu sesión de 30 minutos</h2>
+                <p>Una asesoría práctica y accionable pensada exclusivamente para el crecimiento de tu negocio:</p>
+            </div>
+
+            <div class="deliverables-grid">
+                <div class="deliverable-card">
+                    <div class="deliverable-number">01</div>
+                    <h4>Diagnóstico de Conversión</h4>
+                    <p>Revisaremos cómo vendes hoy por WhatsApp o Instagram para identificar fugas de clientes y pérdidas de ventas por respuestas tardías.</p>
+                </div>
+
+                <div class="deliverable-card">
+                    <div class="deliverable-number">02</div>
+                    <h4>Demostración en Tiempo Real</h4>
+                    <p>Navegaremos en vivo por una tienda idéntica a la que recibirás, viendo cómo tus clientes seleccionan tallas y pagan en Bolívares o Dólares en 3 segundos.</p>
+                </div>
+
+                <div class="deliverable-card">
+                    <div class="deliverable-number">03</div>
+                    <h4>Cotización y Fecha de Entrega</h4>
+                    <p>Te entregaremos una propuesta comercial formal y un cronograma cerrado de 10 a 14 días hábiles para tener tu tienda lista y facturando.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#booking-step-1" class="booking-confirm-btn" style="display: inline-flex; max-width: 320px;">
+                    <span>Reservar mi llamada ahora</span>
+                    <i class="ph-bold ph-calendar-check"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="funnel-footer">
+        <div class="funnel-container">
+            <p>© 2026 Haztap Inc. Todos los derechos reservados. Comercio electrónico y automatización llave en mano.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/embudo.js"></script>
+</body>
+</html>

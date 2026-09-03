@@ -3356,59 +3356,63 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     pointer-events: none;
 }
 
-/* Statusbar iOS con Dynamic Island Elástica */
+/* Statusbar iOS con Dynamic Island Elástica Prémium */
 .ios-statusbar-clean {
     position: relative;
-    z-index: 2;
+    z-index: 12;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 18px 0;
+    padding: 16px 16px 0;
     color: #fff;
-    font-size: 0.76rem;
+    font-size: 0.78rem;
     font-weight: 600;
 }
 
 .ios-island {
     position: relative;
-    height: 24px;
-    min-width: 85px;
-    padding: 0 10px;
+    height: 30px;
+    min-width: 125px;
+    padding: 0 12px;
     background: #000;
     border-radius: 999px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 7px;
     color: #fff;
-    font-size: 0.7rem;
+    font-size: 0.76rem;
     font-weight: 700;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .ios-island.is-expanded {
-    min-width: 175px;
-    height: 28px;
-    background: #000;
-    box-shadow: 0 0 18px rgba(10, 207, 131, 0.5), 0 0 0 1px rgba(10, 207, 131, 0.4);
+    min-width: 220px;
+    height: 35px;
+    background: #060709;
+    border: 1px solid rgba(10, 207, 131, 0.55);
+    box-shadow: 0 0 20px rgba(10, 207, 131, 0.45), 0 8px 18px rgba(0, 0, 0, 0.6);
 }
 
 .island-icon-dot {
-    display: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     color: var(--ht-verde);
-    font-size: 0.82rem;
+    font-size: 0.92rem;
 }
 
 .ios-island.is-expanded .island-icon-dot {
-    display: inline-block;
-    animation: pulseGlow 1.5s infinite;
+    animation: pulseGlow 1.2s infinite;
 }
 
 .island-text {
-    letter-spacing: 0.02em;
-    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 0.01em;
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 700;
     white-space: nowrap;
 }
 
@@ -3566,22 +3570,22 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 /* Escena 4: Contador Overlay */
 .stream-counter-panel {
     position: absolute;
-    bottom: 60px;
-    left: 12px;
-    right: 12px;
-    z-index: 5;
-    background: rgba(23, 23, 25, 0.95);
+    bottom: 55px;
+    left: 10px;
+    right: 10px;
+    z-index: 8;
+    background: rgba(14, 15, 18, 0.96);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(10, 207, 131, 0.45);
     border-radius: 20px;
-    padding: 18px 14px;
+    padding: 16px 14px;
     text-align: center;
     color: #fff;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 24px rgba(10, 207, 131, 0.25);
     opacity: 0;
-    transform: translateY(30px) scale(0.9);
-    transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateY(30px) scale(0.92);
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     pointer-events: none;
 }
 
@@ -3595,46 +3599,43 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     align-items: center;
     gap: 6px;
     padding: 3px 10px;
-    background: rgba(10, 207, 131, 0.15);
-    color: var(--ht-verde);
+    background: rgba(10, 207, 131, 0.2);
+    color: #10f19c;
+    border: 1px solid rgba(10, 207, 131, 0.35);
     border-radius: 999px;
     font-size: 0.72rem;
     font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.counter-number-row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .counter-number-row strong {
-    font-size: 2.8rem;
+    font-size: 3rem;
     font-weight: 800;
-    color: var(--ht-verde);
+    color: #10f19c;
     line-height: 1;
+    text-shadow: 0 0 20px rgba(16, 241, 156, 0.4);
 }
 
 .counter-number-row span {
-    font-size: 0.74rem;
-    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.76rem;
+    color: rgba(255, 255, 255, 0.8);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-top: 4px;
 }
 
 .counter-sales-row {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.75);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 6px;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.85);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 8px;
+    margin-top: 6px;
 }
 
 .counter-sales-row strong {
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 700;
 }
 
 /* Escena 5: Outro Panel */
