@@ -177,6 +177,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 waBubble.classList.add('has-updated');
             }
         });
+    });
+
     // --- 6. SIMULACIÓN DE VERIFICACIÓN DE COMPROBANTE EN 1 CLIC ---
     const approveSlipBtn = document.getElementById('btn-approve-slip-demo');
     const liveOrderTag = document.querySelector('.admin-live-tag');
@@ -366,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     startSimulation();
                 }
             });
-        }, { threshold: 0.35 });
+        }, { threshold: 0.1 });
 
         observer.observe(lockscreenSection);
     } else {
