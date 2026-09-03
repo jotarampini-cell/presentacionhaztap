@@ -3314,10 +3314,13 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     margin: 0 auto 26px;
     filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.75)) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.45));
     transition: transform 0.3s ease;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform, filter;
 }
 
 .cinema-phone-frame:hover {
-    transform: translateY(-3px) scale(1.01);
+    transform: translateY(-3px) scale(1.01) translateZ(0);
 }
 
 .phone-screen-viewport {
@@ -3331,6 +3334,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    transform: translateZ(0);
+    -webkit-mask-image: -webkit-radial-gradient(white, black); /* force border-radius clipping on Safari */
 }
 
 .phone-chill-bg {
