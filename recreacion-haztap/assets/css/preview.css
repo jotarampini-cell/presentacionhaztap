@@ -5372,3 +5372,44 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     }
 }
 
+
+
+/* =========================================================================
+   AMBIENT GLOW FOR LIGHT SECTIONS (Replaces texture)
+   ========================================================================= */
+.ambient-glow-light {
+    position: relative;
+    overflow: hidden;
+}
+
+.ambient-glow-light::before {
+    content: '';
+    position: absolute;
+    inset: -20%;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse 65% 55% at 15% 25%, rgba(162, 89, 255, 0.05), transparent 60%),
+        radial-gradient(ellipse 60% 60% at 85% 75%, rgba(26, 188, 254, 0.06), transparent 65%),
+        radial-gradient(ellipse 55% 55% at 75% 15%, rgba(10, 207, 131, 0.04), transparent 60%),
+        radial-gradient(ellipse 55% 55% at 20% 85%, rgba(242, 78, 30, 0.04), transparent 60%);
+    animation: lightGlowDrift 20s ease-in-out infinite alternate;
+}
+
+@keyframes lightGlowDrift {
+    0%   { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
+    100% { background-position: 6% 6%, -6% -8%, -8% 6%, 6% -4%; }
+}
+
+/* Ensure contents stay above the glow */
+.ambient-glow-light > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Fix bento cards having transparent backgrounds now if we just rely on section glow */
+.bento-card {
+    background: rgba(255, 255, 255, 0.85); /* Slightly translucent to show glow behind it, or just solid white */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
