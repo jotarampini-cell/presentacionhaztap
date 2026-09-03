@@ -5042,6 +5042,74 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     }
 }
 
+@media (max-width: 640px) {
+    .preview-pillars-section .section-header-center h2 {
+        font-size: 1.65rem;
+        line-height: 1.22;
+    }
+
+    .bento-grid-apple {
+        gap: 16px;
+        margin-top: 32px;
+    }
+
+    .bento-item {
+        padding: 24px 20px;
+        border-radius: 24px;
+    }
+
+    .bento-item.small {
+        padding: 24px 20px;
+    }
+
+    .icon-feature {
+        font-size: 1.9rem;
+        margin-bottom: 14px;
+    }
+
+    .bento-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+
+    .bento-item.small h3 {
+        font-size: 1.15rem;
+        margin-bottom: 8px;
+    }
+
+    .bento-content p,
+    .bento-item.small p {
+        font-size: 0.92rem;
+    }
+
+    /* Deja espacio real para la notificación flotante para que no se corte */
+    .bento-item:has(.bento-graphic-bottom) {
+        padding-bottom: 56px;
+    }
+
+    .bento-graphic-bottom {
+        position: static;
+        margin-top: 20px;
+    }
+
+    .fake-notification {
+        border-radius: 16px;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .sync-loop {
+        padding: 16px 24px;
+        gap: 14px;
+        font-size: 2rem;
+    }
+
+    .bento-graphic {
+        padding: 12px;
+    }
+}
+
 /* =========================================================================
    NEW SECTION: ESCALABILIDAD (DARK THEME)
    ========================================================================= */

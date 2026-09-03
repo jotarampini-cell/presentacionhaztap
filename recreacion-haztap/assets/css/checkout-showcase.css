@@ -126,6 +126,27 @@
     color: #0f172a;
 }
 
+@media (max-width: 640px) {
+    .checkout-playback-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .playback-status-pill {
+        justify-content: center;
+        text-align: center;
+        white-space: normal;
+        padding: 8px 14px;
+    }
+
+    .playback-toggle-btn {
+        justify-content: center;
+        width: 100%;
+        padding: 10px 16px;
+    }
+}
+
 /* ==========================================================================
    VENTANA DEL CHECKOUT (DISEÑO FIEL CHECKOUTVENEZOLANO)
    ========================================================================== */
