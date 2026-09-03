@@ -205,174 +205,129 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 7. SIMULADOR DE PEDIDOS EN PANTALLA DE BLOQUEO (Brief Escenas) ---
-    const lockscreenSection = document.getElementById('pedidos-en-vivo');
-    const notif1 = document.getElementById('notif-1');
-    const notif2 = document.getElementById('notif-2');
-    const notif3 = document.getElementById('notif-3');
-    const notif4 = document.getElementById('notif-4');
-    const counterOverlay = document.getElementById('counter-overlay');
-    const counterNumEl = document.getElementById('pedidos-counter-num');
-    const sceneTabs = document.querySelectorAll('.scene-tab-btn');
-    const sceneStepIndicator = document.getElementById('scene-step-indicator');
-    const sceneTitle = document.getElementById('scene-title');
-    const sceneDesc = document.getElementById('scene-desc');
-    const playPauseBtn = document.getElementById('btn-play-pause-sim');
+    // --- 7. VIDEO SHOWCASE CONTINUO EN LOOP AUTÓNOMO (Zero clicks needed) ---
+    const notif1 = document.getElementById('stream-notif-1');
+    const notif2 = document.getElementById('stream-notif-2');
+    const notif3 = document.getElementById('stream-notif-3');
+    const notif4 = document.getElementById('stream-notif-4');
+    const counterPanel = document.getElementById('stream-counter-panel');
+    const countNumberEl = document.getElementById('stream-count-number');
+    const outroPanel = document.getElementById('stream-outro-panel');
+    const timelineSteps = document.querySelectorAll('.timeline-step');
 
-    const scenesData = [
-        {
-            num: 1,
-            name: "Calma",
-            title: "1. Calma en tu teléfono personal",
-            desc: "Pantalla de bloqueo con un fondo relajado de tu vida diaria. Todo en silencio mientras la tienda digital Haztap opera en la nube.",
-            duration: 2500
-        },
-        {
-            num: 2,
-            name: "Primer pedido",
-            title: "2. Llega el primer pedido del día",
-            desc: "Un cliente navega tu catálogo, selecciona su talla y completa la compra. Tu teléfono recibe la primera notificación con foto de la prenda y confirmación de pago.",
-            duration: 3200
-        },
-        {
-            num: 3,
-            name: "Llegan más",
-            title: "3. Cascada automática de pedidos",
-            desc: "Mientras trabajas, atiendes en el mostrador o tomas un café, caen más órdenes simultáneas con fotos y datos listos sin colapsar tu WhatsApp.",
-            duration: 3800
-        },
-        {
-            num: 4,
-            name: "Contador en vivo",
-            title: "4. Tu facturación en tiempo real",
-            desc: "El panel consolida los pedidos del día en automático. Observa cómo el contador asciende hasta superar las 200 órdenes sin esfuerzo manual.",
-            duration: 4000
-        },
-        {
-            num: 5,
-            name: "Cierre",
-            title: "5. Tu negocio en piloto automático",
-            desc: "Sin estrés, sin capturas dudosas y sin perder horas en el chat. Todo organizado y respaldado para despachar a tiempo.",
-            duration: 4500
-        }
-    ];
+    const sceneDurations = [2500, 3000, 4000, 3500, 2800]; // Duración en ms de las 5 escenas
+    let currentStep = 1;
+    let stepStartTime = null;
+    let animFrameId = null;
+    let counterIntervalId = null;
 
-    let currentSceneIdx = 0;
-    let sceneTimer = null;
-    let counterInterval = null;
-    let isAutoPlaying = true;
-
-    function activateScene(sceneNum) {
-        currentSceneIdx = sceneNum - 1;
-        const data = scenesData[currentSceneIdx];
-
-        // Update tabs
-        sceneTabs.forEach(t => {
-            const tNum = parseInt(t.getAttribute('data-scene'), 10);
-            t.classList.toggle('is-active', tNum === sceneNum);
+    function renderSceneState(step) {
+        // Timeline Bar
+        timelineSteps.forEach((s) => {
+            const num = parseInt(s.getAttribute('data-step'), 10);
+            const fill = s.querySelector('.step-progress-fill');
+            if (num < step) {
+                s.classList.add('is-passed');
+                s.classList.remove('is-active');
+                if (fill) fill.style.width = '100%';
+            } else if (num === step) {
+                s.classList.remove('is-passed');
+                s.classList.add('is-active');
+            } else {
+                s.classList.remove('is-passed');
+                s.classList.remove('is-active');
+                if (fill) fill.style.width = '0%';
+            }
         });
 
-        // Update text labels
-        if (sceneStepIndicator) sceneStepIndicator.textContent = `Escena ${sceneNum} de 5`;
-        if (sceneTitle) sceneTitle.textContent = data.title;
-        if (sceneDesc) sceneDesc.textContent = data.desc;
+        clearInterval(counterIntervalId);
 
-        // Reset elements
-        clearInterval(counterInterval);
-        
-        if (sceneNum === 1) {
+        if (step === 1) {
+            // Escena 1: Calma
             if (notif1) notif1.classList.remove('is-visible');
             if (notif2) notif2.classList.remove('is-visible');
             if (notif3) notif3.classList.remove('is-visible');
             if (notif4) notif4.classList.remove('is-visible');
-            if (counterOverlay) counterOverlay.classList.remove('is-active');
-        } else if (sceneNum === 2) {
-            if (counterOverlay) counterOverlay.classList.remove('is-active');
+            if (counterPanel) counterPanel.classList.remove('is-active');
+            if (outroPanel) outroPanel.classList.remove('is-active');
+        } else if (step === 2) {
+            // Escena 2: Primer pedido
+            if (counterPanel) counterPanel.classList.remove('is-active');
+            if (outroPanel) outroPanel.classList.remove('is-active');
             if (notif2) notif2.classList.remove('is-visible');
             if (notif3) notif3.classList.remove('is-visible');
             if (notif4) notif4.classList.remove('is-visible');
             setTimeout(() => { if (notif1) notif1.classList.add('is-visible'); }, 150);
-        } else if (sceneNum === 3) {
-            if (counterOverlay) counterOverlay.classList.remove('is-active');
+        } else if (step === 3) {
+            // Escena 3: Cascada de ventas
+            if (counterPanel) counterPanel.classList.remove('is-active');
+            if (outroPanel) outroPanel.classList.remove('is-active');
             if (notif1) notif1.classList.add('is-visible');
             setTimeout(() => { if (notif2) notif2.classList.add('is-visible'); }, 200);
-            setTimeout(() => { if (notif3) notif3.classList.add('is-visible'); }, 700);
-            setTimeout(() => { if (notif4) notif4.classList.add('is-visible'); }, 1200);
-        } else if (sceneNum === 4) {
+            setTimeout(() => { if (notif3) notif3.classList.add('is-visible'); }, 850);
+            setTimeout(() => { if (notif4) notif4.classList.add('is-visible'); }, 1500);
+        } else if (step === 4) {
+            // Escena 4: Contador +209 en vivo
+            if (outroPanel) outroPanel.classList.remove('is-active');
             if (notif1) notif1.classList.add('is-visible');
             if (notif2) notif2.classList.add('is-visible');
             if (notif3) notif3.classList.add('is-visible');
             if (notif4) notif4.classList.add('is-visible');
-            if (counterOverlay) counterOverlay.classList.add('is-active');
+            if (counterPanel) counterPanel.classList.add('is-active');
 
-            // Animate counter from 0 to 209
-            let current = 0;
+            let currentCount = 0;
             const target = 209;
-            const step = Math.ceil(target / 25);
-            counterInterval = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(counterInterval);
+            const stepInc = Math.ceil(target / 24);
+            counterIntervalId = setInterval(() => {
+                currentCount += stepInc;
+                if (currentCount >= target) {
+                    currentCount = target;
+                    clearInterval(counterIntervalId);
                 }
-                if (counterNumEl) counterNumEl.textContent = current;
-            }, 50);
-        } else if (sceneNum === 5) {
-            if (notif1) notif1.classList.add('is-visible');
-            if (notif2) notif2.classList.add('is-visible');
-            if (notif3) notif3.classList.add('is-visible');
-            if (notif4) notif4.classList.add('is-visible');
-            if (counterOverlay) counterOverlay.classList.add('is-active');
-            if (counterNumEl) counterNumEl.textContent = '209';
+                if (countNumberEl) countNumberEl.textContent = currentCount;
+            }, 55);
+        } else if (step === 5) {
+            // Escena 5: En automático (Cierre de marca)
+            if (counterPanel) counterPanel.classList.remove('is-active');
+            if (outroPanel) outroPanel.classList.add('is-active');
         }
     }
 
-    function runNextScene() {
-        if (!isAutoPlaying) return;
-        let nextScene = currentSceneIdx + 2;
-        if (nextScene > 5) nextScene = 1;
-        activateScene(nextScene);
-        sceneTimer = setTimeout(runNextScene, scenesData[currentSceneIdx].duration);
+    function videoLoopDirector(timestamp) {
+        if (!stepStartTime) stepStartTime = timestamp;
+        const elapsed = timestamp - stepStartTime;
+        const currentDuration = sceneDurations[currentStep - 1];
+        const progress = Math.min(elapsed / currentDuration, 1);
+
+        // Actualizar barra de progreso del paso activo
+        const currentStepEl = document.querySelector(`.timeline-step[data-step="${currentStep}"]`);
+        if (currentStepEl) {
+            const fillEl = currentStepEl.querySelector('.step-progress-fill');
+            if (fillEl) fillEl.style.width = (progress * 100) + '%';
+        }
+
+        if (elapsed >= currentDuration) {
+            // Pasar al siguiente paso o reiniciar loop
+            stepStartTime = timestamp;
+            currentStep = currentStep >= 5 ? 1 : currentStep + 1;
+            renderSceneState(currentStep);
+        }
+
+        animFrameId = requestAnimationFrame(videoLoopDirector);
     }
 
-    function startSimulation() {
-        clearTimeout(sceneTimer);
-        isAutoPlaying = true;
-        activateScene(1);
-        sceneTimer = setTimeout(runNextScene, scenesData[0].duration);
-    }
+    // Inicializar y reproducir continuamente
+    renderSceneState(1);
+    animFrameId = requestAnimationFrame(videoLoopDirector);
 
-    // Manual scene tabs click
-    sceneTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            clearTimeout(sceneTimer);
-            isAutoPlaying = false; // pause auto sequence so user can inspect
-            const sNum = parseInt(tab.getAttribute('data-scene'), 10);
-            activateScene(sNum);
+    // Permitir clic en la barra para adelantar a un capítulo si se desea
+    timelineSteps.forEach((s) => {
+        s.addEventListener('click', () => {
+            const targetStep = parseInt(s.getAttribute('data-step'), 10);
+            currentStep = targetStep;
+            stepStartTime = performance.now();
+            renderSceneState(currentStep);
         });
     });
-
-    if (playPauseBtn) {
-        playPauseBtn.addEventListener('click', () => {
-            startSimulation();
-        });
-    }
-
-    // IntersectionObserver to auto-start when user reaches section
-    if (lockscreenSection && 'IntersectionObserver' in window) {
-        let hasTriggered = false;
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !hasTriggered) {
-                    hasTriggered = true;
-                    startSimulation();
-                }
-            });
-        }, { threshold: 0.1 });
-
-        observer.observe(lockscreenSection);
-    } else {
-        startSimulation();
-    }
 
 });

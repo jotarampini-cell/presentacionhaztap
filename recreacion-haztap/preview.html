@@ -659,281 +659,201 @@
         </div>
     </section>
 
-    <!-- SECCIÓN: CÓMO LLEGAN LOS PEDIDOS EN VIVO (Simulación Lockscreen Relajado) -->
+    <!-- SECCIÓN: VIDEO ANIMADO CONTINUO DE PEDIDOS EN VIVO -->
     <section class="preview-live-orders-section" id="pedidos-en-vivo">
-        <div class="orders-ambient-glow"></div>
+        <div class="orders-stage-glow"></div>
         <div class="ht-container">
             
-            <div class="section-header-center">
-                <div class="ht-pill-eyebrow">
+            <div class="orders-video-header text-center">
+                <div class="ht-pill-eyebrow" style="margin: 0 auto 16px;">
                     <span class="pulse-dot" style="background: var(--ht-verde);"></span>
-                    <span>Vender en Piloto Automático</span>
+                    <span>Modo Automático en Vivo</span>
                 </div>
-                <h2>Tu negocio vendiendo en vivo, mientras tú vives tu vida.</h2>
-                <p>
-                    Olvídate de responder 50 veces "¿precio al DM?". Mira cómo caen los pedidos organizados con fotos, método de pago y comprobante en la pantalla de bloqueo de tu teléfono personal:
-                </p>
+                <h2>Vender en automático se ve exactamente así.</h2>
+                <p>Cero chats interminables. Mira cómo caen los pedidos organizados con fotos y pagos listos en tu teléfono personal:</p>
             </div>
 
-            <!-- Contenedor Principal: Teléfono con Wallpaper Relajado a la izquierda / Storyboard a la derecha -->
-            <div class="live-orders-showcase-grid">
+            <!-- Escenario Central del Smartphone (Video Animado Continuo) -->
+            <div class="orders-stage-center">
                 
-                <!-- Columna Izquierda: Smartphone con Wallpaper Relajado de la Vida Real -->
-                <div class="live-orders-phone-col">
-                    <div class="lockscreen-phone-wrapper">
-                        
-                        <!-- Pantalla del Smartphone -->
-                        <div class="lockscreen-screen" id="lockscreen-display">
-                            
-                            <!-- Fondo de Pantalla Amigable / Relajado (Golden Hour Sunset) -->
-                            <img src="assets/img/wallpaper-chill.jpg" class="lockscreen-wallpaper" alt="Fondo de pantalla relajado">
-                            <div class="lockscreen-overlay-tint"></div>
-
-                            <!-- Barra de Estado Superior iOS -->
-                            <div class="lockscreen-statusbar">
-                                <span class="status-time">09:41</span>
-                                <div class="dynamic-island-pill"></div>
-                                <div class="status-icons">
-                                    <i class="ph-fill ph-cell-signal-full"></i>
-                                    <i class="ph-bold ph-wifi-high"></i>
-                                    <i class="ph-fill ph-battery-charging-vertical"></i>
-                                </div>
-                            </div>
-
-                            <!-- Reloj y Fecha Lockscreen iOS -->
-                            <div class="lockscreen-clock-widget">
-                                <span class="lockscreen-date" id="lockscreen-date-text">Miércoles, 2 de Septiembre</span>
-                                <h1 class="lockscreen-time" id="lockscreen-clock-text">09:41</h1>
-                            </div>
-
-                            <!-- Contenedor de Notificaciones en Cascada -->
-                            <div class="lockscreen-notifications-stack" id="notifications-stack">
-                                
-                                <!-- Notificación 1: Vestido Linen Sand -->
-                                <div class="ios-order-notif notif-order-1" id="notif-1">
-                                    <div class="notif-app-header">
-                                        <div class="notif-app-brand">
-                                            <div class="notif-logo-dot">
-                                                <img src="assets/img/haztap-logo.png" alt="ht">
-                                            </div>
-                                            <span>Haztap · Pedidos</span>
-                                        </div>
-                                        <span class="notif-time-ago">hace 1 min</span>
-                                    </div>
-                                    <div class="notif-body-content">
-                                        <div class="notif-photo-wrap">
-                                            <img src="assets/img/portfolio/proyecto4-mob.webp" alt="Vestido Linen">
-                                        </div>
-                                        <div class="notif-text-col">
-                                            <strong>María Valentina</strong>
-                                            <p>Compró: <span>Vestido Linen Sand (M)</span></p>
-                                            <span class="notif-amount-badge">+$48.00 · PagoMóvil Banesco</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Notificación 2: Pantalón Denim Flare -->
-                                <div class="ios-order-notif notif-order-2" id="notif-2">
-                                    <div class="notif-app-header">
-                                        <div class="notif-app-brand">
-                                            <div class="notif-logo-dot">
-                                                <img src="assets/img/haztap-logo.png" alt="ht">
-                                            </div>
-                                            <span>Haztap · Pedidos</span>
-                                        </div>
-                                        <span class="notif-time-ago">hace 30 seg</span>
-                                    </div>
-                                    <div class="notif-body-content">
-                                        <div class="notif-photo-wrap">
-                                            <img src="assets/img/portfolio/proyecto7-mob.webp" alt="Pantalón Denim">
-                                        </div>
-                                        <div class="notif-text-col">
-                                            <strong>Carlos Rodríguez</strong>
-                                            <p>Compró: <span>Pantalón Denim Flare (28)</span></p>
-                                            <span class="notif-amount-badge">+$55.00 · PagoMóvil</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Notificación 3: Kit Accesorios -->
-                                <div class="ios-order-notif notif-order-3" id="notif-3">
-                                    <div class="notif-app-header">
-                                        <div class="notif-app-brand">
-                                            <div class="notif-logo-dot">
-                                                <img src="assets/img/haztap-logo.png" alt="ht">
-                                            </div>
-                                            <span>Haztap · Pedidos</span>
-                                        </div>
-                                        <span class="notif-time-ago">hace 10 seg</span>
-                                    </div>
-                                    <div class="notif-body-content">
-                                        <div class="notif-photo-wrap">
-                                            <img src="assets/img/portfolio/mockup-autoclub.jpg" alt="Top Ribbed">
-                                        </div>
-                                        <div class="notif-text-col">
-                                            <strong>Andrea Morán</strong>
-                                            <p>Compró: <span>Top Ribbed Terracota (S)</span></p>
-                                            <span class="notif-amount-badge">+$28.00 · Transferencia</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Notificación 4: Panadería Gourmet -->
-                                <div class="ios-order-notif notif-order-4" id="notif-4">
-                                    <div class="notif-app-header">
-                                        <div class="notif-app-brand">
-                                            <div class="notif-logo-dot">
-                                                <img src="assets/img/haztap-logo.png" alt="ht">
-                                            </div>
-                                            <span>Haztap · Pedidos</span>
-                                        </div>
-                                        <span class="notif-time-ago">ahora</span>
-                                    </div>
-                                    <div class="notif-body-content">
-                                        <div class="notif-photo-wrap">
-                                            <img src="assets/img/portfolio/mockup-kpane.jpg" alt="KPANE Bakery">
-                                        </div>
-                                        <div class="notif-text-col">
-                                            <strong>Daniel Silva</strong>
-                                            <p>Compró: <span>Caja Degustación Prémium</span></p>
-                                            <span class="notif-amount-badge">+$34.00 · Zelle</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- Escena 4: Contador en Vivo Overlay -->
-                            <div class="lockscreen-counter-overlay" id="counter-overlay">
-                                <div class="counter-badge-pill">
-                                    <span class="pulse-dot" style="background: var(--ht-verde);"></span>
-                                    <span>Ventas de Hoy en Automático</span>
-                                </div>
-                                <div class="counter-big-number">
-                                    <span class="counter-value" id="pedidos-counter-num">0</span>
-                                    <span class="counter-label">pedidos procesados</span>
-                                </div>
-                                <div class="counter-amount-sum">
-                                    <span>Total facturado:</span>
-                                    <strong id="pedidos-total-sum">$4,850.00 USD</strong>
-                                </div>
-                            </div>
-
-                            <!-- Botones inferiores de la pantalla de bloqueo -->
-                            <div class="lockscreen-bottom-actions">
-                                <div class="quick-action-btn"><i class="ph-bold ph-flashlight"></i></div>
-                                <div class="lockscreen-home-bar"></div>
-                                <div class="quick-action-btn"><i class="ph-bold ph-camera"></i></div>
-                            </div>
-
-                        </div>
-
-                        <!-- Marco de Hardware de iPhone Pro -->
-                        <img src="assets/img/portfolio/iphone.png" class="lockscreen-frame" alt="iPhone Frame">
+                <!-- Barra de Progreso de Escenas Estilo Video -->
+                <div class="video-timeline-bar" id="video-timeline-bar">
+                    <div class="timeline-step step-1 is-active" data-step="1">
+                        <div class="step-progress-fill"></div>
+                        <span>1. Calma</span>
+                    </div>
+                    <div class="timeline-step step-2" data-step="2">
+                        <div class="step-progress-fill"></div>
+                        <span>2. Primer pedido</span>
+                    </div>
+                    <div class="timeline-step step-3" data-step="3">
+                        <div class="step-progress-fill"></div>
+                        <span>3. Cascada de ventas</span>
+                    </div>
+                    <div class="timeline-step step-4" data-step="4">
+                        <div class="step-progress-fill"></div>
+                        <span>4. Contador +209</span>
+                    </div>
+                    <div class="timeline-step step-5" data-step="5">
+                        <div class="step-progress-fill"></div>
+                        <span>5. En automático</span>
                     </div>
                 </div>
 
-                <!-- Columna Derecha: Control de Escenas & Certezas Comerciales -->
-                <div class="live-orders-info-col">
+                <!-- Dispositivo iPhone en Escenario con Iluminación Cinematográfica -->
+                <div class="cinema-phone-frame">
                     
-                    <div class="scene-playback-card">
-                        <div class="scene-card-header">
-                            <span class="scene-live-pill">
-                                <i class="ph-bold ph-broadcast"></i>
-                                <span>Simulación Interactiva</span>
+                    <div class="phone-screen-viewport">
+                        <!-- Fondo Relajado de Atardecer en la Playa -->
+                        <img src="assets/img/wallpaper-chill.jpg" class="phone-chill-bg" alt="Fondo de pantalla relajado">
+                        <div class="phone-vignette"></div>
+
+                        <!-- Barra de Estado Superior iOS -->
+                        <div class="ios-statusbar-clean">
+                            <span class="ios-time">09:41</span>
+                            <div class="ios-island"></div>
+                            <div class="ios-icons">
+                                <i class="ph-fill ph-cell-signal-full"></i>
+                                <i class="ph-bold ph-wifi-high"></i>
+                                <i class="ph-fill ph-battery-charging-vertical"></i>
+                            </div>
+                        </div>
+
+                        <!-- Reloj Central Lockscreen iOS -->
+                        <div class="ios-lock-clock" id="anim-lock-clock">
+                            <span class="ios-date-label">Miércoles, 2 de Septiembre</span>
+                            <h1 class="ios-big-time">09:41</h1>
+                        </div>
+
+                        <!-- Pila de Notificaciones Animadas -->
+                        <div class="ios-orders-stream" id="orders-stream">
+                            
+                            <!-- Notificación 1 -->
+                            <div class="stream-notif notif-item-1" id="stream-notif-1">
+                                <div class="stream-notif-top">
+                                    <div class="stream-brand">
+                                        <div class="stream-logo"><img src="assets/img/haztap-logo.png" alt="ht"></div>
+                                        <span>Haztap Pedidos</span>
+                                    </div>
+                                    <span class="stream-time">Ahora</span>
+                                </div>
+                                <div class="stream-notif-body">
+                                    <img src="assets/img/portfolio/proyecto4-mob.webp" class="stream-photo" alt="Vestido Linen">
+                                    <div class="stream-info">
+                                        <strong>María Valentina</strong>
+                                        <p>Vestido Linen Sand · Talla M</p>
+                                        <span class="stream-badge">+$48.00 · PagoMóvil Banesco</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notificación 2 -->
+                            <div class="stream-notif notif-item-2" id="stream-notif-2">
+                                <div class="stream-notif-top">
+                                    <div class="stream-brand">
+                                        <div class="stream-logo"><img src="assets/img/haztap-logo.png" alt="ht"></div>
+                                        <span>Haztap Pedidos</span>
+                                    </div>
+                                    <span class="stream-time">Ahora</span>
+                                </div>
+                                <div class="stream-notif-body">
+                                    <img src="assets/img/portfolio/proyecto7-mob.webp" class="stream-photo" alt="Pantalón Denim">
+                                    <div class="stream-info">
+                                        <strong>Carlos Rodríguez</strong>
+                                        <p>Pantalón Denim Flare · Talla 28</p>
+                                        <span class="stream-badge">+$55.00 · PagoMóvil</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notificación 3 -->
+                            <div class="stream-notif notif-item-3" id="stream-notif-3">
+                                <div class="stream-notif-top">
+                                    <div class="stream-brand">
+                                        <div class="stream-logo"><img src="assets/img/haztap-logo.png" alt="ht"></div>
+                                        <span>Haztap Pedidos</span>
+                                    </div>
+                                    <span class="stream-time">Ahora</span>
+                                </div>
+                                <div class="stream-notif-body">
+                                    <img src="assets/img/portfolio/mockup-autoclub.jpg" class="stream-photo" alt="Top Ribbed">
+                                    <div class="stream-info">
+                                        <strong>Andrea Morán</strong>
+                                        <p>Top Ribbed Terracota · Talla S</p>
+                                        <span class="stream-badge">+$28.00 · Transferencia</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notificación 4 -->
+                            <div class="stream-notif notif-item-4" id="stream-notif-4">
+                                <div class="stream-notif-top">
+                                    <div class="stream-brand">
+                                        <div class="stream-logo"><img src="assets/img/haztap-logo.png" alt="ht"></div>
+                                        <span>Haztap Pedidos</span>
+                                    </div>
+                                    <span class="stream-time">Ahora</span>
+                                </div>
+                                <div class="stream-notif-body">
+                                    <img src="assets/img/portfolio/mockup-kpane.jpg" class="stream-photo" alt="Bakery">
+                                    <div class="stream-info">
+                                        <strong>Daniel Silva</strong>
+                                        <p>Caja Degustación Prémium</p>
+                                        <span class="stream-badge">+$34.00 · Zelle</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Escena 4: Contador de Impacto Overlay -->
+                        <div class="stream-counter-panel" id="stream-counter-panel">
+                            <span class="counter-pulse-chip">
+                                <i class="ph-bold ph-lightning"></i>
+                                <span>Ventas de Hoy en Automático</span>
                             </span>
-                            <span class="scene-current-step" id="scene-step-indicator">Escena 1 de 5</span>
+                            <div class="counter-number-row">
+                                <strong id="stream-count-number">0</strong>
+                                <span>pedidos procesados</span>
+                            </div>
+                            <div class="counter-sales-row">
+                                <span>Total facturado hoy:</span>
+                                <strong id="stream-sales-total">$5,280.00 USD</strong>
+                            </div>
                         </div>
 
-                        <!-- Selector de Escenas con Progreso -->
-                        <div class="scene-progress-tabs">
-                            <button type="button" class="scene-tab-btn is-active" data-scene="1">
-                                <span class="tab-num">01</span>
-                                <span class="tab-label">Calma</span>
-                            </button>
-                            <button type="button" class="scene-tab-btn" data-scene="2">
-                                <span class="tab-num">02</span>
-                                <span class="tab-label">Primer pedido</span>
-                            </button>
-                            <button type="button" class="scene-tab-btn" data-scene="3">
-                                <span class="tab-num">03</span>
-                                <span class="tab-label">Llegan más</span>
-                            </button>
-                            <button type="button" class="scene-tab-btn" data-scene="4">
-                                <span class="tab-num">04</span>
-                                <span class="tab-label">Contador en vivo</span>
-                            </button>
-                            <button type="button" class="scene-tab-btn" data-scene="5">
-                                <span class="tab-num">05</span>
-                                <span class="tab-label">Cierre</span>
-                            </button>
+                        <!-- Escena 5: Tarjeta de Cierre de Marca -->
+                        <div class="stream-outro-panel" id="stream-outro-panel">
+                            <div class="outro-logo-circle">
+                                <img src="assets/img/haztap-logo.png" alt="ht">
+                            </div>
+                            <h3>haztap</h3>
+                            <p>Tu negocio vendiendo 24/7 mientras tú vives tu vida.</p>
+                            <span class="outro-chip">Todo a un tap</span>
                         </div>
 
-                        <!-- Descripción Dinámica de la Escena -->
-                        <div class="scene-description-box">
-                            <h4 id="scene-title">1. Calma en tu teléfono</h4>
-                            <p id="scene-desc">
-                                Tu pantalla de bloqueo en calma. Tu vida personal transcurre con normalidad mientras la tienda web atiende a tus clientes 24/7 en segundo plano.
-                            </p>
+                        <!-- Barra Inferior iOS -->
+                        <div class="ios-bottom-bar-wrapper">
+                            <div class="ios-home-pill"></div>
                         </div>
 
-                        <!-- Controles de Reproducción -->
-                        <div class="scene-controls-row">
-                            <button type="button" class="btn-scene-action" id="btn-play-pause-sim">
-                                <i class="ph-bold ph-arrow-counter-clockwise"></i>
-                                <span>Reiniciar Simulación</span>
-                            </button>
-                            <span class="sim-speed-note">
-                                <i class="ph-bold ph-shield-check"></i> Cero capturas perdidas en chats
-                            </span>
-                        </div>
                     </div>
 
-                    <!-- 3 Beneficios Concretos para el Dueño del Negocio -->
-                    <div class="orders-benefits-list">
-                        
-                        <div class="benefit-item-card">
-                            <div class="benefit-icon-wrap icon-green">
-                                <i class="ph-bold ph-image-square"></i>
-                            </div>
-                            <div class="benefit-text">
-                                <strong>Fotos reales en cada orden</strong>
-                                <p>Reconoces la prenda o producto al instante con variante de talla, color y precio exacto sin adivinar.</p>
-                            </div>
-                        </div>
+                    <!-- Marco de iPhone Pro Hardware -->
+                    <img src="assets/img/portfolio/iphone.png" class="cinema-hardware-overlay" alt="iPhone Frame">
+                </div>
 
-                        <div class="benefit-item-card">
-                            <div class="benefit-icon-wrap icon-blue">
-                                <i class="ph-bold ph-user-check"></i>
-                            </div>
-                            <div class="benefit-text">
-                                <strong>Datos del comprador organizados</strong>
-                                <p>Nombre, teléfono y método de pago (PagoMóvil, transferencia o Zelle) listos en una sola ficha limpia.</p>
-                            </div>
-                        </div>
-
-                        <div class="benefit-item-card">
-                            <div class="benefit-icon-wrap icon-purple">
-                                <i class="ph-bold ph-trend-up"></i>
-                            </div>
-                            <div class="benefit-text">
-                                <strong>Escalabilidad sin estrés</strong>
-                                <p>Pasa de 5 a 200 pedidos diarios sin contratar más personal solo para contestar precios en WhatsApp.</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- CTA Directo -->
-                    <div class="orders-cta-block">
-                        <a href="https://wa.link/mo02tp" target="_blank" rel="noopener noreferrer" class="ht-btn-primary">
-                            <span>Quiero automatizar mis pedidos</span>
-                            <span class="btn-icon-circle">
-                                <i class="ph-bold ph-arrow-right"></i>
-                            </span>
-                        </a>
-                    </div>
-
+                <!-- Botón de Conversión Inmediato Centrado -->
+                <div class="orders-stage-cta text-center">
+                    <a href="https://wa.link/mo02tp" target="_blank" rel="noopener noreferrer" class="ht-btn-primary" style="margin: 0 auto;">
+                        <span>Quiero esta automatización para mi negocio</span>
+                        <span class="btn-icon-circle">
+                            <i class="ph-bold ph-arrow-right"></i>
+                        </span>
+                    </a>
+                    <span class="stage-cta-guarantee">
+                        <i class="ph-bold ph-shield-check"></i> Cero chats interminables · Pagos directos a tus cuentas
+                    </span>
                 </div>
 
             </div>
