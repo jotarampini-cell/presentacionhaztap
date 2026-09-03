@@ -5065,19 +5065,92 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     border-color: rgba(255,255,255,0.1);
 }
 
-.scale-features-grid {
+.scale-split-layout {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.scale-visual-col {
+    position: relative;
+    padding-right: 20px;
+}
+
+.scale-visual-col h2 {
+    font-size: 3.5rem;
+    margin: 20px 0;
+    line-height: 1.1;
+}
+
+.scale-visual-col p {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 40px;
+}
+
+.scale-hero-image {
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    mix-blend-mode: screen; 
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+}
+
+.scale-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    filter: brightness(1.2) contrast(1.1);
+}
+
+.scale-cards-col {
+    position: relative;
+    height: 650px;
+    overflow: hidden;
+    padding: 20px 10px;
+}
+
+.scale-cards-scroller {
+    display: flex;
+    flex-direction: column;
     gap: 24px;
-    margin-top: 60px;
+    animation: verticalScroll 25s linear infinite;
+}
+
+.scale-cards-scroller:hover {
+    animation-play-state: paused;
+}
+
+@keyframes verticalScroll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(calc(-50% - 12px)); } 
 }
 
 .scale-card {
-    background: rgba(255,255,255,0.02);
+    background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 28px;
-    padding: 40px 30px;
+    padding: 35px 30px;
     transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.scroll-fade-top, .scroll-fade-bottom {
+    position: absolute;
+    left: 0; right: 0;
+    height: 120px;
+    z-index: 10;
+    pointer-events: none;
+}
+.scroll-fade-top {
+    top: 0;
+    background: linear-gradient(to bottom, #0D0D0F 10%, transparent);
+}
+.scroll-fade-bottom {
+    bottom: 0;
+    background: linear-gradient(to top, #0D0D0F 10%, transparent);
 }
 
 .scale-card:hover {
@@ -5119,13 +5192,15 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 }
 
 @media (max-width: 900px) {
-    .scale-features-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    .scale-features-grid {
+    .scale-split-layout {
         grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .scale-visual-col h2 {
+        font-size: 2.5rem;
+    }
+    .scale-hero-image {
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
