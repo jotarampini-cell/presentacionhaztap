@@ -3295,7 +3295,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     align-items: center;
 }
 
-.cafe-stage-tint {
+.cafe-stage-tint { pointer-events: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -3700,7 +3700,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 }
 
 /* Botón CTA debajo del video */
-.orders-stage-cta {
+.orders-stage-cta { position: relative; z-index: 5;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
