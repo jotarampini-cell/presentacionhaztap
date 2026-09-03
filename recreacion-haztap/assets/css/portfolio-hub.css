@@ -111,21 +111,28 @@
     z-index: 2;
 }
 
+.ht-hub-card-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
 .ht-hub-icon-wrapper {
-    width: 70px;
-    height: 70px;
-    border-radius: 20px;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 18px;
     background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 35px;
     color: #fff;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
     -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     transform: translateZ(0);
 }
 
@@ -142,14 +149,14 @@
 .ht-hub-icon-wrapper svg {
     position: relative;
     z-index: 1;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     transition: transform 0.4s ease;
 }
 
 .ht-hub-card:hover .ht-hub-icon-wrapper {
     border-color: transparent;
-    transform: scale(1.1) rotate(5deg) translateZ(0);
+    transform: scale(1.08) rotate(5deg) translateZ(0);
     box-shadow: 0 10px 20px rgba(26, 188, 254, 0.2);
 }
 
@@ -165,7 +172,7 @@
     font-size: 1.6rem;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 18px;
+    margin-bottom: 0;
     letter-spacing: -0.02em;
 }
 
