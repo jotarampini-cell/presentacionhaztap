@@ -18,8 +18,9 @@
     <!-- Swiper 11 CSS para el carrusel de videos 3D -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-    <!-- Estilos dedicados de preview -->
+    <!-- Estilos dedicados de preview y checkout showcase -->
     <link rel="stylesheet" href="assets/css/preview.css">
+    <link rel="stylesheet" href="assets/css/checkout-showcase.css">
 </head>
 <body class="is-preview">
 
@@ -385,100 +386,456 @@
         </div>
     </section>
 
-    <!-- DEMOSTRADOR INTERACTIVO: "SIENTE EL TAP" -->
-    <section class="preview-interactive-demo" id="demo-tap">
+    <!-- SECCIÓN: CHECKOUT VENEZOLANO — DEMOSTRADOR PASO A PASO APPLE -->
+    <section class="checkout-showcase-section" id="checkout-interactivo">
+        <div class="checkout-showcase-glow"></div>
         <div class="ht-container">
-            <div class="demo-header">
-                <div class="ht-pill-eyebrow">
-                    <span class="pulse-dot"></span>
-                    <span>Prueba Interactiva</span>
+            
+            <div class="checkout-section-header">
+                <div class="ht-pill-eyebrow" style="margin: 0 auto 16px;">
+                    <span class="pulse-dot" style="background: var(--ht-verde);"></span>
+                    <span>Checkout Adaptado a Venezuela</span>
                 </div>
-                <h2 class="demo-title">Siente la velocidad del "Tap".</h2>
-                <p class="demo-subtitle">
-                    Toca una prenda y observa cómo llega el pedido cerrado y listo a WhatsApp en 3 segundos:
+                <h2>El checkout que tu cliente entiende al instante.<br><span class="gradient-text-impact">Diseñado para la dinámica real de nuestro país.</span></h2>
+                <p>
+                    Olvídate de formularios eternos y carritos abandonados. Haztap integra selección de entrega por GPS, inicio de sesión exprés y conciliación bancaria directa en bolívares y dólares:
                 </p>
             </div>
 
-            <div class="demo-experience-grid">
+            <!-- Navegación de Pasos Estilo Apple Keynote -->
+            <div class="apple-steps-nav">
+                <button type="button" class="apple-step-tab is-active" data-step="0">
+                    <i class="ph-bold ph-truck"></i>
+                    <span>1. Entrega & Mapa</span>
+                </button>
+                <button type="button" class="apple-step-tab" data-step="1">
+                    <i class="ph-bold ph-user-circle"></i>
+                    <span>2. Identificación</span>
+                </button>
+                <button type="button" class="apple-step-tab" data-step="2">
+                    <i class="ph-bold ph-credit-card"></i>
+                    <span>3. Pagos Bs. & USD</span>
+                </button>
+                <button type="button" class="apple-step-tab" data-step="3">
+                    <i class="ph-bold ph-check-circle"></i>
+                    <span>4. Confirmación</span>
+                </button>
+            </div>
+
+            <!-- Escenario: Tarjetas de Beneficio + Mockup de Checkout Real -->
+            <div class="checkout-stage-layout">
                 
-                <!-- Selector de Productos de Prueba -->
-                <div class="demo-products-selector">
-                    <h4 class="demo-step-label">
-                        <span>1. Haz tap en una prenda:</span>
-                    </h4>
-                    <div class="demo-products-list">
-                        
-                        <button type="button" class="demo-product-card is-active" data-name="Vestido Linen Sand" data-price="48.00" data-spec="Talla M · Arena">
-                            <img src="assets/img/portfolio/proyecto4-mob.webp" alt="Vestido Linen">
-                            <div class="demo-product-info">
-                                <strong>Vestido Linen Sand</strong>
-                                <span>Talla M · Arena · En stock</span>
-                                <span class="demo-price">$48.00 USD</span>
-                            </div>
-                            <span class="demo-check-badge"><i class="ph-bold ph-check"></i></span>
-                        </button>
-
-                        <button type="button" class="demo-product-card" data-name="Pantalón Denim Flare" data-price="55.00" data-spec="Talla 28 · Vintage Blue">
-                            <img src="assets/img/portfolio/proyecto7-mob.webp" alt="Pantalón Denim">
-                            <div class="demo-product-info">
-                                <strong>Pantalón Denim Flare</strong>
-                                <span>Talla 28 · Vintage Blue · En stock</span>
-                                <span class="demo-price">$55.00 USD</span>
-                            </div>
-                            <span class="demo-check-badge"><i class="ph-bold ph-check"></i></span>
-                        </button>
-
-                        <button type="button" class="demo-product-card" data-name="Top Ribbed Terracota" data-price="28.00" data-spec="Talla S · Terracota">
-                            <img src="assets/img/portfolio/mockup-autoclub.jpg" alt="Top Ribbed">
-                            <div class="demo-product-info">
-                                <strong>Top Ribbed Terracota</strong>
-                                <span>Talla S · Terracota · En stock</span>
-                                <span class="demo-price">$28.00 USD</span>
-                            </div>
-                            <span class="demo-check-badge"><i class="ph-bold ph-check"></i></span>
-                        </button>
-
+                <!-- Columna Izquierda: Tarjetas de Valor Comercial -->
+                <div class="stage-callout-sidebar">
+                    
+                    <!-- Callout Paso 1 -->
+                    <div class="benefit-callout-card is-active" data-callout="0">
+                        <span class="callout-badge"><i class="ph-bold ph-map-pin"></i> Entrega de Precisión</span>
+                        <h4>Google Maps & Zonas Tarifadas</h4>
+                        <p>
+                            Tu cliente fija su ubicación con el pin y el sistema calcula la tarifa exacta. Si es al interior, selecciona agencias nacionales (MRW, Zoom, Tealca) o retiro en tus tiendas físicas.
+                        </p>
+                        <div class="admin-config-hint">
+                            <i class="ph-bold ph-sliders"></i>
+                            <span>Configuras zonas, costos y sucursales en tu panel.</span>
+                        </div>
                     </div>
+
+                    <!-- Callout Paso 2 -->
+                    <div class="benefit-callout-card" data-callout="1">
+                        <span class="callout-badge"><i class="ph-bold ph-shield-check"></i> Cero Fricción</span>
+                        <h4>Login Exprés Sin Contraseñas</h4>
+                        <p>
+                            Los clientes nuevos ingresan sus datos básicos en 10 segundos. Los recurrentes reciben un código de 4 dígitos a su teléfono para comprar sin tener que recordar claves.
+                        </p>
+                        <div class="admin-config-hint">
+                            <i class="ph-bold ph-lightning"></i>
+                            <span>Reduce el abandono de compra en más de un 45%.</span>
+                        </div>
+                    </div>
+
+                    <!-- Callout Paso 3 -->
+                    <div class="benefit-callout-card" data-callout="2">
+                        <span class="callout-badge"><i class="ph-bold ph-bank"></i> Conciliación Real</span>
+                        <h4>Pagos Automáticos & Manuales</h4>
+                        <p>
+                            Soporte nativo para Pago Móvil, Transferencias, Zelle y Efectivo. Conciliación bancaria en vivo validando la referencia o aprobación en 1 tap con comprobante adjunto.
+                        </p>
+                        <div class="admin-config-hint">
+                            <i class="ph-bold ph-currency-dollar"></i>
+                            <span>Cambio entre Dólares y Bolívares a tasa oficial.</span>
+                        </div>
+                    </div>
+
+                    <!-- Callout Paso 4 -->
+                    <div class="benefit-callout-card" data-callout="3">
+                        <span class="callout-badge"><i class="ph-bold ph-package"></i> Cierre de Venta</span>
+                        <h4>Orden Cerrada & Notificada</h4>
+                        <p>
+                            Número de orden único generado, confirmación visual inmediata y notificación directa por WhatsApp para coordinar despacho con el cliente.
+                        </p>
+                        <div class="admin-config-hint">
+                            <i class="ph-bold ph-whatsapp-logo"></i>
+                            <span>Todo ordenado, listo para empacar y enviar.</span>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Simulación de WhatsApp en Vivo -->
-                <div class="demo-whatsapp-preview">
-                    <h4 class="demo-step-label">
-                        <span>2. Lo que recibes en tu WhatsApp al instante:</span>
-                    </h4>
-                    <div class="whatsapp-mock-phone">
-                        <div class="whatsapp-mock-header">
-                            <div class="wa-user-avatar">
-                                <img src="assets/img/portfolio/proyecto4-mob.webp" alt="Cliente">
-                            </div>
-                            <div class="wa-user-details">
-                                <strong>Cliente Haztap Store</strong>
-                                <span>● En línea · Pedido #1084</span>
-                            </div>
+                <!-- Columna Derecha: Mockup Interactivo del Checkout (Diseño Exacto de CheckoutVenezolano) -->
+                <div class="checkout-mockup-frame">
+                    
+                    <!-- Barra Superior -->
+                    <div class="checkout-mockup-topbar">
+                        <div class="checkout-brand-mini">
+                            <img src="assets/img/haztap-logo.png" alt="ht">
+                            <span>Haztap Store · Checkout</span>
                         </div>
-
-                        <div class="whatsapp-chat-bubble">
-                            <p class="wa-bubble-greeting">¡Hola! Quiero confirmar este pedido desde la tienda web:</p>
-                            <div class="wa-order-card">
-                                <span class="wa-order-sku"><i class="ph-bold ph-package" style="color: var(--ht-dark); margin-right: 4px;"></i> <strong id="demo-item-name">Vestido Linen Sand</strong></span>
-                                <span class="wa-order-spec" id="demo-item-spec">Variación: Talla M · Arena</span>
-                                <span class="wa-order-total">Total a pagar: <strong id="demo-item-price">$48.00 USD</strong></span>
-                                <span class="wa-order-method">Método preferido: PagoMóvil / Zelle</span>
-                            </div>
-                            <div class="wa-bubble-meta">
-                                <span>12:42 PM</span>
-                                <i class="ph-bold ph-checks" style="color: #34B7F1; font-size: 1.05rem;"></i>
-                            </div>
-                        </div>
-
-                        <div class="whatsapp-badge-status">
-                            <i class="ph-bold ph-lightning" style="color: #F59E0B; margin-right: 6px;"></i>
-                            <span>Cero preguntas de "precio al DM". Pedido 100% cerrado y listo.</span>
+                        <div class="checkout-order-badge">
+                            <i class="ph-bold ph-lock-key"></i>
+                            <span>Transacción Protegida</span>
                         </div>
                     </div>
+
+                    <!-- Cuerpo de los Pasos -->
+                    <div class="checkout-mockup-body">
+                        
+                        <!-- PANTALLA 1: Métodos de Entrega -->
+                        <div class="checkout-step-pane is-active" id="pane-step-0">
+                            <h3 style="font-size: 1.15rem; font-weight: 700; margin: 0 0 4px; color: #0f172a;">Selecciona cómo recibir tu compra</h3>
+                            <p style="font-size: 0.82rem; color: #64748b; margin: 0 0 18px;">Elige el método más conveniente para ti:</p>
+
+                            <!-- Selector de Modo de Entrega -->
+                            <div class="delivery-options-grid">
+                                <div class="delivery-mode-card is-selected" data-mode="local">
+                                    <i class="ph-bold ph-moped"></i>
+                                    <strong>Delivery Local</strong>
+                                    <span>Directo a tu puerta</span>
+                                </div>
+                                <div class="delivery-mode-card" data-mode="national">
+                                    <i class="ph-bold ph-package"></i>
+                                    <strong>Envío Nacional</strong>
+                                    <span>MRW / Zoom / Tealca</span>
+                                </div>
+                                <div class="delivery-mode-card" data-mode="pickup">
+                                    <i class="ph-bold ph-storefront"></i>
+                                    <strong>Retiro en Tienda</strong>
+                                    <span>Nuestras sedes</span>
+                                </div>
+                            </div>
+
+                            <!-- Sub-vista A: Delivery Local con Mapa -->
+                            <div id="subview-local" class="local-delivery-subview">
+                                <div class="co-form-grid" style="margin-bottom: 10px;">
+                                    <div class="co-input-group">
+                                        <label>Ciudad:</label>
+                                        <select class="co-input-field">
+                                            <option>Caracas (Distrito Capital)</option>
+                                            <option>Valencia (Carabobo)</option>
+                                            <option>Maracaibo (Zulia)</option>
+                                            <option>Barquisimeto (Lara)</option>
+                                        </select>
+                                    </div>
+                                    <div class="co-input-group">
+                                        <label>Zona tarifada:</label>
+                                        <select class="co-input-field">
+                                            <option>Las Mercedes / Chacao (+$3.00 USD)</option>
+                                            <option>Altamira / Los Palos Grandes (+$3.50 USD)</option>
+                                            <option>El Hatillo / La Trinidad (+$4.50 USD)</option>
+                                            <option>San Bernardino / La Candelaria (+$3.00 USD)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Mapa Interactivo con Pin -->
+                                <div class="map-selector-box" title="Haz clic en el mapa para simular fijar tu dirección exacta">
+                                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-66.9236%2C10.4706%2C-66.8436%2C10.5106&layer=mapnik"></iframe>
+                                    <div class="map-pin-overlay">
+                                        <span class="map-pin-badge">Fijar ubicación GPS</span>
+                                        <i class="ph-fill ph-map-pin map-pin-icon"></i>
+                                    </div>
+                                </div>
+
+                                <div class="map-address-row">
+                                    <i class="ph-bold ph-check-circle"></i>
+                                    <span id="co-address-text">Av. Principal de Las Mercedes, Edif. Torre ABA, Piso 3</span>
+                                </div>
+                            </div>
+
+                            <!-- Sub-vista B: Envío Nacional -->
+                            <div id="subview-nacional" class="local-delivery-subview" style="display: none;">
+                                <div class="co-form-grid">
+                                    <div class="co-input-group">
+                                        <label>Empresa de encomienda:</label>
+                                        <select class="co-input-field">
+                                            <option>MRW (Cobro a destino)</option>
+                                            <option>ZOOM Envíos (Asegurado)</option>
+                                            <option>Tealca Express</option>
+                                        </select>
+                                    </div>
+                                    <div class="co-input-group">
+                                        <label>Estado y Ciudad destino:</label>
+                                        <input type="text" class="co-input-field" placeholder="Ej: Lechería, Anzoátegui">
+                                    </div>
+                                    <div class="co-input-group full-width">
+                                        <label>Agencia receptora / Código:</label>
+                                        <input type="text" class="co-input-field" placeholder="Ej: Agencia MRW Lechería Plaza Mayor #0821">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sub-vista C: Retiro en Tienda -->
+                            <div id="subview-pickup" class="local-delivery-subview" style="display: none;">
+                                <div class="co-input-group full-width">
+                                    <label>Selecciona la sede de retiro:</label>
+                                    <select class="co-input-field">
+                                        <option>Sede Las Mercedes · Calle Madrid (Lun a Sáb: 10am - 7pm)</option>
+                                        <option>Sede Chacao · Centro Lido Nivel 1 (Lun a Sáb: 11am - 8pm)</option>
+                                    </select>
+                                </div>
+                                <p style="font-size: 0.78rem; color: #64748b; margin-top: 10px;">
+                                    <i class="ph-bold ph-info" style="color: #0acf83;"></i> Tu pedido estará empacado y listo para retirar en 2 horas tras confirmar tu pago.
+                                </p>
+                            </div>
+
+                            <div style="margin-top: 22px;">
+                                <button type="button" class="co-action-btn" data-goto-step="1">
+                                    <span>Continuar a Identificación</span>
+                                    <i class="ph-bold ph-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- PANTALLA 2: Identificación / Login Exprés -->
+                        <div class="checkout-step-pane" id="pane-step-1">
+                            <h3 style="font-size: 1.15rem; font-weight: 700; margin: 0 0 4px; color: #0f172a;">Tus Datos de Contacto</h3>
+                            <p style="font-size: 0.82rem; color: #64748b; margin: 0 0 16px;">Para asociar tu compra y enviarte el recibo:</p>
+
+                            <!-- Toggle Nuevo Cliente vs Login OTP -->
+                            <div class="auth-mode-toggle">
+                                <button type="button" class="auth-tab-btn is-active" data-auth="new">Soy nuevo cliente</button>
+                                <button type="button" class="auth-tab-btn" data-auth="otp">Ya tengo cuenta (Código rápido)</button>
+                            </div>
+
+                            <!-- Formulario Nuevo Cliente -->
+                            <div id="auth-form-new" class="co-form-grid">
+                                <div class="co-input-group">
+                                    <label>Nombre y Apellido *</label>
+                                    <input type="text" class="co-input-field" value="María Valentina Gómez">
+                                </div>
+                                <div class="co-input-group">
+                                    <label>Cédula de Identidad *</label>
+                                    <input type="text" class="co-input-field" value="V-24.891.042">
+                                </div>
+                                <div class="co-input-group">
+                                    <label>WhatsApp Móvil *</label>
+                                    <input type="text" class="co-input-field" value="0414-9201842">
+                                </div>
+                                <div class="co-input-group">
+                                    <label>Correo Electrónico *</label>
+                                    <input type="email" class="co-input-field" value="mvalentina@gmail.com">
+                                </div>
+                            </div>
+
+                            <!-- Simulación OTP Cliente Recurrente -->
+                            <div id="auth-form-otp" class="otp-simulation-box" style="display: none;">
+                                <span style="font-size: 0.82rem; color: #64748b;">Ingresa tu WhatsApp registrado para recibir tu código OTP:</span>
+                                <div style="max-width: 260px; margin: 10px auto;">
+                                    <input type="tel" class="co-input-field" value="0414-9201842" style="text-align: center; font-weight: 700;">
+                                </div>
+                                <button type="button" id="btn-send-otp" class="co-action-btn" style="padding: 8px 16px; font-size: 0.82rem; max-width: 260px; margin: 0 auto 12px; background: #059669;">
+                                    <i class="ph-bold ph-paper-plane-tilt"></i> Simular envío de código
+                                </button>
+                                
+                                <div class="otp-digit-row">
+                                    <div class="otp-box-digit">-</div>
+                                    <div class="otp-box-digit">-</div>
+                                    <div class="otp-box-digit">-</div>
+                                    <div class="otp-box-digit">-</div>
+                                </div>
+                                <span style="font-size: 0.74rem; color: #059669; font-weight: 600;">Código verificado al instante. Cero contraseñas.</span>
+                            </div>
+
+                            <div style="display: flex; gap: 12px; margin-top: 20px;">
+                                <button type="button" class="co-action-btn" data-goto-step="0" style="background: #f1f5f9; color: #0f172a; flex: 0.4;">
+                                    <i class="ph-bold ph-arrow-left"></i> Atrás
+                                </button>
+                                <button type="button" class="co-action-btn" data-goto-step="2" style="flex: 1;">
+                                    <span>Continuar a Métodos de Pago</span>
+                                    <i class="ph-bold ph-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- PANTALLA 3: Métodos de Pago (Bs. & USD) -->
+                        <div class="checkout-step-pane" id="pane-step-2">
+                            <div class="currency-toggle-bar">
+                                <span style="font-size: 0.82rem; font-weight: 700; color: #0f172a;">
+                                    Total a Pagar: <strong id="co-total-display" style="color: #059669; font-size: 1rem;">$48.00 USD</strong>
+                                </span>
+                                <div class="currency-toggle-btns">
+                                    <button type="button" class="cur-btn is-active" data-cur="USD">USD $</button>
+                                    <button type="button" class="cur-btn" data-cur="VES">VES Bs.</button>
+                                </div>
+                            </div>
+
+                            <p style="font-size: 0.82rem; color: #64748b; margin: 0 0 12px;">Selecciona tu forma de pago preferida:</p>
+
+                            <!-- Lista de Métodos de Pago -->
+                            <div class="payment-modes-list">
+                                
+                                <!-- Método 1: Pago Móvil Automatizado -->
+                                <div class="payment-card-item is-selected" data-type="auto">
+                                    <div class="payment-card-icon">
+                                        <i class="ph-bold ph-device-mobile"></i>
+                                    </div>
+                                    <div class="payment-card-details">
+                                        <strong>Pago Móvil Automatizado</strong>
+                                        <span>Conciliación inmediata con el banco</span>
+                                    </div>
+                                    <span class="payment-verification-type type-auto">
+                                        <i class="ph-bold ph-lightning"></i> Automático
+                                    </span>
+                                </div>
+
+                                <!-- Método 2: Zelle / Divisas -->
+                                <div class="payment-card-item" data-type="manual">
+                                    <div class="payment-card-icon">
+                                        <i class="ph-bold ph-currency-dollar"></i>
+                                    </div>
+                                    <div class="payment-card-details">
+                                        <strong>Zelle / Transferencia USD</strong>
+                                        <span>Carga tu comprobante de pago</span>
+                                    </div>
+                                    <span class="payment-verification-type type-manual">
+                                        <i class="ph-bold ph-image"></i> Con Comprobante
+                                    </span>
+                                </div>
+
+                                <!-- Método 3: Efectivo contra entrega -->
+                                <div class="payment-card-item" data-type="manual">
+                                    <div class="payment-card-icon">
+                                        <i class="ph-bold ph-money"></i>
+                                    </div>
+                                    <div class="payment-card-details">
+                                        <strong>Efectivo en Dólares / Euros</strong>
+                                        <span>Paga al momento de recibir tu delivery</span>
+                                    </div>
+                                    <span class="payment-verification-type type-manual">
+                                        Contra Entrega
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <!-- Sub-bloque: Conciliación en Vivo -->
+                            <div id="pago-auto-box" class="bank-reconcile-box">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                    <span style="font-size: 0.78rem; font-weight: 700; color: #0f172a;">Datos para Pago Móvil:</span>
+                                    <span style="font-size: 0.72rem; color: #059669; font-weight: 700;">Tasa BCV Oficial</span>
+                                </div>
+                                <div style="font-size: 0.78rem; color: #475569; line-height: 1.5; margin-bottom: 12px; background: #fff; padding: 8px 12px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                                    <strong>Banco:</strong> Banesco (0134) &nbsp;|&nbsp; <strong>RIF:</strong> J-501849201 &nbsp;|&nbsp; <strong>Tel:</strong> 0414-9201842
+                                </div>
+
+                                <div class="co-form-grid" style="margin-bottom: 8px;">
+                                    <div class="co-input-group">
+                                        <label>Banco emisor:</label>
+                                        <select class="co-input-field">
+                                            <option>Banesco</option>
+                                            <option>Banco Mercantil</option>
+                                            <option>BBVA Provincial</option>
+                                            <option>Banco de Venezuela</option>
+                                        </select>
+                                    </div>
+                                    <div class="co-input-group">
+                                        <label>Número de Referencia (Últimos 6-8 dígitos):</label>
+                                        <input type="text" class="co-input-field" value="849201" placeholder="Ej: 849201">
+                                    </div>
+                                </div>
+
+                                <span id="reconcile-status-badge" style="display: none; align-items: center; gap: 6px; font-size: 0.75rem; color: #059669; font-weight: 700; margin-top: 6px;">
+                                    <i class="ph-bold ph-check-circle"></i> Referencia #849201 verificada con el banco. Fondos recibidos.
+                                </span>
+                            </div>
+
+                            <!-- Sub-bloque: Comprobante Manual -->
+                            <div id="pago-manual-box" class="bank-reconcile-box" style="display: none;">
+                                <div style="font-size: 0.78rem; color: #475569; margin-bottom: 10px;">
+                                    <strong>Cuenta Zelle:</strong> pagos@haztapstore.com (Haztap Commerce LLC)
+                                </div>
+                                <div style="border: 2px dashed #cbd5e1; border-radius: 10px; padding: 14px; text-align: center; background: #fff; cursor: pointer;">
+                                    <i class="ph-bold ph-upload-simple" style="font-size: 1.4rem; color: #059669;"></i>
+                                    <p style="font-size: 0.78rem; margin: 4px 0 0; color: #334155; font-weight: 600;">Haz clic o arrastra tu comprobante / captura de pantalla</p>
+                                    <span style="font-size: 0.7rem; color: #94a3b8;">Formatos: JPG, PNG o PDF</span>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; gap: 12px; margin-top: 18px;">
+                                <button type="button" class="co-action-btn" data-goto-step="1" style="background: #f1f5f9; color: #0f172a; flex: 0.4;">
+                                    <i class="ph-bold ph-arrow-left"></i> Atrás
+                                </button>
+                                <button type="button" class="co-action-btn" id="btn-conciliar-pago" style="flex: 1;">
+                                    <span>Validar Pago y Confirmar Orden</span>
+                                    <i class="ph-bold ph-check"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- PANTALLA 4: Verificación y Confirmación Instantánea -->
+                        <div class="checkout-step-pane" id="pane-step-3">
+                            <div class="order-success-view">
+                                <div class="success-check-circle">
+                                    <i class="ph-fill ph-check"></i>
+                                </div>
+
+                                <h3 style="font-size: 1.45rem; font-weight: 800; color: #0f172a; margin: 0 0 6px;">¡Compra Confirmada con Éxito!</h3>
+                                <p style="font-size: 0.85rem; color: #64748b; margin: 0 auto; max-width: 420px;">
+                                    Tu pedido fue recibido y el pago fue verificado correctamente. Tu orden ya está en cola de despacho.
+                                </p>
+
+                                <div class="order-receipt-summary">
+                                    <div class="receipt-line">
+                                        <span style="color: #64748b;">Número de Orden:</span>
+                                        <strong style="font-family: monospace; color: #0f172a;">#HZ-84920</strong>
+                                    </div>
+                                    <div class="receipt-line">
+                                        <span style="color: #64748b;">Producto:</span>
+                                        <span style="font-weight: 600;">Vestido Linen Sand (Talla M)</span>
+                                    </div>
+                                    <div class="receipt-line">
+                                        <span style="color: #64748b;">Entrega:</span>
+                                        <span style="font-weight: 600;">Delivery Local · Las Mercedes</span>
+                                    </div>
+                                    <div class="receipt-line">
+                                        <span style="color: #64748b;">Método de Pago:</span>
+                                        <span style="font-weight: 600; color: #059669;">Pago Móvil Conciliado (Banesco)</span>
+                                    </div>
+                                    <div class="receipt-line">
+                                        <span style="color: #0f172a;">Total Pagado:</span>
+                                        <span style="color: #0f172a; font-size: 1.1rem;">$48.00 USD</span>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; flex-direction: column; gap: 10px;">
+                                    <button type="button" class="co-action-btn btn-whatsapp" id="btn-co-whatsapp">
+                                        <i class="ph-bold ph-whatsapp-logo" style="font-size: 1.2rem;"></i>
+                                        <span>Notificar al comercio por WhatsApp</span>
+                                    </button>
+                                    <button type="button" class="co-action-btn" id="btn-reset-showcase" style="background: transparent; color: #64748b; border: 1px solid #cbd5e1; padding: 10px;">
+                                        <i class="ph-bold ph-arrows-counter-clockwise"></i>
+                                        <span>Reiniciar demostración interactiva</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
+
         </div>
     </section>
 
@@ -1233,7 +1590,8 @@
 
     <!-- Swiper 11 JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- Scripts interactivos de preview -->
+    <!-- Scripts interactivos de preview y checkout showcase -->
     <script src="assets/js/preview.js"></script>
+    <script src="assets/js/checkout-showcase.js"></script>
 </body>
 </html>
