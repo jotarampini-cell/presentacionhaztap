@@ -4609,3 +4609,290 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
 }
+/* Minimalist Bento Blocks Refined */
+.checkout-blocks-grid.bento-minimal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.minimal-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 28px;
+    overflow: hidden;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.minimal-card-visual {
+    height: 340px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-soft-green { background: #f0fdf4; }
+.bg-soft-blue { background: #eff6ff; }
+
+.minimal-card-text {
+    padding: 30px 40px 40px;
+    text-align: left;
+}
+
+.minimal-card-text h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--ht-dark);
+}
+
+.minimal-card-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* Anim 1: Realistic Receipt */
+.anim-receipt-wrapper {
+    position: relative;
+    width: 260px;
+    height: 290px;
+}
+
+.anim-receipt {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    padding: 24px;
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+.receipt-header-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.receipt-bank-icon {
+    width: 24px;
+    height: 24px;
+    background: rgba(10, 207, 131, 0.1);
+    color: var(--ht-verde);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.receipt-bank-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.receipt-divider {
+    height: 1px;
+    background: repeating-linear-gradient(90deg, #eee, #eee 4px, transparent 4px, transparent 8px);
+    margin: 15px 0;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+}
+
+.r-label { color: #888; }
+.r-val { color: #111; font-weight: 600; }
+
+.receipt-amount-large {
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: var(--ht-dark);
+    margin: 20px 0;
+    text-align: center;
+}
+
+.anim-btn-approve {
+    background: var(--ht-verde);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(10, 207, 131, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.anim-cursor {
+    position: absolute;
+    bottom: 0px;
+    right: 50px;
+    font-size: 2.2rem;
+    color: #111;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+    animation: clickCursor 4s infinite;
+    z-index: 10;
+}
+
+.anim-success-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: var(--ht-verde);
+    border-radius: 16px;
+    opacity: 0;
+    animation: showSuccess 4s infinite;
+    z-index: 5;
+}
+
+@keyframes clickCursor {
+    0% { transform: translate(40px, 50px); opacity: 0; }
+    20% { transform: translate(40px, 50px); opacity: 1; }
+    40% { transform: translate(0, 0) scale(1); }
+    48% { transform: translate(0, 0) scale(0.9); }
+    52% { transform: translate(0, 0) scale(1); }
+    60% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@keyframes showSuccess {
+    0%, 50% { opacity: 0; transform: scale(0.8); }
+    53%, 90% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; }
+}
+
+/* Anim 2: Horizontal Pipeline */
+.horizontal-pipeline-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.pipeline-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 2;
+}
+
+.node-icon {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.03);
+    position: relative;
+}
+
+.node-text {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--ht-dark);
+}
+
+.glowing-ht {
+    border-color: var(--ht-naranja);
+    box-shadow: 0 0 15px rgba(255, 120, 68, 0.2);
+}
+
+.ht-dot-pulse {
+    width: 16px;
+    height: 16px;
+    background: var(--ht-naranja);
+    border-radius: 4px;
+    animation: htPulse 2s infinite;
+}
+
+@keyframes htPulse {
+    0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 120, 68, 0.4); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(255, 120, 68, 0); }
+    100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 120, 68, 0); }
+}
+
+.pipeline-track {
+    height: 4px;
+    width: 60px;
+    background: rgba(45, 156, 219, 0.15);
+    position: relative;
+    overflow: hidden;
+    margin: -30px 10px 0;
+}
+
+.pipeline-orb {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, var(--ht-azul), transparent);
+}
+
+.orb-1 { animation: slideRight 4s infinite linear; }
+.orb-2 { animation: slideRight 4s infinite linear 1s; opacity: 0; }
+
+@keyframes slideRight {
+    0% { transform: translateX(-100%); opacity: 1; }
+    30% { transform: translateX(100%); opacity: 1; }
+    31%, 100% { transform: translateX(100%); opacity: 0; }
+}
+
+.floating-success-badge {
+    position: absolute;
+    top: 30px;
+    background: #fff;
+    color: var(--ht-verde);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 10px 18px;
+    border-radius: 100px;
+    box-shadow: 0 10px 25px rgba(10, 207, 131, 0.15);
+    border: 1px solid rgba(10, 207, 131, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: floatBadgeUp 4s infinite;
+}
+
+@keyframes floatBadgeUp {
+    0%, 45% { opacity: 0; transform: translateY(20px) scale(0.9); }
+    55%, 90% { opacity: 1; transform: translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateY(-10px) scale(0.9); }
+}
+
+@media (max-width: 768px) {
+    .checkout-blocks-grid.bento-minimal {
+        grid-template-columns: 1fr;
+    }
+    .minimal-card-text {
+        padding: 24px;
+    }
+    .pipeline-track {
+        width: 20px;
+    }
+}

@@ -427,138 +427,71 @@
                 <p>Diseñado para la realidad de nuestro mercado. Sin intermediarios foráneos que retengan tus fondos:</p>
             </div>
 
-            <div class="checkout-blocks-grid">
+            <div class="checkout-blocks-grid bento-minimal">
                 
-                <!-- Bloque A: Conciliación manual inteligente -->
-                <div class="checkout-card card-manual">
-                    <div class="checkout-card-header">
-                        <span class="checkout-badge-pill">Opción A</span>
-                        <div class="checkout-icon-wrap icon-manual">
-                            <i class="ph-bold ph-shield-check"></i>
+                <!-- Box 1: Verificación Manual -->
+                <div class="checkout-card minimal-card">
+                    <div class="minimal-card-visual bg-soft-green">
+                        <div class="anim-receipt-wrapper">
+                            <div class="anim-receipt">
+                                <div class="receipt-header-row">
+                                    <div class="receipt-bank-icon"><i class="ph-fill ph-bank"></i></div>
+                                    <div class="receipt-bank-name">PagoMóvil Banesco</div>
+                                </div>
+                                <div class="receipt-divider"></div>
+                                <div class="receipt-row"><span class="r-label">Cliente:</span><span class="r-val">María Gómez</span></div>
+                                <div class="receipt-row"><span class="r-label">Ref:</span><span class="r-val">#849201</span></div>
+                                <div class="receipt-row"><span class="r-label">Fecha:</span><span class="r-val">Hoy, 14:30</span></div>
+                                <div class="receipt-amount-large">Bs. 3,840.00</div>
+                                <div class="anim-btn-approve"><i class="ph-bold ph-check"></i> Aprobar 1-Tap</div>
+                            </div>
+                            <div class="anim-cursor"><i class="ph-fill ph-cursor"></i></div>
+                            <div class="anim-success-overlay"><i class="ph-bold ph-check-circle"></i></div>
                         </div>
-                        <h3>Conciliación inteligente</h3>
-                        <h4>Tú tienes el control directo</h4>
-                        <p>
-                            Tu cliente paga por PagoMóvil o divisa y sube su comprobante. Tú lo revisas en tu panel y apruebas el pedido con un solo tap. Cero capturas perdidas en chats.
-                        </p>
                     </div>
-
-                    <!-- Muestra visual del panel -->
-                    <div class="admin-receipt-preview-box">
-                        <div class="admin-preview-topbar">
-                            <div class="admin-preview-dots">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <span class="admin-preview-title">Panel Haztap · Verificación en 1 Tap</span>
-                            <span class="admin-live-tag"><i class="ph-bold ph-circle"></i> Orden #1084</span>
-                        </div>
-
-                        <div class="admin-preview-body">
-                            <div class="receipt-slip-card">
-                                <div class="slip-header">
-                                    <div class="slip-bank">
-                                        <i class="ph-bold ph-bank"></i>
-                                        <span>Banesco PagoMóvil</span>
-                                    </div>
-                                    <span class="slip-date">Hoy, 12:43 PM</span>
-                                </div>
-                                <div class="slip-amount">
-                                    <strong>Bs. 3,840.00</strong>
-                                    <span>Tasa BCV • Equiv. $48.00 USD</span>
-                                </div>
-                                <div class="slip-data-grid">
-                                    <div class="slip-data-col">
-                                        <span>Cliente:</span>
-                                        <strong>María Valentina</strong>
-                                    </div>
-                                    <div class="slip-data-col">
-                                        <span>Teléfono:</span>
-                                        <strong>0414-***9201</strong>
-                                    </div>
-                                    <div class="slip-data-col">
-                                        <span>Referencia:</span>
-                                        <strong class="slip-ref-highlight">#84920184</strong>
-                                    </div>
-                                    <div class="slip-data-col">
-                                        <span>Comprobante:</span>
-                                        <span class="slip-img-badge"><i class="ph-bold ph-file-image"></i> Adjunto</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="admin-slip-action">
-                                <button type="button" class="btn-approve-slip" id="btn-approve-slip-demo">
-                                    <i class="ph-bold ph-check-circle"></i>
-                                    <span>Aprobar Pago y Notificar Despacho</span>
-                                </button>
-                                <span class="slip-guarantee-note">
-                                    <i class="ph-bold ph-check"></i> Comprobante respaldado automáticamente en el historial
-                                </span>
-                            </div>
-                        </div>
+                    <div class="minimal-card-text">
+                        <h3>Verificación manual, pero inteligente</h3>
+                        <p>Tus clientes suben el comprobante y tú apruebas con un solo botón. Se acabaron los chats llenos de fotos borrosas y las conciliaciones confusas.</p>
                     </div>
                 </div>
 
-                <!-- Bloque B: Automatización bancaria directa -->
-                <div class="checkout-card card-automated">
-                    <div class="checkout-card-header">
-                        <span class="checkout-badge-pill">Opción B</span>
-                        <div class="checkout-icon-wrap icon-auto">
-                            <i class="ph-bold ph-lightning"></i>
+                <!-- Box 2: Pasarelas / Zelle -->
+                <div class="checkout-card minimal-card">
+                    <div class="minimal-card-visual bg-soft-blue">
+                        <div class="horizontal-pipeline-wrapper">
+                            
+                            <div class="pipeline-node node-client">
+                                <div class="node-icon"><i class="ph-fill ph-credit-card"></i></div>
+                                <span class="node-text">Cliente Paga</span>
+                            </div>
+
+                            <div class="pipeline-track track-1">
+                                <div class="pipeline-orb orb-1"></div>
+                            </div>
+
+                            <div class="pipeline-node node-haztap">
+                                <div class="node-icon glowing-ht"><div class="ht-dot-pulse"></div></div>
+                                <span class="node-text">Haztap Valida</span>
+                            </div>
+
+                            <div class="pipeline-track track-2">
+                                <div class="pipeline-orb orb-2"></div>
+                            </div>
+
+                            <div class="pipeline-node node-bank">
+                                <div class="node-icon"><i class="ph-fill ph-bank"></i></div>
+                                <span class="node-text">Tu Banco</span>
+                            </div>
+
+                            <div class="floating-success-badge">
+                                <i class="ph-fill ph-check-circle"></i> Aprobado 100% Automático
+                            </div>
+                            
                         </div>
-                        <h3>Automatización bancaria</h3>
-                        <h4>Cobros directos a tus cuentas</h4>
-                        <p>
-                            Conectamos tu botón bancario oficial. Tu cliente paga en la pasarela y los fondos caen en tu cuenta mientras el pedido se aprueba de forma 100% automática.
-                        </p>
                     </div>
-
-                    <!-- Muestra de Pasarelas Bancarias Conectadas -->
-                    <div class="bank-gateways-showcase">
-                        <span class="gateway-label">Pasarelas e instituciones compatibles:</span>
-                        <div class="gateways-badges-grid">
-                            <div class="gateway-badge">
-                                <i class="ph-bold ph-bank"></i>
-                                <span>Botón Banesco</span>
-                            </div>
-                            <div class="gateway-badge">
-                                <i class="ph-bold ph-bank"></i>
-                                <span>Botón Mercantil</span>
-                            </div>
-                            <div class="gateway-badge">
-                                <i class="ph-bold ph-bank"></i>
-                                <span>Banco de Venezuela</span>
-                            </div>
-                            <div class="gateway-badge">
-                                <i class="ph-bold ph-bank"></i>
-                                <span>Bancamiga</span>
-                            </div>
-                            <div class="gateway-badge">
-                                <i class="ph-bold ph-credit-card"></i>
-                                <span>Zelle Directo</span>
-                            </div>
-                            <div class="gateway-badge">
-                                <i class="ph-bold ph-globe"></i>
-                                <span>Tarjetas Internacionales</span>
-                            </div>
-                        </div>
-
-                        <div class="gateway-auto-flow-box">
-                            <div class="auto-flow-step">
-                                <span class="step-num">1</span>
-                                <span>Cliente paga en pasarela oficial</span>
-                            </div>
-                            <i class="ph-bold ph-arrow-right flow-arrow"></i>
-                            <div class="auto-flow-step">
-                                <span class="step-num">2</span>
-                                <span>El banco liquida directo en tu cuenta</span>
-                            </div>
-                            <i class="ph-bold ph-arrow-right flow-arrow"></i>
-                            <div class="auto-flow-step">
-                                <span class="step-num">3</span>
-                                <span>El pedido se aprueba en automático</span>
-                            </div>
-                        </div>
+                    <div class="minimal-card-text">
+                        <h3>O cobros 100% automatizados</h3>
+                        <p>Haztap conecta el pago de tu cliente directo con tu banco (Zelle, Botón Banesco, etc). El dinero cae en tus cuentas y el pedido se aprueba sin que muevas un dedo.</p>
                     </div>
                 </div>
 
