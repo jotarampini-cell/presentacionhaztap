@@ -3386,6 +3386,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     border-radius: 999px;
     margin: 0 auto;
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+    visibility: hidden; /* Oculto porque el marco del iPhone ya lo trae, pero conserva el espacio */
 }
 
 .ios-icons {
