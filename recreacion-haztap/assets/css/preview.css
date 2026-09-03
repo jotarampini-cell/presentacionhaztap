@@ -4424,3 +4424,188 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     }
 }
 
+
+/* --- DYNAMIC COMPARISON UI --- */
+.chat-simulation-wrapper {
+    height: 320px;
+    background: #f9f9fa;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card-solution .chat-simulation-wrapper {
+    background: #0f1014;
+    background-image: radial-gradient(circle at top right, rgba(255, 120, 68, 0.08) 0%, transparent 60%);
+    border-color: rgba(255,255,255,0.05);
+}
+
+.whatsapp-mockup, .haztap-mockup {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.85rem;
+}
+
+.msg-received, .msg-sent {
+    padding: 10px 14px;
+    border-radius: 16px;
+    max-width: 85%;
+    line-height: 1.4;
+    animation: popIn 0.5s ease backwards;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+}
+
+.msg-received {
+    background: #ffffff;
+    color: #1a1a1c;
+    align-self: flex-start;
+    border-top-left-radius: 4px;
+}
+
+.msg-sent {
+    background: #dcf8c6;
+    color: #111;
+    align-self: flex-end;
+    border-top-right-radius: 4px;
+}
+
+.lost-sale-badge {
+    background: #ffebe9;
+    color: #d1242f;
+    padding: 8px 14px;
+    border-radius: 100px;
+    font-weight: 600;
+    align-self: center;
+    margin-top: 10px;
+    animation: popIn 0.5s ease backwards;
+    font-size: 0.75rem;
+    border: 1px solid rgba(209, 36, 47, 0.2);
+}
+
+.won-sale-badge {
+    background: rgba(46, 160, 67, 0.15);
+    color: #46e06b;
+    padding: 8px 14px;
+    border-radius: 100px;
+    font-weight: 600;
+    align-self: center;
+    margin-top: 20px;
+    animation: popIn 0.5s ease backwards;
+    font-size: 0.75rem;
+    border: 1px solid rgba(46, 160, 67, 0.3);
+}
+
+.ht-notification {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    color: #fff;
+}
+
+.ht-notif-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 12px;
+}
+
+.ht-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background: var(--ht-naranja);
+}
+
+.ht-time {
+    margin-left: auto;
+}
+
+.ht-notif-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.ht-notif-body strong {
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+.ht-notif-body span {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.85rem;
+}
+
+.ht-notif-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.ht-chip.zelle {
+    background: rgba(116, 61, 237, 0.2);
+    color: #a476f9;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.ht-price {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.comparison-text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.comparison-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+.card-solution .comparison-desc {
+    color: rgba(255,255,255,0.7);
+}
+
+/* Delays for animation looping */
+.delay-1 { animation-delay: 1s; }
+.delay-2 { animation-delay: 2.5s; }
+.delay-3 { animation-delay: 4s; }
+.delay-4 { animation-delay: 5.5s; }
+.delay-5 { animation-delay: 7s; }
+.delay-6 { animation-delay: 8.5s; }
+.delay-7 { animation-delay: 10s; }
+
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes slideUpFade {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
