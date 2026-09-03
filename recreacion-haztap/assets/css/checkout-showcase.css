@@ -160,6 +160,8 @@
     box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.12);
     color: var(--co-foreground);
     overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 /* Header del Checkout Oficial */
@@ -428,6 +430,8 @@
     border: 1px solid #cbd5e1;
     margin: 10px 0;
     cursor: pointer;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .co-map-frame iframe {
@@ -661,7 +665,7 @@
 
 .co-btn-primary:hover {
     background: #16a34a;
-    transform: translateY(-1px);
+    transform: translateY(-1px) translateZ(0);
     box-shadow: 0 6px 18px rgba(22, 163, 74, 0.3);
 }
 

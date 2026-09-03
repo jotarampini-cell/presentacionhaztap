@@ -93,11 +93,13 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 /* Hover effects */
 .htp-plan-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) translateZ(0);
     z-index: 10;
 }
 
@@ -151,7 +153,7 @@
 }
 
 .htp-plan-card.htp-popular:hover {
-    transform: scale(1.05) translateY(-10px);
+    transform: scale(1.05) translateY(-10px) translateZ(0);
 }
 .htp-plan-card.htp-popular .htp-card-inner {
     border-color: rgba(255, 255, 255, 0.2);
@@ -246,6 +248,8 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 .htp-plan-card.htp-popular .htp-plan-btn {
     background: #fff;
@@ -264,11 +268,11 @@
     border-color: transparent !important;
     animation: htp-gemini-flow 4s infinite linear !important;
     box-shadow: 0 10px 25px rgba(26, 188, 254, 0.3) !important;
-    transform: scale(1.02);
+    transform: scale(1.02) translateZ(0);
 }
 .htp-plan-btn:hover svg, .htp-plan-card.htp-popular .htp-plan-btn:hover svg {
     color: #fff !important;
-    transform: translateX(4px);
+    transform: translateX(4px) translateZ(0);
 }
 
 /* Features List */
@@ -403,6 +407,6 @@
         transform: scale(1);
     }
     .htp-plan-card.htp-popular:hover {
-        transform: translateY(-5px);
+        transform: translateY(-5px) translateZ(0);
     }
 }

@@ -358,6 +358,8 @@ body.cursor-out #hts-cursor-ring {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .menu-btn-contacto::before {
@@ -381,7 +383,7 @@ body.cursor-out #hts-cursor-ring {
 }
 
 .menu-btn-contacto:hover::before {
-    transform: scaleY(1);
+    transform: scaleY(1) translateZ(0);
     transform-origin: top;
     background: var(--ht-celeste);
 }
@@ -392,7 +394,7 @@ body.cursor-out #hts-cursor-ring {
 }
 
 .menu-btn-contacto:hover svg {
-    transform: translateX(4px);
+    transform: translateX(4px) translateZ(0);
     stroke: #000;
 }
 
@@ -446,7 +448,7 @@ body.cursor-out #hts-cursor-ring {
 
 .menu-search-icon-btn:hover {
     color: #fff;
-    transform: scale(1.1);
+    transform: scale(1.1) translateZ(0);
 }
 
 .menu-search-submit {

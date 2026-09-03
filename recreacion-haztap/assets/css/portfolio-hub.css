@@ -91,10 +91,12 @@
     padding: 1px; /* Para el border dinámico */
     opacity: 0; /* Para GSAP */
     visibility: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .ht-hub-card:hover {
-    transform: translateY(-12px) scale(1.02);
+    transform: translateY(-12px) scale(1.02) translateZ(0);
     box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px -10px rgba(26, 188, 254, 0.1);
 }
 
@@ -123,6 +125,8 @@
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .ht-hub-icon-wrapper::before {
@@ -145,7 +149,7 @@
 
 .ht-hub-card:hover .ht-hub-icon-wrapper {
     border-color: transparent;
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.1) rotate(5deg) translateZ(0);
     box-shadow: 0 10px 20px rgba(26, 188, 254, 0.2);
 }
 
@@ -216,7 +220,7 @@
 .ht-hub-card:hover .ht-hub-arrow-icon {
     background: #fff;
     color: #000;
-    transform: translateX(8px);
+    transform: translateX(8px) translateZ(0);
 }
 
 /* Glow Border Effect (Awwwards Style) */

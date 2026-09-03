@@ -51,6 +51,8 @@ a:hover, button:hover { color: inherit !important; }
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     position: relative;
     overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .cta-btn::before {
@@ -66,7 +68,7 @@ a:hover, button:hover { color: inherit !important; }
 }
 
 .cta-btn:hover::before {
-    transform: scaleX(1);
+    transform: scaleX(1) translateZ(0);
     transform-origin: left;
 }
 

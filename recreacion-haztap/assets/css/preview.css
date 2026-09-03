@@ -142,7 +142,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 }
 
 .team-card:hover .team-plus-btn i {
-    transform: translate(2px, -2px);
+    transform: translate(2px, -2px) translateZ(0);
 }
 
 /* ==========================================================================
@@ -232,11 +232,13 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
     position: relative;
     overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .nav-cta-btn:hover {
     background: #F4F4F6;
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
     box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
 }
 
@@ -327,6 +329,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
     position: relative;
     overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .home-hero .cta-primary {
@@ -348,13 +352,13 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 
 .home-hero .cta-primary:hover {
     background-color: rgba(255, 255, 255, 0.24) !important;
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
 }
 
 .home-hero .cta-secondary:hover {
     background-color: rgba(255, 255, 255, 0.1) !important;
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
 }
 
 .home-scroll-hint {
@@ -473,7 +477,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 
 .ht-btn-primary:hover {
     background: #000;
-    transform: translateY(-3px);
+    transform: translateY(-3px) translateZ(0);
     box-shadow: 0 14px 32px rgba(23, 23, 25, 0.3);
 }
 
@@ -491,7 +495,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 }
 
 .ht-btn-primary:hover .btn-icon-circle {
-    transform: translateX(3px);
+    transform: translateX(3px) translateZ(0);
 }
 
 .ht-btn-secondary {
@@ -528,6 +532,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     width: calc(clamp(380px, 50vh, 520px) * 0.49);
     filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.22));
     animation: floatPhone 6s ease-in-out infinite alternate;
+    will-change: transform, filter;
+    transform: translateZ(0);
 }
 
 @keyframes floatPhone {
@@ -545,6 +551,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     overflow: hidden;
     background: #fff;
     z-index: 1;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .preview-hero .phone-screen-container img {
@@ -643,7 +651,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 .clients-projects-btn:hover {
     background: rgba(255, 255, 255, 0.18);
     border-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
 }
 
 .home-clients-carousel {
@@ -667,6 +675,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     overflow: hidden;
     color: #fff;
     box-shadow: 0 30px 80px -15px rgba(23, 23, 25, 0.35);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .banner-watermark {
@@ -995,12 +1005,14 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     position: relative;
     overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .method-card:hover {
     background: #FFFFFF;
     border-color: var(--ht-dark);
-    transform: translateY(-6px);
+    transform: translateY(-6px) translateZ(0);
     box-shadow: 0 20px 40px -10px rgba(23, 23, 25, 0.08);
 }
 
@@ -1031,7 +1043,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 }
 
 .method-card:hover .method-icon-wrap {
-    transform: scale(1.1);
+    transform: scale(1.1) translateZ(0);
 }
 
 .icon-phase-1 { background: rgba(162, 89, 255, 0.15); color: var(--ht-lila); }
@@ -1099,7 +1111,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 
 .guarantee-card:hover {
     border-color: var(--ht-border-strong);
-    transform: translateY(-3px);
+    transform: translateY(-3px) translateZ(0);
     box-shadow: 0 12px 28px rgba(23, 23, 25, 0.06);
 }
 
@@ -1263,7 +1275,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     background: #fff;
     border-color: var(--ht-border-strong);
     box-shadow: 0 10px 25px rgba(23, 23, 25, 0.06);
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
 }
 
 .demo-product-card.is-active {
@@ -1287,6 +1299,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     border: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     flex-direction: column;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .whatsapp-mock-header {
@@ -1469,6 +1483,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     background: #000;
     box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.12);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .cinema-player-card video {
@@ -1503,7 +1519,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 }
 
 .showreel-play-btn:hover {
-    transform: translate(-50%, -50%) scale(1.1);
+    transform: translate(-50%, -50%) scale(1.1) translateZ(0);
     background: #fff;
 }
 
@@ -1550,6 +1566,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(255, 255, 255, 0.2);
     background: #111;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .swiper-slide-active {
@@ -1591,7 +1609,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 #global-unmute-btn:hover {
     background: #fff;
     color: var(--ht-dark);
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
     box-shadow: 0 14px 30px rgba(255, 255, 255, 0.25);
 }
 
@@ -1657,7 +1675,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 }
 
 .feature-pill-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
     border-color: var(--ht-border-strong);
     box-shadow: 0 8px 20px rgba(23, 23, 25, 0.08);
 }
@@ -1701,6 +1719,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     overflow: hidden;
     border: 1px solid var(--ht-dark-card);
     box-shadow: 0 30px 80px rgba(23, 23, 25, 0.3);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .functions-watermark {
@@ -1726,6 +1746,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     height: 520px;
     margin: 0 auto;
     filter: drop-shadow(0 25px 60px rgba(0, 0, 0, 0.6));
+    will-change: transform, filter;
+    transform: translateZ(0);
 }
 
 .phone-dark-screen {
@@ -1743,6 +1765,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .phone-dark-header {
@@ -1899,10 +1923,12 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     padding: 14px;
     box-shadow: 0 10px 30px -10px rgba(23, 23, 25, 0.05);
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .team-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) translateZ(0);
     box-shadow: 0 18px 40px -10px rgba(23, 23, 25, 0.12);
     border-color: var(--ht-border-strong);
 }
@@ -1914,6 +1940,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     overflow: hidden;
     background: #000;
     margin-bottom: 16px;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .team-photo-wrapper img {
@@ -1926,7 +1954,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 }
 
 .team-card:hover .team-photo-wrapper img {
-    transform: scale(1.05);
+    transform: scale(1.05) translateZ(0);
 }
 
 .team-info-row {
@@ -2078,6 +2106,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     border-radius: 20px;
     overflow: hidden;
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .faq-item.is-open {
@@ -2150,6 +2180,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     box-shadow: 0 20px 50px -10px rgba(23, 23, 25, 0.06);
     position: relative;
     overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .final-cta-pattern {
@@ -2249,7 +2281,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 .footer-social-links a:hover {
     background: #fff;
     color: var(--ht-dark);
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
 }
 
 .footer-col h4 {
@@ -2451,7 +2483,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 }
 
 .checkout-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) translateZ(0);
     box-shadow: 0 16px 40px rgba(23, 23, 25, 0.06);
 }
 
@@ -2521,6 +2553,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     border-radius: 18px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .admin-preview-topbar {
@@ -2658,7 +2692,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 }
 
 .btn-approve-slip:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
     filter: brightness(1.08);
 }
 
@@ -2774,10 +2808,12 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     border-radius: 24px;
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .bento-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) translateZ(0);
     border-color: var(--ht-border-strong);
     box-shadow: 0 16px 40px rgba(23, 23, 25, 0.06);
 }
@@ -3293,6 +3329,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     display: flex;
     flex-direction: column;
     align-items: center;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .cafe-stage-tint { pointer-events: none;
@@ -3487,6 +3525,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .stream-logo img {
@@ -4444,6 +4484,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     justify-content: center;
     padding: 20px;
     border: 1px solid rgba(0,0,0,0.05);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .card-solution .chat-simulation-wrapper {
@@ -4631,6 +4673,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     display: flex;
     flex-direction: column;
     box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .minimal-card-visual {
@@ -4751,6 +4795,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
     animation: clickCursor 4s infinite;
     z-index: 10;
+    will-change: transform, filter;
+    transform: translateZ(0);
 }
 
 .anim-success-overlay {
@@ -4925,6 +4971,8 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .bento-item.wide { 
@@ -5230,7 +5278,7 @@ i.ph, i.ph-bold, i.ph-fill, i.ph-regular {
 .scale-card:hover {
     background: rgba(255,255,255,0.04);
     border-color: rgba(255,255,255,0.15);
-    transform: translateY(-5px);
+    transform: translateY(-5px) translateZ(0);
 }
 
 .scale-icon {

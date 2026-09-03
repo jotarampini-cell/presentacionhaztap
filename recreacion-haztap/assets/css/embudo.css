@@ -172,6 +172,8 @@ body.funnel-page-body {
     display: grid;
     grid-template-columns: 340px 1fr;
     min-height: 560px;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 /* Columna Izquierda: Información de la Sesión */
@@ -200,6 +202,8 @@ body.funnel-page-body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .host-avatar-box img {
@@ -391,7 +395,7 @@ body.funnel-page-body {
 .time-slot-btn:hover {
     border-color: var(--funnel-verde);
     background: rgba(10, 207, 131, 0.08);
-    transform: translateX(4px);
+    transform: translateX(4px) translateZ(0);
 }
 
 .time-slot-btn.is-selected {
@@ -433,7 +437,7 @@ body.funnel-page-body {
 
 .booking-confirm-btn:hover {
     background: var(--funnel-verde);
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
     box-shadow: 0 12px 30px rgba(10, 207, 131, 0.4);
 }
 
@@ -572,6 +576,8 @@ body.funnel-page-body {
     box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
     border: 1px solid var(--funnel-border-strong);
     background: #000;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .funnel-showreel-box video {
@@ -608,7 +614,7 @@ body.funnel-page-body {
 }
 
 .deliverable-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) translateZ(0);
     border-color: var(--funnel-border-strong);
 }
 

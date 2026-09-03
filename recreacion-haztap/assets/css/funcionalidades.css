@@ -174,7 +174,7 @@
 
 .hts-interaction-badge:hover {
     background: rgba(255, 255, 255, 0.15);
-    transform: translateZ(60px) scale(1.05);
+    transform: translateZ(60px) scale(1.05) translateZ(0);
     border-color: rgba(255, 255, 255, 0.3);
     color: #fff;
 }
@@ -232,6 +232,8 @@
         0 40px 80px rgba(0,0,0,0.7),
         0 0 0 1px rgba(255,255,255,0.04);
     overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .hts-phone-body::before {
